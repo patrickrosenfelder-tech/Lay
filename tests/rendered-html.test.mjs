@@ -43,7 +43,8 @@ test("server-renders the complete Precision Vision Institute homepage", async ()
   assert.match(html, /currently available appointments/i);
   assert.match(html, /web\.eyecloudpro\.com\/site\/!appt_req/i);
   assert.match(html, /precision-vision-logo-transparent\.png/i);
-  assert.match(html, /Social links coming soon/i);
+  assert.match(html, /Facebook link coming soon/i);
+  assert.match(html, /instagram\.com\/dr\.laynim/i);
   assert.match(html, /Pause rotating stories/i);
   assert.match(html, /Shawanda M\./i);
   assert.match(html, /href="\/sclerals"/i);

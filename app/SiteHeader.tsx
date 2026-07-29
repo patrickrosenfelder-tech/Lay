@@ -14,11 +14,20 @@ export function SiteHeader() {
         <a href="/#process">Our approach</a>
         <a href="/dr-nim">Dr. Nim</a>
         <a href="/#visit">Visit</a>
-        <span className="header-socials" aria-label="Social links coming soon">
-          <span className="social-icon social-facebook" aria-label="Facebook">
+        <span className="header-socials" aria-label="Social media">
+          <span
+            className="social-icon social-facebook"
+            aria-label="Facebook link coming soon"
+          >
             f
           </span>
-          <span className="social-icon social-instagram" aria-label="Instagram" />
+          <a
+            className="social-icon social-instagram"
+            href="https://www.instagram.com/dr.laynim/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Dr. Lay Nim on Instagram"
+          />
         </span>
       </nav>
 
