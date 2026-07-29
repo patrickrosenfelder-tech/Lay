@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { BookingWidget } from "./BookingWidget";
 import { PatientStories } from "./PatientStories";
 import { SiteFooter } from "./SiteFooter";
@@ -50,7 +52,15 @@ export default function Home() {
         <div className="hero-orbit hero-orbit-one" aria-hidden="true" />
         <div className="hero-orbit hero-orbit-two" aria-hidden="true" />
         <div className="hero-portrait">
-          <img src="/dr-nim.webp" alt="Dr. Lay Nim" />
+          {/* TODO(client): Supply a clinical hero portrait of Dr. Nim with diagnostic equipment. */}
+          <Image
+            src="/dr-nim.webp"
+            alt="Dr. Lay Nim"
+            fill
+            preload
+            fetchPriority="high"
+            sizes="(max-width: 760px) calc(100vw - 40px), 43vw"
+          />
           <div className="portrait-note">
             <span>Meet your specialist</span>
             <strong>Dr. Lay Nim</strong>
@@ -152,7 +162,12 @@ export default function Home() {
 
       <section className="doctor-section" id="doctor">
         <div className="doctor-photo">
-          <img src="/dr-nim.webp" alt="Dr. Lay Nim" />
+          <Image
+            src="/dr-nim.webp"
+            alt="Dr. Lay Nim"
+            fill
+            sizes="(max-width: 760px) calc(100vw - 40px), 45vw"
+          />
           <span>Dr. Lay Nim</span>
         </div>
         <div className="doctor-story">
@@ -166,12 +181,12 @@ export default function Home() {
             right.
           </p>
           <div className="doctor-links">
-            <a href="/dr-nim">
+            <Link href="/dr-nim">
               Meet Dr. Nim <span aria-hidden="true">↗</span>
-            </a>
-            <a href="/doctor-referral">
+            </Link>
+            <Link href="/doctor-referral">
               Refer a patient <span aria-hidden="true">↗</span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -180,9 +195,11 @@ export default function Home() {
 
       <section className="visit-section" id="visit">
         <div className="visit-image">
-          <img
-            src="/office-lounge.jpg"
+          <Image
+            src="/office-lounge.webp"
             alt="Modern waiting area at Precision Vision Institute"
+            fill
+            sizes="(max-width: 760px) calc(100vw - 40px), 60vw"
           />
           <div className="visit-badge">
             <span>33.984° N</span>

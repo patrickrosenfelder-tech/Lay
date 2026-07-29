@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const stories = [
   {
@@ -103,9 +104,9 @@ export function PatientStories() {
           ))}
         </div>
 
-        <a href="/testimonials">
+        <Link href="/testimonials">
           More patient stories <span aria-hidden="true">↗</span>
-        </a>
+        </Link>
       </div>
     </section>
   );

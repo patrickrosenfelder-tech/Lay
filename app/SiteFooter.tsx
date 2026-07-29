@@ -1,25 +1,31 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export function SiteFooter() {
   return (
     <>
       <footer className="site-footer">
-        <a className="footer-brand" href="/">
-          <img
+        <Link className="footer-brand" href="/">
+          <Image
             className="footer-logo"
             src="/precision-vision-logo-transparent.png"
             alt=""
             aria-hidden="true"
+            width={960}
+            height={490}
+            sizes="118px"
           />
           <p>
             Precision Vision Institute
             <small>Specialty eye care in Duluth, Georgia.</small>
           </p>
-        </a>
+        </Link>
         <div className="footer-links">
-          <a href="/patients">Patients</a>
-          <a href="/doctor-referral">Referring doctors</a>
-          <a href="/insurances">Insurance</a>
-          <a href="/testimonials">Patient stories</a>
-          <a href="/#book">Book online</a>
+          <Link href="/patients">Patients</Link>
+          <Link href="/doctor-referral">Referring doctors</Link>
+          <Link href="/insurances">Insurance</Link>
+          <Link href="/testimonials">Patient stories</Link>
+          <Link href="/#book">Book online</Link>
         </div>
         <p className="copyright">
           © {new Date().getFullYear()} Precision Vision Institute
@@ -28,7 +34,7 @@ export function SiteFooter() {
 
       <nav className="mobile-bar" aria-label="Quick actions">
         <a href="tel:+14704404099">Call</a>
-        <a href="/#book">Book online ↗</a>
+        <Link href="/#book">Book online ↗</Link>
       </nav>
     </>
   );

@@ -1,19 +1,26 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <a className="brand" href="/" aria-label="Precision Vision Institute home">
-        <img
+      <Link className="brand" href="/" aria-label="Precision Vision Institute home">
+        {/* TODO(client): Replace with the original vector logo when an SVG source is supplied. */}
+        <Image
           className="brand-logo"
           src="/precision-vision-logo-transparent.png"
           alt="Precision Vision Institute"
+          width={960}
+          height={490}
+          sizes="190px"
         />
-      </a>
+      </Link>
 
       <nav className="desktop-nav" aria-label="Main navigation">
-        <a href="/#specialties">Specialties</a>
-        <a href="/#process">Our approach</a>
-        <a href="/dr-nim">Dr. Nim</a>
-        <a href="/#visit">Visit</a>
+        <Link href="/#specialties">Specialties</Link>
+        <Link href="/#process">Our approach</Link>
+        <Link href="/dr-nim">Dr. Nim</Link>
+        <Link href="/#visit">Visit</Link>
         <span className="header-socials" aria-label="Social media">
           <span
             className="social-icon social-facebook"
@@ -31,19 +38,19 @@ export function SiteHeader() {
         </span>
       </nav>
 
-      <a className="header-cta" href="/#book">
+      <Link className="header-cta" href="/#book">
         Book appointment <span aria-hidden="true">↗</span>
-      </a>
+      </Link>
 
       <details className="mobile-menu">
         <summary aria-label="Open menu">Menu</summary>
         <nav aria-label="Mobile navigation">
-          <a href="/#specialties">Specialties</a>
-          <a href="/#process">Our approach</a>
-          <a href="/dr-nim">Dr. Nim</a>
-          <a href="/#visit">Visit</a>
-          <a href="/patients">Patient resources</a>
-          <a href="/#book">Book appointment ↗</a>
+            <Link href="/#specialties">Specialties</Link>
+            <Link href="/#process">Our approach</Link>
+            <Link href="/dr-nim">Dr. Nim</Link>
+            <Link href="/#visit">Visit</Link>
+            <Link href="/patients">Patient resources</Link>
+            <Link href="/#book">Book appointment ↗</Link>
         </nav>
       </details>
     </header>

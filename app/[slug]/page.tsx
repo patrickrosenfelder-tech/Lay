@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteFooter } from "../SiteFooter";
 import { SiteHeader } from "../SiteHeader";
@@ -83,7 +85,7 @@ const pages: Record<string, DetailPage> = {
     title: "Dry eye is a clue, not a conclusion.",
     lede:
       "Burning, grittiness, redness, watering, and fluctuating vision can have different causes. A focused evaluation looks for the pattern behind your symptoms.",
-    image: "/office-lounge.jpg",
+    image: "/office-lounge.webp",
     imageAlt: "Comfortable waiting area at Precision Vision Institute",
     factLabel: "First step",
     factValue: "Find the driver",
@@ -350,7 +352,7 @@ const pages: Record<string, DetailPage> = {
     title: "The difference is in how care feels.",
     lede:
       "Patients consistently describe careful explanations, unhurried visits, a welcoming team, and specialty lens care that helped them see more clearly.",
-    image: "/office-lounge.jpg",
+    image: "/office-lounge.webp",
     imageAlt: "Bright modern reception area at Precision Vision Institute",
     factLabel: "Shared theme",
     factValue: "Thorough care",
@@ -397,7 +399,7 @@ const pages: Record<string, DetailPage> = {
     title: "Arrive prepared. Leave with a plan.",
     lede:
       "A few details before your visit help the team spend more time on what matters: understanding your eyes, your vision, and your goals.",
-    image: "/office-lounge.jpg",
+    image: "/office-lounge.webp",
     imageAlt: "Reception area at Precision Vision Institute",
     factLabel: "Questions?",
     factValue: "(470) 440-4099",
@@ -450,7 +452,7 @@ const pages: Record<string, DetailPage> = {
     title: "Know your benefits before your visit.",
     lede:
       "Vision plans, medical insurance, and specialty lens benefits are different. Coverage depends on your plan, diagnosis, and the services performed.",
-    image: "/office-lounge.jpg",
+    image: "/office-lounge.webp",
     imageAlt: "Precision Vision Institute patient reception area",
     factLabel: "Benefits support",
     factValue: "(470) 440-4099",
@@ -591,23 +593,30 @@ export default async function DetailPage({
 
       <section className="detail-hero">
         <div className="detail-hero-copy">
-          <a className="detail-back" href="/#specialties">
+          <Link className="detail-back" href="/#specialties">
             ← Back to specialties
-          </a>
+          </Link>
           <p className="section-label">{page.eyebrow}</p>
           <h1>{page.title}</h1>
           <p className="detail-lede">{page.lede}</p>
           <div className="detail-actions">
-            <a className="button button-primary" href="/#book">
+            <Link className="button button-primary" href="/#book">
               View live availability <span aria-hidden="true">↗</span>
-            </a>
+            </Link>
             <a href="tel:+14704404099" className="detail-phone">
               Call (470) 440-4099
             </a>
           </div>
         </div>
         <div className="detail-hero-image">
-          <img src={page.image} alt={page.imageAlt} />
+          <Image
+            src={page.image}
+            alt={page.imageAlt}
+            fill
+            preload={slug === "dr-nim"}
+            fetchPriority={slug === "dr-nim" ? "high" : "auto"}
+            sizes="(max-width: 1050px) 90vw, 42vw"
+          />
           <div className="detail-fact">
             <span>{page.factLabel}</span>
             <strong>{page.factValue}</strong>
