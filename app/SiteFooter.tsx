@@ -5,7 +5,7 @@ export function SiteFooter() {
         <a className="footer-brand" href="/">
           <img
             className="footer-logo"
-            src="/precision-vision-logo.png"
+            src="/precision-vision-logo-transparent.png"
             alt=""
             aria-hidden="true"
           />

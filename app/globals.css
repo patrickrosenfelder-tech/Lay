@@ -61,7 +61,7 @@ summary {
   align-items: center;
   gap: 28px;
   border-radius: 28px;
-  background: rgba(255, 255, 255, 0.97);
+  background: #fff;
   box-shadow: 0 18px 50px rgba(9, 48, 75, 0.16);
   padding: 16px 22px;
   color: var(--ink);
@@ -100,6 +100,51 @@ summary {
   opacity: 0.65;
 }
 
+.header-socials {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.social-icon {
+  position: relative;
+  display: inline-grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--navy);
+}
+
+.social-facebook {
+  padding-top: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.social-instagram::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid currentColor;
+  border-radius: 4px;
+}
+
+.social-instagram::after {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: -4px 4px 0 1px #fff, -4px 4px 0 2.4px currentColor;
+  content: "";
+}
+
 .header-cta {
   justify-self: end;
   border: 0;
@@ -114,7 +159,7 @@ summary {
 .header-cta span,
 .button span,
 .doctor-links span,
-.review-section > a span {
+.story-navigation > a span {
   display: inline-block;
   margin-left: 8px;
   transition: transform 180ms ease;
@@ -123,7 +168,7 @@ summary {
 .header-cta:hover span,
 .button:hover span,
 .doctor-links a:hover span,
-.review-section > a:hover span {
+.story-navigation > a:hover span {
   transform: translate(3px, -3px);
 }
 
@@ -629,7 +674,7 @@ summary {
 .review-section {
   position: relative;
   display: grid;
-  grid-template-columns: 0.25fr 1fr 0.25fr;
+  grid-template-columns: 0.2fr 1fr 0.3fr;
   align-items: end;
   gap: 3vw;
   overflow: hidden;
@@ -645,13 +690,18 @@ summary {
 }
 
 .review-section blockquote {
+  display: flex;
+  min-height: clamp(340px, 29vw, 520px);
+  flex-direction: column;
+  justify-content: space-between;
   margin: 0;
+  animation: story-reveal 480ms ease both;
 }
 
 .review-section blockquote > p {
   max-width: 1100px;
   margin: 0;
-  font-size: clamp(38px, 5vw, 78px);
+  font-size: clamp(42px, 5.2vw, 82px);
   font-weight: 700;
   letter-spacing: -0.06em;
   line-height: 1;
@@ -671,12 +721,83 @@ summary {
   letter-spacing: 0.12em;
 }
 
-.review-section > a {
+.story-navigation {
+  display: flex;
   align-self: end;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.story-navigation > a {
+  width: fit-content;
   border-bottom: 1px solid rgba(10, 10, 10, 0.3);
   padding-bottom: 9px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
+}
+
+.story-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.story-buttons button {
+  min-width: 42px;
+  height: 38px;
+  border: 1px solid rgba(10, 10, 10, 0.22);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.story-buttons button:nth-child(2) {
+  min-width: 62px;
+}
+
+.story-buttons button:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.story-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.story-dots button {
+  width: 8px;
+  height: 8px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(22, 58, 84, 0.25);
+  padding: 0;
+  cursor: pointer;
+}
+
+.story-dots button.active {
+  width: 26px;
+  border-radius: 999px;
+  background: var(--navy);
+}
+
+@keyframes story-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-section blockquote {
+    animation: none;
+  }
 }
 
 .visit-section {
@@ -1224,10 +1345,11 @@ summary {
 .site-footer {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 70px;
+  gap: 28px 54px;
+  align-items: center;
   background: var(--navy-deep);
   border-top: 1px solid #2a2a2a;
-  padding: 52px 5vw 90px;
+  padding: 34px 5vw 30px;
   color: white;
 }
 
@@ -1238,22 +1360,24 @@ summary {
 }
 
 .footer-logo {
-  width: 130px;
-  height: 68px;
+  width: 118px;
+  height: 62px;
   border-radius: 3px;
+  filter: brightness(0) invert(1);
   object-fit: contain;
 }
 
 .footer-brand p {
   margin: 0;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
 }
 
 .footer-brand small {
   display: block;
-  margin-top: 5px;
-  color: #777;
+  margin-top: 6px;
+  color: #9bb1bf;
+  font-size: 12px;
   font-weight: 400;
 }
 
@@ -1261,7 +1385,8 @@ summary {
   display: flex;
   align-items: center;
   gap: 28px;
-  font-size: 11px;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .footer-links a:hover {
@@ -1271,10 +1396,10 @@ summary {
 .copyright {
   grid-column: 1 / -1;
   margin: 0;
-  padding-top: 36px;
-  border-top: 1px solid #242424;
-  color: #666;
-  font-size: 10px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #8fa6b4;
+  font-size: 11px;
 }
 
 .mobile-bar {
@@ -1347,7 +1472,7 @@ summary {
     grid-template-columns: 0.2fr 1fr;
   }
 
-  .review-section > a {
+  .story-navigation {
     grid-column: 2;
     justify-self: start;
     margin-top: 30px;
@@ -1600,8 +1725,14 @@ summary {
     font-size: 41px;
   }
 
-  .review-section > a {
+  .review-section blockquote {
+    min-height: 360px;
+  }
+
+  .story-navigation {
     grid-column: 1;
+    width: 100%;
+    margin-top: 10px;
   }
 
   .visit-section {
@@ -1768,13 +1899,14 @@ summary {
   }
 
   .site-footer {
-    gap: 44px;
-    padding: 48px 20px 70px;
+    gap: 28px;
+    padding: 34px 20px 30px;
   }
 
   .footer-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 18px;
   }
 
   .mobile-bar {

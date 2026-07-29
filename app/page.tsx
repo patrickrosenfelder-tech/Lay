@@ -1,4 +1,5 @@
 import { BookingWidget } from "./BookingWidget";
+import { PatientStories } from "./PatientStories";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 
@@ -175,27 +176,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="review-section">
-        <div className="review-mark" aria-hidden="true">
-          “
-        </div>
-        <blockquote>
-          <p>
-            Quite literally the most thorough and informative exam I&apos;ve
-            ever received. As a Keratoconus patient this was a breath of fresh
-            air.
-          </p>
-          <footer>
-            <span>Brian L.</span>
-            <span className="stars" aria-label="5 out of 5 stars">
-              ★ ★ ★ ★ ★
-            </span>
-          </footer>
-        </blockquote>
-        <a href="/testimonials">
-          More patient stories <span aria-hidden="true">↗</span>
-        </a>
-      </section>
+      <PatientStories />
 
       <section className="visit-section" id="visit">
         <div className="visit-image">

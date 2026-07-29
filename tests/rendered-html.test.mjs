@@ -42,7 +42,10 @@ test("server-renders the complete Precision Vision Institute homepage", async ()
   assert.match(html, /Synced with EyeCloud/i);
   assert.match(html, /currently available appointments/i);
   assert.match(html, /web\.eyecloudpro\.com\/site\/!appt_req/i);
-  assert.match(html, /precision-vision-logo\.png/i);
+  assert.match(html, /precision-vision-logo-transparent\.png/i);
+  assert.match(html, /Social links coming soon/i);
+  assert.match(html, /Pause rotating stories/i);
+  assert.match(html, /Shawanda M\./i);
   assert.match(html, /href="\/sclerals"/i);
   assert.match(html, /href="\/dry-eye"/i);
   assert.match(html, /href="\/post-laser-vision"/i);
@@ -82,7 +85,7 @@ test("renders the rebuilt linked pages with the shared branded header", async ()
     assert.equal(response.status, 200, `${path} should render`);
     const html = await response.text();
     assert.match(html, heading);
-    assert.match(html, /precision-vision-logo\.png/i);
+    assert.match(html, /precision-vision-logo-transparent\.png/i);
     assert.match(html, /View live availability/i);
   }
 });

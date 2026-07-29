@@ -4,7 +4,7 @@ export function SiteHeader() {
       <a className="brand" href="/" aria-label="Precision Vision Institute home">
         <img
           className="brand-logo"
-          src="/precision-vision-logo.png"
+          src="/precision-vision-logo-transparent.png"
           alt="Precision Vision Institute"
         />
       </a>
@@ -14,6 +14,12 @@ export function SiteHeader() {
         <a href="/#process">Our approach</a>
         <a href="/dr-nim">Dr. Nim</a>
         <a href="/#visit">Visit</a>
+        <span className="header-socials" aria-label="Social links coming soon">
+          <span className="social-icon social-facebook" aria-label="Facebook">
+            f
+          </span>
+          <span className="social-icon social-instagram" aria-label="Instagram" />
+        </span>
       </nav>
 
       <a className="header-cta" href="/#book">
