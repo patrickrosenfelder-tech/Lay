@@ -1284,6 +1284,36 @@ summary {
   line-height: 1.65;
 }
 
+.doctor-detail-page .detail-highlights {
+  gap: 18px;
+  background: linear-gradient(180deg, #eaf4f8 0%, var(--powder) 100%);
+  padding: clamp(58px, 7vw, 96px) 5vw;
+}
+
+.doctor-detail-page .detail-highlights article {
+  min-height: 290px;
+  border: 1px solid rgba(22, 58, 84, 0.1);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 16px 38px rgba(13, 63, 98, 0.07);
+  padding: clamp(30px, 3.4vw, 52px);
+}
+
+.doctor-detail-page .detail-highlights article:first-child {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: white;
+}
+
+.doctor-detail-page .detail-highlights article:first-child p,
+.doctor-detail-page .detail-highlights article:first-child > span {
+  color: #c5dbe7;
+}
+
+.doctor-detail-page .detail-highlights h2 {
+  margin-top: 46px;
+}
+
 .detail-content {
   max-width: 1480px;
   margin: 0 auto;
@@ -1300,6 +1330,27 @@ summary {
 
 .detail-section:last-child {
   border-bottom: 1px solid var(--line);
+}
+
+.doctor-personal-section {
+  margin-top: clamp(54px, 7vw, 100px);
+  border: 0;
+  border-radius: 32px;
+  background: linear-gradient(135deg, var(--aqua-light), #eaf4f8);
+  padding: clamp(38px, 5vw, 70px);
+}
+
+.doctor-personal-section:last-child {
+  border-bottom: 0;
+}
+
+.doctor-personal-section h2 {
+  max-width: 670px;
+  font-size: clamp(34px, 4vw, 58px);
+}
+
+.doctor-personal-section > div:last-child > p {
+  font-size: 15px;
 }
 
 .detail-section-label {
@@ -1591,8 +1642,25 @@ summary {
     padding: 54px 28px;
   }
 
+  .doctor-detail-page .detail-highlights {
+    gap: 12px;
+    padding: 52px 20px;
+  }
+
+  .doctor-detail-page .detail-highlights article {
+    min-height: 0;
+    border: 1px solid rgba(22, 58, 84, 0.1);
+    padding: 38px 28px;
+  }
+
   .detail-section {
     grid-template-columns: 0.28fr 1fr;
+  }
+
+  .doctor-personal-section {
+    gap: 28px;
+    margin-top: 42px;
+    padding: 38px 28px;
   }
 
   .site-footer {

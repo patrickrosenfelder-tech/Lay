@@ -606,9 +606,12 @@ export default async function DetailPage({
   const page = pages[slug];
 
   if (!page) notFound();
+  const isDoctorPage = slug === "dr-nim";
 
   return (
-    <main className="detail-page">
+    <main
+      className={`detail-page${isDoctorPage ? " doctor-detail-page" : ""}`}
+    >
       <SiteHeader />
 
       <section className="detail-hero">
@@ -644,7 +647,10 @@ export default async function DetailPage({
         </div>
       </section>
 
-      <section className="detail-highlights" aria-label="Key information">
+      <section
+        className="detail-highlights"
+        aria-label={isDoctorPage ? "Professional background" : "Key information"}
+      >
         {page.highlights.map((highlight, index) => (
           <article key={highlight.title}>
             <span>{String(index + 1).padStart(2, "0")}</span>
@@ -656,7 +662,14 @@ export default async function DetailPage({
 
       <section className="detail-content">
         {page.sections.map((section, index) => (
-          <article className="detail-section" key={section.title}>
+          <article
+            className={`detail-section${
+              isDoctorPage && section.label === "Beyond the clinic"
+                ? " doctor-personal-section"
+                : ""
+            }`}
+            key={section.title}
+          >
             <div className="detail-section-label">
               <span>{String(index + 1).padStart(2, "0")}</span>
               <p>{section.label}</p>
@@ -674,6 +687,8 @@ export default async function DetailPage({
             </div>
           </article>
         ))}
+        {/* TODO(client): Add a second, distinct in-exam-room photo of Dr. Nim when supplied. */}
+        {/* TODO(client): Add verified years in practice, fitting volume, and expanded subspecialty motivation; see CONTENT-TODOS.md. */}
       </section>
 
       <section className="detail-cta">
