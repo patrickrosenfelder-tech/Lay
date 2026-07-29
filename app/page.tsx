@@ -43,9 +43,58 @@ const process = [
   ["Refine", "Follow-up visits optimize comfort, clarity, and long-term eye health."],
 ];
 
+const clinicStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  name: "Precision Vision Institute",
+  description:
+    "Specialty eye care for keratoconus, severe dry eye, complex corneas, post-surgical vision, and progressive myopia.",
+  telephone: "+1-470-440-4099",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "3940 Buford Hwy, Suite A104",
+    addressLocality: "Duluth",
+    addressRegion: "GA",
+    postalCode: "30096",
+    addressCountry: "US",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 33.984,
+    longitude: -84.156,
+  },
+  medicalSpecialty: [
+    "Specialty contact lenses",
+    "Keratoconus care",
+    "Dry eye care",
+    "Orthokeratology",
+    "Myopia management",
+  ],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Friday"],
+      opens: "09:30",
+      closes: "17:30",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "09:30",
+      closes: "13:30",
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(clinicStructuredData).replace(/</g, "\\u003c"),
+        }}
+      />
       <SiteHeader />
 
       <section className="hero" id="top">

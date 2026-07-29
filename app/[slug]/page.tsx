@@ -571,9 +571,29 @@ export async function generateMetadata({
 
   if (!page) return {};
 
+  const isDoctorPage = slug === "dr-nim";
+  const title = isDoctorPage
+    ? "Dr. Lay Nim, OD | Precision Vision Institute"
+    : `${page.title} | Precision Vision Institute`;
+  const description = isDoctorPage
+    ? "Meet Dr. Lay Nim, a Duluth optometrist focused on specialty contact lenses, keratoconus, orthokeratology, and personalized eye care."
+    : page.lede;
+
   return {
-    title: `${page.title} | Precision Vision Institute`,
-    description: page.lede,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [{ url: page.image, alt: page.imageAlt }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [page.image],
+    },
   };
 }
 

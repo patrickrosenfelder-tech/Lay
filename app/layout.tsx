@@ -12,6 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: new URL(`${protocol}://${host}`),
+    // TODO(client): Add alternates.canonical after the final production domain is confirmed.
     title: "Precision Vision Institute | Specialty Eye Care in Duluth, GA",
     description:
       "Personalized specialty eye care for keratoconus, severe dry eye, post-LASIK and post-RK vision, and progressive myopia in Duluth, Georgia.",
