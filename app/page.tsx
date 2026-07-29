@@ -75,11 +75,14 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
-        <div className="hero-glow" aria-hidden="true" />
-        <div className="hero-lens" aria-hidden="true">
-          <div className="lens-ring lens-ring-one" />
-          <div className="lens-ring lens-ring-two" />
-          <div className="lens-core" />
+        <div className="hero-orbit hero-orbit-one" aria-hidden="true" />
+        <div className="hero-orbit hero-orbit-two" aria-hidden="true" />
+        <div className="hero-portrait">
+          <img src="/dr-nim.webp" alt="Dr. Lay Nim" />
+          <div className="portrait-note">
+            <span>Meet your specialist</span>
+            <strong>Dr. Lay Nim</strong>
+          </div>
         </div>
 
         <div className="hero-content">
