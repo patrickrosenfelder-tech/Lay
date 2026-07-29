@@ -61,9 +61,11 @@ const pages: Record<string, DetailPage> = {
         label: "Your evaluation",
         title: "Measured, mapped, and refined.",
         copy:
-          "Dr. Nim evaluates the health and shape of your eyes, maps the corneal surface, and places a diagnostic lens. Vision, comfort, clearance, and edge alignment are reviewed before your individualized design is ordered.",
+          "Dr. Nim evaluates the health and shape of your eyes using specialized technology such as the Pentacam, Corneal Scleral Profilometer, and Ovitz Wavefront Analysis. These measurements help guide diagnostic lens selection before vision, comfort, clearance, and edge alignment are refined for your individualized design.",
         bullets: [
-          "Detailed corneal topography",
+          "Pentacam corneal tomography",
+          "Corneal Scleral Profilometer mapping",
+          "Ovitz Wavefront Analysis",
           "Diagnostic lens fitting",
           "Insertion and removal training",
           "Follow-up adjustments",
@@ -338,7 +340,7 @@ const pages: Record<string, DetailPage> = {
         label: "Keep information secure",
         title: "Do not send protected health details by ordinary email.",
         copy:
-          "Call (470) 440-4099 for the clinic’s current secure transmission method. General questions may be sent to info@precisionvisioninstitute.com without patient-specific information.",
+          "Call (470) 440-4099 for the clinic’s current secure transmission method. General questions may be sent to invoices@precisionvisioninstitute.com without patient-specific information.",
       },
     ],
     ctaTitle: "Ready to refer a patient?",

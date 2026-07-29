@@ -306,11 +306,11 @@ export default function Home() {
               <strong>9:30 AM—5:30 PM</strong>
             </div>
             <div>
-              <span>Saturday</span>
+              <span>Sat</span>
               <strong>9:30 AM—1:30 PM</strong>
             </div>
             <div className="closed">
-              <span>Thursday / Sunday</span>
+              <span>Thurs / Sun</span>
               <strong>Closed</strong>
             </div>
           </div>
