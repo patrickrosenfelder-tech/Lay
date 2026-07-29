@@ -1,3 +1,5 @@
+import { BookingWidget } from "./BookingWidget";
+
 const BOOKING_URL =
   "https://web.eyecloudpro.com/site/!appt_req?sid=30DE3BDF7982B488E75A54C45893656C";
 
@@ -58,7 +60,7 @@ export default function Home() {
           <a href="#visit">Visit</a>
         </nav>
 
-        <a className="header-cta" href={BOOKING_URL}>
+        <a className="header-cta" href="#book">
           Book appointment <span aria-hidden="true">↗</span>
         </a>
 
@@ -69,7 +71,7 @@ export default function Home() {
             <a href="#process">Our approach</a>
             <a href="#doctor">Dr. Nim</a>
             <a href="#visit">Visit</a>
-            <a href={BOOKING_URL}>Book appointment ↗</a>
+            <a href="#book">Book appointment ↗</a>
           </nav>
         </details>
       </header>
@@ -99,7 +101,7 @@ export default function Home() {
             standard contact lenses are not enough.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href={BOOKING_URL}>
+            <a className="button button-primary" href="#book">
               Start with a consultation <span aria-hidden="true">↗</span>
             </a>
             <a className="text-link" href="#specialties">
@@ -161,7 +163,7 @@ export default function Home() {
             design, teach, and refine until your vision and comfort work
             together.
           </p>
-          <a className="button button-light" href={BOOKING_URL}>
+          <a className="button button-light" href="#book">
             Schedule an evaluation <span aria-hidden="true">↗</span>
           </a>
         </div>
@@ -271,12 +273,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="final-cta">
-        <p className="section-label">Your next chapter can look clearer</p>
-        <h2>Ready to see what&apos;s possible?</h2>
-        <a className="button button-primary" href={BOOKING_URL}>
-          Book your consultation <span aria-hidden="true">↗</span>
-        </a>
+      <section className="booking-section" id="book">
+        <div className="booking-intro">
+          <p className="section-label">Your next chapter can look clearer</p>
+          <h2>Plan your visit.</h2>
+          <p>
+            Tell us what kind of care you need, choose a preferred clinic day,
+            and review your pre-visit instructions before continuing to our
+            secure scheduler.
+          </p>
+          <div className="booking-contact">
+            <span>Prefer to speak with us?</span>
+            <a href="tel:+14704404099">(470) 440-4099</a>
+          </div>
+        </div>
+        <BookingWidget />
       </section>
 
       <footer className="site-footer">
@@ -295,7 +306,7 @@ export default function Home() {
           <a href="https://precisionvisioninstitute.com/insurances">
             Insurance
           </a>
-          <a href={BOOKING_URL}>Book online</a>
+          <a href="#book">Book online</a>
         </div>
         <p className="copyright">
           © {new Date().getFullYear()} Precision Vision Institute
@@ -304,7 +315,7 @@ export default function Home() {
 
       <nav className="mobile-bar" aria-label="Quick actions">
         <a href="tel:+14704404099">Call</a>
-        <a href={BOOKING_URL}>Book online ↗</a>
+        <a href="#book">Book online ↗</a>
       </nav>
     </main>
   );
