@@ -1,35 +1,34 @@
 import { BookingWidget } from "./BookingWidget";
-
-const BOOKING_URL =
-  "https://web.eyecloudpro.com/site/!appt_req?sid=30DE3BDF7982B488E75A54C45893656C";
+import { SiteFooter } from "./SiteFooter";
+import { SiteHeader } from "./SiteHeader";
 
 const specialties = [
   {
     number: "01",
     title: "Keratoconus + irregular corneas",
     copy: "When glasses and standard contacts cannot create stable vision, a custom scleral lens can create a new, smooth optical surface.",
-    link: "https://precisionvisioninstitute.com/sclerals",
+    link: "/sclerals",
     tone: "acid",
   },
   {
     number: "02",
     title: "Severe dry eye",
     copy: "A detailed ocular surface evaluation reveals what is driving burning, grittiness, redness, and contact lens intolerance.",
-    link: BOOKING_URL,
+    link: "/dry-eye",
     tone: "cream",
   },
   {
     number: "03",
     title: "Post-LASIK + post-RK vision",
     copy: "Custom lens designs can help address fluctuating vision, glare, halos, and distortion caused by an irregular corneal surface.",
-    link: "https://precisionvisioninstitute.com/sclerals",
+    link: "/post-laser-vision",
     tone: "charcoal",
   },
   {
     number: "04",
     title: "Progressive myopia",
     copy: "Ortho-K lenses gently reshape the cornea overnight, supporting clear daytime vision and proactive myopia management.",
-    link: "https://precisionvisioninstitute.com/ortho-k-crt-lenses",
+    link: "/ortho-k-crt-lenses",
     tone: "sky",
   },
 ];
@@ -44,37 +43,7 @@ const process = [
 export default function Home() {
   return (
     <main>
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="Precision Vision Institute home">
-          <span className="brand-mark">PVI</span>
-          <span className="brand-name">
-            Precision Vision
-            <small>Institute</small>
-          </span>
-        </a>
-
-        <nav className="desktop-nav" aria-label="Main navigation">
-          <a href="#specialties">Specialties</a>
-          <a href="#process">Our approach</a>
-          <a href="#doctor">Dr. Nim</a>
-          <a href="#visit">Visit</a>
-        </nav>
-
-        <a className="header-cta" href="#book">
-          Book appointment <span aria-hidden="true">↗</span>
-        </a>
-
-        <details className="mobile-menu">
-          <summary aria-label="Open menu">Menu</summary>
-          <nav aria-label="Mobile navigation">
-            <a href="#specialties">Specialties</a>
-            <a href="#process">Our approach</a>
-            <a href="#doctor">Dr. Nim</a>
-            <a href="#visit">Visit</a>
-            <a href="#book">Book appointment ↗</a>
-          </nav>
-        </details>
-      </header>
+      <SiteHeader />
 
       <section className="hero" id="top">
         <div className="hero-orbit hero-orbit-one" aria-hidden="true" />
@@ -196,10 +165,10 @@ export default function Home() {
             right.
           </p>
           <div className="doctor-links">
-            <a href="https://precisionvisioninstitute.com/dr-nim">
+            <a href="/dr-nim">
               Meet Dr. Nim <span aria-hidden="true">↗</span>
             </a>
-            <a href="https://precisionvisioninstitute.com/doctor-referral">
+            <a href="/doctor-referral">
               Refer a patient <span aria-hidden="true">↗</span>
             </a>
           </div>
@@ -223,7 +192,7 @@ export default function Home() {
             </span>
           </footer>
         </blockquote>
-        <a href="https://precisionvisioninstitute.com/testimonials">
+        <a href="/testimonials">
           More patient stories <span aria-hidden="true">↗</span>
         </a>
       </section>
@@ -278,9 +247,8 @@ export default function Home() {
           <p className="section-label">Your next chapter can look clearer</p>
           <h2>Plan your visit.</h2>
           <p>
-            Tell us what kind of care you need, choose a preferred clinic day,
-            and review your pre-visit instructions before continuing to our
-            secure scheduler.
+            Complete the secure verification, choose the care you need, and
+            select from the clinic&apos;s live appointment dates and times.
           </p>
           <div className="booking-contact">
             <span>Prefer to speak with us?</span>
@@ -290,33 +258,7 @@ export default function Home() {
         <BookingWidget />
       </section>
 
-      <footer className="site-footer">
-        <div className="footer-brand">
-          <span className="brand-mark">PVI</span>
-          <p>
-            Precision Vision Institute
-            <small>Specialty eye care in Duluth, Georgia.</small>
-          </p>
-        </div>
-        <div className="footer-links">
-          <a href="https://precisionvisioninstitute.com/patients">Patients</a>
-          <a href="https://precisionvisioninstitute.com/doctor-referral">
-            Referring doctors
-          </a>
-          <a href="https://precisionvisioninstitute.com/insurances">
-            Insurance
-          </a>
-          <a href="#book">Book online</a>
-        </div>
-        <p className="copyright">
-          © {new Date().getFullYear()} Precision Vision Institute
-        </p>
-      </footer>
-
-      <nav className="mobile-bar" aria-label="Quick actions">
-        <a href="tel:+14704404099">Call</a>
-        <a href="#book">Book online ↗</a>
-      </nav>
+      <SiteFooter />
     </main>
   );
 }
