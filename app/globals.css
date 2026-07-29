@@ -274,6 +274,13 @@ summary {
   margin-left: 14px;
 }
 
+.find-path-link {
+  border-bottom-color: var(--aqua);
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+}
+
 .hero-meta {
   position: absolute;
   z-index: 4;
@@ -287,7 +294,7 @@ summary {
   max-width: 500px;
 }
 
-.hero-meta span {
+.hero-meta a {
   border: 1px solid rgba(255, 255, 255, 0.26);
   border-radius: 999px;
   padding: 8px 13px;
@@ -295,6 +302,16 @@ summary {
   font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.hero-meta a:hover {
+  border-color: var(--aqua);
+  background: rgba(191, 238, 234, 0.12);
+  color: white;
 }
 
 .hero-portrait {
@@ -409,7 +426,7 @@ summary {
 
 .specialties {
   padding: clamp(90px, 10vw, 150px) 4vw;
-  background: var(--powder);
+  background: linear-gradient(180deg, #edf7fb 0%, var(--powder) 100%);
 }
 
 .section-heading {
@@ -439,14 +456,16 @@ summary {
 .specialty-card {
   position: relative;
   display: flex;
-  min-height: 430px;
+  scroll-margin-top: 32px;
+  min-height: 360px;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
   border: 1px solid rgba(22, 58, 84, 0.08);
   border-radius: 30px;
-  box-shadow: 0 18px 45px rgba(13, 63, 98, 0.08);
-  padding: clamp(28px, 3.5vw, 54px);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 14px 36px rgba(13, 63, 98, 0.07);
+  padding: clamp(26px, 3vw, 46px);
   transition: transform 250ms ease;
 }
 
@@ -459,7 +478,7 @@ summary {
   position: absolute;
   top: -20%;
   right: -10%;
-  width: 52%;
+  width: 38%;
   aspect-ratio: 1;
   border: 1px solid currentColor;
   border-radius: 50%;
@@ -472,20 +491,20 @@ summary {
 }
 
 .specialty-card.acid {
-  background: var(--aqua-light);
+  background: rgba(255, 255, 255, 0.88);
 }
 
 .specialty-card.cream {
-  background: white;
+  background: rgba(255, 255, 255, 0.88);
 }
 
 .specialty-card.charcoal {
-  background: var(--navy);
-  color: white;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--ink);
 }
 
 .specialty-card.sky {
-  background: #c6e4f3;
+  background: rgba(255, 255, 255, 0.88);
 }
 
 .card-number {
@@ -564,15 +583,53 @@ summary {
 
 .process-list li {
   display: grid;
-  grid-template-columns: 52px 1fr;
+  position: relative;
+  grid-template-columns: 76px 1fr;
   gap: 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
-  padding: 38px 0 54px;
+  padding: 0 0 50px;
 }
 
-.process-list li > span {
-  color: var(--aqua);
-  font-size: 11px;
+.process-step-marker {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 68px;
+  height: 68px;
+  place-items: center;
+  border: 1px solid rgba(191, 238, 234, 0.55);
+  border-radius: 50%;
+  background: var(--navy);
+}
+
+.process-list li:not(:last-child) .process-step-marker::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 68px;
+  bottom: -50px;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(var(--aqua), rgba(191, 238, 234, 0.15));
+}
+
+.process-step-marker svg {
+  width: 34px;
+  fill: none;
+  stroke: var(--aqua);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.process-step-marker span {
+  position: absolute;
+  top: -7px;
+  right: -5px;
+  border-radius: 999px;
+  background: var(--aqua);
+  padding: 4px 6px;
+  color: var(--navy);
+  font-size: 9px;
   font-weight: 700;
 }
 
@@ -717,8 +774,25 @@ summary {
   font-weight: 700;
 }
 
+.review-section blockquote footer > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.story-condition {
+  border: 1px solid rgba(22, 58, 84, 0.25);
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: var(--navy);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .stars {
   letter-spacing: 0.12em;
+  font-size: 16px;
 }
 
 .story-navigation {
@@ -1621,7 +1695,7 @@ summary {
     justify-content: flex-start;
   }
 
-  .hero-meta span {
+  .hero-meta a {
     padding: 6px 10px;
     font-size: 8px;
   }
@@ -1653,7 +1727,7 @@ summary {
   }
 
   .specialty-card {
-    min-height: 390px;
+    min-height: 340px;
     padding: 28px;
   }
 
@@ -1682,9 +1756,23 @@ summary {
   }
 
   .process-list li {
-    grid-template-columns: 38px 1fr;
+    grid-template-columns: 64px 1fr;
     gap: 12px;
-    padding: 28px 0 36px;
+    padding: 0 0 42px;
+  }
+
+  .process-step-marker {
+    width: 56px;
+    height: 56px;
+  }
+
+  .process-list li:not(:last-child) .process-step-marker::after {
+    top: 56px;
+    bottom: -42px;
+  }
+
+  .process-step-marker svg {
+    width: 28px;
   }
 
   .doctor-section {

@@ -6,14 +6,17 @@ import Link from "next/link";
 const stories = [
   {
     author: "Brian L.",
+    condition: "Keratoconus",
     text: "Quite literally the most thorough and informative exam I’ve ever received. As a keratoconus patient, this was a breath of fresh air.",
   },
   {
     author: "Shawoun L.",
+    condition: "Specialty contact lenses",
     text: "After a long search for expertise with hard contacts, the fit finally felt comfortable and the vision clear.",
   },
   {
     author: "Shawanda M.",
+    condition: "Keratoconus",
     text: "Complex keratoconus vision was met with patience, compassion, and a plan that made a meaningful difference.",
   },
   {
@@ -39,7 +42,7 @@ export function PatientStories() {
 
     const timer = window.setInterval(() => {
       setActiveStory((current) => (current + 1) % stories.length);
-    }, 6000);
+    }, 5000);
 
     return () => window.clearInterval(timer);
   }, [paused]);
@@ -59,7 +62,12 @@ export function PatientStories() {
       <blockquote key={story.author} aria-live="off">
         <p>{story.text}</p>
         <footer>
-          <span>{story.author}</span>
+          <div>
+            <span>{story.author}</span>
+            {"condition" in story && story.condition && (
+              <span className="story-condition">{story.condition}</span>
+            )}
+          </div>
           <span className="stars" aria-label="5 out of 5 stars">
             ★ ★ ★ ★ ★
           </span>

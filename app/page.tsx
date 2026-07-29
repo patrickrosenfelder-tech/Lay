@@ -7,6 +7,7 @@ import { SiteHeader } from "./SiteHeader";
 
 const specialties = [
   {
+    id: "scleral-lenses",
     number: "01",
     title: "Keratoconus + irregular corneas",
     copy: "When glasses and standard contacts cannot create stable vision, a custom scleral lens can create a new, smooth optical surface.",
@@ -14,6 +15,7 @@ const specialties = [
     tone: "acid",
   },
   {
+    id: "dry-eye-care",
     number: "02",
     title: "Severe dry eye",
     copy: "A detailed ocular surface evaluation reveals what is driving burning, grittiness, redness, and contact lens intolerance.",
@@ -21,6 +23,7 @@ const specialties = [
     tone: "cream",
   },
   {
+    id: "post-surgical-vision",
     number: "03",
     title: "Post-LASIK + post-RK vision",
     copy: "Custom lens designs can help address fluctuating vision, glare, halos, and distortion caused by an irregular corneal surface.",
@@ -28,6 +31,7 @@ const specialties = [
     tone: "charcoal",
   },
   {
+    id: "myopia-management",
     number: "04",
     title: "Progressive myopia",
     copy: "Ortho-K lenses gently reshape the cornea overnight, supporting clear daytime vision and proactive myopia management.",
@@ -42,6 +46,33 @@ const process = [
   ["Train", "Hands-on coaching helps you feel confident with insertion, removal, and care."],
   ["Refine", "Follow-up visits optimize comfort, clarity, and long-term eye health."],
 ];
+
+function ProcessIcon({ step }: { step: number }) {
+  const paths = [
+    <>
+      <circle cx="24" cy="24" r="9" />
+      <path d="M6 24c4.8-7.2 10.8-10.8 18-10.8S37.2 16.8 42 24c-4.8 7.2-10.8 10.8-18 10.8S10.8 31.2 6 24Z" />
+    </>,
+    <>
+      <path d="M10 35 29 16l7 7-19 19H10v-7Z" />
+      <path d="m25 20 7 7M10 38H6" />
+    </>,
+    <>
+      <path d="M14 22v-5a3 3 0 0 1 6 0v4-8a3 3 0 0 1 6 0v8-6a3 3 0 0 1 6 0v7-3a3 3 0 0 1 6 0v8c0 9-5 15-14 15-7 0-11-4-14-10l-3-6a3 3 0 0 1 5-3l2 3v-4Z" />
+    </>,
+    <>
+      <path d="M12 18a14 14 0 0 1 24-3l3 4" />
+      <path d="m39 12 .5 7-7-.5M36 30a14 14 0 0 1-24 3l-3-4" />
+      <path d="m9 36-.5-7 7 .5" />
+    </>,
+  ];
+
+  return (
+    <svg viewBox="0 0 48 48" aria-hidden="true">
+      {paths[step]}
+    </svg>
+  );
+}
 
 const clinicStructuredData = {
   "@context": "https://schema.org",
@@ -133,17 +164,17 @@ export default function Home() {
             <a className="button button-primary" href="#book">
               Start with a consultation <span aria-hidden="true">↗</span>
             </a>
-            <a className="text-link" href="#specialties">
+            <a className="text-link find-path-link" href="#specialties">
               Find your path <span aria-hidden="true">↓</span>
             </a>
           </div>
         </div>
 
         <div className="hero-meta">
-          <span>Scleral lenses</span>
-          <span>Dry eye care</span>
-          <span>Ortho-K</span>
-          <span>Complex corneas</span>
+          <a href="#scleral-lenses">Scleral lenses</a>
+          <a href="#dry-eye-care">Dry eye care</a>
+          <a href="#myopia-management">Ortho-K</a>
+          <a href="#post-surgical-vision">Complex corneas</a>
         </div>
       </section>
 
@@ -165,9 +196,10 @@ export default function Home() {
         </div>
         <div className="specialty-grid">
           {specialties.map((item) => (
-            <a
+            <Link
               className={`specialty-card ${item.tone}`}
               href={item.link}
+              id={item.id}
               key={item.number}
             >
               <span className="card-number">{item.number}</span>
@@ -178,7 +210,7 @@ export default function Home() {
               <span className="card-arrow" aria-hidden="true">
                 ↗
               </span>
-            </a>
+            </Link>
           ))}
         </div>
       </section>
@@ -199,7 +231,10 @@ export default function Home() {
         <ol className="process-list">
           {process.map(([title, copy], index) => (
             <li key={title}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div className="process-step-marker">
+                <ProcessIcon step={index} />
+                <span>{String(index + 1).padStart(2, "0")}</span>
+              </div>
               <div>
                 <h3>{title}</h3>
                 <p>{copy}</p>
