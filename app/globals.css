@@ -881,6 +881,10 @@ summary {
   color: #77756e;
 }
 
+.hours .closed strong {
+  color: var(--muted);
+}
+
 .visit-actions {
   display: flex;
   align-items: center;

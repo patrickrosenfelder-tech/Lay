@@ -37,6 +37,9 @@ test("server-renders the complete Precision Vision Institute homepage", async ()
   assert.match(html, /Keratoconus \+ irregular corneas/);
   assert.match(html, /Quite literally the most thorough/);
   assert.match(html, /\(470\) 440-4099/);
+  assert.match(html, /Mon \/ Tue \/ Wed \/ Fri/);
+  assert.match(html, /Thursday \/ Sunday/);
+  assert.match(html, />Closed</);
   assert.match(html, /Request Appointment|Book appointment|Book online/i);
   assert.match(html, /Live appointment availability/i);
   assert.match(html, /Synced with EyeCloud/i);

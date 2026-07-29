@@ -201,12 +201,16 @@ export default function Home() {
           </address>
           <div className="hours">
             <div>
-              <span>Tue / Wed / Fri</span>
+              <span>Mon / Tue / Wed / Fri</span>
               <strong>9:30 AM—5:30 PM</strong>
             </div>
             <div>
               <span>Saturday</span>
               <strong>9:30 AM—1:30 PM</strong>
+            </div>
+            <div className="closed">
+              <span>Thursday / Sunday</span>
+              <strong>Closed</strong>
             </div>
           </div>
           <div className="visit-actions">
