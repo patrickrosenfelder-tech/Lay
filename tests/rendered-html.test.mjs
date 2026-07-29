@@ -38,9 +38,10 @@ test("server-renders the complete Precision Vision Institute homepage", async ()
   assert.match(html, /Quite literally the most thorough/);
   assert.match(html, /\(470\) 440-4099/);
   assert.match(html, /Request Appointment|Book appointment|Book online/i);
-  assert.match(html, /Appointment request/i);
-  assert.match(html, /Consultation \/ service type/i);
-  assert.match(html, /Insurance provider/i);
+  assert.match(html, /Live appointment availability/i);
+  assert.match(html, /Synced with EyeCloud/i);
+  assert.match(html, /currently available appointments/i);
+  assert.match(html, /web\.eyecloudpro\.com\/site\/!appt_req/i);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/i);
 });
 

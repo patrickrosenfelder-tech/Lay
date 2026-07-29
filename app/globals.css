@@ -890,6 +890,9 @@ summary {
 }
 
 .secure-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   border-radius: 999px;
   background: var(--aqua-light);
   padding: 9px 13px;
@@ -900,175 +903,60 @@ summary {
   text-transform: uppercase;
 }
 
-.booking-hud {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2f8c61;
+  box-shadow: 0 0 0 4px rgba(47, 140, 97, 0.12);
+}
+
+.booking-embed-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+  padding: 18px 32px;
   background: #f8fbfd;
 }
 
-.booking-hud div {
-  padding: 17px 32px;
-}
-
-.booking-hud div + div {
-  border-left: 1px solid var(--line);
-}
-
-.booking-hud span,
-.booking-instructions > span {
-  display: block;
-  margin-bottom: 4px;
-  color: var(--muted);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-}
-
-.booking-hud strong {
-  font-size: 14px;
-}
-
-.booking-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 28px 32px;
-}
-
-.booking-field {
-  display: flex;
-  min-width: 0;
-  flex-direction: column;
-  gap: 7px;
-}
-
-.booking-field-wide,
-.booking-submit {
-  grid-column: 1 / -1;
-}
-
-.booking-field label {
-  color: #526d7d;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.booking-field input,
-.booking-field select {
-  width: 100%;
-  height: 48px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  outline: none;
-  background: #f3f8fb;
-  color: var(--ink);
-  padding: 0 14px;
-  font: inherit;
-  font-size: 14px;
-  transition:
-    border-color 180ms ease,
-    box-shadow 180ms ease;
-}
-
-.booking-field input:focus,
-.booking-field select:focus {
-  border-color: var(--aqua);
-  box-shadow: 0 0 0 3px rgba(118, 203, 213, 0.2);
-}
-
-.field-note {
-  min-height: 18px;
-  color: var(--muted);
-  font-size: 10px;
-  line-height: 1.4;
-}
-
-.field-error {
-  color: #aa3b3b;
-}
-
-.booking-submit {
-  display: flex;
-  min-height: 52px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 4px;
-  border: 0;
-  border-radius: 999px;
-  background: var(--navy);
-  color: white;
-  cursor: pointer;
-  font: inherit;
+.booking-embed-intro strong {
+  color: var(--navy);
   font-size: 13px;
-  font-weight: 700;
-  transition:
-    background 180ms ease,
-    transform 180ms ease;
 }
 
-.booking-submit:hover:not(:disabled) {
-  transform: translateY(-2px);
-  background: #14577f;
-}
-
-.booking-submit:disabled {
-  cursor: not-allowed;
-  opacity: 0.45;
-}
-
-.booking-instructions {
-  border-top: 1px solid var(--line);
-  padding: 24px 32px 28px;
-  background: var(--powder);
-}
-
-.booking-instructions h4 {
-  margin: 0 0 8px;
-  font-size: 15px;
-}
-
-.booking-instructions p {
-  margin: 0;
+.booking-embed-intro span {
   color: #617988;
-  font-size: 12px;
-  line-height: 1.55;
-}
-
-.booking-confirmation {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  border-top: 1px solid rgba(35, 120, 79, 0.2);
-  background: #e6f4ea;
-  padding: 22px 32px;
-  color: #185c36;
-}
-
-.booking-confirmation strong {
-  font-size: 14px;
-}
-
-.booking-confirmation p {
-  max-width: 460px;
-  margin: 4px 0 0;
-  color: #42705a;
   font-size: 11px;
   line-height: 1.45;
 }
 
-.booking-confirmation a {
-  flex: 0 0 auto;
-  border-radius: 999px;
-  background: #185c36;
-  padding: 12px 16px;
-  color: white;
+.booking-embed {
+  display: block;
+  width: 100%;
+  height: 760px;
+  border: 0;
+  background: white;
+}
+
+.booking-embed-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  padding: 16px 32px 18px;
+  background: var(--powder);
+  color: #617988;
   font-size: 11px;
+}
+
+.booking-embed-footer a {
+  color: var(--navy);
   font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .final-cta {
@@ -1506,32 +1394,18 @@ summary {
     font-size: 8px;
   }
 
-  .booking-hud div {
-    padding: 15px 20px;
+  .booking-embed-intro {
+    padding: 17px 20px;
   }
 
-  .booking-hud strong {
-    font-size: 12px;
+  .booking-embed {
+    height: 900px;
   }
 
-  .booking-form {
-    grid-template-columns: 1fr;
-    padding: 24px 20px;
-  }
-
-  .booking-field-wide,
-  .booking-submit {
-    grid-column: 1;
-  }
-
-  .booking-instructions {
-    padding: 22px 20px 24px;
-  }
-
-  .booking-confirmation {
+  .booking-embed-footer {
     align-items: flex-start;
     flex-direction: column;
-    padding: 22px 20px;
+    padding: 17px 20px 20px;
   }
 
   .final-cta {
