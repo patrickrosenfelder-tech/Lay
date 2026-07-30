@@ -1,5 +1,10 @@
 import Link from "next/link";
-import { GOOGLE_REVIEWS_URL, ORIGINAL_TESTIMONIALS_URL, patientReviews } from "./reviews";
+import {
+  GOOGLE_REVIEWS_URL,
+  ORIGINAL_TESTIMONIALS_URL,
+  patientReviews,
+  YELP_REVIEWS_URL,
+} from "./reviews";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 
@@ -35,6 +40,18 @@ export function TestimonialsPage() {
             Read current Google reviews <span aria-hidden="true">↗</span>
           </a>
         </div>
+        <div className="yelp-review-summary">
+          <div>
+            <span className="review-source-label">Yelp rating</span>
+            <strong>5.0</strong>
+          </div>
+          <span className="google-stars" aria-label="5 out of 5 stars">
+            ★★★★★
+          </span>
+          <a href={YELP_REVIEWS_URL} target="_blank" rel="noreferrer">
+            Read current Yelp reviews <span aria-hidden="true">↗</span>
+          </a>
+        </div>
         <div className="original-review-source">
           <span className="review-source-label">Original archive</span>
           <p>
@@ -59,7 +76,7 @@ export function TestimonialsPage() {
             <p>“{review.text}”</p>
             <footer>
               <strong>{review.author}</strong>
-              <span>Patient testimonial</span>
+              <span>{review.source}</span>
             </footer>
           </blockquote>
         ))}
