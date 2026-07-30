@@ -668,12 +668,6 @@ summary {
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
-  filter: grayscale(100%) contrast(1.04);
-  transition: filter 400ms ease;
-}
-
-.doctor-photo:hover img {
-  filter: grayscale(0%) contrast(1);
 }
 
 .doctor-photo > span {
@@ -1183,31 +1177,24 @@ summary {
 
 .reviews-proof {
   display: grid;
-  grid-template-columns: 0.85fr 0.85fr 1.1fr;
+  grid-template-columns: 0.75fr 1.25fr;
   gap: 18px;
   background: var(--powder);
   padding: clamp(70px, 8vw, 120px) 5vw;
 }
 
 .google-review-summary,
-.yelp-review-summary,
 .original-review-source {
   min-height: 330px;
   border-radius: 30px;
   padding: clamp(34px, 4vw, 60px);
 }
 
-.google-review-summary,
-.yelp-review-summary {
+.google-review-summary {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: start;
   background: var(--navy);
-  color: white;
-}
-
-.yelp-review-summary {
-  background: #b4212d;
   color: white;
 }
 
@@ -1221,8 +1208,7 @@ summary {
   text-transform: uppercase;
 }
 
-.google-review-summary strong,
-.yelp-review-summary strong {
+.google-review-summary strong {
   display: block;
   font-size: clamp(74px, 8vw, 124px);
   letter-spacing: -0.08em;
@@ -1236,7 +1222,6 @@ summary {
 }
 
 .google-review-summary a,
-.yelp-review-summary a,
 .original-review-source a {
   align-self: end;
   grid-column: 1 / -1;
@@ -1844,7 +1829,6 @@ summary {
   }
 
   .google-review-summary,
-  .yelp-review-summary,
   .original-review-source {
     min-height: 300px;
     border-radius: 24px;
@@ -1942,14 +1926,14 @@ summary {
   }
 
   .hero {
-    min-height: 820px;
+    min-height: 900px;
   }
 
   .hero-content {
     width: 100%;
-    min-height: 820px;
+    min-height: 900px;
     justify-content: flex-end;
-    padding: 360px 20px 145px;
+    padding: 470px 20px 145px;
   }
 
   .eyebrow {
@@ -1989,12 +1973,12 @@ summary {
     right: 20px;
     bottom: auto;
     width: calc(100vw - 40px);
-    height: 245px;
+    height: 340px;
     border-radius: 90px 90px 20px 20px;
   }
 
   .hero-portrait img {
-    object-position: center 24%;
+    object-position: center 18%;
   }
 
   .portrait-note {

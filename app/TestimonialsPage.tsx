@@ -3,7 +3,6 @@ import {
   GOOGLE_REVIEWS_URL,
   ORIGINAL_TESTIMONIALS_URL,
   patientReviews,
-  YELP_REVIEWS_URL,
 } from "./reviews";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
@@ -40,23 +39,12 @@ export function TestimonialsPage() {
             Read current Google reviews <span aria-hidden="true">↗</span>
           </a>
         </div>
-        <div className="yelp-review-summary">
-          <div>
-            <span className="review-source-label">Yelp rating</span>
-            <strong>5.0</strong>
-          </div>
-          <span className="google-stars" aria-label="5 out of 5 stars">
-            ★★★★★
-          </span>
-          <a href={YELP_REVIEWS_URL} target="_blank" rel="noreferrer">
-            Read current Yelp reviews <span aria-hidden="true">↗</span>
-          </a>
-        </div>
         <div className="original-review-source">
           <span className="review-source-label">Original archive</span>
           <p>
-            Review wording and patient attribution are preserved from the
-            practice&apos;s existing testimonials page.
+            These are real patients, in their own words. We didn&apos;t touch
+            the wording or the names—just brought them over from our
+            original testimonials page.
           </p>
           <a href={ORIGINAL_TESTIMONIALS_URL} target="_blank" rel="noreferrer">
             View original testimonials <span aria-hidden="true">↗</span>
