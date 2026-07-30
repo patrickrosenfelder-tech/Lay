@@ -1141,6 +1141,200 @@ summary {
   background: var(--paper);
 }
 
+.testimonials-page {
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.reviews-hero {
+  min-height: 720px;
+  background:
+    radial-gradient(circle at 82% 28%, rgba(118, 203, 213, 0.2) 0 17%, transparent 17.2%),
+    linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+  padding: 190px 5vw 100px;
+  color: white;
+}
+
+.reviews-hero .section-label {
+  color: var(--aqua);
+}
+
+.reviews-hero h1 {
+  max-width: 1100px;
+  margin: 0;
+  font-size: clamp(72px, 10vw, 160px);
+  letter-spacing: -0.08em;
+  line-height: 0.82;
+}
+
+.reviews-hero h1 em {
+  color: var(--aqua);
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.reviews-hero > p:last-child {
+  max-width: 670px;
+  margin: 52px 0 0;
+  color: #c5dbe7;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.reviews-proof {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 18px;
+  background: var(--powder);
+  padding: clamp(70px, 8vw, 120px) 5vw;
+}
+
+.google-review-summary,
+.original-review-source {
+  min-height: 330px;
+  border-radius: 30px;
+  padding: clamp(34px, 4vw, 60px);
+}
+
+.google-review-summary {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  background: var(--navy);
+  color: white;
+}
+
+.review-source-label {
+  display: block;
+  margin-bottom: 18px;
+  color: #7d929e;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.google-review-summary strong {
+  display: block;
+  font-size: clamp(74px, 8vw, 124px);
+  letter-spacing: -0.08em;
+  line-height: 0.8;
+}
+
+.google-stars {
+  color: var(--aqua);
+  font-size: clamp(17px, 1.8vw, 25px);
+  letter-spacing: 0.08em;
+}
+
+.google-review-summary a,
+.original-review-source a {
+  align-self: end;
+  grid-column: 1 / -1;
+  width: fit-content;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 9px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.original-review-source {
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.original-review-source p {
+  max-width: 520px;
+  margin: 0;
+  color: #5d7482;
+  font-size: clamp(20px, 2.1vw, 31px);
+  line-height: 1.35;
+}
+
+.original-review-source a {
+  margin-top: auto;
+}
+
+.patient-review-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  padding: clamp(75px, 9vw, 140px) 5vw;
+}
+
+.patient-review-card {
+  display: flex;
+  min-height: 420px;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  border: 1px solid rgba(22, 58, 84, 0.1);
+  border-radius: 30px;
+  background: white;
+  box-shadow: 0 16px 40px rgba(13, 63, 98, 0.06);
+  padding: clamp(30px, 4vw, 58px);
+}
+
+.patient-review-card:nth-child(4n + 2),
+.patient-review-card:nth-child(4n + 3) {
+  background: var(--aqua-light);
+}
+
+.review-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.patient-review-card > p {
+  margin: 48px 0;
+  font-size: clamp(30px, 3.2vw, 52px);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 1.05;
+}
+
+.patient-review-card footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.patient-review-card footer strong {
+  color: var(--navy);
+}
+
+.reviews-cta {
+  display: flex;
+  min-height: 600px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+  padding: 90px 5vw;
+  color: white;
+  text-align: center;
+}
+
+.reviews-cta .section-label {
+  color: var(--aqua);
+}
+
+.reviews-cta h2 {
+  max-width: 1000px;
+  margin: 0 0 48px;
+  font-size: clamp(58px, 8vw, 126px);
+  letter-spacing: -0.08em;
+  line-height: 0.88;
+}
+
 .detail-hero {
   display: grid;
   min-height: 850px;
@@ -1622,6 +1816,50 @@ summary {
   .detail-hero {
     grid-template-columns: 1fr;
     padding-top: 155px;
+  }
+
+  .reviews-hero {
+    min-height: 620px;
+    padding: 150px 20px 80px;
+  }
+
+  .reviews-hero h1 {
+    font-size: clamp(70px, 22vw, 104px);
+  }
+
+  .reviews-proof,
+  .patient-review-grid {
+    grid-template-columns: 1fr;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .google-review-summary,
+  .original-review-source {
+    min-height: 300px;
+    border-radius: 24px;
+    padding: 34px 28px;
+  }
+
+  .patient-review-card {
+    min-height: 360px;
+    border-radius: 24px;
+    padding: 32px 26px;
+  }
+
+  .patient-review-card > p {
+    font-size: 35px;
+  }
+
+  .patient-review-card footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .reviews-cta {
+    min-height: 520px;
+    padding: 80px 20px;
   }
 
   .detail-hero-copy {

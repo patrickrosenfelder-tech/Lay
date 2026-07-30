@@ -2,36 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-
-const stories = [
-  {
-    author: "Brian L.",
-    condition: "Keratoconus",
-    text: "Quite literally the most thorough and informative exam I’ve ever received. As a keratoconus patient, this was a breath of fresh air.",
-  },
-  {
-    author: "Shawoun L.",
-    condition: "Specialty contact lenses",
-    text: "After a long search for expertise with hard contacts, the fit finally felt comfortable and the vision clear.",
-  },
-  {
-    author: "Shawanda M.",
-    condition: "Keratoconus",
-    text: "Complex keratoconus vision was met with patience, compassion, and a plan that made a meaningful difference.",
-  },
-  {
-    author: "Hillary K.",
-    text: "A first visit that felt welcoming and judgment-free, with every part of the exam explained clearly.",
-  },
-  {
-    author: "Jamie U.",
-    text: "The team reviewed every option in detail, took their time, and made the entire experience feel professional and personal.",
-  },
-  {
-    author: "Carol N.",
-    text: "Clear contact-lens coaching, thoughtful recommendations, and friendly answers made learning something new feel manageable.",
-  },
-];
+import { patientReviews as stories } from "./reviews";
 
 export function PatientStories() {
   const [activeStory, setActiveStory] = useState(0);

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteFooter } from "../SiteFooter";
 import { SiteHeader } from "../SiteHeader";
+import { TestimonialsPage } from "../TestimonialsPage";
 
 type DetailPage = {
   eyebrow: string;
@@ -608,6 +609,7 @@ export default async function DetailPage({
   const page = pages[slug];
 
   if (!page) notFound();
+  if (slug === "testimonials") return <TestimonialsPage />;
   const isDoctorPage = slug === "dr-nim";
 
   return (
