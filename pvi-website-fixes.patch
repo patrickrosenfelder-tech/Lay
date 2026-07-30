@@ -1,0 +1,166 @@
+From b13767a216383756bc18c506b72e1f0776f8c48f Mon Sep 17 00:00:00 2001
+From: Claude Assistant <assistant@courteyeiq.com>
+Date: Thu, 30 Jul 2026 21:43:04 +0000
+Subject: [PATCH] Remove Yelp block, keep doctor photo colorful, fix mobile
+ hero crop, humanize testimonials copy
+
+---
+ app/TestimonialsPage.tsx | 18 +++---------------
+ app/globals.css          | 32 ++++++++------------------------
+ 2 files changed, 11 insertions(+), 39 deletions(-)
+
+diff --git a/app/TestimonialsPage.tsx b/app/TestimonialsPage.tsx
+index 27a3a49..ae48d9a 100644
+--- a/app/TestimonialsPage.tsx
++++ b/app/TestimonialsPage.tsx
+@@ -3,7 +3,6 @@ import {
+   GOOGLE_REVIEWS_URL,
+   ORIGINAL_TESTIMONIALS_URL,
+   patientReviews,
+-  YELP_REVIEWS_URL,
+ } from "./reviews";
+ import { SiteFooter } from "./SiteFooter";
+ import { SiteHeader } from "./SiteHeader";
+@@ -40,23 +39,12 @@ export function TestimonialsPage() {
+             Read current Google reviews <span aria-hidden="true">↗</span>
+           </a>
+         </div>
+-        <div className="yelp-review-summary">
+-          <div>
+-            <span className="review-source-label">Yelp rating</span>
+-            <strong>5.0</strong>
+-          </div>
+-          <span className="google-stars" aria-label="5 out of 5 stars">
+-            ★★★★★
+-          </span>
+-          <a href={YELP_REVIEWS_URL} target="_blank" rel="noreferrer">
+-            Read current Yelp reviews <span aria-hidden="true">↗</span>
+-          </a>
+-        </div>
+         <div className="original-review-source">
+           <span className="review-source-label">Original archive</span>
+           <p>
+-            Review wording and patient attribution are preserved from the
+-            practice&apos;s existing testimonials page.
++            These are real patients, in their own words. We didn&apos;t touch
++            the wording or the names—just brought them over from our
++            original testimonials page.
+           </p>
+           <a href={ORIGINAL_TESTIMONIALS_URL} target="_blank" rel="noreferrer">
+             View original testimonials <span aria-hidden="true">↗</span>
+diff --git a/app/globals.css b/app/globals.css
+index 7474e2b..ef4970c 100644
+--- a/app/globals.css
++++ b/app/globals.css
+@@ -668,12 +668,6 @@ summary {
+   height: 100%;
+   object-fit: cover;
+   object-position: center 30%;
+-  filter: grayscale(100%) contrast(1.04);
+-  transition: filter 400ms ease;
+-}
+-
+-.doctor-photo:hover img {
+-  filter: grayscale(0%) contrast(1);
+ }
+ 
+ .doctor-photo > span {
+@@ -1183,22 +1177,20 @@ summary {
+ 
+ .reviews-proof {
+   display: grid;
+-  grid-template-columns: 0.85fr 0.85fr 1.1fr;
++  grid-template-columns: 0.75fr 1.25fr;
+   gap: 18px;
+   background: var(--powder);
+   padding: clamp(70px, 8vw, 120px) 5vw;
+ }
+ 
+ .google-review-summary,
+-.yelp-review-summary,
+ .original-review-source {
+   min-height: 330px;
+   border-radius: 30px;
+   padding: clamp(34px, 4vw, 60px);
+ }
+ 
+-.google-review-summary,
+-.yelp-review-summary {
++.google-review-summary {
+   display: grid;
+   grid-template-columns: 1fr auto;
+   align-items: start;
+@@ -1206,11 +1198,6 @@ summary {
+   color: white;
+ }
+ 
+-.yelp-review-summary {
+-  background: #b4212d;
+-  color: white;
+-}
+-
+ .review-source-label {
+   display: block;
+   margin-bottom: 18px;
+@@ -1221,8 +1208,7 @@ summary {
+   text-transform: uppercase;
+ }
+ 
+-.google-review-summary strong,
+-.yelp-review-summary strong {
++.google-review-summary strong {
+   display: block;
+   font-size: clamp(74px, 8vw, 124px);
+   letter-spacing: -0.08em;
+@@ -1236,7 +1222,6 @@ summary {
+ }
+ 
+ .google-review-summary a,
+-.yelp-review-summary a,
+ .original-review-source a {
+   align-self: end;
+   grid-column: 1 / -1;
+@@ -1844,7 +1829,6 @@ summary {
+   }
+ 
+   .google-review-summary,
+-  .yelp-review-summary,
+   .original-review-source {
+     min-height: 300px;
+     border-radius: 24px;
+@@ -1942,14 +1926,14 @@ summary {
+   }
+ 
+   .hero {
+-    min-height: 820px;
++    min-height: 900px;
+   }
+ 
+   .hero-content {
+     width: 100%;
+-    min-height: 820px;
++    min-height: 900px;
+     justify-content: flex-end;
+-    padding: 360px 20px 145px;
++    padding: 470px 20px 145px;
+   }
+ 
+   .eyebrow {
+@@ -1989,12 +1973,12 @@ summary {
+     right: 20px;
+     bottom: auto;
+     width: calc(100vw - 40px);
+-    height: 245px;
++    height: 340px;
+     border-radius: 90px 90px 20px 20px;
+   }
+ 
+   .hero-portrait img {
+-    object-position: center 24%;
++    object-position: center 18%;
+   }
+ 
+   .portrait-note {
+-- 
+2.43.0
+

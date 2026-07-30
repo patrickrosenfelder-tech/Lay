@@ -1,9 +1,5 @@
 import Link from "next/link";
-import {
-  GOOGLE_REVIEWS_URL,
-  ORIGINAL_TESTIMONIALS_URL,
-  patientReviews,
-} from "./reviews";
+import { GOOGLE_REVIEWS_URL, patientReviews } from "./reviews";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 
@@ -40,15 +36,10 @@ export function TestimonialsPage() {
           </a>
         </div>
         <div className="original-review-source">
-          <span className="review-source-label">Original archive</span>
           <p>
-            These are real patients, in their own words. We didn&apos;t touch
-            the wording or the names—just brought them over from our
-            original testimonials page.
+            Hear straight from the people we care for. These are real,
+            unaltered experiences shared by our amazing patients.
           </p>
-          <a href={ORIGINAL_TESTIMONIALS_URL} target="_blank" rel="noreferrer">
-            View original testimonials <span aria-hidden="true">↗</span>
-          </a>
         </div>
       </section>
 
@@ -64,7 +55,6 @@ export function TestimonialsPage() {
             <p>“{review.text}”</p>
             <footer>
               <strong>{review.author}</strong>
-              <span>{review.source}</span>
             </footer>
           </blockquote>
         ))}

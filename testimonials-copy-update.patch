@@ -1,0 +1,24 @@
+From b35163262114a6986affc952ea546e1aa4b041a5 Mon Sep 17 00:00:00 2001
+From: Claude Assistant <assistant@courteyeiq.com>
+Date: Thu, 30 Jul 2026 22:13:28 +0000
+Subject: [PATCH] Update testimonials copy and remove original archive label
+
+---
+ app/TestimonialsPage.tsx | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/app/TestimonialsPage.tsx b/app/TestimonialsPage.tsx
+index 72a1325..74cfd7d 100644
+--- a/app/TestimonialsPage.tsx
++++ b/app/TestimonialsPage.tsx
+@@ -40,7 +40,6 @@ export function TestimonialsPage() {
+           </a>
+         </div>
+         <div className="original-review-source">
+-          <span className="review-source-label">Original archive</span>
+           <p>
+             Hear straight from the people we care for. These are real,
+             unaltered experiences shared by our amazing patients.
+-- 
+2.43.0
+
