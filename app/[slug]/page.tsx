@@ -279,7 +279,7 @@ const pages: Record<string, DetailPage> = {
     eyebrow: "Meet your optometrist",
     title:
       "Dr. Lay Nim specializes in advanced contact lens fittings, taking the time to listen, educate, and ensure your perfect fit.",
-    lede: "Georgia State University and Southern College of Optometry, with a focus on keratoconus, scleral lenses, and orthokeratology.",
+    lede: "Specializing in keratoconus, scleral lenses, and orthokeratology, with a practice built around patient, hands-on fitting.",
     image: "/dr-nim.webp",
     imageAlt: "Dr. Lay Nim of Precision Vision Institute",
     factLabel: "Special focus",
@@ -289,6 +289,7 @@ const pages: Record<string, DetailPage> = {
         intro: "Dr. Nim is a member of:",
         name: "AAOMC",
         description: "American Academy of Orthokeratology & Myopia Control",
+        href: "https://aaomc.org/",
       },
       {
         intro: "Dr. Nim volunteers at:",
@@ -746,7 +747,9 @@ export default async function DetailPage({
         {page.sections.map((section, index) => (
           <article
             className={`detail-section${
-              isDoctorPage && section.label === "Beyond the clinic"
+              isDoctorPage &&
+              (section.label === "Her focus" ||
+                section.label === "Beyond the clinic")
                 ? " doctor-personal-section"
                 : ""
             }`}
