@@ -461,7 +461,7 @@ const pages: Record<string, DetailPage> = {
         label: "Keep information secure",
         title: "Do not send protected health details by ordinary email.",
         copy:
-          "Call (470) 440-4099 for the clinic’s current secure transmission method. General questions may be sent to invoices@precisionvisioninstitute.com without patient-specific information.",
+          "Call (470) 440-4099 for the clinic’s current secure transmission method. General questions may be sent to info@precisionvisioninstitute.com without patient-specific information.",
       },
     ],
     ctaTitle: "Ready to refer a patient?",
