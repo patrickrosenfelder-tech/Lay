@@ -23,7 +23,7 @@ type DetailPage = {
     bullets?: string[];
   }[];
   faq?: { question: string; answer: string }[];
-  credentials?: { intro: string; name: string; description?: string }[];
+  credentials?: { intro: string; name: string; description?: string; href?: string }[];
   ctaTitle: string;
   ctaCopy: string;
   ctaLabel?: string;
@@ -290,45 +290,58 @@ const pages: Record<string, DetailPage> = {
         name: "AAOMC",
         description: "American Academy of Orthokeratology & Myopia Control",
       },
+      {
+        intro: "Dr. Nim volunteers at:",
+        name: "RAM",
+        description: "Remote Area Medical mission events",
+        href: "https://www.ramusa.org/volunteer/",
+      },
     ],
     highlights: [
       {
         title: "Education",
-        copy: "Georgia State University and Southern College of Optometry in Memphis.",
+        copy: "Georgia State University and Southern College of Optometry in Memphis, Tennessee.",
       },
       {
         title: "Service",
-        copy: "International volunteer eye-care experience in Haiti, Nicaragua, and Costa Rica.",
+        copy: "International mission trips providing eye care in Haiti, Nicaragua, and Costa Rica.",
       },
       {
         title: "Perspective",
-        copy: "A belief that careful fitting can meaningfully change daily life.",
+        copy: "A belief that early intervention and careful fitting can meaningfully change daily life.",
       },
     ],
     sections: [
       {
         label: "Her path",
-        title: "A passion discovered through patient results.",
+        title: "From Georgia State to specialty lenses.",
         copy:
-          "During clinical rotations, Dr. Nim worked with experienced specialty lens fitters and saw how the right scleral lens could restore sharp, usable vision for people who had exhausted standard options.",
+          "Dr. Nim completed her undergraduate studies at Georgia State University before earning her Doctor of Optometry degree from Southern College of Optometry in Memphis, Tennessee. During optometry school, she took part in international mission trips to Haiti, Nicaragua, and Costa Rica, providing eye care to underserved communities — experiences that reinforced her passion for helping patients regain their vision and improve their quality of life. She continues that work closer to home as a volunteer at Remote Area Medical (RAM) clinics. It was during her clinical rotations, training alongside experienced specialty lens practitioners, that she discovered the profound difference scleral lenses can make for patients with complex corneal conditions.",
       },
       {
-        label: "Her approach",
-        title: "Measure carefully. Explain clearly. Refine patiently.",
+        label: "Her focus",
+        title: "Specialty lenses, built around the eye in front of her.",
         copy:
-          "Every fit starts with understanding how a person uses their vision. Technology supplies precise measurements; conversation and follow-up turn those measurements into care that works in real life.",
+          "Today, Dr. Nim has dedicated her practice to specialty contact lenses — including scleral lenses, custom soft lenses, and orthokeratology (Ortho-K). She enjoys caring for patients with keratoconus, corneal irregularities, severe dry eye, and other challenging conditions that often require a customized approach, combining advanced diagnostic technology with today's newest lens designs, including freeform lens technology, to give each patient the best possible vision, comfort, and long-term eye health.",
         bullets: [
-          "Keratoconus and irregular corneas",
-          "Scleral lens fitting",
-          "Orthokeratology and myopia management",
-          "Comprehensive eye care",
+          "Scleral lenses",
+          "Custom soft lenses",
+          "Orthokeratology (Ortho-K)",
+          "Keratoconus & corneal irregularities",
+          "Severe dry eye",
         ],
+      },
+      {
+        label: "Myopia management",
+        title: "Protecting vision early, for the long run.",
+        copy:
+          "Dr. Nim is also passionate about myopia management. She believes that slowing the progression of nearsightedness during childhood can have lifelong benefits, and she enjoys partnering with families to help protect their children's vision through treatments such as orthokeratology.",
       },
       {
         label: "Beyond the clinic",
         title: "Rock climbing, curiosity, and new adventures.",
         copy:
-          "Outside the office, Dr. Nim enjoys rock climbing, crocheting, cooking, hiking, and traveling. One of her favorite adventures was fulfilling a longtime dream of climbing in the Italian Dolomites. She believes that exploring new places, embracing new challenges, and continually learning help her bring curiosity and creativity into both her personal life and her patient care.",
+          "Outside the office, Dr. Nim enjoys rock climbing, crocheting, cooking, and traveling. One of her favorite adventures was fulfilling a longtime dream of climbing in the Italian Dolomites. She believes that exploring new places, embracing new challenges, and continually learning help her bring curiosity and creativity into both her personal life and her patient care.",
       },
     ],
     ctaTitle: "Meet Dr. Nim in Duluth.",
@@ -709,7 +722,18 @@ export default async function DetailPage({
           {page.credentials.map((credential) => (
             <div className="credential-card" key={credential.name}>
               <p className="credential-intro">{credential.intro}</p>
-              <p className="credential-name">{credential.name}</p>
+              {credential.href ? (
+                <a
+                  className="credential-name credential-name-link"
+                  href={credential.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {credential.name}
+                </a>
+              ) : (
+                <p className="credential-name">{credential.name}</p>
+              )}
               {credential.description && (
                 <p className="credential-description">{credential.description}</p>
               )}

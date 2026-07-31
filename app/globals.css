@@ -1664,7 +1664,9 @@ summary {
 
 .detail-credentials {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
   padding: 0 5vw 60px;
 }
 
@@ -1692,6 +1694,16 @@ summary {
   font-weight: 800;
   font-size: 28px;
   letter-spacing: -0.02em;
+}
+
+.credential-name-link {
+  text-decoration: none;
+  border-bottom: 2px solid var(--aqua);
+  transition: opacity 200ms ease;
+}
+
+.credential-name-link:hover {
+  opacity: 0.75;
 }
 
 .credential-description {
