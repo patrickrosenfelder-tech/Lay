@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { ArrowIcon } from "./ArrowIcon";
 import { patientReviews as stories } from "./reviews";
 
 export function PatientStories() {
@@ -84,7 +85,7 @@ export function PatientStories() {
         </div>
 
         <Link href="/testimonials">
-          More patient stories <span aria-hidden="true">↗</span>
+          More patient stories <ArrowIcon />
         </Link>
       </div>
     </section>

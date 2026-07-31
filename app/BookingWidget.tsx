@@ -1,3 +1,5 @@
+import { ArrowIcon } from "./ArrowIcon";
+
 const BOOKING_URL =
   "https://web.eyecloudpro.com/site/!appt_req?sid=30DE3BDF7982B488E75A54C45893656C";
 
@@ -34,7 +36,7 @@ export function BookingWidget() {
       <div className="booking-embed-footer">
         <span>Having trouble viewing the scheduler?</span>
         <a href={BOOKING_URL}>
-          Open EyeCloud in a new window <span aria-hidden="true">↗</span>
+          Open EyeCloud in a new window <ArrowIcon />
         </a>
       </div>
     </div>

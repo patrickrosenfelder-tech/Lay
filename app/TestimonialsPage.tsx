@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowIcon } from "./ArrowIcon";
 import { GOOGLE_REVIEWS_URL, patientReviews } from "./reviews";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
@@ -32,7 +33,7 @@ export function TestimonialsPage() {
             ★★★★★
           </span>
           <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noreferrer">
-            Read current Google reviews <span aria-hidden="true">↗</span>
+            Read current Google reviews <ArrowIcon />
           </a>
         </div>
         <div className="original-review-source">
@@ -64,7 +65,7 @@ export function TestimonialsPage() {
         <p className="section-label">Your experience starts here</p>
         <h2>See the difference for yourself.</h2>
         <Link className="button button-primary" href="/#book">
-          View live availability <span aria-hidden="true">↗</span>
+          View live availability <ArrowIcon />
         </Link>
       </section>
 

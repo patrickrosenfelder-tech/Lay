@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ArrowIcon } from "../ArrowIcon";
 import { SiteFooter } from "../SiteFooter";
 import { SiteHeader } from "../SiteHeader";
 import { TestimonialsPage } from "../TestimonialsPage";
@@ -21,10 +22,13 @@ type DetailPage = {
     copy: string;
     bullets?: string[];
   }[];
+  faq?: { question: string; answer: string }[];
+  credentials?: { intro: string; name: string; description?: string }[];
   ctaTitle: string;
   ctaCopy: string;
   ctaLabel?: string;
   ctaHref?: string;
+  ctaConditions?: string[];
 };
 
 const pages: Record<string, DetailPage> = {
@@ -79,9 +83,38 @@ const pages: Record<string, DetailPage> = {
           "Bring your current glasses, contact lenses, lens cases, and any records that explain prior surgery or a corneal diagnosis. The clinic will tell you whether to stop wearing existing lenses before your evaluation.",
       },
     ],
-    ctaTitle: "Could a scleral lens change what you see?",
+    faq: [
+      {
+        question: "Are scleral lenses comfortable?",
+        answer:
+          "Yes. Although scleral lenses are larger than traditional contacts, they rest on the sclera, which has fewer nerve endings than the cornea. Most patients find them surprisingly comfortable after a brief adjustment period.",
+      },
+      {
+        question: "Can scleral lenses help dry eyes?",
+        answer:
+          "Yes. The fluid reservoir beneath the lens continuously bathes the cornea in preservative-free saline, making scleral lenses an excellent option for many patients with moderate to severe dry eye disease.",
+      },
+      {
+        question: "Can scleral lenses help keratoconus?",
+        answer:
+          "Absolutely. Scleral lenses are considered one of the most effective non-surgical treatments for keratoconus because they create a smooth optical surface over the irregular cornea, often providing significantly clearer vision than glasses or soft contact lenses.",
+      },
+      {
+        question: "Are scleral lenses covered by insurance?",
+        answer:
+          "Coverage varies depending on your medical diagnosis and insurance plan. Our team will review your benefits and discuss any available coverage before beginning treatment.",
+      },
+    ],
+    ctaTitle: "Schedule your scleral lens consultation.",
     ctaCopy:
-      "Start with a specialty lens evaluation and a clear conversation about your goals.",
+      "If blurry vision, discomfort, or dry eyes are limiting your daily life, we're here to help. Schedule a comprehensive scleral lens evaluation with Precision Vision Institute to find out whether custom specialty lenses are the right solution for you. Together, we'll develop a personalized treatment plan designed to help you achieve clearer, more comfortable vision.",
+    ctaConditions: [
+      "Keratoconus",
+      "Severe dry eye disease",
+      "Post-surgical corneal irregularity",
+      "Corneal ectasia",
+      "Other irregular corneas",
+    ],
   },
   "dry-eye": {
     eyebrow: "Ocular surface care",
@@ -244,13 +277,20 @@ const pages: Record<string, DetailPage> = {
   },
   "dr-nim": {
     eyebrow: "Meet your optometrist",
-    title: "Precision in the details. Humanity in the room.",
-    lede:
-      "Dr. Lay Nim combines advanced specialty contact lens fitting with the patience to listen, teach, and keep refining.",
+    title:
+      "Dr. Lay Nim specializes in advanced contact lens fittings, taking the time to listen, educate, and ensure your perfect fit.",
+    lede: "Georgia State University and Southern College of Optometry, with a focus on keratoconus, scleral lenses, and orthokeratology.",
     image: "/dr-nim.webp",
     imageAlt: "Dr. Lay Nim of Precision Vision Institute",
     factLabel: "Special focus",
     factValue: "Specialty lenses",
+    credentials: [
+      {
+        intro: "Dr. Nim is a member of:",
+        name: "AAOMC",
+        description: "American Academy of Orthokeratology & Myopia Control",
+      },
+    ],
     highlights: [
       {
         title: "Education",
@@ -286,9 +326,9 @@ const pages: Record<string, DetailPage> = {
       },
       {
         label: "Beyond the clinic",
-        title: "Plants, movement, travel, and a good meal.",
+        title: "Rock climbing, curiosity, and new adventures.",
         copy:
-          "Outside the office, Dr. Nim enjoys time with friends and family, cooking, traveling, tending to her plant collection, jogging, rope jumping, and rock climbing.",
+          "Outside the office, Dr. Nim enjoys rock climbing, crocheting, cooking, hiking, and traveling. One of her favorite adventures was fulfilling a longtime dream of climbing in the Italian Dolomites. She believes that exploring new places, embracing new challenges, and continually learning help her bring curiosity and creativity into both her personal life and her patient care.",
       },
     ],
     ctaTitle: "Meet Dr. Nim in Duluth.",
@@ -628,7 +668,7 @@ export default async function DetailPage({
           <p className="detail-lede">{page.lede}</p>
           <div className="detail-actions">
             <Link className="button button-primary" href="/#book">
-              View live availability <span aria-hidden="true">↗</span>
+              View live availability <ArrowIcon />
             </Link>
             <a href="tel:+14704404099" className="detail-phone">
               Call (470) 440-4099
@@ -664,6 +704,20 @@ export default async function DetailPage({
         ))}
       </section>
 
+      {page.credentials && page.credentials.length > 0 && (
+        <section className="detail-credentials" aria-label="Professional memberships">
+          {page.credentials.map((credential) => (
+            <div className="credential-card" key={credential.name}>
+              <p className="credential-intro">{credential.intro}</p>
+              <p className="credential-name">{credential.name}</p>
+              {credential.description && (
+                <p className="credential-description">{credential.description}</p>
+              )}
+            </div>
+          ))}
+        </section>
+      )}
+
       <section className="detail-content">
         {page.sections.map((section, index) => (
           <article
@@ -695,16 +749,36 @@ export default async function DetailPage({
         {/* TODO(client): Add verified years in practice, fitting volume, and expanded subspecialty motivation; see CONTENT-TODOS.md. */}
       </section>
 
+      {page.faq && page.faq.length > 0 && (
+        <section className="detail-faq" aria-label="Frequently asked questions">
+          <p className="section-label">Frequently asked questions</p>
+          <div className="detail-faq-list">
+            {page.faq.map((item) => (
+              <details key={item.question}>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      )}
+
       <section className="detail-cta">
         <p className="section-label">Your next step</p>
         <h2>{page.ctaTitle}</h2>
         <p>{page.ctaCopy}</p>
+        {page.ctaConditions && page.ctaConditions.length > 0 && (
+          <ul className="detail-cta-conditions">
+            {page.ctaConditions.map((condition) => (
+              <li key={condition}>{condition}</li>
+            ))}
+          </ul>
+        )}
         <a
           className="button button-primary"
           href={page.ctaHref ?? "/#book"}
         >
-          {page.ctaLabel ?? "View live availability"}{" "}
-          <span aria-hidden="true">↗</span>
+          {page.ctaLabel ?? "View live availability"} <ArrowIcon />
         </a>
       </section>
 

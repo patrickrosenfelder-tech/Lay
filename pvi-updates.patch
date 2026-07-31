@@ -118,22 +118,16 @@ index ee90a47..647ca5d 100644
        </details>
      </header>
 diff --git a/app/TestimonialsPage.tsx b/app/TestimonialsPage.tsx
-index ae48d9a..a054e59 100644
+index eee08e5..a054e59 100644
 --- a/app/TestimonialsPage.tsx
 +++ b/app/TestimonialsPage.tsx
-@@ -1,9 +1,6 @@
+@@ -1,4 +1,5 @@
  import Link from "next/link";
--import {
--  GOOGLE_REVIEWS_URL,
--  ORIGINAL_TESTIMONIALS_URL,
--  patientReviews,
--} from "./reviews";
 +import { ArrowIcon } from "./ArrowIcon";
-+import { GOOGLE_REVIEWS_URL, patientReviews } from "./reviews";
+ import { GOOGLE_REVIEWS_URL, patientReviews } from "./reviews";
  import { SiteFooter } from "./SiteFooter";
  import { SiteHeader } from "./SiteHeader";
- 
-@@ -36,19 +33,14 @@ export function TestimonialsPage() {
+@@ -32,7 +33,7 @@ export function TestimonialsPage() {
              ★★★★★
            </span>
            <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noreferrer">
@@ -142,29 +136,7 @@ index ae48d9a..a054e59 100644
            </a>
          </div>
          <div className="original-review-source">
--          <span className="review-source-label">Original archive</span>
-           <p>
--            These are real patients, in their own words. We didn&apos;t touch
--            the wording or the names—just brought them over from our
--            original testimonials page.
-+            Hear straight from the people we care for. These are real,
-+            unaltered experiences shared by our amazing patients.
-           </p>
--          <a href={ORIGINAL_TESTIMONIALS_URL} target="_blank" rel="noreferrer">
--            View original testimonials <span aria-hidden="true">↗</span>
--          </a>
-         </div>
-       </section>
- 
-@@ -64,7 +56,6 @@ export function TestimonialsPage() {
-             <p>“{review.text}”</p>
-             <footer>
-               <strong>{review.author}</strong>
--              <span>{review.source}</span>
-             </footer>
-           </blockquote>
-         ))}
-@@ -74,7 +65,7 @@ export function TestimonialsPage() {
+@@ -64,7 +65,7 @@ export function TestimonialsPage() {
          <p className="section-label">Your experience starts here</p>
          <h2>See the difference for yourself.</h2>
          <Link className="button button-primary" href="/#book">

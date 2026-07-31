@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowIcon } from "./ArrowIcon";
 import { BookingWidget } from "./BookingWidget";
 import { PatientStories } from "./PatientStories";
 import { SiteFooter } from "./SiteFooter";
@@ -162,7 +163,7 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#book">
-              Start with a consultation <span aria-hidden="true">↗</span>
+              Start with a consultation <ArrowIcon />
             </a>
             <a className="text-link find-path-link" href="#specialties">
               Find your path <span aria-hidden="true">↓</span>
@@ -208,7 +209,7 @@ export default function Home() {
                 <p>{item.copy}</p>
               </div>
               <span className="card-arrow" aria-hidden="true">
-                ↗
+                <ArrowIcon />
               </span>
             </Link>
           ))}
@@ -225,7 +226,7 @@ export default function Home() {
             together.
           </p>
           <a className="button button-light" href="#book">
-            Schedule an evaluation <span aria-hidden="true">↗</span>
+            Schedule an evaluation <ArrowIcon />
           </a>
         </div>
         <ol className="process-list">
@@ -266,10 +267,10 @@ export default function Home() {
           </p>
           <div className="doctor-links">
             <Link href="/dr-nim">
-              Meet Dr. Nim <span aria-hidden="true">↗</span>
+              Meet Dr. Nim <ArrowIcon />
             </Link>
             <Link href="/doctor-referral">
-              Refer a patient <span aria-hidden="true">↗</span>
+              Refer a patient <ArrowIcon />
             </Link>
           </div>
         </div>
@@ -319,7 +320,7 @@ export default function Home() {
               className="button button-dark"
               href="https://maps.google.com/?q=Precision+Vision+Institute+3940+Buford+Hwy+Duluth+GA+30096"
             >
-              Get directions <span aria-hidden="true">↗</span>
+              Get directions <ArrowIcon />
             </a>
             <a className="phone-link" href="tel:+14704404099">
               (470) 440-4099

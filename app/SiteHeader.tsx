@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowIcon } from "./ArrowIcon";
 
 export function SiteHeader() {
   return (
@@ -39,7 +40,7 @@ export function SiteHeader() {
       </nav>
 
       <Link className="header-cta" href="/#book">
-        Book appointment <span aria-hidden="true">↗</span>
+        Book appointment <ArrowIcon />
       </Link>
 
       <details className="mobile-menu">
@@ -50,7 +51,9 @@ export function SiteHeader() {
             <Link href="/dr-nim">Dr. Nim</Link>
             <Link href="/#visit">Visit</Link>
             <Link href="/patients">Patient resources</Link>
-            <Link href="/#book">Book appointment ↗</Link>
+            <Link href="/#book">
+              Book appointment <ArrowIcon />
+            </Link>
         </nav>
       </details>
     </header>

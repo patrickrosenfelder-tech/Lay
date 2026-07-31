@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowIcon } from "./ArrowIcon";
 
 export function SiteFooter() {
   return (
@@ -34,7 +35,9 @@ export function SiteFooter() {
 
       <nav className="mobile-bar" aria-label="Quick actions">
         <a href="tel:+14704404099">Call</a>
-        <Link href="/#book">Book online ↗</Link>
+        <Link href="/#book">
+          Book online <ArrowIcon />
+        </Link>
       </nav>
     </>
   );
