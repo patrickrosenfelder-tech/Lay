@@ -1,91 +1,29 @@
-diff --git a/app/[slug]/page.tsx b/app/[slug]/page.tsx
-index 4c8d5f1..b937f54 100644
---- a/app/[slug]/page.tsx
-+++ b/app/[slug]/page.tsx
-@@ -165,6 +165,28 @@ const pages: Record<string, DetailPage> = {
-           "Bring a list of eye drops and medications you use. Unless the clinic gives different instructions, avoid masking your typical symptoms immediately before the exam.",
-       },
-     ],
-+    faq: [
-+      {
-+        question: "What actually causes dry eye?",
-+        answer:
-+          "Dry eye can come from too few tears, poor tear quality, or tears that evaporate too quickly due to blocked oil glands along the eyelids. Screen use, contact lens wear, certain medications, and environment can all play a role, which is why an evaluation looks for your specific pattern rather than assuming one cause.",
-+      },
-+      {
-+        question: "How is dry eye actually diagnosed?",
-+        answer:
-+          "A dry eye evaluation goes beyond asking about symptoms. Microscopic examination of the tear film, eyelids, and ocular surface helps identify whether the issue is tear production, tear quality, gland function, or a combination — which then guides the treatment plan.",
-+      },
-+      {
-+        question: "Will over-the-counter drops fix it?",
-+        answer:
-+          "Sometimes, but not always. Artificial tears can help mild, occasional dryness, but more persistent or severe dry eye often needs a plan matched to its underlying cause — eyelid care, prescription treatment, or specialty lens options — rather than drops alone.",
-+      },
-+      {
-+        question: "Is dry eye treatment covered by insurance?",
-+        answer:
-+          "Coverage depends on your diagnosis and insurance plan. Some treatments are considered medical and may be covered, while others are not. Our team will review your benefits and walk you through any costs before starting treatment.",
-+      },
-+    ],
-     ctaTitle: "Ready to understand your dry eye?",
-     ctaCopy:
-       "Choose a dry eye consultation from the live appointment scheduler.",
-@@ -218,6 +240,28 @@ const pages: Record<string, DetailPage> = {
-           "Bring surgical records if available, along with your current glasses, contact lenses, and a description of when your vision is best or worst.",
-       },
-     ],
-+    faq: [
-+      {
-+        question: "Why do I still see glare or halos after LASIK?",
-+        answer:
-+          "Corneal surgery reshapes the eye, but it can leave a surface that is difficult to correct with an ordinary prescription. Even small irregularities in that surface can scatter light and cause glare, halos, or fluctuating clarity — especially at night.",
-+      },
-+      {
-+        question: "Can new glasses fix these symptoms?",
-+        answer:
-+          "Sometimes glasses help, but they cannot correct an irregular corneal surface the way a specialty contact lens can. Corneal mapping shows exactly where the shape varies, which helps determine whether glasses, a specialty lens, or another approach is the better fit.",
-+      },
-+      {
-+        question: "Are scleral lenses safe to wear after corneal surgery?",
-+        answer:
-+          "Yes. Scleral lenses vault over the cornea entirely and rest on the white of the eye, so they do not put pressure on the surgical site. They are commonly used for post-surgical eyes that need a smoother, more stable optical surface.",
-+      },
-+      {
-+        question: "How long after surgery should I wait for an evaluation?",
-+        answer:
-+          "It depends on your procedure and healing timeline. If your vision has stabilized but you're still experiencing glare, halos, or fluctuating clarity, it's reasonable to schedule an evaluation — Dr. Nim will review your surgical history and current symptoms to determine next steps.",
-+      },
-+    ],
-     ctaTitle: "See whether specialty optics can help.",
-     ctaCopy:
-       "Schedule a scleral lens or complex-cornea evaluation with Dr. Nim.",
-@@ -271,6 +315,28 @@ const pages: Record<string, DetailPage> = {
-           "Cleaning, disinfecting, hand hygiene, and attending follow-up visits are essential. Dr. Nim will discuss whether Ortho-K is appropriate for you or your child.",
-       },
-     ],
-+    faq: [
-+      {
-+        question: "Is Ortho-K safe?",
-+        answer:
-+          "Yes, when properly fitted and cared for. Ortho-K uses FDA-approved gas-permeable lenses worn overnight, with follow-up visits to check corneal health, lens fit, and response along the way. Good lens hygiene and attending scheduled check-ups are essential to keeping it safe.",
-+      },
-+      {
-+        question: "At what age can my child start Ortho-K?",
-+        answer:
-+          "There isn't a strict minimum age — candidacy depends on eye health, prescription, and whether your child can reliably handle lens insertion, removal, and care with adult supervision. Many families start Ortho-K in the school-age years as part of a myopia management plan.",
-+      },
-+      {
-+        question: "What happens if I stop wearing the lenses?",
-+        answer:
-+          "The effect is temporary. If you stop wearing the lenses consistently, the cornea gradually returns toward its original shape and your uncorrected vision returns to how it was before treatment.",
-+      },
-+      {
-+        question: "Does insurance cover Ortho-K?",
-+        answer:
-+          "Coverage varies by plan, and Ortho-K is sometimes considered elective. Our team will review your specific benefits and discuss the costs involved before you begin treatment.",
-+      },
-+    ],
-     ctaTitle: "Explore a proactive approach to myopia.",
-     ctaCopy:
-       "Book an Ortho-K fitting to review candidacy, goals, and expected follow-up.",
+diff --git a/app/globals.css b/app/globals.css
+index 6e8bc25..4651d12 100644
+--- a/app/globals.css
++++ b/app/globals.css
+@@ -2443,12 +2443,24 @@ summary {
+   .site-footer {
+     gap: 28px;
+     padding: 34px 20px 30px;
++    justify-items: center;
++    text-align: center;
++  }
++
++  .footer-brand {
++    flex-direction: column;
+   }
+ 
+   .footer-links {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 18px;
++    justify-items: center;
++    text-align: center;
++  }
++
++  .footer-links a:last-child:nth-child(odd) {
++    grid-column: 1 / -1;
+   }
+ 
+   .mobile-bar {

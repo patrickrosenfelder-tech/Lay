@@ -2443,12 +2443,24 @@ summary {
   .site-footer {
     gap: 28px;
     padding: 34px 20px 30px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .footer-brand {
+    flex-direction: column;
   }
 
   .footer-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 18px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .footer-links a:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 
   .mobile-bar {
