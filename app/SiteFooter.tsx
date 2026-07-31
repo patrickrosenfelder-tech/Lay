@@ -26,7 +26,6 @@ export function SiteFooter() {
           <Link href="/doctor-referral">Referring doctors</Link>
           <Link href="/insurances">Insurance</Link>
           <Link href="/testimonials">Patient stories</Link>
-          <Link href="/#book">Book online</Link>
         </div>
         <p className="copyright">
           © {new Date().getFullYear()} Precision Vision Institute
