@@ -1,3 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
+
+/* eslint-disable @next/next/no-img-element */
+
 import React from 'react';
 
 import BookingWidget from '../BookingWidget';
@@ -150,7 +154,7 @@ export default function DryEyePage() {
 
                       <h3 className="text-white font-bold text-sm">Dr. Lay Nim, OD</h3>
 
-                      <p className="text-slate-300 text-xs">Dry Eye & Ocular Surface Specialist</p>
+                      <p className="text-slate-300 text-xs">Dry Eye &amp; Ocular Surface Specialist</p>
 
                       <p className="text-teal-300 text-xs font-semibold mt-0.5">Precision Vision Institute</p>
 
@@ -186,7 +190,7 @@ export default function DryEyePage() {
 
             <p className="text-slate-600 text-sm sm:text-base">
 
-              Over 80% of dry eye cases are caused by Meibomian Gland Dysfunction (MGD) — where the oil glands along your eyelids become clogged, causing your natural tears to evaporate rapidly.
+              Over 80% of dry eye cases are caused by Meibomian Gland Dysfunction (MGD) &mdash; where the oil glands along your eyelids become clogged, causing your natural tears to evaporate rapidly.
 
             </p>
 
@@ -202,7 +206,7 @@ export default function DryEyePage() {
 
               </div>
 
-              <h3 className="text-lg font-bold text-slate-900">Eye Drops & Artificial Tears</h3>
+              <h3 className="text-lg font-bold text-slate-900">Eye Drops &amp; Artificial Tears</h3>
 
               <p className="text-slate-600 text-sm leading-relaxed">
 
@@ -236,7 +240,7 @@ export default function DryEyePage() {
 
             <p className="text-slate-700 italic text-sm sm:text-base">
 
-              "Using drops on dry eyes is like watering a plant with poor soil — it briefly wets the surface, but the environment remains dry. Envision restores gland health so your eyes produce stable, natural tears."
+              &quot;Using drops on dry eyes is like watering a plant with poor soil &mdash; it briefly wets the surface, but the environment remains dry. Envision restores gland health so your eyes produce stable, natural tears.&quot;
 
             </p>
 
@@ -258,7 +262,7 @@ export default function DryEyePage() {
 
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
 
-              Forma-I (RF) & Lumecca-I (IPL)
+              Forma-I (RF) &amp; Lumecca-I (IPL)
 
             </h2>
 
@@ -370,7 +374,7 @@ export default function DryEyePage() {
 
                 <h3 className="text-lg font-bold text-slate-900">Forma-I (RF Therapy)</h3>
 
-                <p className="text-slate-500 text-xs">Radio frequency heat therapy for MGD & stye relief.</p>
+                <p className="text-slate-500 text-xs">Radio frequency heat therapy for MGD &amp; stye relief.</p>
 
                 <div className="py-3 border-t border-b border-slate-200 space-y-1">
 
@@ -408,7 +412,7 @@ export default function DryEyePage() {
 
                 <h3 className="text-lg font-bold text-slate-900">Lumecca-I (IPL Therapy)</h3>
 
-                <p className="text-slate-500 text-xs">Light therapy for rosacea, blepharitis & demodex.</p>
+                <p className="text-slate-500 text-xs">Light therapy for rosacea, blepharitis &amp; demodex.</p>
 
                 <div className="py-3 border-t border-b border-slate-200 space-y-1">
 
