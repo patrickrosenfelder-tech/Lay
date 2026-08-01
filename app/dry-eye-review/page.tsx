@@ -4,7 +4,7 @@
 
 import React from 'react';
 
-import BookingWidget from '../BookingWidget';
+// Self-contained, robust Dry Eye Page for Precision Vision Institute
 
 export default function DryEyePage() {
 
@@ -588,7 +588,7 @@ export default function DryEyePage() {
 
       </section>
 
-      {/* Booking Widget Container */}
+      {/* Booking CTA Section */}
 
       <section id="booking" className="py-12 md:py-16 bg-white">
 
@@ -598,13 +598,45 @@ export default function DryEyePage() {
 
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">Schedule Your Dry Eye Evaluation</h2>
 
-            <p className="text-slate-600 text-sm">Select a convenient date and time for your consultation at Precision Vision Institute.</p>
+            <p className="text-slate-600 text-sm">Experience lasting, restorative dry eye relief at Precision Vision Institute in Duluth, GA.</p>
 
           </div>
 
-          <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
+          <div className="p-8 rounded-xl bg-slate-900 text-white shadow-md space-y-4">
 
-            <BookingWidget />
+            <div className="text-teal-400 font-bold text-xl">Precision Vision Institute</div>
+
+            <p className="text-slate-300 text-sm">Dr. Lay Nim, OD &mdash; Duluth, GA</p>
+
+            <p className="text-slate-400 text-sm">Call us or book your appointment online for an Envision consultation.</p>
+
+            <div className="pt-2 flex flex-wrap justify-center gap-4">
+
+              <a
+
+                href="tel:7700000000"
+
+                className="px-6 py-3 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold rounded-lg transition-colors text-sm"
+
+              >
+
+                Call Office
+
+              </a>
+
+              <a
+
+                href="/#booking"
+
+                className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-lg border border-slate-700 transition-colors text-sm"
+
+              >
+
+                Online Booking Widget
+
+              </a>
+
+            </div>
 
           </div>
 
