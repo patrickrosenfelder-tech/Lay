@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import { ArrowIcon } from "../ArrowIcon";
 import { SiteFooter } from "../SiteFooter";
 import { SiteHeader } from "../SiteHeader";
+import { DryEyePage } from "../DryEyePage";
+import { StaticPage, type StaticPageData } from "../StaticPage";
 import { TestimonialsPage } from "../TestimonialsPage";
 
 type DetailPage = {
@@ -29,6 +31,88 @@ type DetailPage = {
   ctaLabel?: string;
   ctaHref?: string;
   ctaConditions?: string[];
+};
+
+const staticPages: Record<string, StaticPageData> = {
+  products: {
+    eyebrow: "Products",
+    title: "Eye care products selected for the details.",
+    lede: "From everyday eyewear to the care essentials that support specialty lenses and ocular-surface comfort, our team can help you choose with confidence.",
+    image: "/office-lounge.webp",
+    imageAlt: "Precision Vision Institute reception area",
+    ctaLabel: "Ask about products during your visit",
+    sections: [
+      { title: "Eyewear that fits your day", copy: "Explore frames and prescription lens options selected around your vision needs, work, movement, and personal style." },
+      { title: "Ocular-surface support", copy: "Your clinician can recommend eye drops, lid-care products, and preservative-free options that fit your diagnosis and daily routine." },
+      { title: "Specialty lens essentials", copy: "Solutions, cases, plungers, saline, and lens-care accessories all matter to safe, consistent specialty lens wear." },
+    ],
+  },
+  faq: {
+    eyebrow: "Patient resources",
+    title: "Questions, answered clearly.",
+    lede: "Every eye and every treatment plan is different. These answers cover the practical things patients ask before booking.",
+    sections: [
+      { title: "What should I bring?", copy: "Please bring a photo ID, current insurance cards, glasses, contact lenses and cases, medication list, and any helpful prior eye records." },
+      { title: "How do I know which appointment to choose?", copy: "If you are unsure, choose the option that best matches your main goal or call the clinic at (470) 440-4099. The team can help you select the right starting point." },
+      { title: "Do you offer specialty contact lenses?", copy: "Yes. Scleral lenses, post-laser vision care, and Ortho-K/CRT lens consultations each begin with a detailed evaluation and individualized measurements." },
+      { title: "Can I book dry eye care online?", copy: "Yes. Use the live scheduler to request a comprehensive dry eye evaluation. Your evaluation determines the right care plan and whether advanced treatment is appropriate." },
+    ],
+  },
+  "our-office": {
+    eyebrow: "About Precision Vision Institute",
+    title: "A calmer kind of specialty eye care.",
+    lede: "Precision Vision Institute brings detailed measurements, attentive conversation, and personalized follow-up together in Duluth, Georgia.",
+    image: "/office-lounge.webp",
+    imageAlt: "Precision Vision Institute office lounge",
+    ctaLabel: "Plan your visit",
+    sections: [
+      { title: "Visit us", copy: "3940 Buford Hwy Ste A104, Duluth, GA 30096. Call (470) 440-4099 if you need help finding the office or preparing for your appointment." },
+      { title: "Office hours", copy: "Mon / Tue / Wed / Fri: 9:30 AM–5:30 PM. Sat: 9:30 AM–1:30 PM. Thurs / Sun: Closed." },
+      { title: "Designed around the details", copy: "Specialty lens care and complex eye concerns often need more time and more precise measurements. Our office is built to make that process clear, comfortable, and collaborative." },
+    ],
+  },
+  contact: {
+    eyebrow: "Contact",
+    title: "We are here to help you find the right next step.",
+    lede: "Call the clinic for appointment questions, benefits support, or help choosing a visit type. For general, non-patient-specific questions, email info@precisionvisioninstitute.com.",
+    ctaLabel: "Call (470) 440-4099",
+    ctaHref: "tel:+14704404099",
+    sections: [
+      { title: "Precision Vision Institute", copy: "3940 Buford Hwy Ste A104, Duluth, GA 30096\n(470) 440-4099\ninfo@precisionvisioninstitute.com" },
+      { title: "Please protect your privacy", copy: "Do not send protected health information or urgent medical concerns through ordinary email. Call the clinic for secure instructions or seek urgent care for emergencies." },
+    ],
+  },
+  "privacy-policy": {
+    eyebrow: "Privacy policy",
+    title: "Your privacy matters.",
+    lede: "This website provides general practice information and links to appointment scheduling. Please do not use ordinary email to send private health information.",
+    ctaLabel: "Contact the clinic",
+    sections: [
+      { title: "Scheduling and third-party services", copy: "Appointment scheduling may be provided through a separate service. Information you provide there is governed by that service’s own privacy practices and the clinic’s applicable policies." },
+      { title: "Questions about privacy", copy: "For help with a privacy question, contact Precision Vision Institute at (470) 440-4099. Do not include private health information in ordinary email." },
+    ],
+  },
+  "hipaa-notice": {
+    eyebrow: "HIPAA notice",
+    title: "Request the official Notice of Privacy Practices.",
+    lede: "The clinic’s official Notice of Privacy Practices explains how protected health information may be used or disclosed and how to obtain a copy.",
+    ctaLabel: "Call the clinic",
+    ctaHref: "tel:+14704404099",
+    sections: [
+      { title: "Obtain the official notice", copy: "Please call (470) 440-4099 or ask the team during your visit for the current official Notice of Privacy Practices." },
+      { title: "Important", copy: "This webpage is a request pathway and does not replace the practice’s official Notice of Privacy Practices." },
+    ],
+  },
+  "terms-of-service": {
+    eyebrow: "Terms of service",
+    title: "Using this website.",
+    lede: "Information on this website is for general educational and scheduling purposes. It is not medical advice or a substitute for a comprehensive eye examination.",
+    ctaLabel: "Book an evaluation",
+    sections: [
+      { title: "For care, start with an evaluation", copy: "Eye conditions, treatment suitability, and outcomes are individual. Please book an appointment for advice specific to your eyes." },
+      { title: "Urgent symptoms", copy: "Sudden vision loss, severe eye pain, eye injury, chemical exposure, or new flashes and many floaters can require urgent care. Call immediately or seek emergency care." },
+    ],
+  },
 };
 
 const pages: Record<string, DetailPage> = {
@@ -681,7 +765,7 @@ const pages: Record<string, DetailPage> = {
 };
 
 export function generateStaticParams() {
-  return Object.keys(pages).map((slug) => ({ slug }));
+  return [...Object.keys(pages), ...Object.keys(staticPages), "envision-dry-eye"].map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -691,16 +775,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const page = pages[slug];
+  const staticPage = staticPages[slug];
 
-  if (!page) return {};
+  if (slug === "envision-dry-eye") {
+    return { title: "Envision Complete Dry Eye Package | Precision Vision Institute", description: "Explore the Envision Complete Dry Eye Package and book a comprehensive dry eye evaluation in Duluth, Georgia." };
+  }
+  if (!page && !staticPage) return {};
 
   const isDoctorPage = slug === "dr-nim";
   const title = isDoctorPage
     ? "Dr. Lay Nim, OD | Precision Vision Institute"
-    : `${page.title} | Precision Vision Institute`;
+    : `${(page ?? staticPage).title} | Precision Vision Institute`;
   const description = isDoctorPage
     ? "Meet Dr. Lay Nim, a Duluth optometrist focused on specialty contact lenses, keratoconus, orthokeratology, and personalized eye care."
-    : page.lede;
+    : (page ?? staticPage).lede;
 
   return {
     title,
@@ -708,14 +796,14 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      images: [{ url: page.image, alt: page.imageAlt }],
+      images: page ? [{ url: page.image, alt: page.imageAlt }] : undefined,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [page.image],
+      images: page ? [page.image] : undefined,
     },
   };
 }
@@ -727,8 +815,11 @@ export default async function DetailPage({
 }) {
   const { slug } = await params;
   const page = pages[slug];
+  const staticPage = staticPages[slug];
 
-  if (!page) notFound();
+  if (!page && !staticPage && slug !== "envision-dry-eye") notFound();
+  if (slug === "dry-eye" || slug === "envision-dry-eye") return <DryEyePage packageFocus={slug === "envision-dry-eye"} />;
+  if (staticPage) return <StaticPage page={staticPage} />;
   if (slug === "testimonials") return <TestimonialsPage />;
   const isDoctorPage = slug === "dr-nim";
 
