@@ -2,7 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowIcon } from "./ArrowIcon";
 
-const navigation = [
+type NavigationItem =
+  | { label: string; href: string }
+  | { label: string; links: readonly (readonly [string, string])[] };
+
+const navigation: readonly NavigationItem[] = [
   { label: "Dry eye", links: [["Envision package", "/envision-dry-eye"], ["Dry eye treatment", "/dry-eye"]] },
   { label: "Specialty care", links: [["Scleral lenses", "/sclerals"], ["Post-laser vision care", "/post-laser-vision"], ["Ortho-K/CRT lenses", "/ortho-k-crt-lenses"]] },
   { label: "Products", href: "/products" },
@@ -19,7 +23,7 @@ export function SiteHeader() {
       </Link>
 
       <nav className="desktop-nav" aria-label="Main navigation">
-        {navigation.map((item) => item.href ? (
+        {navigation.map((item) => "href" in item ? (
           <Link key={item.label} href={item.href}>{item.label}</Link>
         ) : (
           <details className="nav-dropdown" key={item.label}>
@@ -42,7 +46,7 @@ export function SiteHeader() {
       <details className="mobile-menu">
         <summary aria-label="Open menu">Menu</summary>
         <nav aria-label="Mobile navigation">
-          {navigation.map((item) => item.href ? (
+          {navigation.map((item) => "href" in item ? (
             <Link key={item.label} href={item.href}>{item.label}</Link>
           ) : (
             <div className="mobile-nav-group" key={item.label}>
