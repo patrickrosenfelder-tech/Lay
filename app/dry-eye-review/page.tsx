@@ -3,6 +3,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import React from 'react';
+import Link from 'next/link';
 
 export default function DryEyePage() {
 
@@ -16,11 +17,11 @@ export default function DryEyePage() {
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-slate-500 flex items-center gap-2">
 
-          <a href="/" className="hover:text-[#00a3e0] transition-colors">Home</a>
+          <Link href="/" className="hover:text-[#00a3e0] transition-colors">Home</Link>
 
           <span>/</span>
 
-          <a href="/services" className="hover:text-[#00a3e0] transition-colors">Services</a>
+          <Link href="/#specialties" className="hover:text-[#00a3e0] transition-colors">Services</Link>
 
           <span>/</span>
 
@@ -622,9 +623,9 @@ export default function DryEyePage() {
 
               </a>
 
-              <a
+              <Link
 
-                href="/#booking"
+                href="/#book"
 
                 className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg border border-white/20 transition-colors text-sm"
 
@@ -632,7 +633,7 @@ export default function DryEyePage() {
 
                 Online Booking Widget
 
-              </a>
+              </Link>
 
             </div>
 
@@ -647,4 +648,3 @@ export default function DryEyePage() {
   );
 
 }
-
