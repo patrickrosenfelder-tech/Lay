@@ -34,19 +34,6 @@ type DetailPage = {
 };
 
 const staticPages: Record<string, StaticPageData> = {
-  products: {
-    eyebrow: "Products",
-    title: "Eye care products selected for the details.",
-    lede: "From everyday eyewear to the care essentials that support specialty lenses and ocular-surface comfort, our team can help you choose with confidence.",
-    image: "/office-lounge.webp",
-    imageAlt: "Precision Vision Institute reception area",
-    ctaLabel: "Ask about products during your visit",
-    sections: [
-      { title: "Eyewear that fits your day", copy: "Explore frames and prescription lens options selected around your vision needs, work, movement, and personal style." },
-      { title: "Ocular-surface support", copy: "Your clinician can recommend eye drops, lid-care products, and preservative-free options that fit your diagnosis and daily routine." },
-      { title: "Specialty lens essentials", copy: "Solutions, cases, plungers, saline, and lens-care accessories all matter to safe, consistent specialty lens wear." },
-    ],
-  },
   faq: {
     eyebrow: "Patient resources",
     title: "Questions, answered clearly.",

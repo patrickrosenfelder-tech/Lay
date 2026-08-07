@@ -8,6 +8,7 @@ type DryEyePageProps = {
 };
 
 export function DryEyePage({ packageFocus = false }: DryEyePageProps) {
+  const showPricing = packageFocus;
   const pageTitle = packageFocus
     ? "The Envision Complete Dry Eye Package."
     : "Stop managing symptoms. Start treating the root cause of dry eye.";
@@ -110,18 +111,20 @@ export function DryEyePage({ packageFocus = false }: DryEyePageProps) {
             whether a package is right for you.
           </p>
         </div>
-        <div className="dry-eye-pricing" aria-label="Dry eye package pricing">
-          <article>
-            <span>Single session</span>
-            <strong>$750</strong>
-            <p>For patients whose evaluation supports a single treatment visit.</p>
-          </article>
-          <article className="recommended-price">
-            <span>Recommended 4-session protocol</span>
-            <strong>$2,700</strong>
-            <p>CareCredit financing is available. HSA/FSA eligibility may vary by plan.</p>
-          </article>
-        </div>
+        {showPricing && (
+          <div className="dry-eye-pricing" aria-label="Dry eye package pricing">
+            <article>
+              <span>Single session</span>
+              <strong>$750</strong>
+              <p>For patients whose evaluation supports a single treatment visit.</p>
+            </article>
+            <article className="recommended-price">
+              <span>Recommended 4-session protocol</span>
+              <strong>$2,700</strong>
+              <p>CareCredit financing is available. HSA/FSA eligibility may vary by plan.</p>
+            </article>
+          </div>
+        )}
       </section>
 
       <section className="dry-eye-expectations">
@@ -163,7 +166,7 @@ export function DryEyePage({ packageFocus = false }: DryEyePageProps) {
         <small>
           Treatment is not appropriate for everyone. Individual results vary;
           your clinician will discuss risks, benefits, alternatives, and
-          suitability during your evaluation. Pricing is subject to change.
+          suitability during your evaluation.{showPricing ? " Pricing is subject to change." : ""}
         </small>
       </section>
 
