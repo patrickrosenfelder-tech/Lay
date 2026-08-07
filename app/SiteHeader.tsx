@@ -83,7 +83,7 @@ export function SiteHeader() {
           </div>
         ))}
         <span className="header-socials" aria-label="Social media">
-          <span className="social-icon social-facebook" aria-label="Facebook link coming soon">f</span>
+          <a className="social-icon social-facebook" href="https://www.facebook.com/people/Precision-Vision-Institute/100063539512239/" target="_blank" rel="noreferrer" aria-label="Precision Vision Institute on Facebook">f</a>
           <a className="social-icon social-instagram" href="https://www.instagram.com/dr.laynim/" target="_blank" rel="noreferrer" aria-label="Dr. Lay Nim on Instagram" />
         </span>
       </nav>
