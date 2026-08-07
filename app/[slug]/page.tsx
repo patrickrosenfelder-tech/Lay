@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowIcon } from "../ArrowIcon";
 import { SiteFooter } from "../SiteFooter";
 import { SiteHeader } from "../SiteHeader";
+import { ContactPage } from "../ContactPage";
 import { DryEyePage } from "../DryEyePage";
 import { StaticPage, type StaticPageData } from "../StaticPage";
 import { TestimonialsPage } from "../TestimonialsPage";
@@ -806,6 +807,7 @@ export default async function DetailPage({
 
   if (!page && !staticPage && slug !== "envision-dry-eye") notFound();
   if (slug === "dry-eye" || slug === "envision-dry-eye") return <DryEyePage packageFocus={slug === "envision-dry-eye"} />;
+  if (slug === "contact") return <ContactPage />;
   if (staticPage) return <StaticPage page={staticPage} />;
   if (slug === "testimonials") return <TestimonialsPage />;
   const isDoctorPage = slug === "dr-nim";
@@ -861,6 +863,14 @@ export default async function DetailPage({
           </article>
         ))}
       </section>
+
+      {slug === "insurances" && (
+        <section className="insurance-logo-panel" aria-label="Insurance plans patients commonly ask about">
+          <p className="section-label">Plans patients commonly ask about</p>
+          <Image src="/accepted-insurance-logos.png" alt="Anthem Blue Cross Blue Shield, Cigna, EyeMed, VSP, UnitedHealthcare, Spectera, and MetLife logos" width={1972} height={780} sizes="(max-width: 1000px) 92vw, 86vw" />
+          <p>Coverage and network participation can change. Please call before your appointment to verify your current benefits.</p>
+        </section>
+      )}
 
       {page.credentials && page.credentials.length > 0 && (
         <section className="detail-credentials" aria-label="Professional memberships">

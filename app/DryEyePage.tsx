@@ -58,26 +58,26 @@ export function DryEyePage({ packageFocus = false }: DryEyePageProps) {
             <div className="gland-visuals" aria-label="Illustration comparing healthy and blocked meibomian glands">
               <article className="gland-card healthy-glands">
                 <span>Healthy glands</span>
-                <div className="eyelid-illustration" aria-hidden="true"><i /><i /><i /><i /><i /><i /></div>
+                <Image className="gland-photo" src="/healthy-glands.png" alt="Close-up example of healthy meibomian glands" width={1582} height={840} />
                 <p>Clear, flowing oil supports a more stable tear film.</p>
               </article>
               <article className="gland-card blocked-glands">
                 <span>Blocked glands</span>
-                <div className="eyelid-illustration" aria-hidden="true"><i /><i /><i /><i /><i /><i /></div>
+                <Image className="gland-photo" src="/blocked-glands.png" alt="Close-up example of blocked meibomian glands" width={1566} height={1046} />
                 <p>Thickened or obstructed oil can contribute to rapid evaporation.</p>
               </article>
             </div>
           </section>
 
           <section className="meibography-section">
-            <div className="meibography-image" aria-hidden="true"><span>Meibography</span><i /><i /><i /><i /><i /></div>
+            <div className="meibography-image"><Image src="/meibomian-gland-structural-changes.png" alt="Examples of meibomian gland structural changes" width={1120} height={1472} sizes="(max-width: 1050px) 90vw, 42vw" /></div>
             <div>
               <p className="section-label">Meibography</p>
               <h2>See what symptoms cannot show on their own.</h2>
               <p>
                 Imaging gives Dr. Nim a closer view of the meibomian glands inside your eyelids. It helps connect what you feel with the condition of the glands, tear film, and ocular surface—so care is based on your eyes, not a one-size-fits-all routine.
               </p>
-              <p className="meibography-note">Office images can be added here when they are supplied.</p>
+              <p className="meibography-note">This clinical reference shows how gland structure can range from no significant change to gland drop out.</p>
             </div>
           </section>
 
