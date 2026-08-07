@@ -69,9 +69,8 @@ summary {
 }
 
 .site-header.is-scrolled {
-  background: rgba(255, 255, 255, 0.94);
+  background: #fff;
   box-shadow: 0 12px 32px rgba(9, 48, 75, 0.2);
-  backdrop-filter: blur(14px);
 }
 
 .brand {
