@@ -22,12 +22,12 @@ export function DryEyePage({ packageFocus = false }: DryEyePageProps) {
           <Link className="detail-back" href="/#specialties">
             ← Explore specialty care
           </Link>
-          <p className="section-label">Envision by InMode</p>
+          <p className="section-label">{packageFocus ? "Envision by InMode" : "Dry eye treatment"}</p>
           <h1>{pageTitle}</h1>
           <p>
-            Advanced, non-surgical dry eye care designed to improve how your
-            eyes function—so you can rely less on temporary fixes and work
-            toward more consistent comfort.
+            {packageFocus
+              ? "Advanced, non-surgical dry eye care designed to improve how your eyes function—so you can rely less on temporary fixes and work toward more consistent comfort."
+              : "Burning, grittiness, redness, watering, blurry vision, and contact lens discomfort are all signs worth looking into. A focused evaluation helps identify why your tear film is not staying stable."}
           </p>
           <Link className="button button-primary" href="/#book">
             Book a comprehensive dry eye evaluation <span aria-hidden="true">↗</span>
@@ -44,6 +44,71 @@ export function DryEyePage({ packageFocus = false }: DryEyePageProps) {
           <p>Personalized care begins with a comprehensive evaluation.</p>
         </div>
       </section>
+
+      {!packageFocus && (
+        <>
+          <section className="gland-comparison" aria-labelledby="gland-comparison-heading">
+            <div className="gland-comparison-copy">
+              <p className="section-label">The tear-film difference</p>
+              <h2 id="gland-comparison-heading">Healthy oil flow helps tears stay where they belong.</h2>
+              <p>
+                Meibomian glands line the eyelids and release the oil layer of your tears. When that oil flows well, tears evaporate more slowly. When glands become blocked, tears can break apart too quickly—leaving eyes dry, irritated, and inconsistent.
+              </p>
+            </div>
+            <div className="gland-visuals" aria-label="Illustration comparing healthy and blocked meibomian glands">
+              <article className="gland-card healthy-glands">
+                <span>Healthy glands</span>
+                <div className="eyelid-illustration" aria-hidden="true"><i /><i /><i /><i /><i /><i /></div>
+                <p>Clear, flowing oil supports a more stable tear film.</p>
+              </article>
+              <article className="gland-card blocked-glands">
+                <span>Blocked glands</span>
+                <div className="eyelid-illustration" aria-hidden="true"><i /><i /><i /><i /><i /><i /></div>
+                <p>Thickened or obstructed oil can contribute to rapid evaporation.</p>
+              </article>
+            </div>
+          </section>
+
+          <section className="meibography-section">
+            <div className="meibography-image" aria-hidden="true"><span>Meibography</span><i /><i /><i /><i /><i /></div>
+            <div>
+              <p className="section-label">Meibography</p>
+              <h2>See what symptoms cannot show on their own.</h2>
+              <p>
+                Imaging gives Dr. Nim a closer view of the meibomian glands inside your eyelids. It helps connect what you feel with the condition of the glands, tear film, and ocular surface—so care is based on your eyes, not a one-size-fits-all routine.
+              </p>
+              <p className="meibography-note">Office images can be added here when they are supplied.</p>
+            </div>
+          </section>
+
+          <section className="dry-eye-treatments">
+            <div><p className="section-label">Your treatment options</p><h2>One condition. More than one way to support it.</h2></div>
+            <div className="treatment-card-grid">
+              <article><span>01</span><h3>Home care</h3><p>Targeted routines, lid hygiene, tear support, and environmental changes may help protect the ocular surface between visits.</p></article>
+              <article><span>02</span><h3>Thermal RF</h3><p>When appropriate, controlled heat can support the natural oil layer of the tear film and meibomian gland function.</p></article>
+              <article><span>03</span><h3>IPL</h3><p>Targeted light therapy may be incorporated into a clinician-led plan for inflammatory signs around the eyelids.</p></article>
+              <article><span>04</span><h3>Medical therapy</h3><p>Prescription treatments may be considered when your evaluation points to inflammation or another underlying contributor.</p></article>
+            </div>
+          </section>
+
+          <section className="dry-eye-pathway">
+            <p className="section-label">A four-step pathway</p>
+            <h2>Evaluate. Treat. Reassess. Adjust.</h2>
+            <div>
+              {["Evaluate", "Treat", "Reassess", "Adjust"].map((step, index) => <article key={step}><span>{String(index + 1).padStart(2, "0")}</span><h3>{step}</h3><p>{["Identify the pattern behind your symptoms.", "Build the right combination of options.", "Track comfort, vision, and eye-health findings.", "Refine the plan as your eyes respond."][index]}</p></article>)}
+            </div>
+          </section>
+
+          <section className="dry-eye-faq" aria-labelledby="dry-eye-faq-heading">
+            <div><p className="section-label">Questions, answered clearly</p><h2 id="dry-eye-faq-heading">Dry eye is personal. Your plan should be, too.</h2></div>
+            <div>
+              <details><summary>Why might one treatment work better than another?</summary><p>Dry eye can involve tear production, gland function, inflammation, eyelid health, medications, screen use, prior surgery, and more. Your evaluation helps identify the contributors that matter most for you.</p></details>
+              <details><summary>Can dry eyes be related to LASIK or an autoimmune condition?</summary><p>Yes. Dry-eye symptoms can occur after eye surgery such as LASIK and alongside certain autoimmune conditions. Tell the team about your surgical and health history so it can inform your evaluation.</p></details>
+              <details><summary>Do I have to understand every cause before booking?</summary><p>No. You only need to describe what your eyes feel like and when symptoms are most noticeable. The evaluation is designed to make the next step clearer.</p></details>
+            </div>
+          </section>
+        </>
+      )}
 
       <section className="dry-eye-problem">
         <div>
