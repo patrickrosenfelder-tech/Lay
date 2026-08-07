@@ -1868,6 +1868,8 @@ summary {
 
 .nav-dropdown {
   position: relative;
+  padding-bottom: 14px;
+  margin-bottom: -14px;
 }
 
 .nav-dropdown button {
@@ -1891,7 +1893,7 @@ summary {
 
 .nav-dropdown > div {
   position: absolute;
-  top: calc(100% + 16px);
+  top: 100%;
   left: 50%;
   display: grid;
   width: max-content;

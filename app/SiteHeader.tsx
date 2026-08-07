@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowIcon } from "./ArrowIcon";
 
 type NavigationItem =
@@ -20,12 +20,36 @@ const navigation: readonly NavigationItem[] = [
 export function SiteHeader() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const cancelScheduledClose = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  };
+
+  const openDropdown = (label: string) => {
+    cancelScheduledClose();
+    setActiveDropdown(label);
+  };
+
+  const scheduleDropdownClose = (label: string) => {
+    cancelScheduledClose();
+    closeTimer.current = setTimeout(() => {
+      setActiveDropdown((current) => (current === label ? null : current));
+      closeTimer.current = null;
+    }, 140);
+  };
 
   useEffect(() => {
     const updateScrolledState = () => setIsScrolled(window.scrollY > 8);
     updateScrolledState();
     window.addEventListener("scroll", updateScrolledState, { passive: true });
-    return () => window.removeEventListener("scroll", updateScrolledState);
+    return () => {
+      window.removeEventListener("scroll", updateScrolledState);
+      cancelScheduledClose();
+    };
   }, []);
 
   return (
@@ -41,11 +65,11 @@ export function SiteHeader() {
           <div
             className="nav-dropdown"
             key={item.label}
-            onMouseEnter={() => setActiveDropdown(item.label)}
-            onMouseLeave={() => setActiveDropdown(null)}
-            onFocus={() => setActiveDropdown(item.label)}
+            onMouseEnter={() => openDropdown(item.label)}
+            onMouseLeave={() => scheduleDropdownClose(item.label)}
+            onFocus={() => openDropdown(item.label)}
             onBlur={(event) => {
-              if (!event.currentTarget.contains(event.relatedTarget)) setActiveDropdown(null);
+              if (!event.currentTarget.contains(event.relatedTarget)) scheduleDropdownClose(item.label);
             }}
           >
             <button type="button" aria-expanded={activeDropdown === item.label} aria-controls={`${item.label}-menu`}>
@@ -53,7 +77,7 @@ export function SiteHeader() {
             </button>
             {activeDropdown === item.label && (
               <div id={`${item.label}-menu`}>
-                {item.links.map(([label, href]) => <Link key={href} href={href} onClick={() => setActiveDropdown(null)}>{label}</Link>)}
+                {item.links.map(([label, href]) => <Link key={href} href={href} onClick={() => { cancelScheduledClose(); setActiveDropdown(null); }}>{label}</Link>)}
               </div>
             )}
           </div>
