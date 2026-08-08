@@ -7,6 +7,7 @@ import { SiteFooter } from "../SiteFooter";
 import { SiteHeader } from "../SiteHeader";
 import { ContactPage } from "../ContactPage";
 import { DryEyePage } from "../DryEyePage";
+import { LegalPage, type LegalPageData } from "../LegalPage";
 import { StaticPage, type StaticPageData } from "../StaticPage";
 import { TestimonialsPage } from "../TestimonialsPage";
 
@@ -72,8 +73,8 @@ const staticPages: Record<string, StaticPageData> = {
   },
   "privacy-policy": {
     eyebrow: "Privacy policy",
-    title: "Your privacy matters.",
-    lede: "This website provides general practice information and links to appointment scheduling. Please do not use ordinary email to send private health information.",
+    title: "Website Privacy Policy",
+    lede: "How Precision Vision Institute collects, uses, processes, and safeguards information gathered through its public website and appointment interfaces.",
     ctaLabel: "Contact the clinic",
     sections: [
       { title: "Scheduling and third-party services", copy: "Appointment scheduling may be provided through a separate service. Information you provide there is governed by that service’s own privacy practices and the clinic’s applicable policies." },
@@ -82,8 +83,8 @@ const staticPages: Record<string, StaticPageData> = {
   },
   "hipaa-notice": {
     eyebrow: "HIPAA notice",
-    title: "Request the official Notice of Privacy Practices.",
-    lede: "The clinic’s official Notice of Privacy Practices explains how protected health information may be used or disclosed and how to obtain a copy.",
+    title: "HIPAA Notice of Privacy Practices",
+    lede: "How medical information about you may be used and disclosed, and how you can access that information.",
     ctaLabel: "Call the clinic",
     ctaHref: "tel:+14704404099",
     sections: [
@@ -93,12 +94,94 @@ const staticPages: Record<string, StaticPageData> = {
   },
   "terms-of-service": {
     eyebrow: "Terms of service",
-    title: "Using this website.",
-    lede: "Information on this website is for general educational and scheduling purposes. It is not medical advice or a substitute for a comprehensive eye examination.",
+    title: "Terms of Service",
+    lede: "The terms governing access to and use of Precision Vision Institute’s website and digital service tools.",
     ctaLabel: "Book an evaluation",
     sections: [
       { title: "For care, start with an evaluation", copy: "Eye conditions, treatment suitability, and outcomes are individual. Please book an appointment for advice specific to your eyes." },
       { title: "Urgent symptoms", copy: "Sudden vision loss, severe eye pain, eye injury, chemical exposure, or new flashes and many floaters can require urgent care. Call immediately or seek emergency care." },
+    ],
+  },
+};
+
+const legalPages: Record<string, LegalPageData> = {
+  "privacy-policy": {
+    eyebrow: "Precision Vision Institute",
+    title: "Website Privacy Policy",
+    effectiveDate: "August 7, 2026",
+    intro: [
+      "Precision Vision Institute (\"Practice,\" \"we,\" \"us,\" or \"our\") respects your privacy and is committed to protecting the security of your personal data and health information. This Website Privacy Policy details how we collect, use, process, and safeguard information gathered through our official website, digital contact mechanisms, and online appointment request interfaces.",
+      "This policy applies specifically to information collected through our public-facing digital platforms. For comprehensive information regarding the privacy, security, and statutory rights surrounding your medical records and Protected Health Information (PHI), please consult our HIPAA Notice of Privacy Practices.",
+    ],
+    sections: [
+      { title: "Categorization of Information We Collect", paragraphs: ["We categorize the data collected through our digital platforms into two distinct classifications."], subSections: [
+        { title: "A. Non-Clinical Personal Information (Website PII)", paragraphs: ["When you browse our public website or submit non-clinical general inquiries, we may collect:"], bullets: ["Contact Data: Name, telephone number, email address, and mailing address submitted via general contact forms.", "Technical & Usage Metadata: IP address, browser type, operating system version, referring URL, time spent on pages, and network hardware parameters collected automatically via essential system logs."] },
+        { title: "B. Electronic Protected Health Information (ePHI)", paragraphs: ["When you interact with our online scheduling tools, patient portal, intake forms, or prescription refill mechanisms, data entered constitutes ePHI under federal and state law. This includes:"], bullets: ["Full legal name, date of birth, home address, contact details, and emergency contacts.", "Vision and health insurance provider details, policy IDs, group numbers, and claim authorization data.", "Ocular health history, current vision prescriptions, medical conditions, symptoms, and appointment requests."] },
+      ] },
+      { title: "Strict Separation of Web PII and ePHI", bullets: ["Handling of Web PII: Used exclusively to respond to non-clinical inquiries, manage site reliability, enforce security protocols, and improve site navigation.", "Handling of ePHI: Processed strictly in accordance with HIPAA administrative, technical, and physical security mandates. Information collected within clinical and appointment workflows is transmitted directly to secure practice systems and is never sold, rented, or shared with third-party advertising, marketing, or non-compliant analytics vendors."] },
+      { title: "Analytics, Cookies, and Tracking Technologies", subSections: [
+        { title: "A. Essential Cookies", paragraphs: ["Our website utilizes essential session cookies required for core platform functionality, security verification, and form transmission. These cookies do not store ePHI."] },
+        { title: "B. Analytics Policy on Clinical Pages", paragraphs: ["In adherence to Health and Human Services Office for Civil Rights guidance regarding online tracking technologies, we do not deploy third-party web analytics, marketing pixels, or tracking scripts on any web page containing appointment scheduling, clinical intake forms, or patient portal interactions. Any performance tracking on clinical pathways is restricted to HIPAA-compliant, server-side infrastructure operating under executed Business Associate Agreements (BAAs)."] },
+        { title: "C. Cookie Management", paragraphs: ["You may disable or block non-essential cookies through your browser settings. Doing so will not restrict your ability to schedule appointments or access patient portal services."] },
+      ] },
+      { title: "Third-Party Integrations & Business Associate Safeguards", paragraphs: ["To deliver digital healthcare and administrative operations, we partner with specialized third-party technology providers."], subSections: [
+        { title: "A. EyeCloud Practice Management & Patient Portal", paragraphs: ["Our online scheduling systems, digital forms, and patient communication modules integrate directly with EyeCloud, our Electronic Health Record (EHR) and practice management software."], bullets: ["All data transfers between our web interface and EyeCloud are secured via Transport Layer Security (TLS 1.3) end-to-end encryption.", "EyeCloud operates as an official Business Associate under a signed Business Associate Agreement (BAA) with Precision Vision Institute, legally committing them to maintain strict HIPAA compliance and data security standards."] },
+        { title: "B. Security & Bot Prevention", paragraphs: ["To shield our web forms and clinical portals from automated attacks, spam, and security breaches, we utilize privacy-focused, server-side bot mitigation technologies. These tools analyze network metadata strictly to verify request authenticity and prevent unauthorized system access without exploiting or storing personal health details."] },
+      ] },
+      { title: "Data Security and Retention", paragraphs: ["We implement robust administrative, physical, and technical controls designed to prevent unauthorized access, disclosure, alteration, or destruction of your data:"], bullets: ["Encryption: Data transmitted to and from our site is encrypted using industry-standard TLS 1.3 protocols. Data at rest within our practice systems is encrypted using AES-256 standards.", "Access Control: Access to collected ePHI is restricted strictly to licensed clinical staff and authorized administrative personnel based on role-based security permissions.", "Retention: Technical web logs are purged periodically in accordance with routine maintenance schedules. Clinical records and associated digital intake submissions are retained in full compliance with state medical board record retention laws."] },
+      { title: "Your Data Rights", paragraphs: ["Depending on your jurisdiction and the nature of the data provided, you hold specific privacy rights:"], bullets: ["Clinical Records (PHI): Your rights to inspect, receive copies of, request amendments to, or restrict disclosures of your clinical data are governed by HIPAA and outlined in our Notice of Privacy Practices.", "Non-Clinical Personal Data: You may request access to, correction of, or deletion of non-clinical personal information submitted via general website forms by contacting our Privacy Officer in writing."] },
+      { title: "Modifications to This Policy", paragraphs: ["We reserve the right to update this Website Privacy Policy to reflect technical, operational, or legal developments. Updated versions will be published on this page with a revised Effective Date."] },
+      { title: "Privacy Contact Information", paragraphs: ["If you have questions, concerns, or formal requests regarding this policy or our digital privacy standards, please contact our privacy office:"], bullets: ["Privacy Officer", "Precision Vision Institute", "3940 Buford Hwy Ste A104, Duluth, GA 30096", "Email: info@precisionvisioninstitute.com", "Phone: (470) 440-4099"] },
+    ],
+  },
+  "hipaa-notice": {
+    eyebrow: "Precision Vision Institute",
+    title: "HIPAA Notice of Privacy Practices",
+    effectiveDate: "August 7, 2026",
+    intro: ["This notice describes how medical information about you may be used and disclosed and how you can get access to this information. Please review it carefully."],
+    sections: [
+      { title: "Our Legal Duty to Protect Your Health Information", paragraphs: ["Precision Vision Institute is required by the Health Insurance Portability and Accountability Act of 1996 (HIPAA), the Health Information Technology for Economic and Clinical Health (HITECH) Act, and applicable state laws to maintain the privacy and security of your Protected Health Information (PHI).", "We are legally required to:"], bullets: ["Provide you with this Notice of Privacy Practices explaining our legal duties and privacy practices.", "Abide by the terms of the Notice currently in effect.", "Safeguard your electronic and physical medical records.", "Notify you promptly following any security breach of your unsecured PHI."] },
+      { title: "Permitted Uses and Disclosures Without Written Authorization", paragraphs: ["Under federal law, we may use and disclose your PHI without your explicit written consent for three primary purposes: Treatment, Payment, and Healthcare Operations."], subSections: [
+        { title: "A. For Treatment", paragraphs: ["We use and disclose your PHI to provide, coordinate, and manage your ocular health care. This includes:"], bullets: ["Conducting eye examinations, diagnostic imaging, and surgical consultations.", "Sharing vision data with external optometric, ophthalmologic, or primary care physicians involved in your treatment plan.", "Transmitting frame, lens, or contact lens prescriptions to optical laboratories and suppliers."] },
+        { title: "B. For Payment", paragraphs: ["We use and disclose your PHI to bill and collect payment for medical services and optical goods provided. This includes:"], bullets: ["Submitting claims to your health or vision insurance carrier.", "Sharing diagnostic codes and clinical notes with insurance claims processors to verify coverage eligibility.", "Coordinating billing and copayments through secure third-party financial clearinghouses."] },
+        { title: "C. For Healthcare Operations", paragraphs: ["We use and disclose your PHI to support our internal business and quality-assurance functions. This includes:"], bullets: ["Evaluating clinical quality, doctor performance, and service outcomes.", "Conducting administrative audits, legal compliance reviews, and financial planning.", "Managing digital health infrastructure, including secure EHR integrations like EyeCloud."] },
+      ] },
+      { title: "Additional Permitted Disclosures Required or Allowed by Law", paragraphs: ["We may disclose your PHI without your authorization in the following specific circumstances:"], bullets: ["Business Associates: We share PHI with third-party vendors (such as EyeCloud, billing platforms, and encrypted cloud hosts) who perform services on our behalf. All Business Associates must execute a legally binding Business Associate Agreement (BAA) requiring them to safeguard your PHI.", "Public Health & Safety: As required by law to report infectious diseases, prevent public safety threats, or track medical device recalls with the FDA.", "Judicial & Administrative Proceedings: In response to a valid court order, administrative subpoena, or law enforcement search warrant.", "Workers’ Compensation: As necessary to comply with laws relating to workers’ compensation or similar legal programs.", "Health Oversight Activities: To health regulatory agencies for audits, investigations, licensure oversight, and inspections."] },
+      { title: "Uses and Disclosures Requiring Your Written Authorization", paragraphs: ["Any other use or disclosure of your PHI not described above will be made only with your explicit written authorization. Specifically, we will never:"], bullets: ["Sell your PHI to third parties.", "Use your PHI for third-party marketing communications without your written opt-in.", "Share psychotherapy or sensitive mental health notes without express authorization (where applicable).", "You may revoke any written authorization at any time in writing. Once received, we will cease disclosing your PHI for that purpose, except to the extent action has already been taken in reliance on your prior authorization."] },
+      { title: "Your Rights Regarding Your Protected Health Information", paragraphs: ["You possess the following statutory rights regarding your medical records maintained by Precision Vision Institute:"], subSections: [
+        { title: "A. Right to Inspect and Obtain Copies", paragraphs: ["You have the right to inspect and receive an electronic or paper copy of your medical and billing records. Requests must be submitted in writing. We will provide your records within 30 days. A reasonable, cost-based fee may apply for paper printing or physical media production."] },
+        { title: "B. Right to Request Amendments", paragraphs: ["If you believe that the clinical or demographic information in your record is incorrect or incomplete, you may submit a written request for amendment. We may deny your request under specific statutory conditions, but we will provide you with a detailed written explanation within 60 days."] },
+        { title: "C. Right to Request Restrictions", paragraphs: ["You have the right to request restrictions on how we use or disclose your PHI for treatment, payment, or operations. While we are not required to agree to all restriction requests, we are legally bound to agree if you request that we not disclose PHI to a health plan for payment or health care operations, provided the PHI pertains solely to a service or item for which you have paid us out-of-pocket in full."] },
+        { title: "D. Right to Confidential Communications", paragraphs: ["You have the right to request that we communicate with you via specific channels or at alternative locations. We will accommodate all reasonable requests."] },
+        { title: "E. Right to an Accounting of Disclosures", paragraphs: ["You may request a written accounting of disclosures of your PHI made by us over the past six years. This accounting excludes disclosures made directly for treatment, payment, healthcare operations, or those made pursuant to your written authorization."] },
+        { title: "F. Right to a Paper Copy of This Notice", paragraphs: ["You have the right to receive a physical paper copy of this Notice upon request at any time, even if you previously agreed to receive it electronically."] },
+      ] },
+      { title: "Complaints and Privacy Questions", paragraphs: ["If you believe your privacy rights have been violated, or if you disagree with a decision regarding access to your records, you may file a complaint with our practice or directly with the federal government. You will not be penalized, retaliated against, or discriminated against in any way for filing a complaint.", "To file a complaint with Precision Vision Institute:"], bullets: ["Attn: Privacy Officer", "Precision Vision Institute", "3940 Buford Hwy Ste A104, Duluth, GA 30096", "Email: info@precisionvisioninstitute.com", "Phone: (470) 440-4099", "To file a complaint with the U.S. Department of Health & Human Services: Office for Civil Rights, U.S. Department of Health and Human Services, 200 Independence Avenue, S.W., Room 509F, HHH Building, Washington, D.C. 20201. Web: https://www.hhs.gov/hipaa/filing-a-complaint/index.html"] },
+    ],
+  },
+  "terms-of-service": {
+    eyebrow: "Precision Vision Institute",
+    title: "Terms of Service",
+    effectiveDate: "August 7, 2026",
+    intro: [],
+    sections: [
+      { title: "Agreement to Terms", paragraphs: ["These Terms of Service (\"Terms\") constitute a legally binding agreement between you and Precision Vision Institute (\"Practice,\" \"we,\" \"us,\" or \"our\") governing your access to and use of our website, digital scheduling features, contact forms, and online service tools (collectively, the \"Site\").", "By accessing or using the Site, you confirm that you have read, understood, and agreed to be bound by these Terms and our Website Privacy Policy. If you do not agree with these Terms, you are expressly prohibited from using the Site and must discontinue use immediately."] },
+      { title: "Emergency & Clinical Medical Disclaimer", subSections: [
+        { title: "A. Not Medical Advice", paragraphs: ["The information, materials, graphics, text, frame try-on modules, and self-assessment content available on this Site are provided strictly for general educational and informational purposes. Nothing on this Site constitutes formal medical advice, diagnosis, optical prescription, or clinical treatment plans."] },
+        { title: "B. No Doctor-Patient Relationship Created", paragraphs: ["Navigating this Site, submitting an online contact request, or transmitting an appointment request does not create a formal doctor-patient relationship between you and Precision Vision Institute or any of its licensed optometrists or ophthalmologists. A doctor-patient relationship is established only upon completing an in-person or formal telehealth clinical consultation with a provider."] },
+        { title: "C. Emergency Warning", paragraphs: ["Do not use this Site or our online forms for medical emergencies. If you are experiencing a medical emergency, acute eye trauma, sudden loss of vision, severe eye pain, or flashing lights or floaters, call 911 immediately or proceed to the nearest emergency medical facility."] },
+      ] },
+      { title: "Intellectual Property Rights", paragraphs: ["Unless otherwise indicated, the Site, including its source code, databases, website functionality, software applications, custom appointment widgets, visual design, text, photographs, and graphics, as well as the trademarks and logos contained therein, are owned or controlled by Precision Vision Institute or licensed to us, and are protected by United States and international copyright, trademark, and unfair competition laws.", "You are granted a limited, revocable, non-transferable license to access and use the Site solely for your personal, non-commercial informational use. You may not reproduce, distribute, modify, create derivative works of, publicly display, or exploit any Content without our prior written consent."] },
+      { title: "User Conduct & Acceptable Use", paragraphs: ["When utilizing our Site, contact mechanisms, and booking portals, you agree not to:"], bullets: ["Submit false, misleading, fraudulent, or inaccurate personal or medical information.", "Attempt to bypass, disable, or tamper with security protocols, access controls, or bot-mitigation mechanisms protecting the Site or connected patient portals (for example, EyeCloud).", "Introduce viruses, malware, trojan horses, worms, logic bombs, or other malicious code designed to interrupt or compromise site performance.", "Use automated tools, scrapers, bots, or spiders to extract data from the Site without authorization.", "Interfere with or disrupt the network connections or servers hosting the Site."] },
+      { title: "Third-Party Web Links and Software Integrations", paragraphs: ["The Site may contain links to third-party platforms, external informational resources, frames try-on software, or integrated healthcare tools, including our EyeCloud scheduling system. We do not control, endorse, or accept responsibility for the content, privacy policies, uptime, or operational practices of any third-party websites or services. Accessing third-party tools is done entirely at your own risk."] },
+      { title: "Limitation of Liability and Disclaimer of Warranties", subSections: [
+        { title: "A. Disclaimer of Warranties", paragraphs: ["To the maximum extent permitted by applicable law, the Site and all content, services, and features are provided on an \"as is\" and \"as available\" basis without warranties of any kind, either express or implied. Precision Vision Institute disclaims all warranties, including implied warranties of merchantability, fitness for a particular purpose, title, and non-infringement. We do not warrant that the Site will be uninterrupted, error-free, secure, or free of viruses."] },
+        { title: "B. Limitation of Liability", paragraphs: ["To the fullest extent permitted by applicable state law, in no event shall Precision Vision Institute, its directors, employees, physicians, affiliates, agents, or third-party software providers be liable for any direct, indirect, incidental, consequential, special, or punitive damages—including lost profits, data loss, or business interruption—arising out of or in connection with your use of, or inability to use, this Site or its contents.", "Certain state laws do not allow limitations on implied warranties or the exclusion or limitation of certain damages. If these laws apply to you, some or all of the above disclaimers or limitations may not apply, and you may have additional statutory rights under your state's laws."] },
+      ] },
+      { title: "Indemnification", paragraphs: ["You agree to defend, indemnify, and hold harmless Precision Vision Institute, its officers, directors, licensed providers, employees, and agents from and against any claims, liabilities, damages, judgments, losses, costs, or expenses (including reasonable attorneys’ fees) arising out of or relating to your violation of these Terms, your misuse of the Site, or your violation of any third-party intellectual property or privacy rights."] },
+      { title: "Governing Law and Severability", paragraphs: ["These Terms shall be governed by and construed in accordance with the laws of the State in which Precision Vision Institute maintains its primary physical clinical facility, without regard to its conflict of law provisions. Any legal action or proceeding arising out of these Terms or Site usage shall be brought exclusively in the state or federal courts serving our local clinical county.", "If any provision of these Terms is held to be unlawful, void, or unenforceable, that provision shall be deemed severable and shall not affect the validity and enforceability of any remaining provisions."] },
+      { title: "Modifications to Terms", paragraphs: ["We reserve the right to revise, modify, or update these Terms of Service at any time without prior notice. The updated version will be posted directly to this page with a revised Effective Date. Continued use of the Site following posted changes constitutes full legal acceptance of the modified Terms."] },
+      { title: "Legal Contact Information", paragraphs: ["For questions, formal legal notices, or inquiries regarding these Terms of Service, please contact our legal desk:"], bullets: ["Precision Vision Institute", "Attn: Legal & Compliance", "3940 Buford Hwy Ste A104, Duluth, GA 30096", "Email: info@precisionvisioninstitute.com", "Phone: (470) 440-4099"] },
     ],
   },
 };
@@ -808,6 +891,7 @@ export default async function DetailPage({
   if (!page && !staticPage && slug !== "envision-dry-eye") notFound();
   if (slug === "dry-eye" || slug === "envision-dry-eye") return <DryEyePage packageFocus={slug === "envision-dry-eye"} />;
   if (slug === "contact") return <ContactPage />;
+  if (legalPages[slug]) return <LegalPage page={legalPages[slug]} />;
   if (staticPage) return <StaticPage page={staticPage} />;
   if (slug === "testimonials") return <TestimonialsPage />;
   const isDoctorPage = slug === "dr-nim";

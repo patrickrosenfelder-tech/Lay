@@ -2349,6 +2349,122 @@ summary {
 
 .contact-map iframe { display: block; width: 100%; height: 510px; border: 0; }
 
+.legal-page {
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.legal-hero {
+  min-height: 620px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+  padding: 190px 10vw 95px;
+  color: white;
+}
+
+.legal-hero .section-label { color: var(--aqua); }
+
+.legal-hero h1 {
+  max-width: 980px;
+  margin: 0;
+  font-size: clamp(60px, 8vw, 122px);
+  letter-spacing: -0.08em;
+  line-height: .88;
+}
+
+.legal-hero > p:last-child {
+  margin: 38px 0 0;
+  color: #c5dbe7;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.legal-content {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(85px, 10vw, 150px) 5vw;
+}
+
+.legal-intro {
+  max-width: 960px;
+  margin: 0 0 24px;
+  color: #547080;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.legal-content > section {
+  border-top: 1px solid var(--line);
+  padding: clamp(46px, 6vw, 76px) 0;
+}
+
+.legal-section-title {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 24px;
+  align-items: baseline;
+  margin-bottom: 25px;
+}
+
+.legal-section-title > span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.legal-section-title h2 {
+  margin: 0;
+  font-size: clamp(31px, 3.6vw, 54px);
+  letter-spacing: -.065em;
+  line-height: .98;
+}
+
+.legal-content section > p,
+.legal-subsection p {
+  max-width: 930px;
+  margin: 0 0 17px 94px;
+  color: #547080;
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+.legal-content ul {
+  max-width: 900px;
+  margin: 20px 0 22px 94px;
+  padding-left: 20px;
+  color: #547080;
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+.legal-content li + li { margin-top: 10px; }
+
+.legal-subsection {
+  margin: 36px 0 0 94px;
+}
+
+.legal-subsection h3 {
+  margin: 0 0 13px;
+  color: var(--navy);
+  font-size: 18px;
+  letter-spacing: -.025em;
+}
+
+.legal-subsection p,
+.legal-subsection ul {
+  margin-left: 0;
+}
+
+.legal-contact-link {
+  display: inline-block;
+  margin-top: 16px;
+  border-bottom: 1px solid var(--navy);
+  padding-bottom: 7px;
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 700;
+}
+
 .dry-eye-problem,
 .dry-eye-solution,
 .dry-eye-package,
@@ -3341,6 +3457,26 @@ summary {
   }
 
   .contact-exterior { border-radius: 100px 100px 20px 20px; }
+
+  .legal-hero {
+    min-height: auto;
+    padding: 145px 20px 70px;
+  }
+
+  .legal-hero h1 { font-size: clamp(52px, 14vw, 76px); }
+
+  .legal-content { padding: 72px 20px; }
+
+  .legal-section-title {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .legal-content section > p,
+  .legal-content ul,
+  .legal-subsection {
+    margin-left: 0;
+  }
 
   .gland-visuals,
   .treatment-card-grid,
