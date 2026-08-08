@@ -7,6 +7,7 @@ import { SiteFooter } from "../SiteFooter";
 import { SiteHeader } from "../SiteHeader";
 import { ContactPage } from "../ContactPage";
 import { DryEyePage } from "../DryEyePage";
+import { FaqPage } from "../FaqPage";
 import { LegalPage, type LegalPageData } from "../LegalPage";
 import { StaticPage, type StaticPageData } from "../StaticPage";
 import { TestimonialsPage } from "../TestimonialsPage";
@@ -889,6 +890,7 @@ export default async function DetailPage({
 
   if (!page && !staticPage && slug !== "envision-dry-eye") notFound();
   if (slug === "dry-eye" || slug === "envision-dry-eye") return <DryEyePage packageFocus={slug === "envision-dry-eye"} />;
+  if (slug === "faq") return <FaqPage />;
   if (slug === "contact") return <ContactPage />;
   if (legalPages[slug]) return <LegalPage page={legalPages[slug]} />;
   if (staticPage) return <StaticPage page={staticPage} />;

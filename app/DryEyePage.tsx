@@ -99,9 +99,10 @@ export function DryEyePage({ packageFocus = false }: DryEyePageProps) {
             </div>
           </section>
 
-          <section className="dry-eye-faq" aria-labelledby="dry-eye-faq-heading">
-            <div><p className="section-label">Questions, answered clearly</p><h2 id="dry-eye-faq-heading">Dry eye is personal. Your plan should be, too.</h2></div>
-            <div>
+          <section className="detail-faq dry-eye-faq" aria-labelledby="dry-eye-faq-heading">
+            <p className="section-label">Frequently asked questions</p>
+            <h2 id="dry-eye-faq-heading">Dry eye is personal. Your plan should be, too.</h2>
+            <div className="detail-faq-list">
               <details><summary>Why might one treatment work better than another?</summary><p>Dry eye can involve tear production, gland function, inflammation, eyelid health, medications, screen use, prior surgery, and more. Your evaluation helps identify the contributors that matter most for you.</p></details>
               <details><summary>Can dry eyes be related to LASIK or an autoimmune condition?</summary><p>Yes. Dry-eye symptoms can occur after eye surgery such as LASIK and alongside certain autoimmune conditions. Tell the team about your surgical and health history so it can inform your evaluation.</p></details>
               <details><summary>Do I have to understand every cause before booking?</summary><p>No. You only need to describe what your eyes feel like and when symptoms are most noticeable. The evaluation is designed to make the next step clearer.</p></details>
