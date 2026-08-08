@@ -51,8 +51,7 @@ const staticPages: Record<string, StaticPageData> = {
     eyebrow: "About Precision Vision Institute",
     title: "A calmer kind of specialty eye care.",
     lede: "Precision Vision Institute brings detailed measurements, attentive conversation, and personalized follow-up together in Duluth, Georgia.",
-    image: "/office-lounge.webp",
-    imageAlt: "Precision Vision Institute office lounge",
+    showOfficeLocation: true,
     ctaLabel: "Plan your visit",
     sections: [
       { title: "Visit us", copy: "3940 Buford Hwy Ste A104, Duluth, GA 30096. Call (470) 440-4099 if you need help finding the office or preparing for your appointment." },

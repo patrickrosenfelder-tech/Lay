@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { LocationMap } from "./LocationMap";
+import { OfficeExterior } from "./OfficeExterior";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 
@@ -10,6 +12,7 @@ export type StaticPageData = {
   sections: { title: string; copy: string; bullets?: string[] }[];
   image?: string;
   imageAlt?: string;
+  showOfficeLocation?: boolean;
   ctaLabel?: string;
   ctaHref?: string;
 };
@@ -27,7 +30,9 @@ export function StaticPage({ page }: { page: StaticPageData }) {
             {page.ctaLabel ?? "Book an appointment"} <span aria-hidden="true">↗</span>
           </Link>
         </div>
-        {page.image && (
+        {page.showOfficeLocation ? (
+          <OfficeExterior className="static-hero-image" sizes="(max-width: 900px) 90vw, 38vw" />
+        ) : page.image && (
           <div className="static-hero-image">
             <Image src={page.image} alt={page.imageAlt ?? ""} fill sizes="(max-width: 900px) 90vw, 38vw" />
           </div>
@@ -42,6 +47,16 @@ export function StaticPage({ page }: { page: StaticPageData }) {
           </article>
         ))}
       </section>
+      {page.showOfficeLocation && (
+        <section className="office-location">
+          <div>
+            <p className="section-label">Find Precision Vision Institute</p>
+            <h2>3940 Buford Hwy<br />Suite A104<br />Duluth, GA 30096</h2>
+            <a href="tel:+14704404099">(470) 440-4099</a>
+          </div>
+          <LocationMap />
+        </section>
+      )}
       <SiteFooter />
     </main>
   );

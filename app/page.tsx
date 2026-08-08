@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowIcon } from "./ArrowIcon";
 import { BookingWidget } from "./BookingWidget";
+import { LocationMap } from "./LocationMap";
+import { OfficeExterior } from "./OfficeExterior";
 import { PatientStories } from "./PatientStories";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
@@ -279,17 +281,14 @@ export default function Home() {
       <PatientStories />
 
       <section className="visit-section" id="visit">
-        <div className="visit-image">
-          <Image
-            src="/office-lounge.webp"
-            alt="Modern waiting area at Precision Vision Institute"
-            fill
-            sizes="(max-width: 760px) calc(100vw - 40px), 60vw"
-          />
-          <div className="visit-badge">
-            <span>33.984° N</span>
-            <span>84.156° W</span>
-          </div>
+        <div className="visit-media">
+          <OfficeExterior className="visit-image" sizes="(max-width: 760px) calc(100vw - 40px), 60vw">
+            <div className="visit-badge">
+              <span>33.984° N</span>
+              <span>84.156° W</span>
+            </div>
+          </OfficeExterior>
+          <LocationMap className="visit-map" />
         </div>
         <div className="visit-details">
           <p className="section-label">Visit Precision Vision Institute</p>
