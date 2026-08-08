@@ -20,7 +20,10 @@ const navigation: readonly NavigationItem[] = [
 export function SiteHeader() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const mobileMenuButton = useRef<HTMLButtonElement>(null);
+  const mobileMenuPanel = useRef<HTMLElement>(null);
 
   const cancelScheduledClose = () => {
     if (closeTimer.current) {
@@ -51,6 +54,29 @@ export function SiteHeader() {
       cancelScheduledClose();
     };
   }, []);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    mobileMenuPanel.current?.focus();
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMobileMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [isMobileMenuOpen]);
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    window.setTimeout(() => mobileMenuButton.current?.focus(), 0);
+  };
 
   return (
     <header className={`site-header${isScrolled ? " is-scrolled" : ""}`}>
@@ -90,20 +116,33 @@ export function SiteHeader() {
 
       <Link className="header-cta" href="/#book">Book appointment <ArrowIcon /></Link>
 
-      <details className="mobile-menu">
-        <summary aria-label="Open menu">Menu</summary>
-        <nav aria-label="Mobile navigation">
+      <div className="mobile-menu">
+        <button
+          ref={mobileMenuButton}
+          className="mobile-menu-toggle"
+          type="button"
+          aria-label="Menu"
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
+        >
+          Menu
+        </button>
+        {isMobileMenuOpen && <button className="mobile-menu-backdrop" type="button" aria-label="Close menu" onClick={closeMobileMenu} />}
+        {isMobileMenuOpen && (
+          <nav ref={mobileMenuPanel} id="mobile-navigation" className="mobile-menu-panel" aria-label="Mobile navigation" tabIndex={-1}>
           {navigation.map((item) => "href" in item ? (
-            <Link key={item.label} href={item.href}>{item.label}</Link>
+            <Link key={item.label} href={item.href} onClick={closeMobileMenu}>{item.label}</Link>
           ) : (
             <div className="mobile-nav-group" key={item.label}>
               <span>{item.label}</span>
-              {item.links.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}
+              {item.links.map(([label, href]) => <Link key={href} href={href} onClick={closeMobileMenu}>{label}</Link>)}
             </div>
           ))}
-          <Link href="/#book">Book appointment <ArrowIcon /></Link>
-        </nav>
-      </details>
+          <Link href="/#book" onClick={closeMobileMenu}>Book appointment <ArrowIcon /></Link>
+          </nav>
+        )}
+      </div>
     </header>
   );
 }

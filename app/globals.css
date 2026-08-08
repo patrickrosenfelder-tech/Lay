@@ -182,6 +182,7 @@ summary {
   display: none;
 }
 
+
 .hero {
   position: relative;
   min-height: 100svh;
@@ -2742,42 +2743,81 @@ summary {
     justify-self: end;
   }
 
-  .mobile-menu summary {
-    list-style: none;
+  .mobile-menu-toggle {
     border: 1px solid var(--line);
     border-radius: 999px;
+    background: #fff;
+    color: var(--ink);
     padding: 10px 16px;
     cursor: pointer;
     font-size: 11px;
     font-weight: 700;
   }
 
-  .mobile-menu summary::-webkit-details-marker {
-    display: none;
+  .mobile-menu-backdrop {
+    position: fixed;
+    z-index: 1;
+    inset: 0;
+    border: 0;
+    background: transparent;
+    cursor: default;
   }
 
-  .mobile-menu nav {
+  .mobile-menu-panel {
     position: absolute;
-    top: 50px;
+    z-index: 2;
+    top: calc(100% + 14px);
     right: 0;
     display: grid;
-    width: 240px;
+    width: min(360px, calc(100vw - 28px));
+    max-height: calc(100svh - var(--header-height) - 42px);
     border-radius: 16px;
-    background: var(--paper);
+    background: #fff;
     box-shadow: 0 18px 55px rgba(0, 0, 0, 0.25);
     color: var(--ink);
     overflow: hidden;
+    overflow-y: auto;
   }
 
-  .mobile-menu nav a {
+  .mobile-menu-panel a {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
     border-bottom: 1px solid var(--line);
-    padding: 17px 20px;
+    padding: 12px 20px;
     font-size: 13px;
+    line-height: 1.45;
   }
 
-  .mobile-menu nav a:last-child {
+  .mobile-menu-panel > a:last-child {
     background: var(--aqua-light);
     font-weight: 700;
+  }
+
+  .mobile-nav-group {
+    display: grid;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mobile-nav-group > span {
+    padding: 16px 20px 8px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .mobile-nav-group a {
+    border-bottom: 0;
+    padding-left: 28px;
+  }
+
+  .mobile-menu-toggle:focus-visible,
+  .mobile-menu-panel:focus-visible,
+  .mobile-menu-panel a:focus-visible {
+    outline: 3px solid var(--aqua);
+    outline-offset: -3px;
   }
 
   .hero-content {
