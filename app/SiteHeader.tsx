@@ -23,7 +23,7 @@ export function SiteHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const mobileMenuButton = useRef<HTMLButtonElement>(null);
-  const mobileMenuPanel = useRef<HTMLElement>(null);
+  const mobileMenuFirstLink = useRef<HTMLAnchorElement>(null);
 
   const cancelScheduledClose = () => {
     if (closeTimer.current) {
@@ -60,7 +60,10 @@ export function SiteHeader() {
 
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    mobileMenuPanel.current?.focus();
+    // Focusing the scrollable container itself causes iOS Safari to repeatedly
+    // restore that container to its initial scroll position during touch scroll.
+    // Move focus to the first actionable item instead without moving the page.
+    mobileMenuFirstLink.current?.focus({ preventScroll: true });
 
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") setIsMobileMenuOpen(false);
@@ -130,13 +133,13 @@ export function SiteHeader() {
         </button>
         {isMobileMenuOpen && <button className="mobile-menu-backdrop" type="button" aria-label="Close menu" onClick={closeMobileMenu} />}
         {isMobileMenuOpen && (
-          <nav ref={mobileMenuPanel} id="mobile-navigation" className="mobile-menu-panel" aria-label="Mobile navigation" tabIndex={-1}>
+          <nav id="mobile-navigation" className="mobile-menu-panel" aria-label="Mobile navigation">
           {navigation.map((item) => "href" in item ? (
             <Link key={item.label} href={item.href} onClick={closeMobileMenu}>{item.label}</Link>
           ) : (
             <div className="mobile-nav-group" key={item.label}>
               <span>{item.label}</span>
-              {item.links.map(([label, href]) => <Link key={href} href={href} onClick={closeMobileMenu}>{label}</Link>)}
+              {item.links.map(([label, href], index) => <Link ref={index === 0 && item.label === navigation[0].label ? mobileMenuFirstLink : undefined} key={href} href={href} onClick={closeMobileMenu}>{label}</Link>)}
             </div>
           ))}
           <Link href="/#book" onClick={closeMobileMenu}>Book appointment <ArrowIcon /></Link>
