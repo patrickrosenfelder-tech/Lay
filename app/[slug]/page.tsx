@@ -7,6 +7,7 @@ import { SiteFooter } from "../SiteFooter";
 import { SiteHeader } from "../SiteHeader";
 import { ContactPage } from "../ContactPage";
 import { DryEyePage } from "../DryEyePage";
+import { DryEyeReviewPage } from "../DryEyeReviewPage";
 import { FaqPage } from "../FaqPage";
 import { LegalPage, type LegalPageData } from "../LegalPage";
 import { StaticPage, type StaticPageData } from "../StaticPage";
@@ -836,7 +837,7 @@ const pages: Record<string, DetailPage> = {
 };
 
 export function generateStaticParams() {
-  return [...Object.keys(pages), ...Object.keys(staticPages), "envision-dry-eye"].map((slug) => ({ slug }));
+  return [...Object.keys(pages), ...Object.keys(staticPages), "envision-dry-eye", "dry-eye-review08-Aug", "envision-dry-eye-review08-Aug"].map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -850,6 +851,16 @@ export async function generateMetadata({
 
   if (slug === "envision-dry-eye") {
     return { title: "Envision Complete Dry Eye Package | Precision Vision Institute", description: "Explore the Envision Complete Dry Eye Package and book a comprehensive dry eye evaluation in Duluth, Georgia." };
+  }
+  if (slug === "dry-eye-review08-Aug" || slug === "envision-dry-eye-review08-Aug") {
+    const envision = slug === "envision-dry-eye-review08-Aug";
+    return {
+      title: `${envision ? "Envision Dry Eye Treatment" : "Dry Eye Treatment"} Review | Precision Vision Institute`,
+      description: envision
+        ? "Review version of the Envision by InMode dry eye treatment page."
+        : "Review version of the general dry eye treatment page.",
+      robots: { index: false, follow: false },
+    };
   }
   if (!page && !staticPage) return {};
 
@@ -888,8 +899,9 @@ export default async function DetailPage({
   const page = pages[slug];
   const staticPage = staticPages[slug];
 
-  if (!page && !staticPage && slug !== "envision-dry-eye") notFound();
+  if (!page && !staticPage && !["envision-dry-eye", "dry-eye-review08-Aug", "envision-dry-eye-review08-Aug"].includes(slug)) notFound();
   if (slug === "dry-eye" || slug === "envision-dry-eye") return <DryEyePage packageFocus={slug === "envision-dry-eye"} />;
+  if (slug === "dry-eye-review08-Aug" || slug === "envision-dry-eye-review08-Aug") return <DryEyeReviewPage envision={slug === "envision-dry-eye-review08-Aug"} />;
   if (slug === "faq") return <FaqPage />;
   if (slug === "contact") return <ContactPage />;
   if (legalPages[slug]) return <LegalPage page={legalPages[slug]} />;
