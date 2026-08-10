@@ -36,7 +36,7 @@ export function BookingWidget() {
       <div className="booking-embed-footer">
         <span>Having trouble viewing the scheduler?</span>
         <a href={BOOKING_URL}>
-          Open EyeCloud in a new window <ArrowIcon />
+          Open EyeCloud <ArrowIcon />
         </a>
       </div>
     </div>
