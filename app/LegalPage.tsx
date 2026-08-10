@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowIcon } from "./ArrowIcon";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 
@@ -40,7 +41,7 @@ export function LegalPage({ page }: { page: LegalPageData }) {
             ))}
           </section>
         ))}
-        <Link className="legal-contact-link" href="/contact">Contact Precision Vision Institute <span aria-hidden="true">↗</span></Link>
+        <Link className="legal-contact-link" href="/contact">Contact Precision Vision Institute <ArrowIcon /></Link>
       </article>
       <SiteFooter />
     </main>

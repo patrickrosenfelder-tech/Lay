@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowIcon } from "./ArrowIcon";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 
@@ -20,7 +21,7 @@ export function DryEyePage({ packageFocus = false }: DryEyePageProps) {
       <section className="dry-eye-hero">
         <div className="dry-eye-hero-copy">
           <Link className="detail-back" href="/#specialties">
-            ← Explore specialty care
+            <ArrowIcon direction="left" placement="before" /> Explore specialty care
           </Link>
           <p className="section-label">{packageFocus ? "Envision by InMode" : "Dry eye treatment"}</p>
           <h1>{pageTitle}</h1>
@@ -30,7 +31,7 @@ export function DryEyePage({ packageFocus = false }: DryEyePageProps) {
               : "Burning, grittiness, redness, watering, blurry vision, and contact lens discomfort are all signs worth looking into. A focused evaluation helps identify why your tear film is not staying stable."}
           </p>
           <Link className="button button-primary" href="/#book">
-            Book a comprehensive dry eye evaluation <span aria-hidden="true">↗</span>
+            View live availability <ArrowIcon />
           </Link>
         </div>
         <div className="dry-eye-hero-image">
@@ -227,7 +228,7 @@ export function DryEyePage({ packageFocus = false }: DryEyePageProps) {
           before you commit.
         </p>
         <Link className="button button-light" href="/#book">
-          Schedule your evaluation <span aria-hidden="true">↗</span>
+          View live availability <ArrowIcon />
         </Link>
         <small>
           Treatment is not appropriate for everyone. Individual results vary;

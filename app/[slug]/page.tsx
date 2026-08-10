@@ -906,7 +906,7 @@ export default async function DetailPage({
       <section className="detail-hero">
         <div className="detail-hero-copy">
           <Link className="detail-back" href="/#specialties">
-            ← Back to specialties
+            <ArrowIcon direction="left" placement="before" /> Back to specialties
           </Link>
           <p className="section-label">{page.eyebrow}</p>
           <h1>{page.title}</h1>

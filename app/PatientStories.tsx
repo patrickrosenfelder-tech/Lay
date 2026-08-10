@@ -53,7 +53,7 @@ export function PatientStories() {
             onClick={() => showStory(activeStory - 1)}
             aria-label="Previous patient story"
           >
-            ←
+            <ArrowIcon direction="left" placement="none" />
           </button>
           <button
             type="button"
@@ -67,7 +67,7 @@ export function PatientStories() {
             onClick={() => showStory(activeStory + 1)}
             aria-label="Next patient story"
           >
-            →
+            <ArrowIcon direction="right" placement="none" />
           </button>
         </div>
 

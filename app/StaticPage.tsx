@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowIcon } from "./ArrowIcon";
 import { LocationMap } from "./LocationMap";
 import { OfficeExterior } from "./OfficeExterior";
 import { SiteFooter } from "./SiteFooter";
@@ -27,7 +28,7 @@ export function StaticPage({ page }: { page: StaticPageData }) {
           <h1>{page.title}</h1>
           <p>{page.lede}</p>
           <Link className="button button-primary" href={page.ctaHref ?? "/#book"}>
-            {page.ctaLabel ?? "Book an appointment"} <span aria-hidden="true">↗</span>
+            {page.ctaLabel ?? "Book an appointment"} <ArrowIcon />
           </Link>
         </div>
         {page.showOfficeLocation ? (
