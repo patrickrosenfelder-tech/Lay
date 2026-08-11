@@ -7,7 +7,7 @@ export function SiteFooter() {
     <>
       <footer className="site-footer">
         <Link className="footer-brand" href="/">
-          <Image className="footer-logo" src="/precision-vision-wordmark.png" alt="" aria-hidden="true" width={1028} height={212} sizes="150px" />
+          <Image className="footer-logo" src="/precision-vision-logo-transparent.png" alt="" aria-hidden="true" width={960} height={490} sizes="150px" />
           <p>Precision Vision Institute<small>Specialty eye care in Duluth, Georgia.</small></p>
         </Link>
         <div className="footer-navigation">

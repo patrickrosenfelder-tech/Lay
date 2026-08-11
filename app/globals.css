@@ -1874,9 +1874,9 @@ summary {
 
 .footer-logo {
   width: 150px;
-  height: 62px;
-  border-radius: 3px;
+  height: 72px;
   object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 .footer-brand p {
@@ -2715,7 +2715,7 @@ summary {
 }
 
 .office-location > div:last-child {
-  min-height: 510px;
+  height: 510px;
   border-radius: 30px;
 }
 
@@ -3563,7 +3563,7 @@ summary {
   .contact-exterior { border-radius: 100px 100px 20px 20px; }
 
   .office-location > div:last-child {
-    min-height: 360px;
+    height: 360px;
     border-radius: 20px;
   }
 
