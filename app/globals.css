@@ -1873,24 +1873,11 @@ summary {
 }
 
 .footer-logo {
-  width: 150px;
-  height: 72px;
+  width: 190px;
+  height: 62px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-}
-
-.footer-brand p {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.footer-brand small {
-  display: block;
-  margin-top: 6px;
-  color: #9bb1bf;
-  font-size: 12px;
-  font-weight: 400;
+  filter: invert(1);
+  mix-blend-mode: screen;
 }
 
 .footer-links {
