@@ -1827,6 +1827,21 @@ summary {
   line-height: 1.65;
 }
 
+.scleral-technology {
+  background: white;
+}
+
+.scleral-technology details h3 {
+  margin: 22px 44px 0 0;
+  color: var(--navy);
+  font-size: clamp(20px, 2vw, 28px);
+  letter-spacing: -0.035em;
+}
+
+.scleral-technology details h3 + p {
+  margin-top: 12px;
+}
+
 .final-cta {
   display: flex;
   min-height: 680px;

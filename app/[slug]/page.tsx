@@ -36,6 +36,30 @@ type DetailPage = {
   ctaConditions?: string[];
 };
 
+const scleralTechnology = [
+  {
+    name: "Pentacam® Corneal Tomography",
+    description:
+      "Creates a detailed 3D map of the cornea, allowing us to evaluate its shape, curvature, and thickness. This is especially valuable for complex corneas such as keratoconus or those that have undergone refractive surgery.",
+  },
+  {
+    name: "Corneal Scleral Profilometry (CSP)",
+    description:
+      "Creates a detailed 3D map of the entire front surface of the eye, including the sclera where a scleral lens rests. This allows us to design lenses that more closely match the unique shape of your eye for improved fit and comfort.",
+  },
+  {
+    name: "OVITZ Wavefront Analysis",
+    subheading: "How does this improve my vision?",
+    description:
+      "Measures higher-order aberrations that can cause ghosting, halos, glare, and starbursts. These measurements can be used to create customized scleral lens optics designed to reduce these distortions.",
+  },
+  {
+    name: "Freeform Scleral Lens Design",
+    description:
+      "Uses detailed measurements of your eye to create a highly customized scleral lens rather than relying on a standard lens shape. The lens can be independently adjusted across different areas to improve alignment, stability, comfort, and vision.",
+  },
+];
+
 const staticPages: Record<string, StaticPageData> = {
   faq: {
     eyebrow: "Patient resources",
@@ -1016,6 +1040,22 @@ export default async function DetailPage({
         {/* TODO(client): Add a second, distinct in-exam-room photo of Dr. Nim when supplied. */}
         {/* TODO(client): Add verified years in practice, fitting volume, and expanded subspecialty motivation; see CONTENT-TODOS.md. */}
       </section>
+
+      {slug === "sclerals" && (
+        <section className="detail-faq scleral-technology" aria-labelledby="scleral-technology-heading">
+          <p className="section-label">Advanced technology</p>
+          <h2 id="scleral-technology-heading">Measured for your eyes.</h2>
+          <div className="detail-faq-list">
+            {scleralTechnology.map((technology) => (
+              <details key={technology.name}>
+                <summary>{technology.name}</summary>
+                {technology.subheading && <h3>{technology.subheading}</h3>}
+                <p>{technology.description}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      )}
 
       {page.faq && page.faq.length > 0 && (
         <section className="detail-faq" aria-label="Frequently asked questions">
