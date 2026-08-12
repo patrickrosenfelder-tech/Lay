@@ -2194,6 +2194,60 @@ summary {
   background: white;
 }
 
+.dry-eye-evaluation-signs {
+  padding: clamp(90px, 11vw, 170px) 10vw;
+  background: var(--powder);
+}
+
+.evaluation-signs-intro {
+  max-width: 820px;
+}
+
+.evaluation-signs-intro h2 {
+  margin: 0;
+  font-size: clamp(42px, 5vw, 78px);
+  letter-spacing: -0.07em;
+  line-height: 0.94;
+}
+
+.evaluation-signs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: clamp(46px, 6vw, 84px);
+}
+
+.evaluation-signs-grid article {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: white;
+}
+
+.evaluation-signs-grid img {
+  height: clamp(260px, 25vw, 420px);
+  object-fit: cover;
+}
+
+.evaluation-signs-grid article > div {
+  padding: clamp(28px, 3.5vw, 46px);
+}
+
+.evaluation-signs-grid h3 {
+  margin: 0 0 14px;
+  font-size: clamp(27px, 2.5vw, 39px);
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.evaluation-signs-grid p {
+  max-width: 540px;
+  margin: 0;
+  color: #617988;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
 .treatment-card-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -2807,6 +2861,7 @@ summary {
   .gland-card p,
   .meibography-note,
   .treatment-card-grid p,
+  .evaluation-signs-grid p,
   .dry-eye-pathway article p,
   .insurance-logo-panel > p:last-child,
   .legal-hero > p:last-child,
@@ -3563,6 +3618,7 @@ summary {
   .gland-comparison,
   .meibography-section,
   .dry-eye-treatments,
+  .dry-eye-evaluation-signs,
   .dry-eye-faq,
   .contact-hero,
   .contact-location,
@@ -3618,6 +3674,7 @@ summary {
   .gland-comparison,
   .meibography-section,
   .dry-eye-treatments,
+  .dry-eye-evaluation-signs,
   .dry-eye-pathway,
   .dry-eye-faq,
   .contact-location,
@@ -3670,6 +3727,7 @@ summary {
 
   .gland-visuals,
   .treatment-card-grid,
+  .evaluation-signs-grid,
   .dry-eye-pathway > div {
     grid-template-columns: 1fr;
   }

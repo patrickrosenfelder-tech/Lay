@@ -61,6 +61,23 @@ function GeneralDryEyeReview() {
         <article><span>04</span><h3>In-office procedures</h3><p>When appropriate, thermal RF or IPL may be incorporated into a clinician-led plan for gland dysfunction or inflammatory signs.</p></article>
       </div></section>
 
+      <section className="dry-eye-evaluation-signs" aria-labelledby="evaluation-signs-heading">
+        <div className="evaluation-signs-intro">
+          <p className="section-label">A closer look</p>
+          <h2 id="evaluation-signs-heading">Signs we look for during a dry eye evaluation.</h2>
+        </div>
+        <div className="evaluation-signs-grid">
+          <article>
+            <Image src="/lid-margin-telangiectasia.png" alt="Dilated blood vessels along the eyelid margin" width={1374} height={948} sizes="(max-width: 760px) 90vw, 40vw" />
+            <div><h3>Lid margin telangiectasia</h3><p>Dilated blood vessels can be a visible sign of chronic eyelid inflammation.</p></div>
+          </article>
+          <article>
+            <Image src="/ocular-surface-staining.png" alt="Ocular surface staining visible on an eye examination" width={1048} height={816} sizes="(max-width: 760px) 90vw, 40vw" />
+            <div><h3>Ocular surface staining</h3><p>Staining helps reveal areas where the ocular surface is stressed or damaged.</p></div>
+          </article>
+        </div>
+      </section>
+
       <section className="dry-eye-pathway"><p className="section-label">A four-step pathway</p><h2>Evaluate. Treat. Reassess. Adjust.</h2><div>{[["Evaluate", "Identify the pattern behind your symptoms."], ["Treat", "Build the right combination of options."], ["Reassess", "Track comfort, vision, and eye-health findings."], ["Adjust", "Refine the plan as your eyes respond."]].map(([title, copy], index) => <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></section>
 
       <section className="detail-faq dry-eye-faq" aria-labelledby="dry-eye-faq-heading"><p className="section-label">Frequently asked questions</p><h2 id="dry-eye-faq-heading">Dry eye is personal. Your plan should be, too.</h2><div className="detail-faq-list">
