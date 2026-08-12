@@ -2759,6 +2759,85 @@ summary {
   border-top: 0;
 }
 
+/* Desktop-only readability increase for supporting copy and image captions. */
+@media (min-width: 761px) {
+  .hero-copy {
+    font-size: clamp(21px, calc(1.45vw + 4px), 26px);
+  }
+
+  .specialty-card p,
+  .doctor-personal-section > div:last-child > p,
+  .static-content article > p {
+    font-size: 19px;
+  }
+
+  .process-intro > p:not(.section-label),
+  .doctor-story > p:not(.section-label),
+  .booking-intro > p:not(.section-label),
+  .detail-cta > p:not(.section-label),
+  .detail-faq-list p,
+  .gland-comparison-copy > p:last-child,
+  .meibography-section > div:last-child > p:not(.section-label),
+  .dry-eye-faq > div:first-child > p:last-child,
+  .contact-address > p:last-child,
+  .dry-eye-solution-intro > p:last-child,
+  .dry-eye-insurance > p:not(.section-label) {
+    font-size: 20px;
+  }
+
+  .process-list p,
+  .detail-highlights p,
+  .booking-embed-intro span,
+  .booking-embed-footer,
+  .gland-card p,
+  .meibography-note,
+  .treatment-card-grid p,
+  .dry-eye-pathway article p,
+  .insurance-logo-panel > p:last-child,
+  .legal-hero > p:last-child,
+  .dry-eye-modality-grid p,
+  .expectation-list p,
+  .dry-eye-pricing p,
+  .dry-eye-package-note,
+  .dry-eye-insurance small,
+  .static-content ul {
+    font-size: 18px;
+  }
+
+  .reviews-hero > p:last-child,
+  .contact-hero > div:first-child > p:not(.section-label),
+  .legal-intro,
+  .dry-eye-problem > p,
+  .static-content article > p {
+    font-size: 22px;
+  }
+
+  .detail-lede,
+  .dry-eye-hero-copy > p:not(.section-label),
+  .static-hero > div:first-child > p:last-of-type {
+    font-size: clamp(21px, calc(1.35vw + 4px), 25px);
+  }
+
+  .detail-section > div:last-child > p,
+  .dry-eye-package-copy > p:not(.section-label) {
+    font-size: 21px;
+  }
+
+  .dry-eye-hero-image p {
+    font-size: 16px;
+  }
+
+  .legal-content section > p,
+  .legal-subsection p,
+  .legal-content ul {
+    font-size: 19px;
+  }
+
+  .credential-description {
+    font-size: 17px;
+  }
+}
+
 @media (max-width: 1050px) {
   .site-header {
     grid-template-columns: 1fr auto;
