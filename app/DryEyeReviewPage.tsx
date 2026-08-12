@@ -70,7 +70,7 @@ function GeneralDryEyeReview() {
         <details><summary>Do I have to understand every cause before booking?</summary><p>No. You only need to describe what your eyes feel like and when symptoms are most noticeable. The evaluation is designed to make the next step clearer.</p></details>
       </div></section>
 
-      <section className="detail-cta"><p className="section-label">Advanced treatment</p><h2>When advanced treatment may help.</h2><p>Some evaluations point to Envision by InMode as an appropriate next step for gland dysfunction and eyelid inflammation. It is one option within a complete, individualized dry-eye care plan.</p><Link className="button button-primary" href="/envision-dry-eye-review08-Aug">Explore Envision dry eye treatment <ArrowIcon /></Link></section>
+      <section className="detail-cta"><p className="section-label">Advanced treatment</p><h2>When advanced treatment may help.</h2><p>Some evaluations point to Envision by InMode as an appropriate next step for gland dysfunction and eyelid inflammation. It is one option within a complete, individualized dry-eye care plan.</p><Link className="button button-primary" href="/envision-dry-eye">Explore Envision Dry Eye Treatment <ArrowIcon /></Link></section>
     </>
   );
 }
