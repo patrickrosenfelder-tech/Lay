@@ -255,6 +255,11 @@ const pages: Record<string, DetailPage> = {
           "Absolutely. Scleral lenses are considered one of the most effective non-surgical treatments for keratoconus because they create a smooth optical surface over the irregular cornea, often providing significantly clearer vision than glasses or soft contact lenses.",
       },
       {
+        question: "What if I already wear scleral lenses but still have ghosting or halos?",
+        answer:
+          "Yes. Some patients continue to experience ghosting, halos, glare, or starbursts despite seeing 20/20 in scleral lenses. These symptoms may be caused by higher-order aberrations. We can measure these distortions with OVITZ wavefront technology and determine whether further lens or optical customization may improve your vision.",
+      },
+      {
         question: "Are scleral lenses covered by insurance?",
         answer:
           "Coverage varies depending on your medical diagnosis and insurance plan. Our team will review your benefits and discuss any available coverage before beginning treatment.",
