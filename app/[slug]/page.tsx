@@ -206,7 +206,7 @@ const pages: Record<string, DetailPage> = {
         copy: "The fluid reservoir beneath the lens may support comfort throughout the day.",
       },
       {
-        title: "Post-surgical vision",
+        title: "LASIK/PRK/RK irregularities",
         copy: "Specialty optics can address fluctuations, glare, halos, and ghosting after corneal surgery.",
       },
     ],
@@ -215,20 +215,17 @@ const pages: Record<string, DetailPage> = {
         label: "How they work",
         title: "The lens does not sit on the cornea.",
         copy:
-          "Unlike a conventional contact lens, a scleral lens arches over the sensitive corneal surface. The space beneath it is filled with preservative-free saline, while the larger lens diameter creates a stable fit.",
+          "Unlike a conventional contact lens, a scleral lens is designed to vault over the cornea. The space beneath it is filled with preservative-free saline, while the larger lens diameter creates a stable fit.",
       },
       {
         label: "Your evaluation",
         title: "Measured, mapped, and refined.",
         copy:
-          "Dr. Nim evaluates the health and shape of your eyes using specialized technology such as the Pentacam, Corneal Scleral Profilometer, and Ovitz Wavefront Analysis. These measurements help guide diagnostic lens selection before vision, comfort, clearance, and edge alignment are refined for your individualized design.",
+          "There is no single scleral lens design that is ideal for every eye. We use advanced corneal and scleral imaging, multiple specialty lens designs, and freeform customization to select and refine the lens based on your individual eye shape and visual needs.",
         bullets: [
           "Pentacam corneal tomography",
           "Corneal Scleral Profilometer mapping",
           "Ovitz Wavefront Analysis",
-          "Diagnostic lens fitting",
-          "Insertion and removal training",
-          "Follow-up adjustments",
         ],
       },
       {
