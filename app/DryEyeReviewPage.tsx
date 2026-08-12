@@ -51,13 +51,13 @@ function GeneralDryEyeReview() {
 
       <section className="meibography-section">
         <div className="meibography-image"><Image src="/meibomian-gland-structural-changes.png" alt="Examples of meibomian gland structural changes" width={1120} height={1472} sizes="(max-width: 1050px) 90vw, 42vw" /></div>
-        <div><p className="section-label">Meibography</p><h2>See what symptoms cannot show on their own.</h2><p>Imaging gives Dr. Nim a closer view of the meibomian glands inside your eyelids. It helps connect what you feel with the condition of the glands, tear film, and ocular surface—so care is based on your eyes, not a one-size-fits-all routine.</p><p className="meibography-note">This clinical reference shows how gland structure can range from no significant change to gland drop out.</p></div>
+        <div><p className="section-label">Meibography</p><h2>See what symptoms cannot show on their own.</h2><p>Meibography is only one piece of the evaluation. We also assess tear-film stability, gland function and expressibility, oil quality, eyelid changes, inflammation, and the ocular surface to understand what is driving your symptoms.</p><p className="meibography-note">This clinical reference shows how gland structure can range from no significant change to gland drop out.</p></div>
       </section>
 
       <section className="dry-eye-treatments"><div><p className="section-label">Your treatment options</p><h2>One condition. More than one way to support it.</h2></div><div className="treatment-card-grid">
         <article><span>01</span><h3>Home care</h3><p>Targeted routines, lid hygiene, tear support, and environmental changes may help protect the ocular surface between visits.</p></article>
         <article><span>02</span><h3>Medical therapy</h3><p>Prescription treatments may be considered when your evaluation points to inflammation or another underlying contributor.</p></article>
-        <article><span>03</span><h3>Specialty lenses</h3><p>For some eyes, a scleral lens can create a protective fluid reservoir and support comfort alongside a broader care plan.</p></article>
+        <article><span>03</span><h3>Specialty lenses</h3><p>For more severe ocular-surface disease, scleral lenses can create a protective reservoir of preservative-free fluid over the cornea. Because we specialize in advanced scleral lens fitting, this option can be incorporated when traditional dry-eye treatment alone is not enough.</p></article>
         <article><span>04</span><h3>In-office procedures</h3><p>When appropriate, thermal RF or IPL may be incorporated into a clinician-led plan for gland dysfunction or inflammatory signs.</p></article>
       </div></section>
 
