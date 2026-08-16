@@ -1839,44 +1839,54 @@ summary {
 .scleral-technology .detail-faq-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 54px;
+  gap: 18px;
   max-width: 1480px;
+  counter-reset: technology;
 }
 
 .scleral-technology .detail-faq-list details {
-  border: 0;
-  border-top: 1px solid var(--line);
-  border-radius: 0;
-  background: transparent;
-  padding: 0;
+  position: relative;
+  min-height: 330px;
+  border: 1px solid rgba(22, 58, 84, 0.08);
+  border-radius: 30px;
+  background: white;
+  padding: clamp(30px, 4vw, 58px);
+  counter-increment: technology;
 }
 
-.scleral-technology .detail-faq-list details:nth-last-child(-n + 2) {
-  border-bottom: 1px solid var(--line);
+.scleral-technology .detail-faq-list details:nth-child(4n + 2),
+.scleral-technology .detail-faq-list details:nth-child(4n + 3) {
+  background: var(--aqua-light);
 }
 
 .scleral-technology .detail-faq-list summary {
   display: flex;
-  min-height: 82px;
-  align-items: center;
-  gap: 18px;
-  padding: 22px 0;
-  font-size: clamp(18px, 1.7vw, 26px);
-  letter-spacing: -0.025em;
+  min-height: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 44px;
+  padding: 0;
+  font-size: clamp(31px, 3.2vw, 52px);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1.03;
 }
 
 .scleral-technology .detail-faq-list summary::before {
-  flex: 0 0 auto;
-  color: #3f9fab;
-  content: "→";
-  font-size: 22px;
-  font-weight: 400;
+  color: var(--muted);
+  content: counter(technology, decimal-leading-zero);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
 }
 
 .scleral-technology .detail-faq-list summary::after {
-  margin-left: auto;
+  position: absolute;
+  right: clamp(30px, 4vw, 58px);
+  bottom: clamp(30px, 4vw, 58px);
+  margin: 0;
   content: "+";
-  font-size: 26px;
+  font-size: 34px;
 }
 
 .scleral-technology .detail-faq-list details[open] summary::after {
@@ -1884,12 +1894,12 @@ summary {
 }
 
 .scleral-technology .detail-faq-list p {
-  margin: 0 0 28px 40px;
+  margin: 34px 0 0;
   font-size: 16px;
 }
 
 .scleral-technology details h3 {
-  margin: 0 0 12px 40px;
+  margin: 34px 0 12px;
   color: var(--navy);
   font-size: clamp(20px, 2vw, 28px);
   letter-spacing: -0.035em;
@@ -1900,7 +1910,7 @@ summary {
 }
 
 .scleral-technology + .detail-faq {
-  border-top: 18px solid var(--paper);
+  border-top: 24px solid var(--paper);
 }
 
 .final-cta {
@@ -3725,21 +3735,13 @@ summary {
     grid-template-columns: 1fr;
   }
 
-  .scleral-technology .detail-faq-list details:nth-last-child(-n + 2) {
-    border-bottom: 0;
-  }
-
-  .scleral-technology .detail-faq-list details:last-child {
-    border-bottom: 1px solid var(--line);
+  .scleral-technology .detail-faq-list details {
+    min-height: 250px;
   }
 
   .scleral-technology .detail-faq-list summary {
-    min-height: 72px;
-  }
-
-  .scleral-technology .detail-faq-list p,
-  .scleral-technology details h3 {
-    margin-left: 34px;
+    gap: 30px;
+    font-size: clamp(30px, 9vw, 44px);
   }
 
   .dry-eye-hero-image,
