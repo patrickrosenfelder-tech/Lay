@@ -3739,6 +3739,14 @@ summary {
     min-height: 250px;
   }
 
+  .scleral-technology .detail-faq-list details:nth-child(4n + 3) {
+    background: white;
+  }
+
+  .scleral-technology .detail-faq-list details:nth-child(4n + 4) {
+    background: var(--aqua-light);
+  }
+
   .scleral-technology .detail-faq-list summary {
     gap: 30px;
     font-size: clamp(30px, 9vw, 44px);
