@@ -1828,18 +1828,79 @@ summary {
 }
 
 .scleral-technology {
-  background: white;
+  padding-bottom: clamp(110px, 13vw, 190px);
+  background: #f8fbfd;
+}
+
+.scleral-technology > h2 {
+  margin-bottom: clamp(58px, 7vw, 100px);
+}
+
+.scleral-technology .detail-faq-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 54px;
+  max-width: 1480px;
+}
+
+.scleral-technology .detail-faq-list details {
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.scleral-technology .detail-faq-list details:nth-last-child(-n + 2) {
+  border-bottom: 1px solid var(--line);
+}
+
+.scleral-technology .detail-faq-list summary {
+  display: flex;
+  min-height: 82px;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 0;
+  font-size: clamp(18px, 1.7vw, 26px);
+  letter-spacing: -0.025em;
+}
+
+.scleral-technology .detail-faq-list summary::before {
+  flex: 0 0 auto;
+  color: #3f9fab;
+  content: "→";
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.scleral-technology .detail-faq-list summary::after {
+  margin-left: auto;
+  content: "+";
+  font-size: 26px;
+}
+
+.scleral-technology .detail-faq-list details[open] summary::after {
+  content: "–";
+}
+
+.scleral-technology .detail-faq-list p {
+  margin: 0 0 28px 40px;
+  font-size: 16px;
 }
 
 .scleral-technology details h3 {
-  margin: 22px 44px 0 0;
+  margin: 0 0 12px 40px;
   color: var(--navy);
   font-size: clamp(20px, 2vw, 28px);
   letter-spacing: -0.035em;
 }
 
 .scleral-technology details h3 + p {
-  margin-top: 12px;
+  margin-top: 0;
+}
+
+.scleral-technology + .detail-faq {
+  border-top: 18px solid var(--paper);
 }
 
 .final-cta {
@@ -2893,6 +2954,10 @@ summary {
     font-size: 21px;
   }
 
+  .scleral-technology .detail-faq-list p {
+    font-size: 18px;
+  }
+
   .dry-eye-hero-image p {
     font-size: 16px;
   }
@@ -3654,6 +3719,27 @@ summary {
   .dry-eye-hero h1,
   .static-hero h1 {
     font-size: clamp(50px, 14vw, 76px);
+  }
+
+  .scleral-technology .detail-faq-list {
+    grid-template-columns: 1fr;
+  }
+
+  .scleral-technology .detail-faq-list details:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+
+  .scleral-technology .detail-faq-list details:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .scleral-technology .detail-faq-list summary {
+    min-height: 72px;
+  }
+
+  .scleral-technology .detail-faq-list p,
+  .scleral-technology details h3 {
+    margin-left: 34px;
   }
 
   .dry-eye-hero-image,
