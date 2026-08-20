@@ -157,7 +157,7 @@ export default function Home() {
           <h1>
             See what
             <br />
-            others <em>miss.</em>
+            {" "}others <em>miss.</em>
           </h1>
           <p className="hero-copy">
             Advanced care for complex vision needs—especially when glasses or
@@ -205,7 +205,7 @@ export default function Home() {
               id={item.id}
               key={item.number}
             >
-              <span className="card-number">{item.number}</span>
+              <span className="card-number">{item.number}</span>{" "}
               <div>
                 <h3>{item.title}</h3>
                 <p>{item.copy}</p>
@@ -318,6 +318,8 @@ export default function Home() {
             <a
               className="button button-dark"
               href="https://maps.google.com/?q=Precision+Vision+Institute+3940+Buford+Hwy+Duluth+GA+30096"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Get directions <ArrowIcon />
             </a>

@@ -14,7 +14,7 @@ export function TestimonialsPage() {
         <h1>
           Their words.
           <br />
-          <em>Not ours.</em>
+          {" "}<em>Not ours.</em>
         </h1>
         <p>
           Real, attributed patient testimonials reproduced from Precision
@@ -32,7 +32,7 @@ export function TestimonialsPage() {
           <span className="google-stars" aria-label="5 out of 5 stars">
             ★★★★★
           </span>
-          <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noreferrer">
+          <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">
             Read current Google reviews <ArrowIcon />
           </a>
         </div>

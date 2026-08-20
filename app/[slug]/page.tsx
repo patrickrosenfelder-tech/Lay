@@ -875,7 +875,20 @@ export async function generateMetadata({
   const staticPage = staticPages[slug];
 
   if (slug === "envision-dry-eye") {
-    return { title: "Envision Complete Dry Eye Package | Precision Vision Institute", description: "Explore the Envision Complete Dry Eye Package and book a comprehensive dry eye evaluation in Duluth, Georgia." };
+    return {
+      title: "Envision Complete Dry Eye Package | Precision Vision Institute",
+      description: "Explore the Envision Complete Dry Eye Package and book a comprehensive dry eye evaluation in Duluth, Georgia.",
+      alternates: { canonical: "/envision-dry-eye" },
+      openGraph: { images: [{ url: "/og.png", width: 1200, height: 630 }] },
+      twitter: { images: ["/og.png"] },
+    };
+  }
+  if (slug === "dry-eye" || slug === "contact" || legalPages[slug]) {
+    return {
+      alternates: { canonical: `/${slug}` },
+      openGraph: { images: [{ url: "/og.png", width: 1200, height: 630 }] },
+      twitter: { images: ["/og.png"] },
+    };
   }
   if (!page && !staticPage) return {};
 
@@ -890,17 +903,18 @@ export async function generateMetadata({
   return {
     title,
     description,
+    alternates: { canonical: `/${slug}` },
     openGraph: {
       title,
       description,
-      images: page ? [{ url: page.image, alt: page.imageAlt }] : undefined,
+      images: page ? [{ url: page.image, alt: page.imageAlt }] : [{ url: "/og.png", width: 1200, height: 630 }],
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: page ? [page.image] : undefined,
+      images: page ? [page.image] : ["/og.png"],
     },
   };
 }
@@ -922,10 +936,11 @@ export default async function DetailPage({
   if (staticPage) return <StaticPage page={staticPage} />;
   if (slug === "testimonials") return <TestimonialsPage />;
   const isDoctorPage = slug === "dr-nim";
+  const isReferralPage = slug === "doctor-referral";
 
   return (
     <main
-      className={`detail-page${isDoctorPage ? " doctor-detail-page" : ""}`}
+      className={`detail-page${isDoctorPage ? " doctor-detail-page" : ""}${isReferralPage ? " doctor-referral-page" : ""}`}
     >
       <SiteHeader />
 
@@ -968,7 +983,7 @@ export default async function DetailPage({
       >
         {page.highlights.map((highlight, index) => (
           <article key={highlight.title}>
-            <span>{String(index + 1).padStart(2, "0")}</span>
+            <span>{String(index + 1).padStart(2, "0")}</span>{" "}
             <h2>{highlight.title}</h2>
             <p>{highlight.copy}</p>
           </article>
@@ -993,7 +1008,7 @@ export default async function DetailPage({
                   className="credential-name credential-name-link"
                   href={credential.href}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   {credential.name}
                 </a>
@@ -1021,7 +1036,7 @@ export default async function DetailPage({
             key={section.title}
           >
             <div className="detail-section-label">
-              <span>{String(index + 1).padStart(2, "0")}</span>
+              <span>{String(index + 1).padStart(2, "0")}</span>{" "}
               <p>{section.label}</p>
             </div>
             <div>

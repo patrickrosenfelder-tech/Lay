@@ -1464,6 +1464,10 @@ summary {
   object-position: center 8%;
 }
 
+.doctor-referral-page .detail-hero-image img {
+  object-position: center 68%;
+}
+
 .detail-fact {
   position: absolute;
   right: 22px;
@@ -3053,6 +3057,20 @@ summary {
     font-weight: 700;
   }
 
+  .mobile-menu-socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px 18px;
+  }
+
+  .mobile-menu-socials .social-icon {
+    display: inline-grid;
+    min-height: 28px;
+    border-bottom: 1px solid var(--line);
+    padding: 0;
+  }
+
   .mobile-nav-group {
     display: grid;
     border-bottom: 1px solid var(--line);
@@ -3212,7 +3230,11 @@ summary {
   }
 
   body {
-    padding-bottom: 62px;
+    padding-bottom: 0;
+  }
+
+  main {
+    padding-bottom: calc(62px + env(safe-area-inset-bottom));
   }
 
   .site-header {

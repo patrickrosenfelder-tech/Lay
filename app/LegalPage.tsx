@@ -29,7 +29,7 @@ export function LegalPage({ page }: { page: LegalPageData }) {
         {page.intro.map((paragraph) => <p className="legal-intro" key={paragraph}>{paragraph}</p>)}
         {page.sections.map((section, index) => (
           <section key={section.title}>
-            <div className="legal-section-title"><span>{String(index + 1).padStart(2, "0")}</span><h2>{section.title}</h2></div>
+            <div className="legal-section-title"><span>{String(index + 1).padStart(2, "0")}</span>{" "}<h2>{section.title}</h2></div>
             {section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             {section.bullets && <ul>{section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>}
             {section.subSections?.map((subSection) => (

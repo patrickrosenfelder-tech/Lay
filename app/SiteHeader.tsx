@@ -112,8 +112,8 @@ export function SiteHeader() {
           </div>
         ))}
         <span className="header-socials" aria-label="Social media">
-          <a className="social-icon social-facebook" href="https://www.facebook.com/people/Precision-Vision-Institute/100063539512239/" target="_blank" rel="noreferrer" aria-label="Precision Vision Institute on Facebook">f</a>
-          <a className="social-icon social-instagram" href="https://www.instagram.com/dr.laynim/" target="_blank" rel="noreferrer" aria-label="Dr. Lay Nim on Instagram" />
+          <a className="social-icon social-facebook" href="https://www.facebook.com/people/Precision-Vision-Institute/100063539512239/" target="_blank" rel="noopener noreferrer" aria-label="Precision Vision Institute on Facebook">f</a>
+          <a className="social-icon social-instagram" href="https://www.instagram.com/dr.laynim/" target="_blank" rel="noopener noreferrer" aria-label="Dr. Lay Nim on Instagram" />
         </span>
       </nav>
 
@@ -143,6 +143,10 @@ export function SiteHeader() {
             </div>
           ))}
           <Link href="/#book" onClick={closeMobileMenu}>Book appointment <ArrowIcon /></Link>
+          <span className="mobile-menu-socials" aria-label="Social media">
+            <a className="social-icon social-facebook" href="https://www.facebook.com/people/Precision-Vision-Institute/100063539512239/" target="_blank" rel="noopener noreferrer" aria-label="Precision Vision Institute on Facebook" onClick={closeMobileMenu}>f</a>
+            <a className="social-icon social-instagram" href="https://www.instagram.com/dr.laynim/" target="_blank" rel="noopener noreferrer" aria-label="Dr. Lay Nim on Instagram" onClick={closeMobileMenu} />
+          </span>
           </nav>
         )}
       </div>
