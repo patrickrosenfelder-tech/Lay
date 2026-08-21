@@ -778,8 +778,8 @@ const pages: Record<string, DetailPage> = {
         copy: "A medical diagnosis may change how an evaluation or treatment is billed.",
       },
       {
-        title: "Self-pay",
-        copy: "The clinic can explain expected fees when benefits do not apply.",
+        title: "Self-pay & CareCredit",
+        copy: "The clinic can explain expected fees when benefits do not apply and discuss CareCredit financing as an available payment option.",
       },
     ],
     sections: [
@@ -787,7 +787,7 @@ const pages: Record<string, DetailPage> = {
         label: "Plans patients ask about",
         title: "Verify participation and benefits directly.",
         copy:
-          "Patients commonly ask the clinic about VSP, EyeMed, Medicare, Blue Cross plans, and self-pay options. Network status and coverage can change, so please call before your appointment rather than relying on a plan directory alone.",
+          "Patients commonly ask the clinic about VSP, EyeMed, Medicare, Blue Cross plans, self-pay options, and CareCredit financing. Network status and coverage can change, so please call before your appointment rather than relying on a plan directory alone.",
       },
       {
         label: "What to ask",
