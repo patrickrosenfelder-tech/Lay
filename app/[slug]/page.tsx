@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { ArrowIcon } from "../ArrowIcon";
 import { SiteFooter } from "../SiteFooter";
 import { SiteHeader } from "../SiteHeader";
@@ -921,10 +921,15 @@ export async function generateMetadata({
 
 export default async function DetailPage({
   params,
+  allowLegacyPostLaserPath = false,
 }: {
   params: Promise<{ slug: string }>;
+  allowLegacyPostLaserPath?: boolean;
 }) {
   const { slug } = await params;
+  if (slug === "post-laser-vision" && !allowLegacyPostLaserPath) {
+    permanentRedirect("/LASIK/PK/PRK");
+  }
   const page = pages[slug];
   const staticPage = staticPages[slug];
 

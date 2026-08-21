@@ -30,7 +30,7 @@ const specialties = [
     number: "03",
     title: "LASIK/PK/PRK",
     copy: "Custom lens designs can help address fluctuating vision, glare, halos, and distortion caused by an irregular corneal surface.",
-    link: "/post-laser-vision",
+    link: "/LASIK/PK/PRK",
     tone: "charcoal",
   },
   {
