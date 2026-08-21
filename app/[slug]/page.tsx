@@ -687,8 +687,9 @@ const pages: Record<string, DetailPage> = {
         copy: "Have a photo ID and your current vision and medical insurance cards available.",
       },
       {
-        title: "Bring your eyewear",
-        copy: "Include current glasses, contact lenses, cases, and solutions you regularly use.",
+        title: "Bring what you use for your eyes",
+        copy:
+          "Current glasses and any contact lenses you wear (including cases and solutions). If dry eye is part of your visit, bring drops, ointments, or warm-compress devices you use at home.",
       },
       {
         title: "Bring your history",
@@ -698,27 +699,34 @@ const pages: Record<string, DetailPage> = {
     sections: [
       {
         label: "Before the appointment",
-        title: "Know what kind of visit you selected.",
+        title: "Prepare for the type of visit you booked.",
         copy:
-          "Specialty lens evaluations may take longer than routine exams and can include dilation, mapping, or diagnostic lenses. Call if you are unsure about contact lens wear before the appointment.",
+          "Specialty visits often run longer than a routine exam and may include dilation, corneal mapping, or diagnostic testing. If you are unsure how to prepare, call the office before your appointment.",
         bullets: [
           "Confirm date, time, and appointment type",
           "Complete any requested intake information",
           "Verify insurance benefits before arrival",
           "Plan transportation if dilation is expected",
+          "For a contact lens evaluation: ask whether to remove your lenses before the visit",
+          "For a dry eye evaluation: avoid eye makeup and, if possible, hold your artificial tears the morning of the visit unless the office directs otherwise",
         ],
       },
       {
         label: "At the clinic",
         title: "Tell us what better vision would change.",
         copy:
-          "Share the tasks that are difficult, when symptoms happen, and what you have already tried. Those everyday details help shape the exam and recommendations.",
+          "Share the tasks that are difficult, when symptoms happen, and what you have already tried — drops, glasses, past treatments, or lenses. Those everyday details help shape the exam and recommendations.",
       },
       {
         label: "After the visit",
         title: "Follow-up is part of specialty care.",
         copy:
-          "Lens training, fit checks, and refinements are expected parts of many specialty lens plans. Keep your scheduled follow-ups and call if you experience unexpected pain, redness, discharge, or vision loss.",
+          "Most treatment plans — specialty lenses, dry eye therapy, or post-surgical care — depend on scheduled follow-ups to measure progress and refine the plan. Keep your appointments, and call the office if you experience unexpected pain, redness, discharge, or vision loss.",
+        bullets: [
+          "Scleral / Ortho-K patients: expect lens training, fit checks, and lens design refinements",
+          "Dry eye patients: expect symptom-tracking visits and treatment adjustments over several weeks",
+          "Post-laser / complex cornea patients: expect periodic mapping to monitor corneal stability",
+        ],
       },
     ],
     ctaTitle: "Plan your visit online.",
