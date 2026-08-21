@@ -127,7 +127,11 @@ summary {
 }
 
 .social-facebook {
-  padding-top: 2px;
+  text-decoration: none;
+}
+
+.social-facebook::before {
+  content: "f";
   font-family: Arial, Helvetica, sans-serif;
   font-size: 19px;
   font-weight: 700;
@@ -1028,6 +1032,11 @@ summary {
     linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
   padding: clamp(90px, 10vw, 150px) 5vw;
   color: white;
+}
+
+.booking-page-section {
+  min-height: 100svh;
+  padding-top: calc(var(--header-height) + 96px);
 }
 
 .booking-intro .section-label {
@@ -2499,6 +2508,83 @@ summary {
 
 .contact-map iframe { height: 510px; }
 
+.inquiry-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(42px, 8vw, 130px);
+  align-items: start;
+  background: var(--powder);
+  padding: clamp(82px, 10vw, 140px) 8vw;
+}
+
+.inquiry-section h2 {
+  max-width: 620px;
+  margin: 0;
+  font-size: clamp(48px, 5vw, 82px);
+  letter-spacing: -0.07em;
+  line-height: 0.92;
+}
+
+.inquiry-section > div > p:not(.section-label) {
+  max-width: 520px;
+  margin: 30px 0 0;
+  color: #547080;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.inquiry-form {
+  border-radius: 28px;
+  background: white;
+  box-shadow: 0 16px 42px rgba(9, 48, 75, 0.08);
+  padding: clamp(28px, 4vw, 48px);
+}
+
+.inquiry-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.inquiry-fields label {
+  display: grid;
+  gap: 9px;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.inquiry-fields input,
+.inquiry-fields textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fbfdfe;
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.45;
+  padding: 12px 14px;
+  resize: vertical;
+}
+
+.inquiry-fields input:focus,
+.inquiry-fields textarea:focus {
+  outline: 2px solid var(--aqua);
+  outline-offset: 2px;
+}
+
+.inquiry-message {
+  grid-column: 1 / -1;
+}
+
+.inquiry-privacy {
+  margin: 22px 0;
+  color: #617988;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
 .legal-page {
   overflow: hidden;
   background: var(--paper);
@@ -3237,7 +3323,7 @@ summary {
   }
 
   main {
-    padding-bottom: calc(62px + env(safe-area-inset-bottom));
+    padding-bottom: calc(76px + env(safe-area-inset-bottom));
   }
 
   .site-header {
@@ -3264,7 +3350,7 @@ summary {
     width: 100%;
     min-height: 900px;
     justify-content: flex-end;
-    padding: 470px 20px 145px;
+    padding: 470px 20px calc(205px + env(safe-area-inset-bottom));
   }
 
   .eyebrow {
@@ -3321,7 +3407,7 @@ summary {
 
   .hero-meta {
     right: 20px;
-    bottom: 24px;
+    bottom: calc(80px + env(safe-area-inset-bottom));
     left: 20px;
     justify-content: flex-start;
   }
@@ -3676,7 +3762,7 @@ summary {
     left: 0;
     display: grid;
     grid-template-columns: 0.7fr 1.3fr;
-    height: 62px;
+    height: 56px;
     border-top: 1px solid #2b2b2b;
     background: var(--navy-deep);
     color: white;
@@ -3687,6 +3773,7 @@ summary {
     place-items: center;
     font-size: 12px;
     font-weight: 700;
+    white-space: nowrap;
   }
 
   .mobile-bar a:last-child {
@@ -3722,6 +3809,7 @@ summary {
   .dry-eye-faq,
   .contact-hero,
   .contact-location,
+  .inquiry-section,
   .office-location {
     grid-template-columns: 1fr;
   }
@@ -3807,9 +3895,14 @@ summary {
   .dry-eye-pathway,
   .dry-eye-faq,
   .contact-location,
+  .inquiry-section,
   .office-location {
     gap: 34px;
     padding: 76px 20px;
+  }
+
+  .inquiry-fields {
+    grid-template-columns: 1fr;
   }
 
   .contact-hero {

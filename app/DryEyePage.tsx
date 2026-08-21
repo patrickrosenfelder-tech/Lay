@@ -30,7 +30,7 @@ export function DryEyePage({ packageFocus = false }: DryEyePageProps) {
               ? "Advanced, non-surgical dry eye care designed to improve how your eyes function—so you can rely less on temporary fixes and work toward more consistent comfort."
               : "Burning, grittiness, redness, watering, blurry vision, and contact lens discomfort are all signs worth looking into. A focused evaluation helps identify why your tear film is not staying stable."}
           </p>
-          <Link className="button button-primary" href="/#book">
+          <Link className="button button-primary" href="/book">
             View live availability <ArrowIcon />
           </Link>
         </div>
@@ -227,7 +227,7 @@ export function DryEyePage({ packageFocus = false }: DryEyePageProps) {
           your individual plan. Our team can help you understand the next step
           before you commit.
         </p>
-        <Link className="button button-light" href="/#book">
+        <Link className="button button-light" href="/book">
           View live availability <ArrowIcon />
         </Link>
         <small>

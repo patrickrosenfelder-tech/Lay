@@ -11,10 +11,11 @@ type NavigationItem =
 
 const navigation: readonly NavigationItem[] = [
   { label: "Dry eye", links: [["Envision package", "/envision-dry-eye"], ["Dry eye treatment", "/dry-eye"]] },
-  { label: "Specialty care", links: [["Scleral lenses", "/sclerals"], ["LASIK/PK/PRK", "/LASIK/PK/PRK"], ["Ortho-K/CRT lenses", "/ortho-k-crt-lenses"]] },
+  { label: "Specialty care", links: [["Scleral lenses", "/sclerals"], ["LASIK/PK/PRK", "/lasik-pk-prk"], ["Ortho-K/CRT lenses", "/ortho-k-crt-lenses"]] },
   { label: "Resources", links: [["New patient visit prep", "/patients"], ["Insurance & financing", "/insurances"], ["Testimonials", "/testimonials"], ["FAQ", "/faq"]] },
   { label: "About", links: [["Meet Dr. Nim", "/dr-nim"], ["Our office", "/our-office"]] },
   { label: "For doctors", href: "/doctor-referral" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function SiteHeader() {
@@ -112,12 +113,12 @@ export function SiteHeader() {
           </div>
         ))}
         <span className="header-socials" aria-label="Social media">
-          <a className="social-icon social-facebook" href="https://www.facebook.com/people/Precision-Vision-Institute/100063539512239/" target="_blank" rel="noopener noreferrer" aria-label="Precision Vision Institute on Facebook">f</a>
+          <a className="social-icon social-facebook" href="https://www.facebook.com/people/Precision-Vision-Institute/100063539512239/" target="_blank" rel="noopener noreferrer" aria-label="Precision Vision Institute on Facebook" />
           <a className="social-icon social-instagram" href="https://www.instagram.com/dr.laynim/" target="_blank" rel="noopener noreferrer" aria-label="Dr. Lay Nim on Instagram" />
         </span>
       </nav>
 
-      <Link className="header-cta" href="/#book">Book appointment <ArrowIcon /></Link>
+      <Link className="header-cta" href="/book">Book appointment <ArrowIcon /></Link>
 
       <div className="mobile-menu">
         <button
@@ -142,9 +143,9 @@ export function SiteHeader() {
               {item.links.map(([label, href], index) => <Link ref={index === 0 && item.label === navigation[0].label ? mobileMenuFirstLink : undefined} key={href} href={href} onClick={closeMobileMenu}>{label}</Link>)}
             </div>
           ))}
-          <Link href="/#book" onClick={closeMobileMenu}>Book appointment <ArrowIcon /></Link>
+          <Link href="/book" onClick={closeMobileMenu}>Book appointment <ArrowIcon /></Link>
           <span className="mobile-menu-socials" aria-label="Social media">
-            <a className="social-icon social-facebook" href="https://www.facebook.com/people/Precision-Vision-Institute/100063539512239/" target="_blank" rel="noopener noreferrer" aria-label="Precision Vision Institute on Facebook" onClick={closeMobileMenu}>f</a>
+            <a className="social-icon social-facebook" href="https://www.facebook.com/people/Precision-Vision-Institute/100063539512239/" target="_blank" rel="noopener noreferrer" aria-label="Precision Vision Institute on Facebook" onClick={closeMobileMenu} />
             <a className="social-icon social-instagram" href="https://www.instagram.com/dr.laynim/" target="_blank" rel="noopener noreferrer" aria-label="Dr. Lay Nim on Instagram" onClick={closeMobileMenu} />
           </span>
           </nav>

@@ -8,6 +8,7 @@ import { SiteHeader } from "../SiteHeader";
 import { ContactPage } from "../ContactPage";
 import { DryEyeReviewPage } from "../DryEyeReviewPage";
 import { FaqPage } from "../FaqPage";
+import { InquiryForm } from "../InquiryForm";
 import { LegalPage, type LegalPageData } from "../LegalPage";
 import { StaticPage, type StaticPageData } from "../StaticPage";
 import { TestimonialsPage } from "../TestimonialsPage";
@@ -891,11 +892,46 @@ export async function generateMetadata({
       twitter: { images: ["/og.png"] },
     };
   }
-  if (slug === "dry-eye" || slug === "contact" || legalPages[slug]) {
+  const routeMetadata: Record<string, { title: string; description: string }> = {
+    "dry-eye": {
+      title: "Dry Eye Treatment | Precision Vision Institute",
+      description: "Personalized dry eye evaluations and treatment options that address the factors affecting comfort, tear-film stability, and eye health.",
+    },
+    contact: {
+      title: "Contact & Directions | Precision Vision Institute",
+      description: "Contact Precision Vision Institute in Duluth, Georgia for appointment questions, directions, and help choosing a visit type.",
+    },
+    "privacy-policy": {
+      title: "Website Privacy Policy | Precision Vision Institute",
+      description: "Learn how Precision Vision Institute collects, uses, and safeguards information through its public website and appointment interfaces.",
+    },
+    "hipaa-notice": {
+      title: "HIPAA Notice of Privacy Practices | Precision Vision Institute",
+      description: "Review information about how medical information may be used and disclosed by Precision Vision Institute.",
+    },
+    "terms-of-service": {
+      title: "Terms of Service | Precision Vision Institute",
+      description: "Read the terms governing use of the Precision Vision Institute website and online services.",
+    },
+  };
+  const override = routeMetadata[slug];
+  if (override) {
     return {
+      title: override.title,
+      description: override.description,
       alternates: { canonical: `/${slug}` },
-      openGraph: { images: [{ url: "/og.png", width: 1200, height: 630 }] },
-      twitter: { images: ["/og.png"] },
+      openGraph: {
+        title: override.title,
+        description: override.description,
+        images: [{ url: "/og.png", width: 1200, height: 630 }],
+        type: "website",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: override.title,
+        description: override.description,
+        images: ["/og.png"],
+      },
     };
   }
   if (!page && !staticPage) return {};
@@ -936,7 +972,7 @@ export default async function DetailPage({
 }) {
   const { slug } = await params;
   if (slug === "post-laser-vision" && !allowLegacyPostLaserPath) {
-    permanentRedirect("/LASIK/PK/PRK");
+    permanentRedirect("/lasik-pk-prk");
   }
   const page = pages[slug];
   const staticPage = staticPages[slug];
@@ -966,7 +1002,7 @@ export default async function DetailPage({
           <h1>{page.title}</h1>
           <p className="detail-lede">{page.lede}</p>
           <div className="detail-actions">
-            <Link className="button button-primary" href="/#book">
+            <Link className="button button-primary" href="/book">
               View live availability <ArrowIcon />
             </Link>
             <a href="tel:+14704404099" className="detail-phone">
@@ -1082,6 +1118,17 @@ export default async function DetailPage({
         {/* TODO(client): Add verified years in practice, fitting volume, and expanded subspecialty motivation; see CONTENT-TODOS.md. */}
       </section>
 
+      {isReferralPage && (
+        <section className="inquiry-section referral-inquiry">
+          <div>
+            <p className="section-label">Referral coordination</p>
+            <h2>Request secure referral instructions.</h2>
+            <p>Share your practice contact details and the team will reply with the appropriate secure route for patient records. Please do not include patient information here.</p>
+          </div>
+          <InquiryForm kind="referral" />
+        </section>
+      )}
+
       {page.faq && page.faq.length > 0 && (
         <section className="detail-faq" aria-label="Frequently asked questions">
           <p className="section-label">Frequently asked questions</p>
@@ -1109,7 +1156,7 @@ export default async function DetailPage({
         )}
         <a
           className="button button-primary"
-          href={page.ctaHref ?? "/#book"}
+          href={page.ctaHref ?? "/book"}
         >
           {page.ctaLabel ?? "View live availability"} <ArrowIcon />
         </a>

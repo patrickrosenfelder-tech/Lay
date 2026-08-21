@@ -34,7 +34,7 @@ export function FaqPage() {
           <p className="section-label">Patient resources</p>
           <h1>Questions, answered clearly.</h1>
           <p>Every eye and every treatment plan is different. These answers cover the practical things patients ask before booking.</p>
-          <Link className="button button-primary" href="/#book">Book an appointment <ArrowIcon /></Link>
+          <Link className="button button-primary" href="/book">Book an appointment <ArrowIcon /></Link>
         </div>
       </section>
       <section className="detail-faq faq-accordion" aria-labelledby="faq-heading">

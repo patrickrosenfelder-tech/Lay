@@ -17,9 +17,8 @@ export function TestimonialsPage() {
           {" "}<em>Not ours.</em>
         </h1>
         <p>
-          Real, attributed patient testimonials reproduced from Precision
-          Vision Institute&apos;s original testimonials page—without AI
-          summaries or rewritten claims.
+          Read the experiences patients have shared about their care at
+          Precision Vision Institute.
         </p>
       </section>
 
@@ -64,7 +63,7 @@ export function TestimonialsPage() {
       <section className="reviews-cta">
         <p className="section-label">Your experience starts here</p>
         <h2>See the difference for yourself.</h2>
-        <Link className="button button-primary" href="/#book">
+        <Link className="button button-primary" href="/book">
           View live availability <ArrowIcon />
         </Link>
       </section>

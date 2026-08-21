@@ -30,7 +30,7 @@ const specialties = [
     number: "03",
     title: "LASIK/PK/PRK",
     copy: "Custom lens designs can help address fluctuating vision, glare, halos, and distortion caused by an irregular corneal surface.",
-    link: "/LASIK/PK/PRK",
+    link: "/lasik-pk-prk",
     tone: "charcoal",
   },
   {
@@ -174,10 +174,10 @@ export default function Home() {
         </div>
 
         <div className="hero-meta">
-          <a href="#scleral-lenses">Scleral lenses</a>
-          <a href="#dry-eye-care">Dry eye care</a>
-          <a href="#myopia-management">Ortho-K</a>
-          <a href="#post-surgical-vision">Complex corneas</a>
+          <Link href="/sclerals">Scleral lenses</Link>
+          <Link href="/dry-eye">Dry eye care</Link>
+          <Link href="/ortho-k-crt-lenses">Ortho-K</Link>
+          <Link href="/lasik-pk-prk">Complex corneas</Link>
         </div>
       </section>
 

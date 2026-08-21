@@ -22,7 +22,7 @@ function ReviewHero({ envision }: { envision: boolean }) {
             ? "For patients whose evaluation points to gland dysfunction and eyelid inflammation, Envision combines two advanced, non-surgical technologies in one personalized treatment plan."
             : "Burning, grittiness, redness, watering, blurry vision, and contact lens discomfort can have more than one cause. A focused evaluation helps identify what is disrupting your tear film."}
         </p>
-        <Link className="button button-primary" href="/#book">
+        <Link className="button button-primary" href="/book">
           {envision ? "Book an Envision dry eye evaluation" : "View live availability"} <ArrowIcon />
         </Link>
       </div>
@@ -122,7 +122,7 @@ function EnvisionReview() {
         <details><summary>Is Envision covered by insurance?</summary><p>Envision is currently considered an elective procedure and is not covered by insurance. HSA/FSA funds may be eligible; please confirm eligibility with your plan administrator.</p></details>
       </div></section>
 
-      <section className="dry-eye-insurance"><p className="section-label">Insurance and financing</p><h2>“Does insurance cover this?”</h2><p>Insurance may cover parts of a dry-eye evaluation or symptom management, but coverage for advanced in-office procedures varies by plan and is often limited. Our team can help you understand the next step before you commit.</p><Link className="button button-light" href="/#book">Book an Envision dry eye evaluation <ArrowIcon /></Link><small>Treatment is not appropriate for everyone. Individual results vary; your clinician will discuss risks, benefits, alternatives, and suitability during your evaluation. Pricing is subject to change.</small></section>
+      <section className="dry-eye-insurance"><p className="section-label">Insurance and financing</p><h2>“Does insurance cover this?”</h2><p>Insurance may cover parts of a dry-eye evaluation or symptom management, but coverage for advanced in-office procedures varies by plan and is often limited. Our team can help you understand the next step before you commit.</p><Link className="button button-light" href="/book">Book an Envision dry eye evaluation <ArrowIcon /></Link><small>Treatment is not appropriate for everyone. Individual results vary; your clinician will discuss risks, benefits, alternatives, and suitability during your evaluation. Pricing is subject to change.</small></section>
     </>
   );
 }
