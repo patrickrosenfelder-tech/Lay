@@ -1049,28 +1049,25 @@ export default async function DetailPage({
                   ))}
                 </ul>
               )}
+              {slug === "sclerals" && section.label === "Your evaluation" && (
+                <div className="scleral-technology-inline" aria-label="Advanced scleral lens technology">
+                  <div className="detail-faq-list">
+                    {scleralTechnology.map((technology) => (
+                      <details key={technology.name}>
+                        <summary>{technology.name}</summary>
+                        {technology.subheading && <h3>{technology.subheading}</h3>}
+                        <p>{technology.description}</p>
+                      </details>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </article>
         ))}
         {/* TODO(client): Add a second, distinct in-exam-room photo of Dr. Nim when supplied. */}
         {/* TODO(client): Add verified years in practice, fitting volume, and expanded subspecialty motivation; see CONTENT-TODOS.md. */}
       </section>
-
-      {slug === "sclerals" && (
-        <section className="detail-faq scleral-technology" aria-labelledby="scleral-technology-heading">
-          <p className="section-label">Advanced technology</p>
-          <h2 id="scleral-technology-heading">Measured for your eyes.</h2>
-          <div className="detail-faq-list">
-            {scleralTechnology.map((technology) => (
-              <details key={technology.name}>
-                <summary>{technology.name}</summary>
-                {technology.subheading && <h3>{technology.subheading}</h3>}
-                <p>{technology.description}</p>
-              </details>
-            ))}
-          </div>
-        </section>
-      )}
 
       {page.faq && page.faq.length > 0 && (
         <section className="detail-faq" aria-label="Frequently asked questions">

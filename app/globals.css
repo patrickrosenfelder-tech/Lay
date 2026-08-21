@@ -1831,26 +1831,20 @@ summary {
   line-height: 1.65;
 }
 
-.scleral-technology {
-  padding-bottom: clamp(110px, 13vw, 190px);
-  background: #f8fbfd;
+.scleral-technology-inline {
+  margin-top: clamp(42px, 6vw, 76px);
 }
 
-.scleral-technology > h2 {
-  margin-bottom: clamp(58px, 7vw, 100px);
-}
-
-.scleral-technology .detail-faq-list {
+.scleral-technology-inline .detail-faq-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
-  max-width: 1480px;
   counter-reset: technology;
 }
 
-.scleral-technology .detail-faq-list details {
+.scleral-technology-inline .detail-faq-list details {
   position: relative;
-  min-height: 330px;
+  min-height: 290px;
   border: 1px solid rgba(22, 58, 84, 0.08);
   border-radius: 30px;
   background: white;
@@ -1858,25 +1852,25 @@ summary {
   counter-increment: technology;
 }
 
-.scleral-technology .detail-faq-list details:nth-child(4n + 2),
-.scleral-technology .detail-faq-list details:nth-child(4n + 3) {
+.scleral-technology-inline .detail-faq-list details:nth-child(4n + 2),
+.scleral-technology-inline .detail-faq-list details:nth-child(4n + 3) {
   background: var(--aqua-light);
 }
 
-.scleral-technology .detail-faq-list summary {
+.scleral-technology-inline .detail-faq-list summary {
   display: flex;
   min-height: 0;
   flex-direction: column;
   align-items: flex-start;
   gap: 44px;
   padding: 0;
-  font-size: clamp(31px, 3.2vw, 52px);
+  font-size: clamp(27px, 2.6vw, 42px);
   font-weight: 400;
   letter-spacing: -0.055em;
   line-height: 1.03;
 }
 
-.scleral-technology .detail-faq-list summary::before {
+.scleral-technology-inline .detail-faq-list summary::before {
   color: var(--muted);
   content: counter(technology, decimal-leading-zero);
   font-size: 13px;
@@ -1884,7 +1878,7 @@ summary {
   letter-spacing: 0.12em;
 }
 
-.scleral-technology .detail-faq-list summary::after {
+.scleral-technology-inline .detail-faq-list summary::after {
   position: absolute;
   right: clamp(30px, 4vw, 58px);
   bottom: clamp(30px, 4vw, 58px);
@@ -1893,28 +1887,24 @@ summary {
   font-size: 34px;
 }
 
-.scleral-technology .detail-faq-list details[open] summary::after {
+.scleral-technology-inline .detail-faq-list details[open] summary::after {
   content: "–";
 }
 
-.scleral-technology .detail-faq-list p {
+.scleral-technology-inline .detail-faq-list p {
   margin: 34px 0 0;
   font-size: 16px;
 }
 
-.scleral-technology details h3 {
+.scleral-technology-inline details h3 {
   margin: 34px 0 12px;
   color: var(--navy);
   font-size: clamp(20px, 2vw, 28px);
   letter-spacing: -0.035em;
 }
 
-.scleral-technology details h3 + p {
+.scleral-technology-inline details h3 + p {
   margin-top: 0;
-}
-
-.scleral-technology + .detail-faq {
-  border-top: 24px solid var(--paper);
 }
 
 .final-cta {
@@ -2981,7 +2971,7 @@ summary {
     font-size: 21px;
   }
 
-  .scleral-technology .detail-faq-list p {
+  .scleral-technology-inline .detail-faq-list p {
     font-size: 18px;
   }
 
@@ -3774,23 +3764,23 @@ summary {
     font-size: clamp(50px, 14vw, 76px);
   }
 
-  .scleral-technology .detail-faq-list {
+  .scleral-technology-inline .detail-faq-list {
     grid-template-columns: 1fr;
   }
 
-  .scleral-technology .detail-faq-list details {
+  .scleral-technology-inline .detail-faq-list details {
     min-height: 250px;
   }
 
-  .scleral-technology .detail-faq-list details:nth-child(4n + 3) {
+  .scleral-technology-inline .detail-faq-list details:nth-child(4n + 3) {
     background: white;
   }
 
-  .scleral-technology .detail-faq-list details:nth-child(4n + 4) {
+  .scleral-technology-inline .detail-faq-list details:nth-child(4n + 4) {
     background: var(--aqua-light);
   }
 
-  .scleral-technology .detail-faq-list summary {
+  .scleral-technology-inline .detail-faq-list summary {
     gap: 30px;
     font-size: clamp(30px, 9vw, 44px);
   }
