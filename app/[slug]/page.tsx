@@ -68,7 +68,7 @@ const staticPages: Record<string, StaticPageData> = {
     sections: [
       { title: "What should I bring?", copy: "Please bring a photo ID, current insurance cards, glasses, contact lenses and cases, medication list, and any helpful prior eye records." },
       { title: "How do I know which appointment to choose?", copy: "If you are unsure, choose the option that best matches your main goal or call the clinic at (470) 440-4099. The team can help you select the right starting point." },
-      { title: "Do you offer specialty contact lenses?", copy: "Yes. Scleral lenses, post-laser vision care, and Ortho-K/CRT lens consultations each begin with a detailed evaluation and individualized measurements." },
+      { title: "Do you offer specialty contact lenses?", copy: "Yes. Scleral lenses, LASIK/PK/PRK care, and Ortho-K/CRT lens consultations each begin with a detailed evaluation and individualized measurements." },
       { title: "Can I book dry eye care online?", copy: "Yes. Use the live scheduler to request a comprehensive dry eye evaluation. Your evaluation determines the right care plan and whether advanced treatment is appropriate." },
     ],
   },

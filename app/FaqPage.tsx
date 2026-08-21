@@ -6,7 +6,7 @@ import { SiteHeader } from "./SiteHeader";
 const faqs = [
   ["What should I bring?", "Please bring a photo ID, current insurance cards, glasses, contact lenses and cases, medication list, and any helpful prior eye records."],
   ["How do I know which appointment to choose?", "If you are unsure, choose the option that best matches your main goal or call the clinic at (470) 440-4099. The team can help you select the right starting point."],
-  ["Do you offer specialty contact lenses?", "Yes. Scleral lenses, post-laser vision care, and Ortho-K/CRT lens consultations each begin with a detailed evaluation and individualized measurements."],
+  ["Do you offer specialty contact lenses?", "Yes. Scleral lenses, LASIK/PK/PRK care, and Ortho-K/CRT lens consultations each begin with a detailed evaluation and individualized measurements."],
   ["Can I book dry eye care online?", "Yes. Use the live scheduler to request a comprehensive dry eye evaluation. Your evaluation determines the right care plan and whether advanced treatment is appropriate."],
   ["Are scleral lenses comfortable?", "Yes. Although scleral lenses are larger than traditional contacts, they rest on the sclera, which has fewer nerve endings than the cornea. Most patients find them surprisingly comfortable after a brief adjustment period."],
   ["Can scleral lenses help dry eyes?", "Yes. The fluid reservoir beneath the lens continuously bathes the cornea in preservative-free saline, making scleral lenses an excellent option for many patients with moderate to severe dry eye disease."],
