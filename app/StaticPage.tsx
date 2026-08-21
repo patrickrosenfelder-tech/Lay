@@ -32,10 +32,10 @@ export function StaticPage({ page }: { page: StaticPageData }) {
           </Link>
         </div>
         {page.showOfficeLocation ? (
-          <OfficeExterior className="static-hero-image" sizes="(max-width: 900px) 90vw, 38vw" />
+          <OfficeExterior className="static-hero-image" priority sizes="(max-width: 900px) 90vw, 38vw" />
         ) : page.image && (
           <div className="static-hero-image">
-            <Image src={page.image} alt={page.imageAlt ?? ""} fill sizes="(max-width: 900px) 90vw, 38vw" />
+            <Image src={page.image} alt={page.imageAlt ?? ""} fill priority fetchPriority="high" sizes="(max-width: 900px) 90vw, 38vw" />
           </div>
         )}
       </section>

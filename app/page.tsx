@@ -155,9 +155,7 @@ export default function Home() {
             Specialty eye care <span>Duluth, Georgia</span>
           </p>
           <h1>
-            See what
-            <br />
-            {" "}others <em>miss.</em>
+            See what <span className="hero-headline-line">others <em>miss.</em></span>
           </h1>
           <p className="hero-copy">
             Advanced care for complex vision needs—especially when glasses or

@@ -243,6 +243,10 @@ summary {
   letter-spacing: -0.07em;
 }
 
+.hero-headline-line {
+  display: block;
+}
+
 .hero-copy {
   max-width: 560px;
   margin: 42px 0 0;

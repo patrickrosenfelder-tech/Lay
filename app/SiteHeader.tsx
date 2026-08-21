@@ -85,7 +85,7 @@ export function SiteHeader() {
   return (
     <header className={`site-header${isScrolled ? " is-scrolled" : ""}`}>
       <Link className="brand" href="/" aria-label="Precision Vision Institute home">
-        <Image className="brand-logo" src="/precision-vision-wordmark.png" alt="Precision Vision Institute" width={1028} height={212} sizes="190px" />
+        <Image className="brand-logo" src="/precision-vision-wordmark.png" alt="Precision Vision Institute" width={1028} height={212} sizes="190px" priority fetchPriority="high" />
       </Link>
 
       <nav className="desktop-nav" aria-label="Main navigation">

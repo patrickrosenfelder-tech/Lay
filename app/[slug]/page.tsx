@@ -231,7 +231,7 @@ const pages: Record<string, DetailPage> = {
         copy: "The fluid reservoir beneath the lens may support comfort throughout the day.",
       },
       {
-        title: "LASIK/PRK/RK irregularities",
+        title: "LASIK/PK/PRK irregularities",
         copy: "Specialty optics can address fluctuations, glare, halos, and ghosting after corneal surgery.",
       },
     ],
@@ -247,11 +247,6 @@ const pages: Record<string, DetailPage> = {
         title: "Measured, mapped, and refined.",
         copy:
           "There is no single scleral lens design that is ideal for every eye. We use advanced corneal and scleral imaging, multiple specialty lens designs, and freeform customization to select and refine the lens based on your individual eye shape and visual needs.",
-        bullets: [
-          "Pentacam corneal tomography",
-          "Corneal Scleral Profilometer mapping",
-          "Ovitz Wavefront Analysis",
-        ],
       },
       {
         label: "What to bring",
@@ -986,6 +981,12 @@ export default async function DetailPage({
   if (slug === "testimonials") return <TestimonialsPage />;
   const isDoctorPage = slug === "dr-nim";
   const isReferralPage = slug === "doctor-referral";
+  const breadcrumb = {
+    patients: { href: "/faq", label: "Back to resources" },
+    insurances: { href: "/faq", label: "Back to resources" },
+    "dr-nim": { href: "/our-office", label: "Back to about" },
+    "doctor-referral": { href: "/", label: "Back to home" },
+  }[slug] ?? { href: "/#specialties", label: "Back to specialties" };
 
   return (
     <main
@@ -995,8 +996,8 @@ export default async function DetailPage({
 
       <section className="detail-hero">
         <div className="detail-hero-copy">
-          <Link className="detail-back" href="/#specialties">
-            <ArrowIcon direction="left" placement="before" /> Back to specialties
+          <Link className="detail-back" href={breadcrumb.href}>
+            <ArrowIcon direction="left" placement="before" /> {breadcrumb.label}
           </Link>
           <p className="section-label">{page.eyebrow}</p>
           <h1>{page.title}</h1>
@@ -1015,8 +1016,8 @@ export default async function DetailPage({
             src={page.image}
             alt={page.imageAlt}
             fill
-            preload={slug === "dr-nim"}
-            fetchPriority={slug === "dr-nim" ? "high" : "auto"}
+            priority
+            fetchPriority="high"
             sizes="(max-width: 1050px) 90vw, 42vw"
           />
           <div className="detail-fact">
