@@ -2155,7 +2155,7 @@ summary {
 }
 
 .gland-comparison-copy > p:last-child,
-.meibography-section > div:last-child > p:not(.section-label),
+.meibography-copy > p:not(.section-label),
 .dry-eye-faq > div:first-child > p:last-child {
   margin: 30px 0 0;
   color: #547080;
@@ -2239,9 +2239,14 @@ summary {
 
 .meibography-section {
   background: var(--powder);
+  grid-template-areas:
+    "image copy"
+    "signs signs"
+    "note note";
 }
 
 .meibography-image {
+  grid-area: image;
   position: relative;
   min-height: 430px;
   overflow: hidden;
@@ -2255,8 +2260,21 @@ summary {
   object-position: top;
 }
 
+.meibography-copy {
+  grid-area: copy;
+}
+
+.meibography-evaluation-signs {
+  grid-area: signs;
+  padding-top: clamp(76px, 10vw, 150px);
+}
+
 .meibography-note {
-  margin-top: 24px !important;
+  grid-area: note;
+}
+
+.meibography-note {
+  margin: 0 !important;
   color: var(--muted) !important;
   font-size: 14px !important;
   font-style: italic;
@@ -2267,11 +2285,6 @@ summary {
   grid-template-columns: 0.7fr 1.3fr;
   gap: clamp(45px, 8vw, 140px);
   background: white;
-}
-
-.dry-eye-evaluation-signs {
-  padding: clamp(90px, 11vw, 170px) 10vw;
-  background: var(--powder);
 }
 
 .evaluation-signs-intro {
@@ -3721,6 +3734,14 @@ summary {
   .contact-location,
   .office-location {
     grid-template-columns: 1fr;
+  }
+
+  .meibography-section {
+    grid-template-areas:
+      "image"
+      "copy"
+      "signs"
+      "note";
   }
 
   .dry-eye-pathway > div {
