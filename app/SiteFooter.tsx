@@ -11,7 +11,7 @@ export function SiteFooter() {
         </Link>
         <div className="footer-navigation">
           <div><span>Care</span><Link href="/envision-dry-eye">Dry eye solutions</Link><Link href="/sclerals">Scleral lenses</Link><Link href="/post-laser-vision">Post-laser care</Link></div>
-          <div><span>Resources</span><Link href="/patients">New patients</Link><Link href="/insurances">Insurance & financing</Link><Link href="/testimonials">Testimonials</Link></div>
+          <div><span>Resources</span><Link href="/patients">New patient visit prep</Link><Link href="/insurances">Insurance & financing</Link><Link href="/testimonials">Testimonials</Link></div>
           <div><span>Practice</span><Link href="/dr-nim">Meet Dr. Nim</Link><Link href="/our-office">Our office</Link><Link href="/doctor-referral">For doctors</Link></div>
         </div>
         <div className="footer-utility">
