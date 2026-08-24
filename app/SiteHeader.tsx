@@ -12,7 +12,7 @@ type NavigationItem =
 const navigation: readonly NavigationItem[] = [
   { label: "Dry eye", links: [["Envision package", "/envision-dry-eye"], ["Dry eye treatment", "/dry-eye"]] },
   { label: "Specialty care", links: [["Scleral lenses", "/sclerals"], ["LASIK/PK/PRK", "/lasik-pk-prk"], ["Ortho-K/CRT lenses", "/ortho-k-crt-lenses"]] },
-  { label: "Resources", links: [["New patient visit prep", "/patients"], ["Insurance & financing", "/insurances"], ["Testimonials", "/testimonials"], ["FAQ", "/faq"]] },
+  { label: "Resources", links: [["Patients", "/patients"], ["Insurance & financing", "/insurances"], ["Testimonials", "/testimonials"], ["FAQ", "/faq"]] },
   { label: "About", links: [["Meet Dr. Nim", "/dr-nim"], ["Our office", "/our-office"]] },
   { label: "For doctors", href: "/doctor-referral" },
   { label: "Contact", href: "/contact" },

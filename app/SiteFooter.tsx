@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { MobileQuickActions } from "./MobileQuickActions";
 
 export function SiteFooter() {
   return (
@@ -10,7 +11,7 @@ export function SiteFooter() {
         </Link>
         <div className="footer-navigation">
           <div><span>Care</span><Link href="/envision-dry-eye">Dry eye solutions</Link><Link href="/sclerals">Scleral lenses</Link><Link href="/lasik-pk-prk">LASIK/PK/PRK</Link></div>
-          <div><span>Resources</span><Link href="/patients">New patient visit prep</Link><Link href="/insurances">Insurance & financing</Link><Link href="/testimonials">Testimonials</Link></div>
+          <div><span>Resources</span><Link href="/patients">Patients</Link><Link href="/insurances">Insurance & financing</Link><Link href="/testimonials">Testimonials</Link></div>
           <div><span>Practice</span><Link href="/dr-nim">Meet Dr. Nim</Link><Link href="/our-office">Our office</Link><Link href="/doctor-referral">For doctors</Link></div>
         </div>
         <div className="footer-utility">
@@ -18,10 +19,7 @@ export function SiteFooter() {
         </div>
         <p className="copyright">© {new Date().getFullYear()} Precision Vision Institute</p>
       </footer>
-      <nav className="mobile-bar" aria-label="Quick actions">
-        <a href="tel:+14704404099">Call</a>
-        <Link href="/book">Book online</Link>
-      </nav>
+      <MobileQuickActions />
     </>
   );
 }

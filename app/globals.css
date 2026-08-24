@@ -3770,6 +3770,13 @@ summary {
     border-top: 1px solid #2b2b2b;
     background: var(--navy-deep);
     color: white;
+    transition: opacity 160ms ease, transform 160ms ease;
+  }
+
+  .mobile-bar.is-hidden {
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(calc(100% + env(safe-area-inset-bottom)));
   }
 
   .mobile-bar a {

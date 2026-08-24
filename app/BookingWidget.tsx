@@ -5,7 +5,7 @@ const BOOKING_URL =
 
 export function BookingWidget() {
   return (
-    <div className="booking-card">
+    <div className="booking-card" data-booking-widget>
       <div className="booking-card-header">
         <div>
           <p>Precision Vision Institute</p>
