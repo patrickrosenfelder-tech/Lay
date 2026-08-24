@@ -140,7 +140,7 @@ export default function Home() {
             src="/dr-nim.webp"
             alt="Dr. Lay Nim"
             fill
-            preload
+            priority
             fetchPriority="high"
             sizes="(max-width: 760px) calc(100vw - 40px), 43vw"
           />

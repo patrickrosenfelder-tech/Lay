@@ -3852,6 +3852,17 @@ summary {
 }
 
 @media (max-width: 760px) {
+  .booking-page-section {
+    /* The fixed header also has a 14px top offset, so the booking intro
+       needs more than the shared section padding to clear it comfortably. */
+    padding-top: 140px;
+  }
+
+  .gland-comparison,
+  .meibography-section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .dry-eye-hero,
   .static-hero {
     gap: 38px;
@@ -3962,7 +3973,13 @@ summary {
   .treatment-card-grid,
   .evaluation-signs-grid,
   .dry-eye-pathway > div {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .gland-comparison-copy,
+  .gland-visuals,
+  .gland-card {
+    min-width: 0;
   }
 
   .gland-card {
