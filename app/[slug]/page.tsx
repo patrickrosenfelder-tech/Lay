@@ -284,7 +284,7 @@ const pages: Record<string, DetailPage> = {
     ],
     ctaTitle: "Schedule your scleral lens consultation.",
     ctaCopy:
-      "If blurry vision, discomfort, or dry eyes are limiting your daily life, we're here to help. Schedule a comprehensive scleral lens evaluation with Precision Vision Institute to find out whether custom specialty lenses are the right solution for you. Together, we'll develop a personalized treatment plan designed to help you achieve clearer, more comfortable vision.",
+      "At your visit, Dr. Nim will review your corneal measurements, current lenses, and visual symptoms to determine whether a custom scleral lens may help.",
     ctaConditions: [
       "Keratoconus",
       "Severe dry eye disease",
@@ -475,7 +475,7 @@ const pages: Record<string, DetailPage> = {
       },
       {
         label: "The fitting",
-        title: "A process designed around safety and consistency.",
+        title: "Ortho-K works best when lens wear, cleaning, and follow-up visits are consistent.",
         copy:
           "Your evaluation includes eye health, prescription, corneal shape, and lifestyle. Follow-up visits check vision, lens position, corneal response, and care technique.",
         bullets: [
@@ -596,7 +596,7 @@ const pages: Record<string, DetailPage> = {
     eyebrow: "For referring doctors",
     title: "Collaborative care, with a clear handoff.",
     lede:
-      "Precision Vision Institute welcomes referrals for specialty contact lenses, complex corneas, myopia management, and comprehensive optometric care.",
+      "Refer a patient for specialty contact lenses, complex corneas, myopia management, or advanced dry-eye care.",
     image: "/exam-room.jpg",
     imageAlt: "Clinical examination room at Precision Vision Institute",
     factLabel: "Referral line",
@@ -698,7 +698,7 @@ const pages: Record<string, DetailPage> = {
     eyebrow: "Patient resources",
     title: "Arrive prepared. Leave with a plan.",
     lede:
-      "A few details before your visit help the team spend more time on what matters: understanding your eyes, your vision, and your goals.",
+      "Bring your current glasses, contacts, lens cases, and prior eye records if you have them. This helps us start with a clearer picture.",
     image: "/office-lounge.webp",
     imageAlt: "Reception area at Precision Vision Institute",
     factLabel: "Questions?",

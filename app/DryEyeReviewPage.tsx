@@ -28,7 +28,7 @@ function ReviewHero({ envision }: { envision: boolean }) {
       </div>
       <div className="dry-eye-hero-image">
         <Image src="/exam-room.jpg" alt="Precision Vision Institute examination room" fill priority sizes="(max-width: 900px) 90vw, 40vw" />
-        <p>Personalized care begins with a comprehensive evaluation.</p>
+        <p>Dry eye can have more than one cause. Your exam looks at the tear film, eyelids, glands, and eye surface before treatment is recommended.</p>
       </div>
     </section>
   );
@@ -84,7 +84,7 @@ function GeneralDryEyeReview() {
         <details><summary>Why might one treatment work better than another?</summary><p>Dry eye can involve tear production, gland function, inflammation, eyelid health, medications, screen use, prior surgery, and more. Your evaluation helps identify the contributors that matter most for you.</p></details>
         <details><summary>Can dry eyes be related to LASIK or an autoimmune condition?</summary><p>Yes. Dry-eye symptoms can occur after eye surgery such as LASIK and alongside certain autoimmune conditions. Tell the team about your surgical and health history so it can inform your evaluation.</p></details>
         <details><summary>Can scleral lenses help dry eye?</summary><p>For appropriate patients, a scleral lens can hold a fluid reservoir over the cornea and may support comfort. Your evaluation determines whether it fits your needs.</p></details>
-        <details><summary>Do I have to understand every cause before booking?</summary><p>No. You only need to describe what your eyes feel like and when symptoms are most noticeable. The evaluation is designed to make the next step clearer.</p></details>
+        <details><summary>Do I have to understand every cause before booking?</summary><p>No. Tell us what you feel and when it happens; we will evaluate the likely contributors.</p></details>
       </div></section>
 
       <section className="detail-cta"><p className="section-label">Advanced treatment</p><h2>When advanced treatment may help.</h2><p>Some evaluations point to Envision by InMode as an appropriate next step for gland dysfunction and eyelid inflammation. It is one option within a complete, individualized dry-eye care plan.</p><Link className="button button-primary" href="/envision-dry-eye">Explore Envision Dry Eye Treatment <ArrowIcon /></Link></section>
@@ -104,7 +104,7 @@ function EnvisionReview() {
         <article><span>04</span>{" "}<h3>Evaluation-led care</h3><p>Your examination determines whether Envision, another treatment, or a combination is the appropriate next step.</p></article>
       </div></section>
 
-      <section className="dry-eye-solution"><div className="dry-eye-solution-intro"><p className="section-label">The Envision approach</p><h2>Two technologies. One coordinated plan.</h2><p>Envision combines thermal radiofrequency and intense pulsed light in a treatment plan designed around your ocular-surface findings, symptoms, and candidacy.</p></div><div className="dry-eye-modality-grid">
+      <section className="dry-eye-solution"><div className="dry-eye-solution-intro"><p className="section-label">The Envision approach</p><h2>Two technologies. One coordinated plan.</h2><p>Envision combines heat and light-based treatment when eyelid inflammation or blocked oil glands are contributing to dry-eye symptoms.</p></div><div className="dry-eye-modality-grid">
         <article><span>01</span>{" "}<h3>Forma-I thermal radiofrequency</h3><p>Gentle, controlled heat is applied around the eyelids to support meibomian gland function and the natural oil layer of the tear film. It may be recommended when thickened gland secretions are contributing to rapid tear evaporation.</p></article>
         <article><span>02</span>{" "}<h3>Lumecca-I intense pulsed light</h3><p>Targeted light therapy may be used as part of a clinician-led plan for inflammatory signs around the eyelids. Treatment choice and settings are individualized after an eye-health evaluation.</p></article>
       </div></section>

@@ -42,7 +42,7 @@ export function DryEyePage({ packageFocus = false }: DryEyePageProps) {
             priority
             sizes="(max-width: 900px) 90vw, 40vw"
           />
-          <p>Personalized care begins with a comprehensive evaluation.</p>
+          <p>Dry eye can have more than one cause. Your exam looks at the tear film, eyelids, glands, and eye surface before treatment is recommended.</p>
         </div>
       </section>
 
@@ -106,7 +106,7 @@ export function DryEyePage({ packageFocus = false }: DryEyePageProps) {
             <div className="detail-faq-list">
               <details><summary>Why might one treatment work better than another?</summary><p>Dry eye can involve tear production, gland function, inflammation, eyelid health, medications, screen use, prior surgery, and more. Your evaluation helps identify the contributors that matter most for you.</p></details>
               <details><summary>Can dry eyes be related to LASIK or an autoimmune condition?</summary><p>Yes. Dry-eye symptoms can occur after eye surgery such as LASIK and alongside certain autoimmune conditions. Tell the team about your surgical and health history so it can inform your evaluation.</p></details>
-              <details><summary>Do I have to understand every cause before booking?</summary><p>No. You only need to describe what your eyes feel like and when symptoms are most noticeable. The evaluation is designed to make the next step clearer.</p></details>
+              <details><summary>Do I have to understand every cause before booking?</summary><p>No. Tell us what you feel and when it happens; we will evaluate the likely contributors.</p></details>
             </div>
           </section>
         </>
@@ -133,10 +133,9 @@ export function DryEyePage({ packageFocus = false }: DryEyePageProps) {
           <p className="section-label">The solution</p>
           <h2>Envision by InMode</h2>
           <p>
-            Envision brings thermal radiofrequency and intense pulsed light
-            modalities into one personalized care plan. After your evaluation,
-            Dr. Nim can determine whether either modality is appropriate for
-            your dry-eye pattern and ocular-surface health.
+            Envision combines heat and light-based treatment when eyelid
+            inflammation or blocked oil glands are contributing to dry-eye
+            symptoms.
           </p>
         </div>
         <div className="dry-eye-modality-grid">

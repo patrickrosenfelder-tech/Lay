@@ -61,8 +61,8 @@ export function TestimonialsPage() {
       </section>
 
       <section className="reviews-cta">
-        <p className="section-label">Your experience starts here</p>
-        <h2>See the difference for yourself.</h2>
+        <p className="section-label">Patient experiences</p>
+        <h2>See what patients have shared about their care.</h2>
         <Link className="button button-primary" href="/book">
           View live availability <ArrowIcon />
         </Link>
