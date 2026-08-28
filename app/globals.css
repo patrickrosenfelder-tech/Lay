@@ -3673,6 +3673,13 @@ summary {
     width: 100%;
   }
 
+  /* The fixed mobile call bar is the reachable phone action on small screens.
+     Keeping this duplicate inline link would place it beneath that bar on
+     longer specialty-page titles. */
+  .detail-phone {
+    display: none;
+  }
+
   .detail-hero-image {
     min-height: 470px;
     border-radius: 100px 100px 22px 22px;
