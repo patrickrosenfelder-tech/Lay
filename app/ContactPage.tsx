@@ -28,7 +28,7 @@ export function ContactPage() {
         <InquiryForm kind="contact" />
       </section>
       <section className="contact-location">
-        <div className="contact-address"><p className="section-label">Find us</p><h2>3940 Buford Hwy<br />Suite A104<br />Duluth, GA 30096</h2><p>Mon / Tue / Wed / Fri: 9:30 AM–5:30 PM<br />Sat: 9:30 AM–1:30 PM<br />Thurs / Sun: Closed</p></div>
+        <div className="contact-address"><p className="section-label">Find us</p><h2>3940 Buford Hwy<br />Suite A104<br />Duluth, GA 30096</h2><p>Mon / Tue / Wed: 9:30 AM–5:30 PM<br />Fri: 9:30 AM–4:30 PM<br />Sat: 9:30 AM–1:30 PM<br />Thurs / Sun: Closed</p></div>
         <LocationMap className="contact-map" />
       </section>
       <SiteFooter />
