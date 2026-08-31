@@ -107,9 +107,15 @@ const clinicStructuredData = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Friday"],
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday"],
       opens: "09:30",
       closes: "17:30",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Friday",
+      opens: "09:30",
+      closes: "16:30",
     },
     {
       "@type": "OpeningHoursSpecification",
@@ -300,8 +306,12 @@ export default function Home() {
           </address>
           <div className="hours">
             <div>
-              <span>Mon / Tue / Wed / Fri</span>
+              <span>Mon / Tue / Wed</span>
               <strong>9:30 AM—5:30 PM</strong>
+            </div>
+            <div>
+              <span>Fri</span>
+              <strong>9:30 AM—4:30 PM</strong>
             </div>
             <div>
               <span>Sat</span>

@@ -81,7 +81,7 @@ const staticPages: Record<string, StaticPageData> = {
     ctaLabel: "Plan your visit",
     sections: [
       { title: "Visit us", copy: "3940 Buford Hwy Ste A104, Duluth, GA 30096. Call (470) 440-4099 if you need help finding the office or preparing for your appointment." },
-      { title: "Office hours", copy: "Mon / Tue / Wed / Fri: 9:30 AM–5:30 PM. Sat: 9:30 AM–1:30 PM. Thurs / Sun: Closed." },
+      { title: "Office hours", copy: "Mon / Tue / Wed: 9:30 AM–5:30 PM. Fri: 9:30 AM–4:30 PM. Sat: 9:30 AM–1:30 PM. Thurs / Sun: Closed." },
       { title: "Designed around the details", copy: "Specialty lens care and complex eye concerns often need more time and more precise measurements. Our office is built to make that process clear, comfortable, and collaborative." },
     ],
   },
