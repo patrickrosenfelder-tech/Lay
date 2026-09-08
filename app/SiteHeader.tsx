@@ -105,11 +105,16 @@ export function SiteHeader() {
             <button type="button" aria-expanded={activeDropdown === item.label} aria-controls={`${item.label}-menu`}>
               {item.label}
             </button>
-            {activeDropdown === item.label && (
-              <div id={`${item.label}-menu`}>
-                {item.links.map(([label, href]) => <Link key={href} href={href} onClick={() => { cancelScheduledClose(); setActiveDropdown(null); }}>{label}</Link>)}
-              </div>
-            )}
+            {/* Rendered on the server in every state so the links are crawlable;
+                visibility is CSS-driven and `inert` keeps closed menus out of
+                the focus order. */}
+            <div
+              id={`${item.label}-menu`}
+              className={`nav-dropdown-menu${activeDropdown === item.label ? " is-open" : ""}`}
+              inert={activeDropdown !== item.label}
+            >
+              {item.links.map(([label, href]) => <Link key={href} href={href} onClick={() => { cancelScheduledClose(); setActiveDropdown(null); }}>{label}</Link>)}
+            </div>
           </div>
         ))}
         <span className="header-socials" aria-label="Social media">
@@ -133,8 +138,12 @@ export function SiteHeader() {
           Menu
         </button>
         {isMobileMenuOpen && <button className="mobile-menu-backdrop" type="button" aria-label="Close menu" onClick={closeMobileMenu} />}
-        {isMobileMenuOpen && (
-          <nav id="mobile-navigation" className="mobile-menu-panel" aria-label="Mobile navigation">
+        <nav
+          id="mobile-navigation"
+          className={`mobile-menu-panel${isMobileMenuOpen ? " is-open" : ""}`}
+          aria-label="Mobile navigation"
+          inert={!isMobileMenuOpen}
+        >
           {navigation.map((item) => "href" in item ? (
             <Link key={item.label} href={item.href} onClick={closeMobileMenu}>{item.label}</Link>
           ) : (
@@ -148,8 +157,7 @@ export function SiteHeader() {
             <a className="social-icon social-facebook" href="https://www.facebook.com/people/Precision-Vision-Institute/100063539512239/" target="_blank" rel="noopener noreferrer" aria-label="Precision Vision Institute on Facebook" onClick={closeMobileMenu} />
             <a className="social-icon social-instagram" href="https://www.instagram.com/dr.laynim/" target="_blank" rel="noopener noreferrer" aria-label="Dr. Lay Nim on Instagram" onClick={closeMobileMenu} />
           </span>
-          </nav>
-        )}
+        </nav>
       </div>
     </header>
   );

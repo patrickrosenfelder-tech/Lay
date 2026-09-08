@@ -2,6 +2,11 @@ import Link from "next/link";
 import { ArrowIcon } from "./ArrowIcon";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
+import {
+  breadcrumbStructuredData,
+  JsonLd,
+  medicalWebPageStructuredData,
+} from "./structured-data";
 
 export type LegalPageData = {
   eyebrow: string;
@@ -16,7 +21,7 @@ export type LegalPageData = {
   }[];
 };
 
-export function LegalPage({ page }: { page: LegalPageData }) {
+export function LegalPage({ page, path }: { page: LegalPageData; path: string }) {
   const formatText = (text: string) => {
     const emailPattern = /(info@precisionvisioninstitute\.com)/g;
     const parts = text.split(emailPattern);
@@ -30,7 +35,20 @@ export function LegalPage({ page }: { page: LegalPageData }) {
   };
 
   return (
-    <main className="legal-page">
+    <main id="main-content" className="legal-page">
+      <JsonLd
+        data={[
+          medicalWebPageStructuredData({
+            path,
+            name: page.title,
+            description: page.intro[0] ?? page.title,
+          }),
+          breadcrumbStructuredData([
+            { name: "Home", path: "/" },
+            { name: page.eyebrow, path },
+          ]),
+        ]}
+      />
       <SiteHeader />
       <section className="legal-hero">
         <p className="section-label">{page.eyebrow}</p>

@@ -1,10 +1,29 @@
 import { BookingWidget } from "./BookingWidget";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
+import {
+  breadcrumbStructuredData,
+  JsonLd,
+  medicalWebPageStructuredData,
+} from "./structured-data";
 
 export function BookingPage() {
   return (
-    <main className="booking-page">
+    <main id="main-content" className="booking-page">
+      <JsonLd
+        data={[
+          medicalWebPageStructuredData({
+            path: "/book",
+            name: "Book an appointment",
+            description:
+              "View live appointment availability and book specialty eye care at Precision Vision Institute in Duluth, Georgia.",
+          }),
+          breadcrumbStructuredData([
+            { name: "Home", path: "/" },
+            { name: "Book an appointment", path: "/book" },
+          ]),
+        ]}
+      />
       <SiteHeader />
       <section className="booking-section booking-page-section">
         <div className="booking-intro">
@@ -19,7 +38,7 @@ export function BookingPage() {
             <a href="tel:+14704404099">(470) 440-4099</a>
           </div>
         </div>
-        <BookingWidget />
+        <BookingWidget eager />
       </section>
       <SiteFooter />
     </main>

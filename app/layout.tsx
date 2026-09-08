@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import { SITE_URL } from "./site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.precisionvisioninstitute.com"),
+  metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: "/",
   },
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     title: "See what others miss. | Precision Vision Institute",
     description:
       "Advanced care for complex vision needs in Duluth, Georgia.",
-    images: [{ url: "/og.png", width: 1200, height: 630 }],
+    images: [{ url: "/og.jpg", width: 1200, height: 631 }],
     type: "website",
   },
   twitter: {
@@ -22,8 +23,12 @@ export const metadata: Metadata = {
     title: "See what others miss. | Precision Vision Institute",
     description:
       "Advanced care for complex vision needs in Duluth, Georgia.",
-    images: ["/og.png"],
+    images: ["/og.jpg"],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#082f4b",
 };
 
 export default function RootLayout({
@@ -34,6 +39,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <a className="skip-link" href="#main-content">
+          Skip to main content
+        </a>
         {children}
         <Analytics />
       </body>

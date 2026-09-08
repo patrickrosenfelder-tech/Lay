@@ -7,6 +7,7 @@ import { OfficeExterior } from "./OfficeExterior";
 import { PatientStories } from "./PatientStories";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
+import { clinicStructuredData, JsonLd } from "./structured-data";
 
 const specialties = [
   {
@@ -77,64 +78,11 @@ function ProcessIcon({ step }: { step: number }) {
   );
 }
 
-const clinicStructuredData = {
-  "@context": "https://schema.org",
-  "@type": "MedicalClinic",
-  name: "Precision Vision Institute",
-  description:
-    "Specialty eye care for keratoconus, severe dry eye, complex corneas, post-surgical vision, and progressive myopia.",
-  telephone: "+1-470-440-4099",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "3940 Buford Hwy, Suite A104",
-    addressLocality: "Duluth",
-    addressRegion: "GA",
-    postalCode: "30096",
-    addressCountry: "US",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 33.984,
-    longitude: -84.156,
-  },
-  medicalSpecialty: [
-    "Specialty contact lenses",
-    "Keratoconus care",
-    "Dry eye care",
-    "Orthokeratology",
-    "Myopia management",
-  ],
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday"],
-      opens: "09:30",
-      closes: "17:30",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Friday",
-      opens: "09:30",
-      closes: "16:30",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "09:30",
-      closes: "13:30",
-    },
-  ],
-};
 
 export default function Home() {
   return (
-    <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(clinicStructuredData).replace(/</g, "\\u003c"),
-        }}
-      />
+    <main id="main-content">
+      <JsonLd data={clinicStructuredData} />
       <SiteHeader />
 
       <section className="hero" id="top">
@@ -288,8 +236,8 @@ export default function Home() {
         <div className="visit-media">
           <OfficeExterior className="visit-image" sizes="(max-width: 760px) calc(100vw - 40px), 60vw">
             <div className="visit-badge">
-              <span>33.984° N</span>
-              <span>84.156° W</span>
+              <span>33.978° N</span>
+              <span>84.161° W</span>
             </div>
           </OfficeExterior>
           <LocationMap className="visit-map" />

@@ -5,6 +5,11 @@ import { LocationMap } from "./LocationMap";
 import { OfficeExterior } from "./OfficeExterior";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
+import {
+  breadcrumbStructuredData,
+  JsonLd,
+  medicalWebPageStructuredData,
+} from "./structured-data";
 
 export type StaticPageData = {
   eyebrow: string;
@@ -18,9 +23,22 @@ export type StaticPageData = {
   ctaHref?: string;
 };
 
-export function StaticPage({ page }: { page: StaticPageData }) {
+export function StaticPage({ page, path }: { page: StaticPageData; path: string }) {
   return (
-    <main className="static-page">
+    <main id="main-content" className="static-page">
+      <JsonLd
+        data={[
+          medicalWebPageStructuredData({
+            path,
+            name: page.title,
+            description: page.lede,
+          }),
+          breadcrumbStructuredData([
+            { name: "Home", path: "/" },
+            { name: page.eyebrow, path },
+          ]),
+        ]}
+      />
       <SiteHeader />
       <section className="static-hero">
         <div>

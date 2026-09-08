@@ -1,12 +1,31 @@
 import Link from "next/link";
 import { ArrowIcon } from "./ArrowIcon";
-import { GOOGLE_REVIEWS_URL, patientReviews } from "./reviews";
+import { GOOGLE_RATING, GOOGLE_REVIEWS_URL, patientReviews } from "./reviews";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
+import {
+  breadcrumbStructuredData,
+  JsonLd,
+  medicalWebPageStructuredData,
+} from "./structured-data";
 
 export function TestimonialsPage() {
   return (
-    <main className="testimonials-page">
+    <main id="main-content" className="testimonials-page">
+      <JsonLd
+        data={[
+          medicalWebPageStructuredData({
+            path: "/testimonials",
+            name: "Patient testimonials",
+            description:
+              "Experiences patients have shared about specialty lens care at Precision Vision Institute in Duluth, Georgia.",
+          }),
+          breadcrumbStructuredData([
+            { name: "Home", path: "/" },
+            { name: "Testimonials", path: "/testimonials" },
+          ]),
+        ]}
+      />
       <SiteHeader />
 
       <section className="reviews-hero">
@@ -26,19 +45,27 @@ export function TestimonialsPage() {
         <div className="google-review-summary">
           <div>
             <span className="review-source-label">Google rating</span>
-            <strong>5.0</strong>
+            <strong>{GOOGLE_RATING.value}</strong>
           </div>
-          <span className="google-stars" aria-label="5 out of 5 stars">
+          <span
+            className="google-stars"
+            aria-label={`${GOOGLE_RATING.value} out of 5 stars`}
+          >
             ★★★★★
           </span>
           <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">
             Read current Google reviews <ArrowIcon />
           </a>
+          <span className="review-checked-on">
+            Verified {GOOGLE_RATING.checkedOn}. Ratings change over time — see
+            Google for the current figure.
+          </span>
         </div>
         <div className="original-review-source">
           <p>
             Hear straight from the people we care for. These are real,
-            unaltered experiences shared by our amazing patients.
+            unaltered experiences shared by our amazing patients across Google,
+            Yelp, and testimonials sent directly to the clinic.
           </p>
         </div>
       </section>
@@ -55,6 +82,7 @@ export function TestimonialsPage() {
             <p>“{review.text}”</p>
             <footer>
               <strong>{review.author}</strong>
+              <span className="review-source">{review.source}</span>
             </footer>
           </blockquote>
         ))}

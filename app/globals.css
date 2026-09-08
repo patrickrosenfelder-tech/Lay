@@ -8,7 +8,10 @@
   --powder: #e3f0f8;
   --aqua: #76cbd5;
   --aqua-light: #cfecef;
-  --muted: #8093a0;
+  --muted: #5a6d7d;
+  /* Brand teal is only legible on the dark sections; this is its
+     light-background counterpart. */
+  --aqua-ink: #1d7480;
   --line: rgba(22, 58, 84, 0.14);
   --header-height: 100px;
 }
@@ -18,6 +21,24 @@
 }
 
 html { background: var(--ink); }
+
+.skip-link {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  transform: translateY(-120%);
+  border-radius: 0 0 10px 0;
+  background: var(--navy-deep);
+  padding: 14px 20px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
 
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
@@ -189,6 +210,12 @@ summary {
   display: none;
 }
 
+/* The panel is server-rendered on every page so its links are crawlable;
+   it stays visually hidden (and inert) until the toggle opens it. */
+.mobile-menu-panel:not(.is-open) {
+  display: none;
+}
+
 [id] {
   scroll-margin-top: calc(var(--header-height) + 38px);
 }
@@ -216,7 +243,7 @@ summary {
 .eyebrow,
 .section-label {
   margin: 0 0 28px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -321,7 +348,7 @@ summary {
   border-radius: 999px;
   padding: 8px 13px;
   color: #d4e5ee;
-  font-size: 10px;
+  font-size: 11.5px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition:
@@ -373,7 +400,7 @@ summary {
 
 .portrait-note span {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 11.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -651,7 +678,7 @@ summary {
   background: var(--aqua);
   padding: 4px 6px;
   color: var(--navy);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 700;
 }
 
@@ -801,7 +828,7 @@ summary {
   border-radius: 999px;
   padding: 6px 10px;
   color: var(--navy);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -954,7 +981,7 @@ summary {
   background: var(--navy);
   padding: 11px 17px;
   color: white;
-  font-size: 10px;
+  font-size: 11.5px;
   letter-spacing: 0.08em;
 }
 
@@ -1106,7 +1133,7 @@ summary {
 .booking-card-header p {
   margin: 0 0 4px;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1126,7 +1153,7 @@ summary {
   background: var(--aqua-light);
   padding: 9px 13px;
   color: var(--navy);
-  font-size: 10px;
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1156,7 +1183,7 @@ summary {
 }
 
 .booking-embed-intro span {
-  color: #617988;
+  color: var(--muted);
   font-size: 13px;
   line-height: 1.45;
 }
@@ -1177,7 +1204,7 @@ summary {
   border-top: 1px solid var(--line);
   padding: 16px 32px 18px;
   background: var(--powder);
-  color: #617988;
+  color: var(--muted);
   font-size: 13px;
 }
 
@@ -1186,6 +1213,9 @@ summary {
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 4px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
 }
 
 .detail-page {
@@ -1259,8 +1289,8 @@ summary {
 .review-source-label {
   display: block;
   margin-bottom: 18px;
-  color: #7d929e;
-  font-size: 10px;
+  color: #a9c2d4;
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1338,7 +1368,7 @@ summary {
   align-items: center;
   justify-content: space-between;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 11.5px;
   font-weight: 700;
 }
 
@@ -1498,7 +1528,7 @@ summary {
 
 .detail-fact span {
   color: var(--muted);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1527,7 +1557,7 @@ summary {
 
 .detail-highlights article > span {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 11.5px;
   font-weight: 700;
 }
 
@@ -1540,7 +1570,7 @@ summary {
 .detail-highlights p {
   max-width: 410px;
   margin: 0;
-  color: #617988;
+  color: var(--muted);
   font-size: 16px;
   line-height: 1.65;
 }
@@ -1618,7 +1648,7 @@ summary {
   display: flex;
   gap: 22px;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.11em;
   text-transform: uppercase;
@@ -2023,6 +2053,12 @@ summary {
   line-height: 1;
 }
 
+.nav-dropdown-menu:not(.is-open) {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
 .nav-dropdown > div {
   position: absolute;
   top: 100%;
@@ -2186,7 +2222,7 @@ summary {
 
 .gland-card p {
   margin: 26px 0 0;
-  color: #617988;
+  color: var(--muted);
   font-size: 15px;
   line-height: 1.55;
 }
@@ -2334,7 +2370,7 @@ summary {
 .evaluation-signs-grid p {
   max-width: 540px;
   margin: 0;
-  color: #617988;
+  color: var(--muted);
   font-size: 15px;
   line-height: 1.65;
 }
@@ -2358,7 +2394,7 @@ summary {
 .treatment-card-grid span,
 .dry-eye-pathway article > span {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.12em;
 }
@@ -2374,7 +2410,7 @@ summary {
 .treatment-card-grid p,
 .dry-eye-pathway article p {
   margin: 0;
-  color: #617988;
+  color: var(--muted);
   font-size: 15px;
   line-height: 1.65;
 }
@@ -2425,7 +2461,7 @@ summary {
 .insurance-logo-panel > p:last-child {
   max-width: 650px;
   margin: 24px auto 0;
-  color: #617988;
+  color: var(--muted);
   font-size: 16px;
   line-height: 1.6;
 }
@@ -2584,7 +2620,7 @@ summary {
 
 .inquiry-privacy {
   margin: 22px 0;
-  color: #617988;
+  color: var(--muted);
   font-size: 13px;
   line-height: 1.55;
 }
@@ -2768,7 +2804,7 @@ summary {
 
 .dry-eye-modality-grid article span {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.13em;
 }
@@ -2786,7 +2822,7 @@ summary {
 .dry-eye-pricing p,
 .dry-eye-package-note {
   margin: 0;
-  color: #617988;
+  color: var(--muted);
   font-size: 16px;
   line-height: 1.65;
 }
@@ -2915,7 +2951,7 @@ summary {
 .static-content ul {
   margin: 24px 0 0;
   padding-left: 20px;
-  color: #617988;
+  color: var(--muted);
   font-size: 16px;
   line-height: 1.7;
 }
@@ -2964,7 +3000,7 @@ summary {
 .footer-navigation span {
   margin-bottom: 4px;
   color: #8fa6b4;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -2972,7 +3008,10 @@ summary {
 
 .footer-navigation a,
 .footer-utility a {
-  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  font-size: 13px;
   font-weight: 600;
 }
 
@@ -3172,7 +3211,7 @@ summary {
   .mobile-nav-group > span {
     padding: 16px 20px 8px;
     color: var(--muted);
-    font-size: 10px;
+    font-size: 11.5px;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -3418,7 +3457,7 @@ summary {
 
   .hero-meta a {
     padding: 6px 10px;
-    font-size: 8px;
+    font-size: 11px;
   }
 
   .statement {
@@ -3626,15 +3665,19 @@ summary {
 
   .secure-note {
     padding: 7px 9px;
-    font-size: 8px;
+    font-size: 11px;
   }
 
   .booking-embed-intro {
     padding: 17px 20px;
   }
 
+  /* A fixed 900px frame is taller than a phone screen, which traps the user
+     in a nested scroll container on the main conversion path. Size it to the
+     viewport so the page scroll is the only scroll. */
   .booking-embed {
-    height: 900px;
+    height: calc(100svh - 96px);
+    min-height: 520px;
   }
 
   .booking-embed-footer {
@@ -4047,4 +4090,75 @@ summary {
   *::after {
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Inquiry form states ------------------------------------------------------ */
+
+.inquiry-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.inquiry-error {
+  margin: 0;
+  border-radius: 12px;
+  border: 1px solid rgba(150, 40, 40, 0.28);
+  background: #fdf4f4;
+  padding: 12px 14px;
+  color: #8a2b2b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.inquiry-error a {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.inquiry-success h3 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 19px;
+}
+
+.inquiry-success p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.inquiry-success a {
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.inquiry-form button[disabled] {
+  cursor: progress;
+  opacity: 0.72;
+}
+
+/* Testimonial provenance ---------------------------------------------------- */
+
+.review-checked-on {
+  flex-basis: 100%;
+  color: #a9c2d4;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.patient-review-card footer .review-source {
+  display: block;
+  margin-top: 3px;
+  color: #3f5260;
+  font-size: 11px;
+  letter-spacing: 0.04em;
 }

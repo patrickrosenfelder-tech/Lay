@@ -3,7 +3,13 @@ import { ArrowIcon } from "./ArrowIcon";
 const BOOKING_URL =
   "https://web.eyecloudpro.com/site/!appt_req?sid=30DE3BDF7982B488E75A54C45893656C";
 
-export function BookingWidget() {
+type BookingWidgetProps = {
+  /** Eager on /book, where the scheduler is the whole point of the page.
+      Lazy on the homepage, where it sits far below the fold. */
+  eager?: boolean;
+};
+
+export function BookingWidget({ eager = false }: BookingWidgetProps) {
   return (
     <div className="booking-card" data-booking-widget>
       <div className="booking-card-header">
@@ -29,7 +35,7 @@ export function BookingWidget() {
         className="booking-embed"
         src={BOOKING_URL}
         title="Precision Vision Institute live appointment scheduler"
-        loading="lazy"
+        loading={eager ? "eager" : "lazy"}
         referrerPolicy="strict-origin-when-cross-origin"
       />
 

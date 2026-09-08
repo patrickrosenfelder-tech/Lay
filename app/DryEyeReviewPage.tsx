@@ -3,6 +3,26 @@ import Link from "next/link";
 import { ArrowIcon } from "./ArrowIcon";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
+import {
+  breadcrumbStructuredData,
+  faqStructuredData,
+  JsonLd,
+  medicalWebPageStructuredData,
+} from "./structured-data";
+
+const generalDryEyeFaqs = [
+  ["Why might one treatment work better than another?", "Dry eye can involve tear production, gland function, inflammation, eyelid health, medications, screen use, prior surgery, and more. Your evaluation helps identify the contributors that matter most for you."],
+  ["Can dry eyes be related to LASIK or an autoimmune condition?", "Yes. Dry-eye symptoms can occur after eye surgery such as LASIK and alongside certain autoimmune conditions. Tell the team about your surgical and health history so it can inform your evaluation."],
+  ["Can scleral lenses help dry eye?", "For appropriate patients, a scleral lens can hold a fluid reservoir over the cornea and may support comfort. Your evaluation determines whether it fits your needs."],
+  ["Do I have to understand every cause before booking?", "No. Tell us what you feel and when it happens; we will evaluate the likely contributors."],
+] as const;
+
+const envisionFaqs = [
+  ["Does Envision treatment hurt?", "Comfort and treatment settings are individualized. Your clinician will explain what to expect, review possible temporary effects, and confirm whether treatment is appropriate for you."],
+  ["How many sessions might I need?", "Recommendations are based on your evaluation and response to care. A four-session protocol is commonly recommended for patients who are candidates for the Complete Dry Eye Package."],
+  ["Can Envision be combined with drops or specialty lenses?", "Sometimes. Dry eye often has more than one contributor, so your plan may include home care, medical therapy, specialty lenses, or other options alongside in-office treatment."],
+  ["Is Envision covered by insurance?", "Envision is currently considered an elective procedure and is not covered by insurance. HSA/FSA funds may be eligible; please confirm eligibility with your plan administrator."],
+] as const;
 
 type DryEyeReviewPageProps = {
   envision?: boolean;
@@ -128,5 +148,20 @@ function EnvisionReview() {
 }
 
 export function DryEyeReviewPage({ envision = false }: DryEyeReviewPageProps) {
-  return <main className="dry-eye-page"><SiteHeader /><ReviewHero envision={envision} />{envision ? <EnvisionReview /> : <GeneralDryEyeReview />}<SiteFooter /></main>;
+  const path = envision ? "/envision-dry-eye" : "/dry-eye";
+  return <main id="main-content" className="dry-eye-page"><JsonLd data={[
+    medicalWebPageStructuredData({
+      path,
+      name: envision ? "Envision Complete Dry Eye Package" : "Dry eye treatment",
+      description: envision
+        ? "A more complete approach to dry eye treatment, combining in-office therapy with a personalized care plan."
+        : "Personalized dry eye evaluations and treatment options that address the factors affecting comfort, tear-film stability, and eye health.",
+      about: "Dry eye disease",
+    }),
+    breadcrumbStructuredData([
+      { name: "Home", path: "/" },
+      { name: envision ? "Envision package" : "Dry eye treatment", path },
+    ]),
+    faqStructuredData(envision ? envisionFaqs : generalDryEyeFaqs),
+  ]} /><SiteHeader /><ReviewHero envision={envision} />{envision ? <EnvisionReview /> : <GeneralDryEyeReview />}<SiteFooter /></main>;
 }

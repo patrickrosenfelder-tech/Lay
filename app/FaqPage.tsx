@@ -2,8 +2,14 @@ import Link from "next/link";
 import { ArrowIcon } from "./ArrowIcon";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
+import {
+  breadcrumbStructuredData,
+  faqStructuredData,
+  JsonLd,
+  medicalWebPageStructuredData,
+} from "./structured-data";
 
-const faqs = [
+export const faqs = [
   ["What should I bring?", "Please bring a photo ID, current insurance cards, glasses, contact lenses and cases, medication list, and any helpful prior eye records."],
   ["How do I know which appointment to choose?", "If you are unsure, choose the option that best matches your main goal or call the clinic at (470) 440-4099. The team can help you select the right starting point."],
   ["Do you offer specialty contact lenses?", "Yes. Scleral lenses, LASIK/PK/PRK care, and Ortho-K/CRT lens consultations each begin with a detailed evaluation and individualized measurements."],
@@ -27,7 +33,22 @@ const faqs = [
 
 export function FaqPage() {
   return (
-    <main className="faq-page">
+    <main id="main-content" className="faq-page">
+      <JsonLd
+        data={[
+          medicalWebPageStructuredData({
+            path: "/faq",
+            name: "Frequently asked questions",
+            description:
+              "Answers to the practical questions patients ask before booking specialty eye care at Precision Vision Institute.",
+          }),
+          faqStructuredData(faqs),
+          breadcrumbStructuredData([
+            { name: "Home", path: "/" },
+            { name: "FAQ", path: "/faq" },
+          ]),
+        ]}
+      />
       <SiteHeader />
       <section className="static-hero faq-hero">
         <div>

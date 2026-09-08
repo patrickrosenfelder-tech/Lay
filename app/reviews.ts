@@ -1,5 +1,19 @@
 export const GOOGLE_REVIEWS_URL =
-  "https://www.google.com.mx/maps/place/Precision+Vision+Institute/@33.9775123,-84.1638908,17z/data=!4m8!3m7!1s0x88f5a31f1f5f00c9:0x21ed856629aca207!8m2!3d33.9775123!4d-84.1613159!9m1!1b1!16s%2Fg%2F11jv5wpzc2?entry=ttu";
+  "https://www.google.com/maps/place/Precision+Vision+Institute/@33.9775123,-84.1638908,17z/data=!4m8!3m7!1s0x88f5a31f1f5f00c9:0x21ed856629aca207!8m2!3d33.9775123!4d-84.1613159!9m1!1b1!16s%2Fg%2F11jv5wpzc2";
+
+/**
+ * Displayed Google rating. This is a manually maintained snapshot, so it is
+ * shown with the date it was last verified rather than as a live figure.
+ *
+ * NOTE: `reviewCount` is deliberately absent. AggregateRating structured data
+ * requires a real, verifiable count; add one here (and the schema in
+ * TestimonialsPage) only once the true number is confirmed from the Google
+ * Business Profile.
+ */
+export const GOOGLE_RATING = {
+  value: "5.0",
+  checkedOn: "September 2026",
+} as const;
 
 export const ORIGINAL_TESTIMONIALS_URL =
   "https://precisionvisioninstitute.com/testimonials";

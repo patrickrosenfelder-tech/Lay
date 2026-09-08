@@ -12,6 +12,13 @@ import { InquiryForm } from "../InquiryForm";
 import { LegalPage, type LegalPageData } from "../LegalPage";
 import { StaticPage, type StaticPageData } from "../StaticPage";
 import { TestimonialsPage } from "../TestimonialsPage";
+import {
+  breadcrumbStructuredData,
+  doctorStructuredData,
+  faqStructuredData,
+  JsonLd,
+  medicalWebPageStructuredData,
+} from "../structured-data";
 
 type DetailPage = {
   eyebrow: string;
@@ -520,9 +527,8 @@ const pages: Record<string, DetailPage> = {
   },
   "dr-nim": {
     eyebrow: "Meet your optometrist",
-    title:
-      "Dr. Lay Nim specializes in advanced contact lens fittings, taking the time to listen, educate, and ensure your perfect fit.",
-    lede: "Specializing in keratoconus, scleral lenses, and orthokeratology, with a practice built around patient, hands-on fitting.",
+    title: "Dr. Lay Nim, OD",
+    lede: "Dr. Nim specializes in advanced contact lens fittings for keratoconus, scleral lenses, and orthokeratology — taking the time to listen, educate, and get the details right.",
     image: "/dr-nim.webp",
     imageAlt: "Dr. Lay Nim of Precision Vision Institute",
     factLabel: "Special focus",
@@ -883,11 +889,51 @@ export async function generateMetadata({
       title: "Envision Complete Dry Eye Package | Precision Vision Institute",
       description: "Explore the Envision Complete Dry Eye Package and book a comprehensive dry eye evaluation in Duluth, Georgia.",
       alternates: { canonical: "/envision-dry-eye" },
-      openGraph: { images: [{ url: "/og.png", width: 1200, height: 630 }] },
-      twitter: { images: ["/og.png"] },
+      openGraph: { images: [{ url: "/og.jpg", width: 1200, height: 631 }] },
+      twitter: { images: ["/og.jpg"] },
     };
   }
   const routeMetadata: Record<string, { title: string; description: string }> = {
+    sclerals: {
+      title: "Scleral Lenses for Keratoconus & Complex Corneas | Duluth, GA",
+      description:
+        "Custom scleral lenses fitted with corneal and scleral imaging for keratoconus, severe dry eye, and post-surgical corneas in Duluth, Georgia.",
+    },
+    "ortho-k-crt-lenses": {
+      title: "Ortho-K & CRT Lenses for Myopia Management | Duluth, GA",
+      description:
+        "Orthokeratology lenses gently reshape the cornea overnight, supporting clear daytime vision and proactive myopia management for children and adults.",
+    },
+    insurances: {
+      title: "Insurance & Financing for Specialty Eye Care | Duluth, GA",
+      description:
+        "How vision plans, medical insurance, specialty lens benefits, self-pay, and CareCredit apply to your visit at Precision Vision Institute.",
+    },
+    patients: {
+      title: "New Patient Information & What to Bring | Precision Vision Institute",
+      description:
+        "What to bring, how to prepare, and what to expect at your first specialty eye care visit in Duluth, Georgia.",
+    },
+    testimonials: {
+      title: "Patient Reviews & Testimonials | Precision Vision Institute",
+      description:
+        "Read what patients say about specialty lens care, keratoconus fittings, and dry eye treatment at Precision Vision Institute in Duluth, Georgia.",
+    },
+    faq: {
+      title: "Specialty Eye Care FAQ | Precision Vision Institute",
+      description:
+        "Answers about scleral lenses, Ortho-K, dry eye evaluations, insurance coverage, and what to bring to your first visit in Duluth, Georgia.",
+    },
+    "doctor-referral": {
+      title: "Refer a Patient | Precision Vision Institute, Duluth GA",
+      description:
+        "Refer a patient for specialty contact lenses, complex corneas, myopia management, or advanced dry-eye care, with a clear handoff back to your practice.",
+    },
+    "our-office": {
+      title: "Our Duluth, GA Optometry Office | Precision Vision Institute",
+      description:
+        "Precision Vision Institute brings detailed measurements, attentive conversation, and personalized follow-up together in Duluth, Georgia.",
+    },
     "dry-eye": {
       title: "Dry Eye Treatment | Precision Vision Institute",
       description: "Personalized dry eye evaluations and treatment options that address the factors affecting comfort, tear-film stability, and eye health.",
@@ -918,14 +964,14 @@ export async function generateMetadata({
       openGraph: {
         title: override.title,
         description: override.description,
-        images: [{ url: "/og.png", width: 1200, height: 630 }],
+        images: [{ url: "/og.jpg", width: 1200, height: 631 }],
         type: "website",
       },
       twitter: {
         card: "summary_large_image",
         title: override.title,
         description: override.description,
-        images: ["/og.png"],
+        images: ["/og.jpg"],
       },
     };
   }
@@ -946,14 +992,14 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      images: page ? [{ url: page.image, alt: page.imageAlt }] : [{ url: "/og.png", width: 1200, height: 630 }],
+      images: page ? [{ url: page.image, alt: page.imageAlt }] : [{ url: "/og.jpg", width: 1200, height: 631 }],
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: page ? [page.image] : ["/og.png"],
+      images: page ? [page.image] : ["/og.jpg"],
     },
   };
 }
@@ -976,8 +1022,8 @@ export default async function DetailPage({
   if (slug === "dry-eye" || slug === "envision-dry-eye") return <DryEyeReviewPage envision={slug === "envision-dry-eye"} />;
   if (slug === "faq") return <FaqPage />;
   if (slug === "contact") return <ContactPage />;
-  if (legalPages[slug]) return <LegalPage page={legalPages[slug]} />;
-  if (staticPage) return <StaticPage page={staticPage} />;
+  if (legalPages[slug]) return <LegalPage page={legalPages[slug]} path={`/${slug}`} />;
+  if (staticPage) return <StaticPage page={staticPage} path={`/${slug}`} />;
   if (slug === "testimonials") return <TestimonialsPage />;
   const isDoctorPage = slug === "dr-nim";
   const isReferralPage = slug === "doctor-referral";
@@ -988,10 +1034,33 @@ export default async function DetailPage({
     "doctor-referral": { href: "/", label: "Back to home" },
   }[slug] ?? { href: "/#specialties", label: "Back to specialties" };
 
+  const conditionBySlug: Record<string, string> = {
+    sclerals: "Keratoconus",
+    "lasik-pk-prk": "Post-refractive-surgery corneal irregularity",
+    "ortho-k-crt-lenses": "Myopia",
+  };
+
+  const structuredData: object[] = [
+    medicalWebPageStructuredData({
+      path: `/${slug}`,
+      name: page.title,
+      description: page.lede,
+      about: conditionBySlug[slug],
+    }),
+    breadcrumbStructuredData([
+      { name: "Home", path: "/" },
+      { name: page.eyebrow, path: `/${slug}` },
+    ]),
+  ];
+  if (page.faq?.length) structuredData.push(faqStructuredData(page.faq));
+  if (isDoctorPage) structuredData.push(doctorStructuredData);
+
   return (
     <main
+      id="main-content"
       className={`detail-page${isDoctorPage ? " doctor-detail-page" : ""}${isReferralPage ? " doctor-referral-page" : ""}`}
     >
+      <JsonLd data={structuredData} />
       <SiteHeader />
 
       <section className="detail-hero">

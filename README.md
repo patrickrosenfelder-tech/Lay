@@ -96,3 +96,29 @@ actions tied to the current ChatGPT user. Leave public content anonymous.
 
 - [vinext Documentation](https://github.com/cloudflare/vinext)
 - [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
+
+## Contact form delivery (required)
+
+The contact and doctor-referral forms POST to `/api/inquiry`, which relays the
+message through [Resend](https://resend.com). Until these environment variables
+are set in Vercel, the route returns HTTP 503 and the form shows a visible
+"please call the clinic" fallback — it never reports success for a message that
+was not delivered.
+
+| Variable | Required | Purpose |
+| --- | --- | --- |
+| `INQUIRY_RESEND_API_KEY` | yes | Resend API key |
+| `INQUIRY_FROM_EMAIL` | yes | Verified sender, e.g. `website@precisionvisioninstitute.com` |
+| `INQUIRY_TO_EMAIL` | no | Destination inbox (defaults to `info@precisionvisioninstitute.com`) |
+
+Set them for Preview and Production:
+
+```bash
+vercel env add INQUIRY_RESEND_API_KEY
+vercel env add INQUIRY_FROM_EMAIL
+```
+
+The sending domain must be verified in Resend (SPF + DKIM) or delivery will
+fail. Note that ordinary email is not a HIPAA-compliant channel: both forms
+tell patients not to include protected health information, and the endpoint
+should not be repurposed for clinical intake.
