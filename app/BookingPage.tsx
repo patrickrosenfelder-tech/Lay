@@ -4,7 +4,7 @@ import { SiteHeader } from "./SiteHeader";
 
 export function BookingPage() {
   return (
-    <main className="booking-page">
+    <main id="main-content" className="booking-page">
       <SiteHeader />
       <section className="booking-section booking-page-section">
         <div className="booking-intro">

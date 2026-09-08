@@ -8,7 +8,7 @@ import { SiteHeader } from "./SiteHeader";
 
 export function ContactPage() {
   return (
-    <main className="contact-page">
+    <main id="main-content" className="contact-page">
       <SiteHeader />
       <section className="contact-hero">
         <div>

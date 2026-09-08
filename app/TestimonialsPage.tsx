@@ -6,7 +6,7 @@ import { SiteHeader } from "./SiteHeader";
 
 export function TestimonialsPage() {
   return (
-    <main className="testimonials-page">
+    <main id="main-content" className="testimonials-page">
       <SiteHeader />
 
       <section className="reviews-hero">

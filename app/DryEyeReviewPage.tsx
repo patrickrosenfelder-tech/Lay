@@ -128,5 +128,5 @@ function EnvisionReview() {
 }
 
 export function DryEyeReviewPage({ envision = false }: DryEyeReviewPageProps) {
-  return <main className="dry-eye-page"><SiteHeader /><ReviewHero envision={envision} />{envision ? <EnvisionReview /> : <GeneralDryEyeReview />}<SiteFooter /></main>;
+  return <main id="main-content" className="dry-eye-page"><SiteHeader /><ReviewHero envision={envision} />{envision ? <EnvisionReview /> : <GeneralDryEyeReview />}<SiteFooter /></main>;
 }

@@ -30,7 +30,7 @@ export function LegalPage({ page }: { page: LegalPageData }) {
   };
 
   return (
-    <main className="legal-page">
+    <main id="main-content" className="legal-page">
       <SiteHeader />
       <section className="legal-hero">
         <p className="section-label">{page.eyebrow}</p>

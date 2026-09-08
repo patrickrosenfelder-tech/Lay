@@ -883,8 +883,8 @@ export async function generateMetadata({
       title: "Envision Complete Dry Eye Package | Precision Vision Institute",
       description: "Explore the Envision Complete Dry Eye Package and book a comprehensive dry eye evaluation in Duluth, Georgia.",
       alternates: { canonical: "/envision-dry-eye" },
-      openGraph: { images: [{ url: "/og.png", width: 1200, height: 630 }] },
-      twitter: { images: ["/og.png"] },
+      openGraph: { images: [{ url: "/og.jpg", width: 1200, height: 630 }] },
+      twitter: { images: ["/og.jpg"] },
     };
   }
   const routeMetadata: Record<string, { title: string; description: string }> = {
@@ -918,14 +918,14 @@ export async function generateMetadata({
       openGraph: {
         title: override.title,
         description: override.description,
-        images: [{ url: "/og.png", width: 1200, height: 630 }],
+        images: [{ url: "/og.jpg", width: 1200, height: 630 }],
         type: "website",
       },
       twitter: {
         card: "summary_large_image",
         title: override.title,
         description: override.description,
-        images: ["/og.png"],
+        images: ["/og.jpg"],
       },
     };
   }
@@ -946,14 +946,14 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      images: page ? [{ url: page.image, alt: page.imageAlt }] : [{ url: "/og.png", width: 1200, height: 630 }],
+      images: page ? [{ url: page.image, alt: page.imageAlt }] : [{ url: "/og.jpg", width: 1200, height: 630 }],
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: page ? [page.image] : ["/og.png"],
+      images: page ? [page.image] : ["/og.jpg"],
     },
   };
 }
@@ -990,6 +990,7 @@ export default async function DetailPage({
 
   return (
     <main
+      id="main-content"
       className={`detail-page${isDoctorPage ? " doctor-detail-page" : ""}${isReferralPage ? " doctor-referral-page" : ""}`}
     >
       <SiteHeader />

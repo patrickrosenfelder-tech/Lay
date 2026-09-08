@@ -15,7 +15,7 @@ export function DryEyePage({ packageFocus = false }: DryEyePageProps) {
     : "Stop managing symptoms. Start treating the root cause of dry eye.";
 
   return (
-    <main className="dry-eye-page">
+    <main id="main-content" className="dry-eye-page">
       <SiteHeader />
 
       <section className="dry-eye-hero">

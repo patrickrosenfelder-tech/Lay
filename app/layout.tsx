@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "See what others miss. | Precision Vision Institute",
     description:
       "Advanced care for complex vision needs in Duluth, Georgia.",
-    images: [{ url: "/og.png", width: 1200, height: 630 }],
+    images: [{ url: "/og.jpg", width: 1200, height: 630 }],
     type: "website",
   },
   twitter: {
@@ -22,7 +22,14 @@ export const metadata: Metadata = {
     title: "See what others miss. | Precision Vision Institute",
     description:
       "Advanced care for complex vision needs in Duluth, Georgia.",
-    images: ["/og.png"],
+    images: ["/og.jpg"],
+  },
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/apple-touch-icon.png",
+  },
+  other: {
+    "theme-color": "#082f4b",
   },
 };
 
@@ -34,6 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <a className="skip-link" href="#main-content">Skip to main content</a>
         {children}
         <Analytics />
       </body>

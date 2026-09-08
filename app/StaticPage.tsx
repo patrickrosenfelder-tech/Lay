@@ -20,7 +20,7 @@ export type StaticPageData = {
 
 export function StaticPage({ page }: { page: StaticPageData }) {
   return (
-    <main className="static-page">
+    <main id="main-content" className="static-page">
       <SiteHeader />
       <section className="static-hero">
         <div>

@@ -128,7 +128,7 @@ const clinicStructuredData = {
 
 export default function Home() {
   return (
-    <main>
+    <main id="main-content">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

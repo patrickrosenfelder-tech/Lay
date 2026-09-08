@@ -27,7 +27,7 @@ const faqs = [
 
 export function FaqPage() {
   return (
-    <main className="faq-page">
+    <main id="main-content" className="faq-page">
       <SiteHeader />
       <section className="static-hero faq-hero">
         <div>
