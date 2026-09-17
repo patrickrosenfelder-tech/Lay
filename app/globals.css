@@ -145,6 +145,14 @@ summary {
   border: 1px solid var(--line);
   border-radius: 50%;
   color: var(--navy);
+  transition:
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.social-icon:hover {
+  border-color: var(--navy);
+  background: var(--powder);
 }
 
 .social-facebook {
