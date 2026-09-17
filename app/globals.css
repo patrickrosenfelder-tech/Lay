@@ -892,7 +892,10 @@ summary {
   background: rgba(22, 58, 84, 0.25);
   padding: 0;
   cursor: pointer;
-  transition: width 220ms ease, border-radius 220ms ease, background 220ms ease;
+  transition:
+    width 220ms ease,
+    border-radius 220ms ease,
+    background 220ms ease;
 }
 
 .story-dots button.active {
@@ -3175,6 +3178,18 @@ summary {
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
     touch-action: pan-y;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition:
+      opacity 200ms ease,
+      transform 200ms ease;
+    pointer-events: none;
+  }
+
+  details[open] .mobile-menu nav {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   .mobile-menu-panel a {
