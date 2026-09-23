@@ -15,7 +15,7 @@ const specialties = [
     number: "01",
     title: "Keratoconus + irregular corneas",
     copy: "When glasses and standard contacts cannot create stable vision, a custom scleral lens can create a new, smooth optical surface.",
-    link: "/sclerals",
+    link: "/keratoconus",
     tone: "acid",
   },
   {
@@ -29,9 +29,9 @@ const specialties = [
   {
     id: "post-surgical-vision",
     number: "03",
-    title: "LASIK/PK/PRK",
+    title: "Post-surgical vision",
     copy: "Custom lens designs can help address fluctuating vision, glare, halos, and distortion caused by an irregular corneal surface.",
-    link: "/lasik-pk-prk",
+    link: "/post-surgical-vision",
     tone: "charcoal",
   },
   {
@@ -129,7 +129,7 @@ export default function Home() {
           <Link href="/sclerals">Scleral lenses</Link>
           <Link href="/dry-eye">Dry eye care</Link>
           <Link href="/ortho-k-crt-lenses">Ortho-K</Link>
-          <Link href="/lasik-pk-prk">Complex corneas</Link>
+          <Link href="/post-surgical-vision">Complex corneas</Link>
         </div>
       </section>
 

@@ -20,3 +20,16 @@ facts without approval.
   the practice wants to publish one.
 - Dr. Nim's expanded first-person explanation of why she chose specialty
   contact-lens care.
+
+## Clinical review before launch
+
+- Dr. Nim to review the new `/keratoconus` page copy (symptoms, lens options,
+  cross-linking wording, FAQ) before it is promoted from staging.
+- Confirm the "Post-surgical vision" wording covers the procedures the practice
+  sees: LASIK, PRK, RK, and corneal transplant (PK).
+
+## Reviews
+
+- Current Google review count from the Google Business Profile, so the
+  testimonials page can show "5.0 · N reviews" (see `GOOGLE_RATING` in
+  `app/reviews.ts`).

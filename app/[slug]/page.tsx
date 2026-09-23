@@ -76,7 +76,7 @@ const staticPages: Record<string, StaticPageData> = {
     sections: [
       { title: "What should I bring?", copy: "Please bring a photo ID, current insurance cards, glasses, contact lenses and cases, medication list, and any helpful prior eye records." },
       { title: "How do I know which appointment to choose?", copy: "If you are unsure, choose the option that best matches your main goal or call the clinic at (470) 440-4099. The team can help you select the right starting point." },
-      { title: "Do you offer specialty contact lenses?", copy: "Yes. Scleral lenses, LASIK/PK/PRK care, and Ortho-K/CRT lens consultations each begin with a detailed evaluation and individualized measurements." },
+      { title: "Do you offer specialty contact lenses?", copy: "Yes. Scleral lenses, post-surgical vision care, and Ortho-K/CRT lens consultations each begin with a detailed evaluation and individualized measurements." },
       { title: "Can I book dry eye care online?", copy: "Yes. Use the live scheduler to request a comprehensive dry eye evaluation. Your evaluation determines the right care plan and whether advanced treatment is appropriate." },
     ],
   },
@@ -238,8 +238,8 @@ const pages: Record<string, DetailPage> = {
         copy: "The fluid reservoir beneath the lens may support comfort throughout the day.",
       },
       {
-        title: "LASIK/PK/PRK irregularities",
-        copy: "Specialty optics can address fluctuations, glare, halos, and ghosting after corneal surgery.",
+        title: "Post-surgical irregularities",
+        copy: "After LASIK, PRK, RK, or a corneal transplant, specialty optics can address fluctuations, glare, halos, and ghosting.",
       },
     ],
     sections: [
@@ -276,12 +276,12 @@ const pages: Record<string, DetailPage> = {
       {
         question: "Can scleral lenses help keratoconus?",
         answer:
-          "Absolutely. Scleral lenses are considered one of the most effective non-surgical treatments for keratoconus because they create a smooth optical surface over the irregular cornea, often providing significantly clearer vision than glasses or soft contact lenses.",
+          "For many patients, yes. Scleral lenses are considered one of the most effective non-surgical treatments for keratoconus because they create a smooth optical surface over the irregular cornea, often providing significantly clearer vision than glasses or soft contact lenses.",
       },
       {
         question: "What if I already wear scleral lenses but still have ghosting or halos?",
         answer:
-          "Yes. Some patients continue to experience ghosting, halos, glare, or starbursts despite seeing 20/20 in scleral lenses. These symptoms may be caused by higher-order aberrations. We can measure these distortions with OVITZ wavefront technology and determine whether further lens or optical customization may improve your vision.",
+          "That can often be improved. Some patients continue to experience ghosting, halos, glare, or starbursts despite seeing 20/20 in scleral lenses. These symptoms may be caused by higher-order aberrations. We can measure these distortions with OVITZ wavefront technology and determine whether further lens or optical customization may improve your vision.",
       },
       {
         question: "Are scleral lenses covered by insurance?",
@@ -375,11 +375,109 @@ const pages: Record<string, DetailPage> = {
     ctaCopy:
       "Choose a dry eye consultation from the live appointment scheduler.",
   },
-  "post-laser-vision": {
-    eyebrow: "Complex cornea care",
+  keratoconus: {
+    eyebrow: "Keratoconus care",
+    title: "When your cornea changes shape, your lenses should too.",
+    lede:
+      "Keratoconus thins and reshapes the cornea into an irregular cone, which can make vision blurry, doubled, or streaky—even with new glasses. Specialty contact lenses are designed for exactly that kind of eye.",
+    image: "/exam-room.jpg",
+    imageAlt: "Corneal imaging equipment at Precision Vision Institute",
+    factLabel: "Focus",
+    factValue: "Irregular corneas",
+    highlights: [
+      {
+        title: "Ghosting and distortion",
+        copy: "An irregular corneal surface can cause doubled images, streaks, glare, and halos, especially at night.",
+      },
+      {
+        title: "Changing prescriptions",
+        copy: "Frequent prescription changes, or glasses that never feel quite right, can be an early sign worth evaluating.",
+      },
+      {
+        title: "Lenses built for the shape",
+        copy: "Scleral and other specialty lenses create a smooth optical surface over the irregular cornea.",
+      },
+    ],
+    sections: [
+      {
+        label: "Why glasses fall short",
+        title: "Glasses correct a regular shape. Keratoconus is not regular.",
+        copy:
+          "Glasses and standard soft lenses follow the shape of the cornea underneath them, so an irregular surface can still blur or double what you see. A specialty lens replaces that uneven front surface with a smooth one, which is why it can often provide clearer, more stable vision.",
+      },
+      {
+        label: "Your evaluation",
+        title: "Mapped in detail before anything is fitted.",
+        copy:
+          "Your visit starts with detailed imaging of the cornea and the white of the eye. Those measurements guide lens selection, and the design is refined over follow-up visits until vision and comfort work together.",
+        bullets: [
+          "Pentacam® corneal tomography",
+          "Corneal scleral profilometry (CSP)",
+          "OVITZ wavefront analysis",
+          "Freeform scleral lens design",
+        ],
+      },
+      {
+        label: "Lens options",
+        title: "More than one way to fit an irregular cornea.",
+        copy:
+          "Depending on your corneal shape, eye health, and daily needs, options may include scleral lenses, custom soft lenses, or other specialty designs. Scleral lenses vault over the cornea and rest on the white of the eye, so they do not rub against the most irregular area.",
+      },
+      {
+        label: "Protecting the cornea",
+        title: "Clear vision and corneal stability are two different goals.",
+        copy:
+          "Specialty lenses improve how you see, but they do not stop keratoconus from progressing. Corneal cross-linking is a separate procedure, performed by a corneal surgeon, that aims to slow progression. If your measurements suggest your cornea is changing, Dr. Nim will discuss whether a cross-linking consultation makes sense.",
+      },
+      {
+        label: "What to bring",
+        title: "Your history helps us start in the right place.",
+        copy:
+          "Bring your current glasses, any contact lenses and cases you use, prior corneal maps or eye records, and a list of situations where your vision is hardest, such as night driving or screen work.",
+      },
+    ],
+    faq: [
+      {
+        question: "Can keratoconus be treated without surgery?",
+        answer:
+          "For many patients, yes. Specialty contact lenses such as scleral lenses are a common non-surgical way to restore clearer vision. Whether they are right for you depends on your corneal shape, eye health, and goals, which your evaluation will clarify.",
+      },
+      {
+        question: "Why do my glasses stop working as keratoconus progresses?",
+        answer:
+          "Glasses can only correct regular focusing errors. As the cornea becomes more irregular, it creates distortions that glasses cannot fully correct, so vision may stay blurry even with an updated prescription.",
+      },
+      {
+        question: "Are scleral lenses comfortable with keratoconus?",
+        answer:
+          "Many patients find them comfortable after a short adjustment period because the lens rests on the white of the eye rather than the sensitive cornea. Comfort varies from person to person, and follow-up visits are used to refine the fit.",
+      },
+      {
+        question: "Do I still need a corneal specialist?",
+        answer:
+          "Specialty lenses and corneal cross-linking do different jobs. If there are signs that your keratoconus is progressing, Dr. Nim can talk with you about whether seeing a corneal surgeon about cross-linking is appropriate.",
+      },
+      {
+        question: "Is a keratoconus lens fitting covered by insurance?",
+        answer:
+          "Coverage varies with your diagnosis and plan. Some medical plans provide benefits for specialty lenses when they are medically necessary. Our team will review your benefits and discuss costs before you begin.",
+      },
+    ],
+    ctaTitle: "Schedule a keratoconus lens evaluation.",
+    ctaCopy:
+      "Dr. Nim will review your corneal measurements, current lenses, and visual symptoms to recommend a lens approach that fits your eyes.",
+    ctaConditions: [
+      "Keratoconus",
+      "Corneal ectasia",
+      "Pellucid marginal degeneration",
+      "Other irregular corneas",
+    ],
+  },
+  "post-surgical-vision": {
+    eyebrow: "Post-surgical vision",
     title: "When surgery changed the shape—not the symptoms.",
     lede:
-      "After LASIK, PRK, RK, or other corneal procedures, some people experience glare, halos, ghosting, or vision that shifts throughout the day.",
+      "After LASIK, PRK, RK, a corneal transplant (PK), or other corneal procedures, some people experience glare, halos, ghosting, or vision that shifts throughout the day.",
     image: "/exam-room.jpg",
     imageAlt: "Precision Vision Institute examination room",
     factLabel: "Focus",
@@ -886,7 +984,7 @@ export async function generateMetadata({
 
   if (slug === "envision-dry-eye") {
     return {
-      title: "Envision Complete Dry Eye Package | Precision Vision Institute",
+      title: "Envision Dry Eye Package | Duluth, GA",
       description: "Explore the Envision Complete Dry Eye Package and book a comprehensive dry eye evaluation in Duluth, Georgia.",
       alternates: { canonical: "/envision-dry-eye" },
       openGraph: { images: [{ url: "/og.jpg", width: 1200, height: 631 }] },
@@ -934,8 +1032,18 @@ export async function generateMetadata({
       description:
         "Precision Vision Institute brings detailed measurements, attentive conversation, and personalized follow-up together in Duluth, Georgia.",
     },
+    keratoconus: {
+      title: "Keratoconus Care & Scleral Lenses | Duluth, GA",
+      description:
+        "Specialty contact lens care for keratoconus in Duluth, Georgia: detailed corneal mapping, custom scleral and specialty lens fitting, and ongoing follow-up.",
+    },
+    "post-surgical-vision": {
+      title: "Vision After LASIK, PRK, RK & Corneal Transplant | Duluth, GA",
+      description:
+        "Specialty lens care for glare, halos, ghosting, and fluctuating vision after LASIK, PRK, RK, corneal transplant (PK), or other corneal procedures.",
+    },
     "dry-eye": {
-      title: "Dry Eye Treatment | Precision Vision Institute",
+      title: "Dry Eye Evaluation & Treatment | Duluth, GA",
       description: "Personalized dry eye evaluations and treatment options that address the factors affecting comfort, tear-film stability, and eye health.",
     },
     contact: {
@@ -979,7 +1087,7 @@ export async function generateMetadata({
 
   const isDoctorPage = slug === "dr-nim";
   const title = isDoctorPage
-    ? "Dr. Lay Nim, OD | Precision Vision Institute"
+    ? "Dr. Lay Nim, OD | Specialty Contact Lenses | Duluth, GA"
     : `${(page ?? staticPage).title} | Precision Vision Institute`;
   const description = isDoctorPage
     ? "Meet Dr. Lay Nim, a Duluth optometrist focused on specialty contact lenses, keratoconus, orthokeratology, and personalized eye care."
@@ -1006,14 +1114,12 @@ export async function generateMetadata({
 
 export default async function DetailPage({
   params,
-  allowLegacyPostLaserPath = false,
 }: {
   params: Promise<{ slug: string }>;
-  allowLegacyPostLaserPath?: boolean;
 }) {
   const { slug } = await params;
-  if (slug === "post-laser-vision" && !allowLegacyPostLaserPath) {
-    permanentRedirect("/lasik-pk-prk");
+  if (slug === "post-laser-vision" || slug === "lasik-pk-prk") {
+    permanentRedirect("/post-surgical-vision");
   }
   const page = pages[slug];
   const staticPage = staticPages[slug];
@@ -1035,8 +1141,9 @@ export default async function DetailPage({
   }[slug] ?? { href: "/#specialties", label: "Back to specialties" };
 
   const conditionBySlug: Record<string, string> = {
+    keratoconus: "Keratoconus",
     sclerals: "Keratoconus",
-    "lasik-pk-prk": "Post-refractive-surgery corneal irregularity",
+    "post-surgical-vision": "Post-surgical corneal irregularity",
     "ortho-k-crt-lenses": "Myopia",
   };
 

@@ -12,10 +12,11 @@ export function SiteFooter() {
         <div className="footer-navigation">
           <div>
             <span>Care</span>
-            <Link href="/dry-eye">Dry eye treatment</Link>
-            <Link href="/envision-dry-eye">Envision package</Link>
+            <Link href="/dry-eye">Dry eye evaluation</Link>
+            <Link href="/envision-dry-eye">Envision dry eye package</Link>
+            <Link href="/keratoconus">Keratoconus</Link>
             <Link href="/sclerals">Scleral lenses</Link>
-            <Link href="/lasik-pk-prk">LASIK/PK/PRK</Link>
+            <Link href="/post-surgical-vision">Post-surgical vision</Link>
             <Link href="/ortho-k-crt-lenses">Ortho-K/CRT lenses</Link>
           </div>
           <div>

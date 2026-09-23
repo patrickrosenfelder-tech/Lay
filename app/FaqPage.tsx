@@ -12,11 +12,11 @@ import {
 export const faqs = [
   ["What should I bring?", "Please bring a photo ID, current insurance cards, glasses, contact lenses and cases, medication list, and any helpful prior eye records."],
   ["How do I know which appointment to choose?", "If you are unsure, choose the option that best matches your main goal or call the clinic at (470) 440-4099. The team can help you select the right starting point."],
-  ["Do you offer specialty contact lenses?", "Yes. Scleral lenses, LASIK/PK/PRK care, and Ortho-K/CRT lens consultations each begin with a detailed evaluation and individualized measurements."],
+  ["Do you offer specialty contact lenses?", "Yes. Scleral lenses, post-surgical vision care, and Ortho-K/CRT lens consultations each begin with a detailed evaluation and individualized measurements."],
   ["Can I book dry eye care online?", "Yes. Use the live scheduler to request a comprehensive dry eye evaluation. Your evaluation determines the right care plan and whether advanced treatment is appropriate."],
   ["Are scleral lenses comfortable?", "Yes. Although scleral lenses are larger than traditional contacts, they rest on the sclera, which has fewer nerve endings than the cornea. Most patients find them surprisingly comfortable after a brief adjustment period."],
   ["Can scleral lenses help dry eyes?", "Yes. The fluid reservoir beneath the lens continuously bathes the cornea in preservative-free saline, making scleral lenses an excellent option for many patients with moderate to severe dry eye disease."],
-  ["Can scleral lenses help keratoconus?", "Absolutely. Scleral lenses create a smooth optical surface over the irregular cornea, often providing significantly clearer vision than glasses or soft contact lenses."],
+  ["Can scleral lenses help keratoconus?", "For many patients, yes. Scleral lenses create a smooth optical surface over the irregular cornea, often providing significantly clearer vision than glasses or soft contact lenses."],
   ["Are scleral lenses covered by insurance?", "Coverage varies depending on your medical diagnosis and insurance plan. Our team will review your benefits and discuss any available coverage before beginning treatment."],
   ["Why do I still see glare or halos after LASIK?", "Corneal surgery can leave a surface that is difficult to correct with an ordinary prescription. Even small irregularities can scatter light and cause glare, halos, or fluctuating clarity—especially at night."],
   ["Can new glasses fix these symptoms?", "Sometimes glasses help, but they cannot correct an irregular corneal surface the way a specialty contact lens can. Corneal mapping helps determine whether glasses, a specialty lens, or another approach is the better fit."],

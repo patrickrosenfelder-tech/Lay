@@ -67,11 +67,6 @@ export const patientReviews = [
     text: "It’s really rare to come by great customer service and they absolutely have it. Dr. Nim is so knowledgeable, and really breaks everything down for you.",
   },
   {
-    author: "Triana S.",
-    source: "Yelp review",
-    text: "I waited until I received my glasses before writing this review because I wanted to rate my experience from beginning to end.",
-  },
-  {
     author: "Osiris R.",
     source: "Yelp review",
     text: "From the wonderful lady at the front desk to the optometrist who checked my vision, they were all great, kind and professional.",

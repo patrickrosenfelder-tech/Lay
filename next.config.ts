@@ -45,12 +45,17 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/LASIK/PK/PRK",
-        destination: "/lasik-pk-prk",
+        destination: "/post-surgical-vision",
+        statusCode: 301,
+      },
+      {
+        source: "/lasik-pk-prk",
+        destination: "/post-surgical-vision",
         statusCode: 301,
       },
       {
         source: "/post-laser-vision",
-        destination: "/lasik-pk-prk",
+        destination: "/post-surgical-vision",
         statusCode: 301,
       },
     ];

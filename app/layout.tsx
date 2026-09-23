@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
   title: "Precision Vision Institute | Specialty Eye Care in Duluth, GA",
   description:
-    "Personalized specialty eye care for keratoconus, severe dry eye, post-LASIK and post-RK vision, and progressive myopia in Duluth, Georgia.",
+    "Personalized specialty eye care for keratoconus, severe dry eye, vision after LASIK, PRK, RK, or corneal transplant, and progressive myopia in Duluth, Georgia.",
   openGraph: {
     title: "See what others miss. | Precision Vision Institute",
     description:

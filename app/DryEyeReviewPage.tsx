@@ -35,7 +35,7 @@ function ReviewHero({ envision }: { envision: boolean }) {
         <Link className="detail-back" href="/#specialties">
           <ArrowIcon direction="left" placement="before" /> Back to specialty care
         </Link>
-        <p className="section-label">{envision ? "Envision by InMode" : "Dry eye treatment"}</p>
+        <p className="section-label">{envision ? "Envision by InMode" : "Dry eye evaluation"}</p>
         <h1>{envision ? "A more complete approach to dry eye treatment." : "Dry eye is a clue, not a conclusion."}</h1>
         <p>
           {envision
@@ -152,7 +152,7 @@ export function DryEyeReviewPage({ envision = false }: DryEyeReviewPageProps) {
   return <main id="main-content" className="dry-eye-page"><JsonLd data={[
     medicalWebPageStructuredData({
       path,
-      name: envision ? "Envision Complete Dry Eye Package" : "Dry eye treatment",
+      name: envision ? "Envision Complete Dry Eye Package" : "Dry eye evaluation and treatment",
       description: envision
         ? "A more complete approach to dry eye treatment, combining in-office therapy with a personalized care plan."
         : "Personalized dry eye evaluations and treatment options that address the factors affecting comfort, tear-film stability, and eye health.",
@@ -160,7 +160,7 @@ export function DryEyeReviewPage({ envision = false }: DryEyeReviewPageProps) {
     }),
     breadcrumbStructuredData([
       { name: "Home", path: "/" },
-      { name: envision ? "Envision package" : "Dry eye treatment", path },
+      { name: envision ? "Envision dry eye package" : "Dry eye evaluation", path },
     ]),
     faqStructuredData(envision ? envisionFaqs : generalDryEyeFaqs),
   ]} /><SiteHeader /><ReviewHero envision={envision} />{envision ? <EnvisionReview /> : <GeneralDryEyeReview />}<SiteFooter /></main>;
