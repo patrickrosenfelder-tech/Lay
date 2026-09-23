@@ -33,3 +33,17 @@ facts without approval.
 - Current Google review count from the Google Business Profile, so the
   testimonials page can show "5.0 · N reviews" (see `GOOGLE_RATING` in
   `app/reviews.ts`).
+
+## Google reviews widget
+
+- Create a Google Cloud API key restricted to **Places API (New)** and add it in
+  Vercel as `GOOGLE_PLACES_API_KEY` (Preview + Production), then redeploy.
+  Optional: `GOOGLE_PLACE_ID` to skip the name/address lookup.
+- Until the key is set, /testimonials and the homepage carousel show the
+  curated testimonials in `app/reviews.ts`.
+
+## Clinical wording to confirm
+
+- Dr. Nim to confirm the Ortho-K FAQ: lenses FDA-approved for temporary myopia
+  correction; myopia-control use described as off-label in the U.S.
+- Dr. Nim to confirm the hedged safety/comfort answers in `app/faq-content.ts`.

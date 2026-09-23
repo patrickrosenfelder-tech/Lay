@@ -26,7 +26,7 @@ export function BookingWidget({ eager = false }: BookingWidgetProps) {
       <div className="booking-embed-intro">
         <strong>Choose from currently available appointments.</strong>
         <span>
-          Complete the quick verification, select a service, then choose an
+          Confirm you&apos;re not a robot, pick a service, then choose an
           available date and time.
         </span>
       </div>

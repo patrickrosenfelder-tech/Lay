@@ -9,20 +9,7 @@ import {
   JsonLd,
   medicalWebPageStructuredData,
 } from "./structured-data";
-
-const generalDryEyeFaqs = [
-  ["Why might one treatment work better than another?", "Dry eye can involve tear production, gland function, inflammation, eyelid health, medications, screen use, prior surgery, and more. Your evaluation helps identify the contributors that matter most for you."],
-  ["Can dry eyes be related to LASIK or an autoimmune condition?", "Yes. Dry-eye symptoms can occur after eye surgery such as LASIK and alongside certain autoimmune conditions. Tell the team about your surgical and health history so it can inform your evaluation."],
-  ["Can scleral lenses help dry eye?", "For appropriate patients, a scleral lens can hold a fluid reservoir over the cornea and may support comfort. Your evaluation determines whether it fits your needs."],
-  ["Do I have to understand every cause before booking?", "No. Tell us what you feel and when it happens; we will evaluate the likely contributors."],
-] as const;
-
-const envisionFaqs = [
-  ["Does Envision treatment hurt?", "Comfort and treatment settings are individualized. Your clinician will explain what to expect, review possible temporary effects, and confirm whether treatment is appropriate for you."],
-  ["How many sessions might I need?", "Recommendations are based on your evaluation and response to care. A four-session protocol is commonly recommended for patients who are candidates for the Complete Dry Eye Package."],
-  ["Can Envision be combined with drops or specialty lenses?", "Sometimes. Dry eye often has more than one contributor, so your plan may include home care, medical therapy, specialty lenses, or other options alongside in-office treatment."],
-  ["Is Envision covered by insurance?", "Envision is currently considered an elective procedure and is not covered by insurance. HSA/FSA funds may be eligible; please confirm eligibility with your plan administrator."],
-] as const;
+import { dryEyeFaqs, envisionFaqs } from "./faq-content";
 
 type DryEyeReviewPageProps = {
   envision?: boolean;
@@ -43,7 +30,7 @@ function ReviewHero({ envision }: { envision: boolean }) {
             : "Burning, grittiness, redness, watering, blurry vision, and contact lens discomfort can have more than one cause. A focused evaluation helps identify what is disrupting your tear film."}
         </p>
         <Link className="button button-primary" href="/book">
-          {envision ? "Book an Envision dry eye evaluation" : "View live availability"} <ArrowIcon />
+          {envision ? "Book an Envision dry eye evaluation" : "Book a dry eye evaluation"} <ArrowIcon />
         </Link>
       </div>
       <div className="dry-eye-hero-image">
@@ -101,10 +88,7 @@ function GeneralDryEyeReview() {
       <section className="dry-eye-pathway"><p className="section-label">A four-step pathway</p><h2>Evaluate. Treat. Reassess. Adjust.</h2><div>{[["Evaluate", "Identify the pattern behind your symptoms."], ["Treat", "Build the right combination of options."], ["Reassess", "Track comfort, vision, and eye-health findings."], ["Adjust", "Refine the plan as your eyes respond."]].map(([title, copy], index) => <article key={title}><span>{String(index + 1).padStart(2, "0")}</span>{" "}<h3>{title}</h3><p>{copy}</p></article>)}</div></section>
 
       <section className="detail-faq dry-eye-faq" aria-label="Frequently asked questions"><p className="section-label">Frequently asked questions</p><div className="detail-faq-list">
-        <details><summary>Why might one treatment work better than another?</summary><p>Dry eye can involve tear production, gland function, inflammation, eyelid health, medications, screen use, prior surgery, and more. Your evaluation helps identify the contributors that matter most for you.</p></details>
-        <details><summary>Can dry eyes be related to LASIK or an autoimmune condition?</summary><p>Yes. Dry-eye symptoms can occur after eye surgery such as LASIK and alongside certain autoimmune conditions. Tell the team about your surgical and health history so it can inform your evaluation.</p></details>
-        <details><summary>Can scleral lenses help dry eye?</summary><p>For appropriate patients, a scleral lens can hold a fluid reservoir over the cornea and may support comfort. Your evaluation determines whether it fits your needs.</p></details>
-        <details><summary>Do I have to understand every cause before booking?</summary><p>No. Tell us what you feel and when it happens; we will evaluate the likely contributors.</p></details>
+        {dryEyeFaqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}
       </div></section>
 
       <section className="detail-cta"><p className="section-label">Advanced treatment</p><h2>When advanced treatment may help.</h2><p>Some evaluations point to Envision by InMode as an appropriate next step for gland dysfunction and eyelid inflammation. It is one option within a complete, individualized dry-eye care plan.</p><Link className="button button-primary" href="/envision-dry-eye">Explore Envision Dry Eye Treatment <ArrowIcon /></Link></section>
@@ -136,10 +120,7 @@ function EnvisionReview() {
       <section className="dry-eye-expectations"><div><p className="section-label">What to expect</p><h2>Clear expectations make better care possible.</h2></div><div className="expectation-list"><article><h3>Return to your day</h3><p>Most patients return to normal activities right away after treatment.</p></article><article><h3>Comfort comes first</h3><p>Temporary warmth, redness, or swelling can occur. Your clinician will review possible effects before treatment.</p></article><article><h3>A plan, not a promise</h3><p>Response and timing vary. We will track your symptoms and ocular-surface findings throughout your plan.</p></article></div></section>
 
       <section className="detail-faq dry-eye-faq" aria-label="Frequently asked questions"><p className="section-label">Frequently asked questions</p><div className="detail-faq-list">
-        <details><summary>Does Envision treatment hurt?</summary><p>Comfort and treatment settings are individualized. Your clinician will explain what to expect, review possible temporary effects, and confirm whether treatment is appropriate for you.</p></details>
-        <details><summary>How many sessions might I need?</summary><p>Recommendations are based on your evaluation and response to care. A four-session protocol is commonly recommended for patients who are candidates for the Complete Dry Eye Package.</p></details>
-        <details><summary>Can Envision be combined with drops or specialty lenses?</summary><p>Sometimes. Dry eye often has more than one contributor, so your plan may include home care, medical therapy, specialty lenses, or other options alongside in-office treatment.</p></details>
-        <details><summary>Is Envision covered by insurance?</summary><p>Envision is currently considered an elective procedure and is not covered by insurance. HSA/FSA funds may be eligible; please confirm eligibility with your plan administrator.</p></details>
+        {envisionFaqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}
       </div></section>
 
       <section className="dry-eye-insurance"><p className="section-label">Insurance and financing</p><h2>“Does insurance cover this?”</h2><p>Insurance may cover parts of a dry-eye evaluation or symptom management, but coverage for advanced in-office procedures varies by plan and is often limited. Our team can help you understand the next step before you commit.</p><Link className="button button-light" href="/book">Book an Envision dry eye evaluation <ArrowIcon /></Link><small>Treatment is not appropriate for everyone. Individual results vary; your clinician will discuss risks, benefits, alternatives, and suitability during your evaluation. Pricing is subject to change.</small></section>
@@ -162,6 +143,6 @@ export function DryEyeReviewPage({ envision = false }: DryEyeReviewPageProps) {
       { name: "Home", path: "/" },
       { name: envision ? "Envision dry eye package" : "Dry eye evaluation", path },
     ]),
-    faqStructuredData(envision ? envisionFaqs : generalDryEyeFaqs),
+    faqStructuredData(envision ? envisionFaqs : dryEyeFaqs),
   ]} /><SiteHeader /><ReviewHero envision={envision} />{envision ? <EnvisionReview /> : <GeneralDryEyeReview />}<SiteFooter /></main>;
 }

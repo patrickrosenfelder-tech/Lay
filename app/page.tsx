@@ -4,7 +4,9 @@ import { ArrowIcon } from "./ArrowIcon";
 import { BookingWidget } from "./BookingWidget";
 import { LocationMap } from "./LocationMap";
 import { OfficeExterior } from "./OfficeExterior";
+import { getGoogleReviews } from "./google-reviews";
 import { PatientStories } from "./PatientStories";
+import { patientReviews } from "./reviews";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 import { clinicStructuredData, JsonLd } from "./structured-data";
@@ -79,7 +81,9 @@ function ProcessIcon({ step }: { step: number }) {
 }
 
 
-export default function Home() {
+export default async function Home() {
+  const googleReviews = await getGoogleReviews();
+
   return (
     <main id="main-content">
       <JsonLd data={clinicStructuredData} />
@@ -117,7 +121,7 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#book">
-              Start with a consultation <ArrowIcon />
+              Book an evaluation <ArrowIcon />
             </a>
             <a className="text-link find-path-link" href="#specialties">
               Find your path <span aria-hidden="true">↓</span>
@@ -126,10 +130,10 @@ export default function Home() {
         </div>
 
         <div className="hero-meta">
+          <Link href="/keratoconus">Keratoconus</Link>
           <Link href="/sclerals">Scleral lenses</Link>
           <Link href="/dry-eye">Dry eye care</Link>
           <Link href="/ortho-k-crt-lenses">Ortho-K</Link>
-          <Link href="/post-surgical-vision">Complex corneas</Link>
         </div>
       </section>
 
@@ -180,7 +184,7 @@ export default function Home() {
             together.
           </p>
           <a className="button button-light" href="#book">
-            Schedule an evaluation <ArrowIcon />
+            Book an evaluation <ArrowIcon />
           </a>
         </div>
         <ol className="process-list">
@@ -230,14 +234,14 @@ export default function Home() {
         </div>
       </section>
 
-      <PatientStories />
+      <PatientStories stories={googleReviews?.reviews ?? patientReviews} fromGoogle={Boolean(googleReviews)} />
 
       <section className="visit-section" id="visit">
         <div className="visit-media">
           <OfficeExterior className="visit-image" sizes="(max-width: 760px) calc(100vw - 40px), 60vw">
             <div className="visit-badge">
-              <span>33.978° N</span>
-              <span>84.161° W</span>
+              <span>3940 Buford Hwy</span>
+              <span>Suite A104</span>
             </div>
           </OfficeExterior>
           <LocationMap className="visit-map" />
@@ -291,8 +295,8 @@ export default function Home() {
           <p className="section-label">Your next chapter can look clearer</p>
           <h2>Plan your visit.</h2>
           <p>
-            Complete the secure verification, choose the care you need, and
-            select from the clinic&apos;s live appointment dates and times.
+            Pick the care you need, then choose a date and time that works
+            for you. It takes about two minutes.
           </p>
           <div className="booking-contact">
             <span>Prefer to speak with us?</span>

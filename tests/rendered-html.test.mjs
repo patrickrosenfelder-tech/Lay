@@ -93,7 +93,7 @@ test("renders the rebuilt linked pages with the shared branded header", async ()
     const html = await response.text();
     assert.match(html, heading);
     assert.match(html, /precision-vision-wordmark\.png/i);
-    assert.match(html, /View live availability/i);
+    assert.match(html, /Book an evaluation/i);
   }
 });
 
@@ -126,4 +126,61 @@ test("uses search-friendly titles and clear labels on the audited pages", async 
   assert.doesNotMatch(sclerals, /Absolutely\.|halos\?<\/summary><p>Yes\./);
   const testimonials = await (await render("/testimonials")).text();
   assert.doesNotMatch(testimonials, /I waited until I received my glasses/);
+});
+
+test("applies the audit batch 2 copy, contact, and FAQ fixes", async () => {
+  const home = await (await render()).text();
+  assert.match(home, /class="header-phone" href="tel:\+14704404099"/);
+  assert.doesNotMatch(home, /Complete the secure verification|Start with a consultation|33\.978° N/);
+  assert.match(home, /about two minutes/);
+  assert.match(home, /serving Johns Creek, Suwanee, Norcross, Alpharetta, and Gwinnett County/);
+  assert.match(home, /class="hero-meta"><a href="\/keratoconus">Keratoconus<\/a>/);
+
+  const faq = await (await render("/faq")).text();
+  const orthoK = await (await render("/ortho-k-crt-lenses")).text();
+  const faqAnswer = /<summary>Is Ortho-K safe\?<\/summary><p>([^<]+)<\/p>/;
+  assert.ok(faq.match(faqAnswer)?.[1]);
+  assert.equal(faq.match(faqAnswer)?.[1], orthoK.match(faqAnswer)?.[1], "FAQ copy comes from one source");
+  assert.match(orthoK, /considered off-label use/);
+  assert.doesNotMatch(faq, /surprisingly comfortable|excellent option|safe to wear after corneal surgery\?<\/summary><p>Yes\./);
+});
+
+test("shows live Google reviews when the Places API is configured", async () => {
+  const realFetch = globalThis.fetch;
+  process.env.GOOGLE_PLACES_API_KEY = "test-key";
+  process.env.GOOGLE_PLACE_ID = "test-place";
+  globalThis.fetch = async (input, init) => {
+    const url = String(input instanceof Request ? input.url : input);
+    if (!url.startsWith("https://places.googleapis.com/")) return realFetch(input, init);
+    return Response.json({
+      rating: 4.9,
+      userRatingCount: 137,
+      googleMapsUri: "https://maps.google.com/?cid=123",
+      reviews: [
+        {
+          rating: 5,
+          relativePublishTimeDescription: "2 weeks ago",
+          text: { text: "Test review from Google about my scleral lenses." },
+          authorAttribution: { displayName: "Test Patient", uri: "https://www.google.com/maps/contrib/1" },
+        },
+      ],
+    });
+  };
+  try {
+    const html = await (await render("/testimonials")).text();
+    assert.match(html, /Test review from Google about my scleral lenses\./);
+    assert.match(html, /Read all 137 Google reviews/);
+    assert.match(html, /4\.9/);
+    assert.match(html, /Reviews and rating provided by Google/);
+  } finally {
+    globalThis.fetch = realFetch;
+    delete process.env.GOOGLE_PLACES_API_KEY;
+    delete process.env.GOOGLE_PLACE_ID;
+  }
+});
+
+test("falls back to curated testimonials without a Places API key", async () => {
+  const html = await (await render("/testimonials")).text();
+  assert.match(html, /Shawoun L\./);
+  assert.doesNotMatch(html, /Reviews and rating provided by Google/);
 });

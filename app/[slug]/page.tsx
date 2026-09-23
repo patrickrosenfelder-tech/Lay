@@ -19,6 +19,7 @@ import {
   JsonLd,
   medicalWebPageStructuredData,
 } from "../structured-data";
+import { dryEyeFaqs, generalFaqs, orthoKFaqs, postSurgicalFaqs, scleralFaqs } from "../faq-content";
 
 type DetailPage = {
   eyebrow: string;
@@ -73,12 +74,7 @@ const staticPages: Record<string, StaticPageData> = {
     eyebrow: "Patient resources",
     title: "Questions, answered clearly.",
     lede: "Every eye and every treatment plan is different. These answers cover the practical things patients ask before booking.",
-    sections: [
-      { title: "What should I bring?", copy: "Please bring a photo ID, current insurance cards, glasses, contact lenses and cases, medication list, and any helpful prior eye records." },
-      { title: "How do I know which appointment to choose?", copy: "If you are unsure, choose the option that best matches your main goal or call the clinic at (470) 440-4099. The team can help you select the right starting point." },
-      { title: "Do you offer specialty contact lenses?", copy: "Yes. Scleral lenses, post-surgical vision care, and Ortho-K/CRT lens consultations each begin with a detailed evaluation and individualized measurements." },
-      { title: "Can I book dry eye care online?", copy: "Yes. Use the live scheduler to request a comprehensive dry eye evaluation. Your evaluation determines the right care plan and whether advanced treatment is appropriate." },
-    ],
+    sections: generalFaqs.map(({ question, answer }) => ({ title: question, copy: answer })),
   },
   "our-office": {
     eyebrow: "About Precision Vision Institute",
@@ -262,33 +258,7 @@ const pages: Record<string, DetailPage> = {
           "Bring your current glasses, contact lenses, lens cases, and any records that explain prior surgery or a corneal diagnosis. The clinic will tell you whether to stop wearing existing lenses before your evaluation.",
       },
     ],
-    faq: [
-      {
-        question: "Are scleral lenses comfortable?",
-        answer:
-          "Yes. Although scleral lenses are larger than traditional contacts, they rest on the sclera, which has fewer nerve endings than the cornea. Most patients find them surprisingly comfortable after a brief adjustment period.",
-      },
-      {
-        question: "Can scleral lenses help dry eyes?",
-        answer:
-          "Yes. The fluid reservoir beneath the lens continuously bathes the cornea in preservative-free saline, making scleral lenses an excellent option for many patients with moderate to severe dry eye disease.",
-      },
-      {
-        question: "Can scleral lenses help keratoconus?",
-        answer:
-          "For many patients, yes. Scleral lenses are considered one of the most effective non-surgical treatments for keratoconus because they create a smooth optical surface over the irregular cornea, often providing significantly clearer vision than glasses or soft contact lenses.",
-      },
-      {
-        question: "What if I already wear scleral lenses but still have ghosting or halos?",
-        answer:
-          "That can often be improved. Some patients continue to experience ghosting, halos, glare, or starbursts despite seeing 20/20 in scleral lenses. These symptoms may be caused by higher-order aberrations. We can measure these distortions with OVITZ wavefront technology and determine whether further lens or optical customization may improve your vision.",
-      },
-      {
-        question: "Are scleral lenses covered by insurance?",
-        answer:
-          "Coverage varies depending on your medical diagnosis and insurance plan. Our team will review your benefits and discuss any available coverage before beginning treatment.",
-      },
-    ],
+    faq: scleralFaqs,
     ctaTitle: "Schedule your scleral lens consultation.",
     ctaCopy:
       "At your visit, Dr. Nim will review your corneal measurements, current lenses, and visual symptoms to determine whether a custom scleral lens may help.",
@@ -349,28 +319,7 @@ const pages: Record<string, DetailPage> = {
           "Bring a list of eye drops and medications you use. Unless the clinic gives different instructions, avoid masking your typical symptoms immediately before the exam.",
       },
     ],
-    faq: [
-      {
-        question: "What actually causes dry eye?",
-        answer:
-          "Dry eye can come from too few tears, poor tear quality, or tears that evaporate too quickly due to blocked oil glands along the eyelids. Screen use, contact lens wear, certain medications, and environment can all play a role, which is why an evaluation looks for your specific pattern rather than assuming one cause.",
-      },
-      {
-        question: "How is dry eye actually diagnosed?",
-        answer:
-          "A dry eye evaluation goes beyond asking about symptoms. Microscopic examination of the tear film, eyelids, and ocular surface helps identify whether the issue is tear production, tear quality, gland function, or a combination — which then guides the treatment plan.",
-      },
-      {
-        question: "Will over-the-counter drops fix it?",
-        answer:
-          "Sometimes, but not always. Artificial tears can help mild, occasional dryness, but more persistent or severe dry eye often needs a plan matched to its underlying cause — eyelid care, prescription treatment, or specialty lens options — rather than drops alone.",
-      },
-      {
-        question: "Is dry eye treatment covered by insurance?",
-        answer:
-          "Coverage depends on your diagnosis and insurance plan. Some treatments are considered medical and may be covered, while others are not. Our team will review your benefits and walk you through any costs before starting treatment.",
-      },
-    ],
+    faq: dryEyeFaqs,
     ctaTitle: "Ready to understand your dry eye?",
     ctaCopy:
       "Choose a dry eye consultation from the live appointment scheduler.",
@@ -522,28 +471,7 @@ const pages: Record<string, DetailPage> = {
           "Bring surgical records if available, along with your current glasses, contact lenses, and a description of when your vision is best or worst.",
       },
     ],
-    faq: [
-      {
-        question: "Why do I still see glare or halos after LASIK?",
-        answer:
-          "Corneal surgery reshapes the eye, but it can leave a surface that is difficult to correct with an ordinary prescription. Even small irregularities in that surface can scatter light and cause glare, halos, or fluctuating clarity — especially at night.",
-      },
-      {
-        question: "Can new glasses fix these symptoms?",
-        answer:
-          "Sometimes glasses help, but they cannot correct an irregular corneal surface the way a specialty contact lens can. Corneal mapping shows exactly where the shape varies, which helps determine whether glasses, a specialty lens, or another approach is the better fit.",
-      },
-      {
-        question: "Are scleral lenses safe to wear after corneal surgery?",
-        answer:
-          "Yes. Scleral lenses vault over the cornea entirely and rest on the white of the eye, so they do not put pressure on the surgical site. They are commonly used for post-surgical eyes that need a smoother, more stable optical surface.",
-      },
-      {
-        question: "How long after surgery should I wait for an evaluation?",
-        answer:
-          "It depends on your procedure and healing timeline. If your vision has stabilized but you're still experiencing glare, halos, or fluctuating clarity, it's reasonable to schedule an evaluation — Dr. Nim will review your surgical history and current symptoms to determine next steps.",
-      },
-    ],
+    faq: postSurgicalFaqs,
     ctaTitle: "See whether specialty optics can help.",
     ctaCopy:
       "Schedule a scleral lens or complex-cornea evaluation with Dr. Nim.",
@@ -597,28 +525,7 @@ const pages: Record<string, DetailPage> = {
           "Cleaning, disinfecting, hand hygiene, and attending follow-up visits are essential. Dr. Nim will discuss whether Ortho-K is appropriate for you or your child.",
       },
     ],
-    faq: [
-      {
-        question: "Is Ortho-K safe?",
-        answer:
-          "Yes, when properly fitted and cared for. Ortho-K uses FDA-approved gas-permeable lenses worn overnight, with follow-up visits to check corneal health, lens fit, and response along the way. Good lens hygiene and attending scheduled check-ups are essential to keeping it safe.",
-      },
-      {
-        question: "At what age can my child start Ortho-K?",
-        answer:
-          "There isn't a strict minimum age — candidacy depends on eye health, prescription, and whether your child can reliably handle lens insertion, removal, and care with adult supervision. Many families start Ortho-K in the school-age years as part of a myopia management plan.",
-      },
-      {
-        question: "What happens if I stop wearing the lenses?",
-        answer:
-          "The effect is temporary. If you stop wearing the lenses consistently, the cornea gradually returns toward its original shape and your uncorrected vision returns to how it was before treatment.",
-      },
-      {
-        question: "Does insurance cover Ortho-K?",
-        answer:
-          "Coverage varies by plan, and Ortho-K is sometimes considered elective. Our team will review your specific benefits and discuss the costs involved before you begin treatment.",
-      },
-    ],
+    faq: orthoKFaqs,
     ctaTitle: "Explore a proactive approach to myopia.",
     ctaCopy:
       "Book an Ortho-K fitting to review candidacy, goals, and expected follow-up.",
@@ -1180,7 +1087,7 @@ export default async function DetailPage({
           <p className="detail-lede">{page.lede}</p>
           <div className="detail-actions">
             <Link className="button button-primary" href="/book">
-              View live availability <ArrowIcon />
+              Book an evaluation <ArrowIcon />
             </Link>
             <a href="tel:+14704404099" className="detail-phone">
               Call (470) 440-4099
@@ -1335,7 +1242,7 @@ export default async function DetailPage({
           className="button button-primary"
           href={page.ctaHref ?? "/book"}
         >
-          {page.ctaLabel ?? "View live availability"} <ArrowIcon />
+          {page.ctaLabel ?? "Book an evaluation"} <ArrowIcon />
         </a>
       </section>
 

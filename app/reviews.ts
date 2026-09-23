@@ -21,7 +21,20 @@ export const ORIGINAL_TESTIMONIALS_URL =
 export const YELP_REVIEWS_URL =
   "https://www.yelp.com/biz/precision-vision-institute-duluth";
 
-export const patientReviews = [
+export type Review = {
+  author: string;
+  text: string;
+  source: string;
+  condition?: string;
+  /** 1–5; curated testimonials are all five-star. */
+  rating?: number;
+  authorUrl?: string;
+  photoUrl?: string;
+  /** Relative time from Google, e.g. "3 months ago". */
+  when?: string;
+};
+
+export const patientReviews: Review[] = [
   {
     author: "Shawoun L.",
     condition: "Specialty contact lenses",
@@ -77,4 +90,4 @@ export const patientReviews = [
     source: "Yelp review",
     text: "So glad I found Precision Vision Institute. Dr. Nim has given me the best fit and best vision with my scleral lenses.",
   },
-] as const;
+];

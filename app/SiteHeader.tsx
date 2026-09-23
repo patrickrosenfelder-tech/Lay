@@ -123,7 +123,10 @@ export function SiteHeader() {
         </span>
       </nav>
 
-      <Link className="header-cta" href="/book">Book appointment <ArrowIcon /></Link>
+      <div className="header-actions">
+        <a className="header-phone" href="tel:+14704404099" aria-label="Call Precision Vision Institute at (470) 440-4099">(470) 440-4099</a>
+        <Link className="header-cta" href="/book">Book an evaluation <ArrowIcon /></Link>
+      </div>
 
       <div className="mobile-menu">
         <button
@@ -152,7 +155,7 @@ export function SiteHeader() {
               {item.links.map(([label, href], index) => <Link ref={index === 0 && item.label === navigation[0].label ? mobileMenuFirstLink : undefined} key={href} href={href} onClick={closeMobileMenu}>{label}</Link>)}
             </div>
           ))}
-          <Link href="/book" onClick={closeMobileMenu}>Book appointment <ArrowIcon /></Link>
+          <Link href="/book" onClick={closeMobileMenu}>Book an evaluation <ArrowIcon /></Link>
           <span className="mobile-menu-socials" aria-label="Social media">
             <a className="social-icon social-facebook" href="https://www.facebook.com/people/Precision-Vision-Institute/100063539512239/" target="_blank" rel="noopener noreferrer" aria-label="Precision Vision Institute on Facebook" onClick={closeMobileMenu} />
             <a className="social-icon social-instagram" href="https://www.instagram.com/dr.laynim/" target="_blank" rel="noopener noreferrer" aria-label="Dr. Lay Nim on Instagram" onClick={closeMobileMenu} />

@@ -30,8 +30,8 @@ export function BookingPage() {
           <p className="section-label">Book an appointment</p>
           <h1>Plan your visit.</h1>
           <p>
-            Complete the secure verification, choose the care you need, and
-            select from the clinic&apos;s live appointment dates and times.
+            Pick the care you need, then choose a date and time that works
+            for you. It takes about two minutes.
           </p>
           <div className="booking-contact">
             <span>Prefer to speak with us?</span>

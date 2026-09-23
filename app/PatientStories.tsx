@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowIcon } from "./ArrowIcon";
-import { patientReviews as stories } from "./reviews";
+import type { Review } from "./reviews";
 
-export function PatientStories() {
+export function PatientStories({ stories, fromGoogle = false }: { stories: Review[]; fromGoogle?: boolean }) {
   const [activeStory, setActiveStory] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -17,7 +17,7 @@ export function PatientStories() {
     }, 5000);
 
     return () => window.clearInterval(timer);
-  }, [paused]);
+  }, [paused, stories.length]);
 
   const story = stories[activeStory];
 
@@ -31,17 +31,17 @@ export function PatientStories() {
         “
       </div>
 
-      <blockquote key={story.author} aria-live="off">
+      <blockquote key={`${story.author}-${activeStory}`} aria-live="off">
         <p>{story.text}</p>
         <footer>
           <div>
             <span>{story.author}</span>
-            {"condition" in story && story.condition && (
+            {story.condition && (
               <span className="story-condition">{story.condition}</span>
             )}
           </div>
-          <span className="stars" aria-label="5 out of 5 stars">
-            ★ ★ ★ ★ ★
+          <span className="stars" aria-label={`${story.rating ?? 5} out of 5 stars${fromGoogle ? " on Google" : ""}`}>
+            {Array.from({ length: Math.round(story.rating ?? 5) }, () => "★").join(" ")}
           </span>
         </footer>
       </blockquote>
@@ -79,13 +79,13 @@ export function PatientStories() {
               onClick={() => showStory(index)}
               aria-label={`Show story from ${item.author}`}
               aria-current={index === activeStory ? "true" : undefined}
-              key={item.author}
+              key={`${item.author}-${index}`}
             />
           ))}
         </div>
 
         <Link href="/testimonials">
-          More patient stories <ArrowIcon />
+          {fromGoogle ? "More Google reviews" : "More patient stories"} <ArrowIcon />
         </Link>
       </div>
     </section>

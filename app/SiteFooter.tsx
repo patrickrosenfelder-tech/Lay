@@ -31,12 +31,15 @@ export function SiteFooter() {
             <Link href="/dr-nim">Meet Dr. Nim</Link>
             <Link href="/our-office">Our office</Link>
             <Link href="/doctor-referral">For doctors</Link>
-            <Link href="/book">Book appointment</Link>
+            <Link href="/book">Book an evaluation</Link>
           </div>
         </div>
         <div className="footer-utility">
           <Link href="/contact">Contact</Link><Link href="/privacy-policy">Privacy Policy</Link><Link href="/hipaa-notice">HIPAA Notice</Link><Link href="/terms-of-service">Terms of Service</Link>
         </div>
+        <p className="footer-service-area">
+          Specialty eye care in Duluth, GA, serving Johns Creek, Suwanee, Norcross, Alpharetta, and Gwinnett County.
+        </p>
         <p className="copyright">© {new Date().getFullYear()} Precision Vision Institute</p>
       </footer>
       <MobileQuickActions />

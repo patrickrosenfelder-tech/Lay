@@ -8,7 +8,7 @@
   --powder: #e3f0f8;
   --aqua: #76cbd5;
   --aqua-light: #cfecef;
-  --muted: #5a6d7d;
+  --muted: #4d6070;
   /* Brand teal is only legible on the dark sections; this is its
      light-background counterpart. */
   --aqua-ink: #1d7480;
@@ -251,7 +251,7 @@ summary {
 .eyebrow,
 .section-label {
   margin: 0 0 28px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -699,7 +699,7 @@ summary {
 .process-list p {
   max-width: 460px;
   margin: 0;
-  color: #898989;
+  color: #c3d0da;
   font-size: 16px;
   line-height: 1.55;
 }
@@ -1341,7 +1341,7 @@ summary {
 .original-review-source p {
   max-width: 520px;
   margin: 0;
-  color: #5d7482;
+  color: #4d6576;
   font-size: clamp(20px, 2.1vw, 31px);
   line-height: 1.35;
 }
@@ -1684,7 +1684,7 @@ summary {
 .detail-section > div:last-child > p {
   max-width: 760px;
   margin: 0;
-  color: #5d7482;
+  color: #4d6576;
   font-size: 19px;
   line-height: 1.75;
 }
@@ -2211,7 +2211,7 @@ summary {
 .meibography-copy > p:not(.section-label),
 .dry-eye-faq > div:first-child > p:last-child {
   margin: 30px 0 0;
-  color: #547080;
+  color: #466272;
   font-size: 18px;
   line-height: 1.65;
 }
@@ -2550,7 +2550,7 @@ summary {
 
 .contact-address > p:last-child {
   margin: 30px 0 0;
-  color: #547080;
+  color: #466272;
   font-size: 18px;
   line-height: 1.75;
 }
@@ -2582,7 +2582,7 @@ summary {
 .inquiry-section > div > p:not(.section-label) {
   max-width: 520px;
   margin: 30px 0 0;
-  color: #547080;
+  color: #466272;
   font-size: 18px;
   line-height: 1.65;
 }
@@ -2677,7 +2677,7 @@ summary {
 .legal-intro {
   max-width: 960px;
   margin: 0 0 24px;
-  color: #547080;
+  color: #466272;
   font-size: 20px;
   line-height: 1.7;
 }
@@ -2713,7 +2713,7 @@ summary {
 .legal-subsection p {
   max-width: 930px;
   margin: 0 0 17px 94px;
-  color: #547080;
+  color: #466272;
   font-size: 17px;
   line-height: 1.72;
 }
@@ -2722,7 +2722,7 @@ summary {
   max-width: 900px;
   margin: 20px 0 22px 94px;
   padding-left: 20px;
-  color: #547080;
+  color: #466272;
   font-size: 17px;
   line-height: 1.72;
 }
@@ -2788,7 +2788,7 @@ summary {
 .dry-eye-insurance > p:not(.section-label),
 .static-content article > p {
   margin: 0;
-  color: #547080;
+  color: #466272;
   font-size: clamp(20px, calc(1.6vw + 2px), 26px);
   line-height: 1.6;
 }
@@ -2979,7 +2979,7 @@ summary {
   background: var(--aqua-light);
 }
 
-.office-location .section-label { color: #547080; }
+.office-location .section-label { color: #466272; }
 
 .office-location h2 {
   margin: 0 0 30px;
@@ -3139,7 +3139,7 @@ summary {
   }
 
   .desktop-nav,
-  .header-cta {
+  .header-actions {
     display: none;
   }
 
@@ -4187,4 +4187,130 @@ summary {
   color: #3f5260;
   font-size: 11px;
   letter-spacing: 0.04em;
+}
+
+/* ---- Header phone (audit #6) ---- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  gap: 18px;
+}
+
+.header-phone {
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: opacity 180ms ease;
+}
+
+.header-phone:hover {
+  opacity: 0.65;
+}
+
+@media (max-width: 1240px) and (min-width: 1051px) {
+  .header-phone {
+    display: none;
+  }
+}
+
+@media (max-width: 1050px) {
+  .header-actions {
+    display: none;
+  }
+}
+
+/* ---- Footer service area (audit #35) ---- */
+.footer-service-area {
+  grid-column: 1 / -1;
+  max-width: 640px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ---- Google reviews ---- */
+.google-stars-empty {
+  opacity: 0.3;
+}
+
+.review-card-top .google-stars {
+  font-size: 14px;
+}
+
+.patient-review-card footer {
+  align-items: center;
+  gap: 10px;
+}
+
+.patient-review-card footer a {
+  color: inherit;
+}
+
+.review-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.patient-review-card footer .review-source {
+  margin-left: auto;
+}
+
+.google-attribution {
+  margin: 0;
+  padding: 0 5vw 40px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* ---- Mobile: headline before portrait, compact header on scroll (audit #24) ---- */
+@media (max-width: 760px) {
+  .site-header {
+    transition: padding 180ms ease, min-height 180ms ease, background 180ms ease, box-shadow 180ms ease;
+  }
+
+  .site-header.is-scrolled {
+    min-height: 64px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .site-header.is-scrolled .brand-logo {
+    height: 44px;
+  }
+
+  .hero {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    padding-bottom: 36px;
+  }
+
+  .hero-content {
+    order: 1;
+    min-height: 0;
+    justify-content: flex-start;
+    padding: calc(var(--header-height) + 52px) 20px 0;
+  }
+
+  .hero-portrait {
+    order: 2;
+    position: relative;
+    top: auto;
+    right: auto;
+    width: calc(100% - 40px);
+    height: 300px;
+    margin: 36px 20px 0;
+  }
+
+  .hero-meta {
+    order: 3;
+    position: static;
+    margin: 22px 20px 0;
+  }
 }

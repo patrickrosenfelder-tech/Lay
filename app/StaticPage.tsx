@@ -46,7 +46,7 @@ export function StaticPage({ page, path }: { page: StaticPageData; path: string 
           <h1>{page.title}</h1>
           <p>{page.lede}</p>
           <Link className="button button-primary" href={page.ctaHref ?? "/#book"}>
-            {page.ctaLabel ?? "Book an appointment"} <ArrowIcon />
+            {page.ctaLabel ?? "Book an evaluation"} <ArrowIcon />
           </Link>
         </div>
         {page.showOfficeLocation ? (
