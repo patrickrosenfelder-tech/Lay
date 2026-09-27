@@ -184,3 +184,64 @@ test("falls back to curated testimonials without a Places API key", async () => 
   assert.match(html, /Shawoun L\./);
   assert.doesNotMatch(html, /Reviews and rating provided by Google/);
 });
+
+test("shows every review from the Google Business Profile API when configured", async () => {
+  const realFetch = globalThis.fetch;
+  const env = {
+    GBP_CLIENT_ID: "client",
+    GBP_CLIENT_SECRET: "secret",
+    GBP_REFRESH_TOKEN: "refresh",
+    GBP_ACCOUNT_ID: "accounts/111",
+    GBP_LOCATION_ID: "locations/222",
+    GOOGLE_PLACES_API_KEY: "places-key-should-not-be-used",
+  };
+  Object.assign(process.env, env);
+  const calls = [];
+  const review = (n, extra = {}) => ({
+    reviewer: { displayName: `Reviewer ${n}` },
+    starRating: "FIVE",
+    comment: `Business Profile review number ${n}.`,
+    createTime: new Date(Date.now() - n * 86_400_000).toISOString(),
+    ...extra,
+  });
+  globalThis.fetch = async (input, init) => {
+    const url = String(input instanceof Request ? input.url : input);
+    if (url.startsWith("https://oauth2.googleapis.com/token")) {
+      calls.push("token");
+      return Response.json({ access_token: "access", expires_in: 3599 });
+    }
+    if (url.startsWith("https://mybusiness.googleapis.com/v4/accounts/111/locations/222/reviews")) {
+      calls.push(url.includes("pageToken=") ? "page2" : "page1");
+      assert.equal(new Headers(init?.headers).get("authorization"), "Bearer access");
+      if (!url.includes("pageToken=")) {
+        return Response.json({
+          averageRating: 4.9,
+          totalReviewCount: 15,
+          nextPageToken: "next",
+          reviews: [
+            review(1, { reviewReply: { comment: "Thank you for trusting us with your care!" } }),
+            ...Array.from({ length: 11 }, (_, i) => review(i + 2)),
+            { reviewer: { displayName: "Stars only" }, starRating: "FIVE" },
+          ],
+        });
+      }
+      return Response.json({ reviews: [review(13), review(14)] });
+    }
+    if (url.startsWith("https://places.googleapis.com/")) calls.push("places");
+    return realFetch(input, init);
+  };
+  try {
+    const html = await (await render("/testimonials")).text();
+    assert.deepEqual(calls.filter((c) => c !== "token"), ["page1", "page2"], "pages through every review, never calls Places");
+    assert.match(html, /Read all 15 Google reviews/);
+    assert.match(html, /Every written review patients have left on Google/);
+    assert.match(html, /Business Profile review number 14\./);
+    assert.match(html, /Show all 14 reviews/);
+    assert.match(html, /Reply from Precision Vision Institute/);
+    assert.match(html, /Thank you for trusting us with your care!/);
+    assert.doesNotMatch(html, /Stars only/);
+  } finally {
+    globalThis.fetch = realFetch;
+    for (const key of Object.keys(env)) delete process.env[key];
+  }
+});

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowIcon } from "./ArrowIcon";
 import { getGoogleReviews } from "./google-reviews";
-import { GOOGLE_RATING, GOOGLE_REVIEWS_URL, patientReviews } from "./reviews";
+import { GOOGLE_RATING, GOOGLE_REVIEWS_URL, patientReviews, type Review } from "./reviews";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 import {
@@ -20,10 +20,51 @@ function Stars({ rating }: { rating: number }) {
   );
 }
 
+const INITIAL_REVIEWS = 12;
+
+function ReviewCard({ review, index, showStars }: { review: Review; index: number; showStars: boolean }) {
+  return (
+    <blockquote className="patient-review-card">
+      <div className="review-card-top">
+        <span>{String(index + 1).padStart(2, "0")}</span>
+        {review.condition && <span className="story-condition">{review.condition}</span>}
+        {showStars && <Stars rating={review.rating ?? 5} />}
+      </div>
+      <p>“{review.text}”</p>
+      {review.reply && (
+        <div className="review-reply">
+          <span>Reply from Precision Vision Institute</span>
+          <p>{review.reply}</p>
+        </div>
+      )}
+      <footer>
+        {review.photoUrl && (
+          // Google-hosted avatar; next/image would need a remote-pattern allowlist for it.
+          // eslint-disable-next-line @next/next/no-img-element
+          <img className="review-avatar" src={review.photoUrl} alt="" width={36} height={36} loading="lazy" referrerPolicy="no-referrer" />
+        )}
+        {review.authorUrl ? (
+          <a href={review.authorUrl} target="_blank" rel="noopener noreferrer">
+            <strong>{review.author}</strong>
+          </a>
+        ) : (
+          <strong>{review.author}</strong>
+        )}
+        <span className="review-source">
+          {review.source}
+          {review.when ? ` · ${review.when}` : ""}
+        </span>
+      </footer>
+    </blockquote>
+  );
+}
+
 export async function TestimonialsPage() {
   const google = await getGoogleReviews();
   const reviews = google?.reviews ?? patientReviews;
   const reviewsUrl = google?.reviewsUrl || GOOGLE_REVIEWS_URL;
+  const visible = reviews.slice(0, INITIAL_REVIEWS);
+  const more = reviews.slice(INITIAL_REVIEWS);
 
   return (
     <main id="main-content" className="testimonials-page">
@@ -78,7 +119,9 @@ export async function TestimonialsPage() {
         <div className="original-review-source">
           <p>
             {google
-              ? "These are the most relevant recent reviews patients have left on Google, shown exactly as they were written."
+              ? google.complete
+                ? "Every written review patients have left on Google, newest first, shown exactly as they were written."
+                : "These are the most relevant recent reviews patients have left on Google, shown exactly as they were written."
               : "Hear straight from the people we care for. These are real, unaltered experiences shared by our amazing patients across Google, Yelp, and testimonials sent directly to the clinic."}
           </p>
           {google && (
@@ -90,35 +133,21 @@ export async function TestimonialsPage() {
       </section>
 
       <section className="patient-review-grid" aria-label={google ? "Google reviews" : "Patient testimonials"}>
-        {reviews.map((review, index) => (
-          <blockquote className="patient-review-card" key={`${review.author}-${index}`}>
-            <div className="review-card-top">
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              {review.condition && <span className="story-condition">{review.condition}</span>}
-              {google && <Stars rating={review.rating ?? 5} />}
-            </div>
-            <p>“{review.text}”</p>
-            <footer>
-              {review.photoUrl && (
-                // Google-hosted avatar; next/image would need a remote-pattern allowlist for it.
-                // eslint-disable-next-line @next/next/no-img-element
-                <img className="review-avatar" src={review.photoUrl} alt="" width={36} height={36} loading="lazy" referrerPolicy="no-referrer" />
-              )}
-              {review.authorUrl ? (
-                <a href={review.authorUrl} target="_blank" rel="noopener noreferrer">
-                  <strong>{review.author}</strong>
-                </a>
-              ) : (
-                <strong>{review.author}</strong>
-              )}
-              <span className="review-source">
-                {review.source}
-                {review.when ? ` · ${review.when}` : ""}
-              </span>
-            </footer>
-          </blockquote>
+        {visible.map((review, index) => (
+          <ReviewCard review={review} index={index} showStars={Boolean(google)} key={`${review.author}-${index}`} />
         ))}
       </section>
+
+      {more.length > 0 && (
+        <details className="more-reviews">
+          <summary>{`Show all ${reviews.length} reviews`}</summary>
+          <section className="patient-review-grid" aria-label="More reviews">
+            {more.map((review, index) => (
+              <ReviewCard review={review} index={index + INITIAL_REVIEWS} showStars={Boolean(google)} key={`${review.author}-${index + INITIAL_REVIEWS}`} />
+            ))}
+          </section>
+        </details>
+      )}
 
       {google && (
         <p className="google-attribution">

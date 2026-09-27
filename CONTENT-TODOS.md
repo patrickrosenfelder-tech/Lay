@@ -47,3 +47,13 @@ facts without approval.
 - Dr. Nim to confirm the Ortho-K FAQ: lenses FDA-approved for temporary myopia
   correction; myopia-control use described as off-label in the U.S.
 - Dr. Nim to confirm the hedged safety/comfort answers in `app/faq-content.ts`.
+
+## All Google reviews (Business Profile API)
+
+- Request Business Profile API access for the Google Cloud project (Google
+  approval, days to weeks). Until approved and configured, the site keeps
+  using the Places API (max 5 reviews).
+- Then add in Vercel (Production + Preview): GBP_CLIENT_ID, GBP_CLIENT_SECRET,
+  GBP_REFRESH_TOKEN (Secrets) and GBP_ACCOUNT_ID, GBP_LOCATION_ID (Config).
+- OAuth consent screen must be "In production", not "Testing"; testing-mode
+  refresh tokens expire after 7 days and the reviews would silently fall back.

@@ -32,6 +32,8 @@ export type Review = {
   photoUrl?: string;
   /** Relative time from Google, e.g. "3 months ago". */
   when?: string;
+  /** The practice's public reply, when Google provides it. */
+  reply?: string;
 };
 
 export const patientReviews: Review[] = [
