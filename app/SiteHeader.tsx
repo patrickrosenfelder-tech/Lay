@@ -10,13 +10,16 @@ type NavigationItem =
   | { label: string; links: readonly (readonly [string, string])[] };
 
 const navigation: readonly NavigationItem[] = [
-  { label: "Dry eye", links: [["Dry eye evaluation", "/dry-eye"], ["Envision dry eye package", "/envision-dry-eye"]] },
-  { label: "Specialty care", links: [["Keratoconus", "/keratoconus"], ["Scleral lenses", "/sclerals"], ["Post-surgical vision", "/post-surgical-vision"], ["Ortho-K/CRT lenses", "/ortho-k-crt-lenses"]] },
+  { label: "Contact Lenses", links: [["Scleral lenses", "/sclerals"], ["Ortho-K/CRT lenses", "/ortho-k-crt-lenses"]] },
+  { label: "Specialty care", links: [["Keratoconus", "/keratoconus"], ["Post-surgical vision", "/post-surgical-vision"], ["Dry eye evaluation", "/dry-eye"], ["Envision dry eye package", "/envision-dry-eye"]] },
   { label: "Resources", links: [["Patients", "/patients"], ["Insurance & financing", "/insurances"], ["Testimonials", "/testimonials"], ["FAQ", "/faq"]] },
-  { label: "About", links: [["Meet Dr. Nim", "/dr-nim"], ["Our office", "/our-office"]] },
+  { label: "About", links: [["Meet Dr. Nim", "/dr-nim"], ["Our office", "/our-office"], ["Contact", "/contact"]] },
   { label: "For doctors", href: "/doctor-referral" },
-  { label: "Contact", href: "/contact" },
 ];
+
+// Labels contain spaces ("Contact Lenses"); ids must not, or aria-controls
+// would point at two ids that do not exist.
+const menuId = (label: string) => `${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-menu`;
 
 export function SiteHeader() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -102,14 +105,14 @@ export function SiteHeader() {
               if (!event.currentTarget.contains(event.relatedTarget)) scheduleDropdownClose(item.label);
             }}
           >
-            <button type="button" aria-expanded={activeDropdown === item.label} aria-controls={`${item.label}-menu`}>
+            <button type="button" aria-expanded={activeDropdown === item.label} aria-controls={menuId(item.label)}>
               {item.label}
             </button>
             {/* Rendered on the server in every state so the links are crawlable;
                 visibility is CSS-driven and `inert` keeps closed menus out of
                 the focus order. */}
             <div
-              id={`${item.label}-menu`}
+              id={menuId(item.label)}
               className={`nav-dropdown-menu${activeDropdown === item.label ? " is-open" : ""}`}
               inert={activeDropdown !== item.label}
             >

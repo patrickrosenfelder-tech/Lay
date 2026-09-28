@@ -245,3 +245,26 @@ test("shows every review from the Google Business Profile API when configured", 
     for (const key of Object.keys(env)) delete process.env[key];
   }
 });
+
+test("header groups contact lenses, specialty care, and puts Contact under About", async () => {
+  const html = await (await render()).text();
+  const navStart = html.indexOf(">", html.indexOf('aria-label="Main navigation"')) + 1;
+  const nav = html.slice(navStart, html.indexOf("</nav>", navStart));
+  const text = nav.replace(/<[^>]+>/g, "|").split("|").map((part) => part.trim()).filter(Boolean);
+  assert.deepEqual(text, [
+    "Contact Lenses", "Scleral lenses", "Ortho-K/CRT lenses",
+    "Specialty care", "Keratoconus", "Post-surgical vision", "Dry eye evaluation", "Envision dry eye package",
+    "Resources", "Patients", "Insurance &amp; financing", "Testimonials", "FAQ",
+    "About", "Meet Dr. Nim", "Our office", "Contact",
+    "For doctors",
+  ]);
+  assert.match(nav, /aria-controls="contact-lenses-menu"/);
+  assert.match(nav, /id="contact-lenses-menu"/);
+});
+
+test("mobile menu panel becomes visible when opened", async () => {
+  const { readFile } = await import("node:fs/promises");
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  assert.match(css, /\.mobile-menu-panel\.is-open \{\s*opacity: 1;[^}]*pointer-events: auto;/);
+  assert.doesNotMatch(css, /details\[open\] \.mobile-menu nav/);
+});
