@@ -3194,10 +3194,20 @@ summary {
     pointer-events: none;
   }
 
-  details[open] .mobile-menu nav {
+  /* The menu is a button + .is-open panel, not a <details>; reveal it here.
+     @starting-style lets the fade run even though the closed panel is
+     display: none. */
+  .mobile-menu-panel.is-open {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+  }
+
+  @starting-style {
+    .mobile-menu-panel.is-open {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
   }
 
   .mobile-menu-panel a {
