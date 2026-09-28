@@ -2,16 +2,21 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type Ref } from "react";
 import { ArrowIcon } from "./ArrowIcon";
+
+type NavLink = readonly [label: string, href: string];
+// A nested group inside a dropdown (e.g. "Dry eye"), expanded on click.
+type NavGroup = { label: string; links: readonly NavLink[] };
+type NavEntry = NavLink | NavGroup;
 
 type NavigationItem =
   | { label: string; href: string }
-  | { label: string; links: readonly (readonly [string, string])[] };
+  | { label: string; links: readonly NavEntry[] };
 
 const navigation: readonly NavigationItem[] = [
   { label: "Contact Lenses", links: [["Scleral lenses", "/sclerals"], ["Ortho-K/CRT lenses", "/ortho-k-crt-lenses"]] },
-  { label: "Specialty care", links: [["Keratoconus", "/keratoconus"], ["Post-surgical vision", "/post-surgical-vision"], ["Dry eye evaluation", "/dry-eye"], ["Envision dry eye package", "/envision-dry-eye"]] },
+  { label: "Specialty care", links: [["Keratoconus", "/keratoconus"], ["Post-surgical vision", "/post-surgical-vision"], { label: "Dry eye", links: [["Dry eye evaluation", "/dry-eye"], ["Envision dry eye package", "/envision-dry-eye"]] }] },
   { label: "Resources", links: [["Patients", "/patients"], ["Insurance & financing", "/insurances"], ["Testimonials", "/testimonials"], ["FAQ", "/faq"]] },
   { label: "About", links: [["Meet Dr. Nim", "/dr-nim"], ["Our office", "/our-office"], ["Contact", "/contact"]] },
   { label: "For doctors", href: "/doctor-referral" },
@@ -21,8 +26,44 @@ const navigation: readonly NavigationItem[] = [
 // would point at two ids that do not exist.
 const menuId = (label: string) => `${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-menu`;
 
+const isGroup = (entry: NavEntry): entry is NavGroup => "links" in entry;
+
+type EntryListProps = {
+  entries: readonly NavEntry[];
+  /** Keeps desktop and mobile submenu ids distinct. */
+  idPrefix: string;
+  openGroup: string | null;
+  onToggleGroup: (label: string | null) => void;
+  onNavigate: () => void;
+  firstLinkRef?: Ref<HTMLAnchorElement>;
+};
+
+function EntryList({ entries, idPrefix, openGroup, onToggleGroup, onNavigate, firstLinkRef }: EntryListProps) {
+  return entries.map((entry, index) => {
+    if (!isGroup(entry)) {
+      const [label, href] = entry;
+      return <Link ref={index === 0 ? firstLinkRef : undefined} key={href} href={href} onClick={onNavigate}>{label}</Link>;
+    }
+    const isOpen = openGroup === entry.label;
+    const id = `${idPrefix}-${menuId(entry.label)}`;
+    return (
+      <div className={`nav-submenu${isOpen ? " is-open" : ""}`} key={entry.label}>
+        <button type="button" className="nav-submenu-toggle" aria-expanded={isOpen} aria-controls={id} onClick={() => onToggleGroup(isOpen ? null : entry.label)}>
+          {entry.label}
+        </button>
+        {/* Always rendered so the links stay crawlable; `hidden` until opened. */}
+        <div id={id} className="nav-submenu-links" hidden={!isOpen}>
+          {entry.links.map(([label, href]) => <Link key={href} href={href} onClick={onNavigate}>{label}</Link>)}
+        </div>
+      </div>
+    );
+  });
+}
+
 export function SiteHeader() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
+  const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -45,6 +86,7 @@ export function SiteHeader() {
     cancelScheduledClose();
     closeTimer.current = setTimeout(() => {
       setActiveDropdown((current) => (current === label ? null : current));
+      setOpenGroup(null);
       closeTimer.current = null;
     }, 140);
   };
@@ -116,7 +158,13 @@ export function SiteHeader() {
               className={`nav-dropdown-menu${activeDropdown === item.label ? " is-open" : ""}`}
               inert={activeDropdown !== item.label}
             >
-              {item.links.map(([label, href]) => <Link key={href} href={href} onClick={() => { cancelScheduledClose(); setActiveDropdown(null); }}>{label}</Link>)}
+              <EntryList
+                entries={item.links}
+                idPrefix="desktop"
+                openGroup={openGroup}
+                onToggleGroup={setOpenGroup}
+                onNavigate={() => { cancelScheduledClose(); setActiveDropdown(null); setOpenGroup(null); }}
+              />
             </div>
           </div>
         ))}
@@ -155,7 +203,14 @@ export function SiteHeader() {
           ) : (
             <div className="mobile-nav-group" key={item.label}>
               <span>{item.label}</span>
-              {item.links.map(([label, href], index) => <Link ref={index === 0 && item.label === navigation[0].label ? mobileMenuFirstLink : undefined} key={href} href={href} onClick={closeMobileMenu}>{label}</Link>)}
+              <EntryList
+                entries={item.links}
+                idPrefix="mobile"
+                openGroup={openMobileGroup}
+                onToggleGroup={setOpenMobileGroup}
+                onNavigate={closeMobileMenu}
+                firstLinkRef={item.label === navigation[0].label ? mobileMenuFirstLink : undefined}
+              />
             </div>
           ))}
           <Link href="/book" onClick={closeMobileMenu}>Book an evaluation <ArrowIcon /></Link>

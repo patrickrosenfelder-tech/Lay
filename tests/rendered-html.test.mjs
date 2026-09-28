@@ -253,7 +253,7 @@ test("header groups contact lenses, specialty care, and puts Contact under About
   const text = nav.replace(/<[^>]+>/g, "|").split("|").map((part) => part.trim()).filter(Boolean);
   assert.deepEqual(text, [
     "Contact Lenses", "Scleral lenses", "Ortho-K/CRT lenses",
-    "Specialty care", "Keratoconus", "Post-surgical vision", "Dry eye evaluation", "Envision dry eye package",
+    "Specialty care", "Keratoconus", "Post-surgical vision", "Dry eye", "Dry eye evaluation", "Envision dry eye package",
     "Resources", "Patients", "Insurance &amp; financing", "Testimonials", "FAQ",
     "About", "Meet Dr. Nim", "Our office", "Contact",
     "For doctors",
@@ -267,4 +267,11 @@ test("mobile menu panel becomes visible when opened", async () => {
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   assert.match(css, /\.mobile-menu-panel\.is-open \{\s*opacity: 1;[^}]*pointer-events: auto;/);
   assert.doesNotMatch(css, /details\[open\] \.mobile-menu nav/);
+});
+
+test("Dry eye is a collapsed group inside Specialty care", async () => {
+  const html = await (await render()).text();
+  assert.match(html, /<button type="button" class="nav-submenu-toggle" aria-expanded="false" aria-controls="desktop-dry-eye-menu">Dry eye<\/button>/);
+  assert.match(html, /<div id="desktop-dry-eye-menu" class="nav-submenu-links" hidden="">/);
+  assert.match(html, /id="mobile-dry-eye-menu"/);
 });

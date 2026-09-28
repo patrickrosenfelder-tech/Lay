@@ -4368,3 +4368,90 @@ summary {
 .more-reviews[open] > summary {
   display: none;
 }
+
+/* ---- Nested menu group ("Dry eye" under Specialty care) ---- */
+.nav-dropdown .nav-submenu {
+  display: grid;
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-dropdown .nav-submenu:last-child {
+  border-bottom: 0;
+}
+
+.nav-dropdown .nav-submenu-toggle {
+  width: 100%;
+  justify-content: space-between;
+  padding: 13px 16px;
+  text-align: left;
+}
+
+.nav-submenu-toggle::after {
+  transition: transform 160ms ease;
+}
+
+.nav-submenu.is-open > .nav-submenu-toggle::after {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown .nav-submenu-links {
+  display: grid;
+  background: var(--paper);
+}
+
+.nav-dropdown .nav-submenu-links[hidden] {
+  display: none;
+}
+
+.nav-dropdown > div .nav-submenu-links a {
+  padding-left: 30px;
+}
+
+.nav-dropdown > div .nav-submenu-links a:last-child {
+  border-bottom: 0;
+}
+
+@media (max-width: 1050px) {
+  .mobile-nav-group .nav-submenu {
+    display: grid;
+  }
+
+  .mobile-nav-group .nav-submenu-toggle {
+    display: flex;
+    width: 100%;
+    min-height: 44px;
+    align-items: center;
+    justify-content: space-between;
+    border: 0;
+    background: transparent;
+    padding: 12px 20px 12px 28px;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 13px;
+    text-align: left;
+  }
+
+  .mobile-nav-group .nav-submenu-toggle::after {
+    content: "⌄";
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .mobile-nav-group .nav-submenu-links {
+    display: grid;
+  }
+
+  .mobile-nav-group .nav-submenu-links[hidden] {
+    display: none;
+  }
+
+  .mobile-nav-group .nav-submenu-links a {
+    padding-left: 44px;
+  }
+
+  .mobile-nav-group .nav-submenu-toggle:focus-visible {
+    outline: 3px solid var(--aqua);
+    outline-offset: -3px;
+  }
+}
