@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowIcon } from "./ArrowIcon";
 import { getGoogleReviews } from "./google-reviews";
+import { ReviewList, ReviewStars } from "./ReviewList";
 import { GOOGLE_RATING, GOOGLE_REVIEWS_URL, patientReviews, type Review } from "./reviews";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
@@ -10,61 +11,43 @@ import {
   medicalWebPageStructuredData,
 } from "./structured-data";
 
-function Stars({ rating }: { rating: number }) {
-  const rounded = Math.round(rating);
-  return (
-    <span className="google-stars" aria-label={`${rating} out of 5 stars`}>
-      {"★".repeat(rounded)}
-      <span className="google-stars-empty" aria-hidden="true">{"★".repeat(5 - rounded)}</span>
-    </span>
-  );
+const HIGHLIGHT_LENGTH = 180;
+
+function formatDate(iso?: string) {
+  if (!iso) return undefined;
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) return undefined;
+  return date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "America/New_York" });
 }
 
-const INITIAL_REVIEWS = 12;
+function excerpt(text: string) {
+  if (text.length <= HIGHLIGHT_LENGTH) return text;
+  return `${text.slice(0, text.lastIndexOf(" ", HIGHLIGHT_LENGTH)).trimEnd()}…`;
+}
 
-function ReviewCard({ review, index, showStars }: { review: Review; index: number; showStars: boolean }) {
-  return (
-    <blockquote className="patient-review-card">
-      <div className="review-card-top">
-        <span>{String(index + 1).padStart(2, "0")}</span>
-        {review.condition && <span className="story-condition">{review.condition}</span>}
-        {showStars && <Stars rating={review.rating ?? 5} />}
-      </div>
-      <p>“{review.text}”</p>
-      {review.reply && (
-        <div className="review-reply">
-          <span>Reply from Precision Vision Institute</span>
-          <p>{review.reply}</p>
-        </div>
-      )}
-      <footer>
-        {review.photoUrl && (
-          // Google-hosted avatar; next/image would need a remote-pattern allowlist for it.
-          // eslint-disable-next-line @next/next/no-img-element
-          <img className="review-avatar" src={review.photoUrl} alt="" width={36} height={36} loading="lazy" referrerPolicy="no-referrer" />
-        )}
-        {review.authorUrl ? (
-          <a href={review.authorUrl} target="_blank" rel="noopener noreferrer">
-            <strong>{review.author}</strong>
-          </a>
-        ) : (
-          <strong>{review.author}</strong>
-        )}
-        <span className="review-source">
-          {review.source}
-          {review.when ? ` · ${review.when}` : ""}
-        </span>
-      </footer>
-    </blockquote>
-  );
+/** The newest review, plus the highest-rated of the rest (newest among ties),
+    so both labels stay literally true and the cards never repeat. */
+function pickHighlights(reviews: Review[]) {
+  const dated = reviews.filter((review) => review.date);
+  if (dated.length < 2) return [];
+  const newest = (a: Review, b: Review) => (b.date ?? "").localeCompare(a.date ?? "");
+  const [recent, ...rest] = [...dated].sort(newest);
+  const highest = [...rest].sort((a, b) => (b.rating ?? 5) - (a.rating ?? 5) || newest(a, b))[0];
+  return [
+    { label: "Highest rated review", review: highest },
+    { label: "Most recent review", review: recent },
+  ];
 }
 
 export async function TestimonialsPage() {
   const google = await getGoogleReviews();
   const reviews = google?.reviews ?? patientReviews;
   const reviewsUrl = google?.reviewsUrl || GOOGLE_REVIEWS_URL;
-  const visible = reviews.slice(0, INITIAL_REVIEWS);
-  const more = reviews.slice(INITIAL_REVIEWS);
+  const writeReviewUrl = google?.writeReviewUrl ?? reviewsUrl;
+  const rating = google ? google.rating : Number(GOOGLE_RATING.value);
+  const distribution = google?.distribution;
+  const distributionMax = distribution ? Math.max(...Object.values(distribution), 1) : 1;
+  const highlights = google ? pickHighlights(reviews) : [];
 
   return (
     <main id="main-content" className="testimonials-page">
@@ -97,63 +80,86 @@ export async function TestimonialsPage() {
         </p>
       </section>
 
-      <section className="reviews-proof" aria-label="Review sources">
-        <div className="google-review-summary">
-          <div>
-            <span className="review-source-label">Google rating</span>
-            <strong>{google ? google.rating.toFixed(1) : GOOGLE_RATING.value}</strong>
+      <div className="reviews-board">
+        <section className={`rating-summary${distribution ? " has-distribution" : ""}`} aria-label="Google rating summary">
+          <div className="rating-score">
+            <strong>
+              {rating.toFixed(1)}
+              <span aria-hidden="true">★</span>
+            </strong>
+            <ReviewStars rating={rating} />
+            <span>
+              {google
+                ? `${google.reviewCount} Google reviews`
+                : `Google rating, verified ${GOOGLE_RATING.checkedOn}`}
+            </span>
           </div>
-          <Stars rating={google ? google.rating : Number(GOOGLE_RATING.value)} />
-          <a href={reviewsUrl} target="_blank" rel="noopener noreferrer">
-            {google
-              ? `Read all ${google.reviewCount} Google reviews`
-              : "Read current Google reviews"}{" "}
-            <ArrowIcon />
-          </a>
-          <span className="review-checked-on">
-            {google
-              ? "Live from Google. Updated daily."
-              : `Verified ${GOOGLE_RATING.checkedOn}. Ratings change over time — see Google for the current figure.`}
-          </span>
-        </div>
-        <div className="original-review-source">
-          <p>
-            {google
-              ? google.complete
-                ? "Every written review patients have left on Google, newest first, shown exactly as they were written."
-                : "These are the most relevant recent reviews patients have left on Google, shown exactly as they were written."
-              : "Hear straight from the people we care for. These are real, unaltered experiences shared by our amazing patients across Google, Yelp, and testimonials sent directly to the clinic."}
-          </p>
-          {google && (
-            <a href={reviewsUrl} target="_blank" rel="noopener noreferrer">
-              Leave a review on Google <ArrowIcon />
-            </a>
+
+          {distribution ? (
+            <ol className="rating-bars" aria-label="Reviews by star rating">
+              {([5, 4, 3, 2, 1] as const).map((stars) => (
+                <li key={stars}>
+                  <span className="rating-bar-label">{stars} ★</span>
+                  <span className="rating-bar-track" aria-hidden="true">
+                    <span className="rating-bar-fill" style={{ width: `${(distribution[stars] / distributionMax) * 100}%` }} />
+                  </span>
+                  <span className="rating-bar-count">
+                    {distribution[stars]}
+                    <span className="visually-hidden">{` ${stars}-star reviews`}</span>
+                  </span>
+                </li>
+              ))}
+            </ol>
+          ) : (
+            <div className="rating-summary-note">
+              <p>
+                {google
+                  ? "The latest reviews patients have left on Google, shown exactly as they were written."
+                  : "Real, unaltered experiences shared by our patients across Google, Yelp, and testimonials sent directly to the clinic."}
+              </p>
+              <a href={reviewsUrl} target="_blank" rel="noopener noreferrer">
+                {google ? `Read all ${google.reviewCount} reviews on Google` : "Read current Google reviews"} <ArrowIcon />
+              </a>
+            </div>
           )}
-        </div>
-      </section>
+        </section>
 
-      <section className="patient-review-grid" aria-label={google ? "Google reviews" : "Patient testimonials"}>
-        {visible.map((review, index) => (
-          <ReviewCard review={review} index={index} showStars={Boolean(google)} key={`${review.author}-${index}`} />
-        ))}
-      </section>
-
-      {more.length > 0 && (
-        <details className="more-reviews">
-          <summary>{`Show all ${reviews.length} reviews`}</summary>
-          <section className="patient-review-grid" aria-label="More reviews">
-            {more.map((review, index) => (
-              <ReviewCard review={review} index={index + INITIAL_REVIEWS} showStars={Boolean(google)} key={`${review.author}-${index + INITIAL_REVIEWS}`} />
+        {highlights.length > 0 && (
+          <section className="review-highlights" aria-label="Highlighted reviews">
+            {highlights.map(({ label, review }) => (
+              <article key={label}>
+                <header>
+                  <h2>{label}</h2>
+                  {formatDate(review.date) && <span>on {formatDate(review.date)}</span>}
+                </header>
+                <strong className="review-highlight-score">
+                  {review.rating ?? 5}
+                  <span aria-hidden="true">★</span>
+                  <span className="visually-hidden"> out of 5 stars</span>
+                </strong>
+                <p>“{excerpt(review.text)}”</p>
+                <footer>{review.author} on Google</footer>
+              </article>
             ))}
           </section>
-        </details>
-      )}
+        )}
 
-      {google && (
-        <p className="google-attribution">
-          Reviews and rating provided by Google.
-        </p>
-      )}
+        {google && (
+          <a className="write-review" href={writeReviewUrl} target="_blank" rel="noopener noreferrer">
+            <span className="write-review-label">Write a review</span>
+            <span className="write-review-stars" aria-hidden="true">★★★★★</span>
+            <span className="write-review-hint">Share your experience on Google</span>
+          </a>
+        )}
+
+        <ReviewList reviews={reviews} showStars={Boolean(google)} />
+
+        {google && (
+          <p className="google-attribution">
+            Reviews and rating provided by Google. Updated daily.
+          </p>
+        )}
+      </div>
 
       <section className="reviews-cta">
         <p className="section-label">Patient experiences</p>

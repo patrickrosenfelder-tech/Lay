@@ -169,9 +169,12 @@ test("shows live Google reviews when the Places API is configured", async () => 
   try {
     const html = await (await render("/testimonials")).text();
     assert.match(html, /Test review from Google about my scleral lenses\./);
-    assert.match(html, /Read all 137 Google reviews/);
+    assert.match(html, /Read all 137 reviews on Google/);
+    assert.match(html, /137 Google reviews/);
     assert.match(html, /4\.9/);
     assert.match(html, /Reviews and rating provided by Google/);
+    assert.doesNotMatch(html, /class="rating-bars"/, "five reviews are not enough for a star chart");
+    assert.match(html, /class="write-review" href="https:\/\/search\.google\.com\/local\/writereview\?placeid=test-place"/);
   } finally {
     globalThis.fetch = realFetch;
     delete process.env.GOOGLE_PLACES_API_KEY;
@@ -193,6 +196,7 @@ test("shows every review from the Google Business Profile API when configured", 
     GBP_REFRESH_TOKEN: "refresh",
     GBP_ACCOUNT_ID: "accounts/111",
     GBP_LOCATION_ID: "locations/222",
+    GOOGLE_PLACE_ID: "gbp-place",
     GOOGLE_PLACES_API_KEY: "places-key-should-not-be-used",
   };
   Object.assign(process.env, env);
@@ -233,10 +237,14 @@ test("shows every review from the Google Business Profile API when configured", 
   try {
     const html = await (await render("/testimonials")).text();
     assert.deepEqual(calls.filter((c) => c !== "token"), ["page1", "page2"], "pages through every review, never calls Places");
-    assert.match(html, /Read all 15 Google reviews/);
-    assert.match(html, /Every written review patients have left on Google/);
-    assert.match(html, /Business Profile review number 14\./);
-    assert.match(html, /Show all 14 reviews/);
+    assert.match(html, /15 Google reviews/);
+    assert.match(html, /class="rating-bars"/);
+    assert.match(html, /<span class="rating-bar-count">15<span class="visually-hidden"> 5-star reviews<\/span>/, "star-only reviews still count");
+    assert.match(html, /Highest rated review/);
+    assert.match(html, /Most recent review/);
+    assert.match(html, /writereview\?placeid=gbp-place/);
+    assert.equal(html.match(/<article class="review-item">/g)?.length, 10, "first page of ten");
+    assert.match(html, /Show more reviews \(4 left\)/);
     assert.match(html, /Reply from Precision Vision Institute/);
     assert.match(html, /Thank you for trusting us with your care!/);
     assert.doesNotMatch(html, /Stars only/);

@@ -32,6 +32,8 @@ export type Review = {
   photoUrl?: string;
   /** Relative time from Google, e.g. "3 months ago". */
   when?: string;
+  /** ISO timestamp, used for sorting and "on Sep 16, 2026" labels. */
+  date?: string;
   /** The practice's public reply, when Google provides it. */
   reply?: string;
 };

@@ -26,7 +26,15 @@ export type GoogleReviewData = {
   reviews: Review[];
   /** True when every review is included, not just Google's top five. */
   complete: boolean;
+  /** Count of reviews per star (index 1–5), including star-only reviews.
+      Only present when `complete`: five reviews make a misleading chart. */
+  distribution?: Record<1 | 2 | 3 | 4 | 5, number>;
+  /** Opens Google's "write a review" dialog for the practice, when known. */
+  writeReviewUrl?: string;
 };
+
+const writeReviewUrl = (placeId?: string) =>
+  placeId ? `https://search.google.com/local/writereview?placeid=${encodeURIComponent(placeId)}` : undefined;
 
 // `next.revalidate` is honoured by Next.js on Vercel and ignored elsewhere.
 const cacheFor = (seconds: number) => ({ next: { revalidate: seconds } }) as RequestInit;
@@ -133,8 +141,15 @@ async function getBusinessProfileReviews(): Promise<GoogleReviewData | null> {
       rating: STARS[review.starRating as keyof typeof STARS] ?? 5,
       photoUrl: review.reviewer?.profilePhotoUrl,
       when: relativeTime(review.createTime),
+      date: review.createTime,
       reply: review.reviewReply?.comment?.trim() || undefined,
     }));
+
+  const distribution = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+  for (const review of collected) {
+    const stars = STARS[review.starRating as keyof typeof STARS];
+    if (stars) distribution[stars] += 1;
+  }
 
   if (!rating || !reviewCount || reviews.length === 0) return null;
 
@@ -144,6 +159,8 @@ async function getBusinessProfileReviews(): Promise<GoogleReviewData | null> {
     reviewsUrl: "",
     reviews,
     complete: !pageToken,
+    distribution: pageToken ? undefined : distribution,
+    writeReviewUrl: writeReviewUrl(process.env.GOOGLE_PLACE_ID),
   };
 }
 
@@ -151,6 +168,7 @@ async function getBusinessProfileReviews(): Promise<GoogleReviewData | null> {
 
 type PlaceReview = {
   rating?: number;
+  publishTime?: string;
   relativePublishTimeDescription?: string;
   text?: { text?: string };
   originalText?: { text?: string };
@@ -209,6 +227,7 @@ async function getPlacesReviews(): Promise<GoogleReviewData | null> {
       authorUrl: review.authorAttribution?.uri,
       photoUrl: review.authorAttribution?.photoUri,
       when: review.relativePublishTimeDescription,
+      date: review.publishTime,
     }))
     .filter((review) => review.text.length > 0);
 
@@ -220,6 +239,7 @@ async function getPlacesReviews(): Promise<GoogleReviewData | null> {
     reviewsUrl: place.googleMapsUri ?? "",
     reviews,
     complete: false,
+    writeReviewUrl: writeReviewUrl(placeId),
   };
 }
 
