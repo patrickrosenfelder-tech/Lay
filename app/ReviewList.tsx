@@ -28,8 +28,9 @@ function initials(name: string) {
     .join("");
 }
 
-function ReviewItem({ review, showStars }: { review: Review; showStars: boolean }) {
+export function ReviewItem({ review, showStars }: { review: Review; showStars: boolean }) {
   const [expanded, setExpanded] = useState(false);
+  const [photoFailed, setPhotoFailed] = useState(false);
   // Server render guesses from length; after mount, measure whether the
   // three-line clamp actually cuts text at the current width.
   const [isLong, setIsLong] = useState(review.text.length > LONG_REVIEW);
@@ -51,10 +52,10 @@ function ReviewItem({ review, showStars }: { review: Review; showStars: boolean 
   return (
     <article className="review-item">
       <header>
-        {review.photoUrl ? (
+        {review.photoUrl && !photoFailed ? (
           // Google-hosted avatar; next/image would need a remote-pattern allowlist for it.
           // eslint-disable-next-line @next/next/no-img-element
-          <img className="review-avatar" src={review.photoUrl} alt="" width={48} height={48} loading="lazy" referrerPolicy="no-referrer" />
+          <img className="review-avatar" src={review.photoUrl} alt="" width={48} height={48} loading="lazy" referrerPolicy="no-referrer" onError={() => setPhotoFailed(true)} />
         ) : (
           <span className="review-avatar review-avatar-initials" aria-hidden="true">{initials(review.author)}</span>
         )}

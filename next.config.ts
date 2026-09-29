@@ -7,7 +7,8 @@ const contentSecurityPolicy = [
   // Next.js inlines its bootstrap and hydration payload.
   "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://*.googleapis.com https://*.gstatic.com",
+  // googleusercontent.com serves reviewers' Google profile photos.
+  "img-src 'self' data: blob: https://*.googleapis.com https://*.gstatic.com https://*.googleusercontent.com",
   "font-src 'self' data:",
   "connect-src 'self' https://va.vercel-scripts.com",
   "frame-src https://web.eyecloudpro.com https://www.google.com https://maps.google.com",

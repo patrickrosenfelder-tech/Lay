@@ -48,8 +48,9 @@ test("server-renders the complete Precision Vision Institute homepage", async ()
   assert.match(html, /precision-vision-wordmark\.png/i);
   assert.match(html, /facebook\.com\/people\/Precision-Vision-Institute/i);
   assert.match(html, /instagram\.com\/dr\.laynim/i);
-  assert.match(html, /Pause rotating stories/i);
-  assert.match(html, /Shawanda M\./i);
+  assert.match(html, /<section class="home-reviews"/);
+  assert.equal(html.match(/<article class="review-item">/g)?.length, 3, "three featured review cards");
+  assert.match(html, /href="\/testimonials"[^>]*>Read all reviews/);
   assert.match(html, /href="\/sclerals"/i);
   assert.match(html, /href="\/dry-eye"/i);
   assert.match(html, /href="\/post-surgical-vision"/i);

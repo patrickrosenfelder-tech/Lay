@@ -4831,3 +4831,93 @@ summary {
     font-size: 110px;
   }
 }
+
+/* ---- Homepage reviews (same cards as /testimonials) ---- */
+.home-reviews {
+  --star: #e59a2f;
+  display: grid;
+  gap: 34px;
+  background: var(--paper);
+  padding: clamp(80px, 9vw, 130px) 5vw;
+}
+
+.home-reviews-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.home-reviews-heading .section-label {
+  margin-bottom: 14px;
+  color: var(--aqua-ink);
+}
+
+.home-reviews-heading h2 {
+  margin: 0;
+  color: var(--navy);
+  font-size: clamp(42px, 5.5vw, 76px);
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+
+.home-reviews-score {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.home-reviews-score strong {
+  color: var(--navy);
+  font-size: 56px;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.home-reviews-score div {
+  display: grid;
+  gap: 4px;
+}
+
+.home-reviews-score span:not(.review-stars):not(.review-stars-empty) {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.home-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.home-reviews-grid .review-item::after {
+  font-size: 110px;
+}
+
+/* Narrow cards: stars on their own row so every card lines up. */
+.home-reviews-grid .review-item header .review-stars {
+  flex-basis: 100%;
+}
+
+.home-reviews-link {
+  justify-self: center;
+}
+
+@media (max-width: 1050px) {
+  .home-reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-reviews {
+    padding: 70px 20px;
+  }
+
+  .home-reviews-link {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -5,8 +5,7 @@ import { BookingWidget } from "./BookingWidget";
 import { LocationMap } from "./LocationMap";
 import { OfficeExterior } from "./OfficeExterior";
 import { getGoogleReviews } from "./google-reviews";
-import { PatientStories } from "./PatientStories";
-import { patientReviews, type Review } from "./reviews";
+import { HomeReviews } from "./HomeReviews";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 import { clinicStructuredData, JsonLd } from "./structured-data";
@@ -80,15 +79,6 @@ function ProcessIcon({ step }: { step: number }) {
   );
 }
 
-
-// With the full Business Profile feed there can be hundreds of reviews; the
-// rotating carousel shows the ten newest five-star ones that fit the layout.
-// Every review stays visible on /testimonials.
-function carouselReviews(reviews?: Review[]) {
-  if (!reviews?.length) return null;
-  const featured = reviews.filter((review) => (review.rating ?? 5) === 5 && review.text.length <= 320).slice(0, 10);
-  return featured.length >= 3 ? featured : reviews.slice(0, 10);
-}
 
 export default async function Home() {
   const googleReviews = await getGoogleReviews();
@@ -243,7 +233,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <PatientStories stories={carouselReviews(googleReviews?.reviews) ?? patientReviews} fromGoogle={Boolean(googleReviews)} />
+      <HomeReviews google={googleReviews} />
 
       <section className="visit-section" id="visit">
         <div className="visit-media">
