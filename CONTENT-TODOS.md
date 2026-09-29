@@ -30,3 +30,13 @@ facts without approval.
   then redeploy. Until then the page shows the 5 Places API reviews.
 - Check SerpApi's dashboard after the first week to confirm usage stays
   inside the free plan.
+
+## Online referral form (Google Form)
+
+- Super admin accepts Google's HIPAA BAA: Admin console → Account → Account
+  settings → Legal and compliance → Google Workspace/Cloud Identity HIPAA
+  Business Associate Amendment. Required before any real referral is sent.
+- Build the Google Form in the practice's Workspace (fields mirror the PDF),
+  with sign-in NOT required and "send responders a copy" OFF.
+- Add its link in Vercel as `REFERRAL_GOOGLE_FORM_URL` (Config, Production +
+  Preview) and redeploy. Until then the referral page offers PDF + fax only.

@@ -11,7 +11,7 @@ const contentSecurityPolicy = [
   "img-src 'self' data: blob: https://*.googleapis.com https://*.gstatic.com https://*.googleusercontent.com",
   "font-src 'self' data:",
   "connect-src 'self' https://va.vercel-scripts.com",
-  "frame-src https://web.eyecloudpro.com https://www.google.com https://maps.google.com",
+  "frame-src https://web.eyecloudpro.com https://www.google.com https://maps.google.com https://docs.google.com",
   "frame-ancestors 'self'",
   "form-action 'self'",
   "base-uri 'self'",

@@ -304,3 +304,27 @@ test("referral page offers the fax number and a fillable referral form", async (
   assert.ok(pdf.includes("/AcroForm"), "form fields are fillable");
   assert.ok(pdf.includes("(470) 588-8894") || pdf.includes("588-8894"), "fax number printed on the form");
 });
+
+test("referral page embeds the Google Form only when it is configured", async () => {
+  const off = await (await render("/doctor-referral")).text();
+  assert.doesNotMatch(off, /id="refer-online"/);
+  assert.match(off, /Download referral form \(PDF\)/);
+
+  process.env.REFERRAL_GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/TESTFORM/viewform?usp=sf_link";
+  try {
+    const on = await (await render("/doctor-referral")).text();
+    assert.match(on, /<section class="referral-online" id="refer-online"/);
+    assert.match(on, /src="https:\/\/docs\.google\.com\/forms\/d\/e\/TESTFORM\/viewform\?usp=sf_link&amp;embedded=true"/);
+    assert.match(on, /href="#refer-online">Refer online/);
+  } finally {
+    delete process.env.REFERRAL_GOOGLE_FORM_URL;
+  }
+
+  process.env.REFERRAL_GOOGLE_FORM_URL = "https://evil.example.com/forms/x";
+  try {
+    const rejected = await (await render("/doctor-referral")).text();
+    assert.doesNotMatch(rejected, /id="refer-online"/, "only docs.google.com forms are embedded");
+  } finally {
+    delete process.env.REFERRAL_GOOGLE_FORM_URL;
+  }
+});

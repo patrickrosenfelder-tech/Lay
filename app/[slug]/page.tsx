@@ -13,6 +13,7 @@ import { LegalPage, type LegalPageData } from "../LegalPage";
 import { StaticPage, type StaticPageData } from "../StaticPage";
 import { TestimonialsPage } from "../TestimonialsPage";
 import { REFERRAL_FORM_URL } from "../site";
+import { ReferralOnlineForm, referralFormEmbedUrl } from "../ReferralOnlineForm";
 import {
   breadcrumbStructuredData,
   doctorStructuredData,
@@ -1041,6 +1042,7 @@ export default async function DetailPage({
   if (slug === "testimonials") return <TestimonialsPage />;
   const isDoctorPage = slug === "dr-nim";
   const isReferralPage = slug === "doctor-referral";
+  const referralEmbedUrl = isReferralPage ? referralFormEmbedUrl() : null;
   const breadcrumb = {
     patients: { href: "/faq", label: "Back to resources" },
     insurances: { href: "/faq", label: "Back to resources" },
@@ -1087,7 +1089,11 @@ export default async function DetailPage({
           <h1>{page.title}</h1>
           <p className="detail-lede">{page.lede}</p>
           <div className="detail-actions">
-            {isReferralPage ? (
+            {isReferralPage && referralEmbedUrl ? (
+              <a className="button button-primary" href="#refer-online">
+                Refer online <ArrowIcon />
+              </a>
+            ) : isReferralPage ? (
               <a className="button button-primary" href={REFERRAL_FORM_URL} target="_blank" rel="noopener">
                 Download referral form (PDF) <ArrowIcon />
               </a>
@@ -1137,6 +1143,8 @@ export default async function DetailPage({
           <p>Coverage and network participation can change. Please call before your appointment to verify your current benefits.</p>
         </section>
       )}
+
+      {referralEmbedUrl && <ReferralOnlineForm embedUrl={referralEmbedUrl} />}
 
       {page.credentials && page.credentials.length > 0 && (
         <section className="detail-credentials" aria-label="Professional memberships">
