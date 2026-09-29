@@ -15,10 +15,10 @@ type NavigationItem =
   | { label: string; links: readonly NavEntry[] };
 
 const navigation: readonly NavigationItem[] = [
+  { label: "Specialty care", links: [["Keratoconus", "/keratoconus"], ["Post-surgical vision", "/post-surgical-vision"], { label: "Dry Eye", links: [["Dry Eye Evaluation", "/dry-eye"], ["Envision Dry Eye Package", "/envision-dry-eye"]] }] },
   { label: "Contact Lenses", links: [["Scleral lenses", "/sclerals"], ["Ortho-K/CRT lenses", "/ortho-k-crt-lenses"]] },
-  { label: "Specialty care", links: [["Keratoconus", "/keratoconus"], ["Post-surgical vision", "/post-surgical-vision"], { label: "Dry eye", links: [["Dry eye evaluation", "/dry-eye"], ["Envision dry eye package", "/envision-dry-eye"]] }] },
   { label: "Resources", links: [["Patients", "/patients"], ["Insurance & financing", "/insurances"], ["Testimonials", "/testimonials"], ["FAQ", "/faq"]] },
-  { label: "About", links: [["Meet Dr. Nim", "/dr-nim"], ["Our office", "/our-office"], ["Contact", "/contact"]] },
+  { label: "About", links: [["Meet Dr. Nim", "/dr-nim"], ["Our office", "/our-office"], ["Contact Us", "/contact"]] },
   { label: "For doctors", href: "/doctor-referral" },
 ];
 

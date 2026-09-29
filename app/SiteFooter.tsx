@@ -12,8 +12,8 @@ export function SiteFooter() {
         <div className="footer-navigation">
           <div>
             <span>Care</span>
-            <Link href="/dry-eye">Dry eye evaluation</Link>
-            <Link href="/envision-dry-eye">Envision dry eye package</Link>
+            <Link href="/dry-eye">Dry Eye Evaluation</Link>
+            <Link href="/envision-dry-eye">Envision Dry Eye Package</Link>
             <Link href="/keratoconus">Keratoconus</Link>
             <Link href="/sclerals">Scleral lenses</Link>
             <Link href="/post-surgical-vision">Post-surgical vision</Link>
@@ -35,7 +35,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="footer-utility">
-          <Link href="/contact">Contact</Link><Link href="/privacy-policy">Privacy Policy</Link><Link href="/hipaa-notice">HIPAA Notice</Link><Link href="/terms-of-service">Terms of Service</Link>
+          <Link href="/contact">Contact Us</Link><Link href="/privacy-policy">Privacy Policy</Link><Link href="/hipaa-notice">HIPAA Notice</Link><Link href="/terms-of-service">Terms of Service</Link>
         </div>
         <p className="footer-service-area">
           Specialty eye care in Duluth, GA, serving Johns Creek, Suwanee, Norcross, Alpharetta, and Gwinnett County.

@@ -115,8 +115,8 @@ test("uses search-friendly titles and clear labels on the audited pages", async 
   for (const [path, title] of titles) {
     const html = await (await render(path)).text();
     assert.match(html, title);
-    assert.match(html, />Dry eye evaluation</);
-    assert.match(html, />Envision dry eye package</);
+    assert.match(html, />Dry Eye Evaluation</);
+    assert.match(html, />Envision Dry Eye Package</);
     assert.doesNotMatch(html, /Dry eye solutions|PK\/PRK/);
   }
 
@@ -252,10 +252,10 @@ test("header groups contact lenses, specialty care, and puts Contact under About
   const nav = html.slice(navStart, html.indexOf("</nav>", navStart));
   const text = nav.replace(/<[^>]+>/g, "|").split("|").map((part) => part.trim()).filter(Boolean);
   assert.deepEqual(text, [
+    "Specialty care", "Keratoconus", "Post-surgical vision", "Dry Eye", "Dry Eye Evaluation", "Envision Dry Eye Package",
     "Contact Lenses", "Scleral lenses", "Ortho-K/CRT lenses",
-    "Specialty care", "Keratoconus", "Post-surgical vision", "Dry eye", "Dry eye evaluation", "Envision dry eye package",
     "Resources", "Patients", "Insurance &amp; financing", "Testimonials", "FAQ",
-    "About", "Meet Dr. Nim", "Our office", "Contact",
+    "About", "Meet Dr. Nim", "Our office", "Contact Us",
     "For doctors",
   ]);
   assert.match(nav, /aria-controls="contact-lenses-menu"/);
@@ -271,7 +271,7 @@ test("mobile menu panel becomes visible when opened", async () => {
 
 test("Dry eye is a collapsed group inside Specialty care", async () => {
   const html = await (await render()).text();
-  assert.match(html, /<button type="button" class="nav-submenu-toggle" aria-expanded="false" aria-controls="desktop-dry-eye-menu">Dry eye<\/button>/);
+  assert.match(html, /<button type="button" class="nav-submenu-toggle" aria-expanded="false" aria-controls="desktop-dry-eye-menu">Dry Eye<\/button>/);
   assert.match(html, /<div id="desktop-dry-eye-menu" class="nav-submenu-links" hidden="">/);
   assert.match(html, /id="mobile-dry-eye-menu"/);
 });
