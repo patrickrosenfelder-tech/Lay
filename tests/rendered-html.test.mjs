@@ -264,7 +264,7 @@ test("header groups contact lenses, specialty care, and puts Contact under About
   const nav = html.slice(navStart, html.indexOf("</nav>", navStart));
   const text = nav.replace(/<[^>]+>/g, "|").split("|").map((part) => part.trim()).filter(Boolean);
   assert.deepEqual(text, [
-    "Specialty care", "Keratoconus", "Post-surgical vision", "Dry Eye", "Dry Eye Evaluation", "Envision Dry Eye Package",
+    "Specialty Care", "Keratoconus", "Post-surgical vision", "Dry Eye", "Dry Eye Evaluation", "Envision Dry Eye Package",
     "Contact Lenses", "Scleral lenses", "Ortho-K/CRT lenses",
     "Resources", "Patients", "Insurance &amp; financing", "Testimonials", "FAQ",
     "About", "Meet Dr. Nim", "Our office", "Contact Us",
