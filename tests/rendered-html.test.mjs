@@ -288,3 +288,19 @@ test("Dry eye is a collapsed group inside Specialty care", async () => {
   assert.match(html, /<div id="desktop-dry-eye-menu" class="nav-submenu-links" hidden="">/);
   assert.match(html, /id="mobile-dry-eye-menu"/);
 });
+
+test("referral page offers the fax number and a fillable referral form", async () => {
+  const html = await (await render("/doctor-referral")).text();
+  assert.match(html, /\(470\) 588-8894/);
+  assert.equal(html.match(/href="\/precision-vision-referral-form\.pdf"/g)?.length, 2, "hero + closing call to action");
+  assert.doesNotMatch(html, /Start with a call from your practice/);
+
+  const home = await (await render()).text();
+  assert.match(home, /"faxNumber":"\+1-470-588-8894"/);
+
+  const { readFile } = await import("node:fs/promises");
+  const pdf = await readFile(new URL("../public/precision-vision-referral-form.pdf", import.meta.url));
+  assert.equal(pdf.subarray(0, 5).toString(), "%PDF-");
+  assert.ok(pdf.includes("/AcroForm"), "form fields are fillable");
+  assert.ok(pdf.includes("(470) 588-8894") || pdf.includes("588-8894"), "fax number printed on the form");
+});

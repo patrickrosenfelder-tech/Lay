@@ -47,6 +47,7 @@ export const clinicStructuredData = {
   description:
     "Specialty eye care for keratoconus, severe dry eye, complex corneas, post-surgical vision, and progressive myopia.",
   telephone: CLINIC.phoneE164,
+  faxNumber: CLINIC.faxE164,
   email: CLINIC.email,
   image: `${SITE_URL}/og.jpg`,
   logo: `${SITE_URL}/precision-vision-logo.png`,

@@ -63,7 +63,7 @@ export function InquiryForm({ kind }: InquiryFormProps) {
         <h3>Thank you — your message is on its way.</h3>
         <p>
           {isReferral
-            ? "We will reply with secure referral instructions within one business day."
+            ? "We will get back to your practice within one business day."
             : "We will get back to you within one business day."}{" "}
           If you need help sooner, call{" "}
           <a href={CLINIC.phoneHref}>{CLINIC.phone}</a>.
@@ -131,7 +131,7 @@ export function InquiryForm({ kind }: InquiryFormProps) {
         {isSubmitting
           ? "Sending…"
           : isReferral
-            ? "Request referral instructions"
+            ? "Send referral question"
             : "Send general inquiry"}
       </button>
     </form>

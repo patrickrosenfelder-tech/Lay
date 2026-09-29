@@ -12,6 +12,7 @@ import { InquiryForm } from "../InquiryForm";
 import { LegalPage, type LegalPageData } from "../LegalPage";
 import { StaticPage, type StaticPageData } from "../StaticPage";
 import { TestimonialsPage } from "../TestimonialsPage";
+import { REFERRAL_FORM_URL } from "../site";
 import {
   breadcrumbStructuredData,
   doctorStructuredData,
@@ -610,16 +611,16 @@ const pages: Record<string, DetailPage> = {
       "Refer a patient for specialty contact lenses, complex corneas, myopia management, or advanced dry-eye care.",
     image: "/exam-room.jpg",
     imageAlt: "Clinical examination room at Precision Vision Institute",
-    factLabel: "Referral line",
-    factValue: "(470) 440-4099",
+    factLabel: "Referral fax",
+    factValue: "(470) 588-8894",
     highlights: [
       {
-        title: "Send the reason",
-        copy: "Include the working diagnosis, visual goal, and the service you are requesting.",
+        title: "Download the form",
+        copy: "Fill in the one-page referral form on screen or by hand, including the reason and the service you are requesting.",
       },
       {
-        title: "Share key records",
-        copy: "Corneal maps, surgical history, prescriptions, and relevant exam findings are helpful.",
+        title: "Fax it with records",
+        copy: "Send the form with corneal maps, surgical history, prescriptions, and recent exam notes to (470) 588-8894.",
       },
       {
         title: "We coordinate",
@@ -629,9 +630,9 @@ const pages: Record<string, DetailPage> = {
     sections: [
       {
         label: "Referral process",
-        title: "Start with a call from your practice.",
+        title: "Download, complete, and fax.",
         copy:
-          "To protect patient information, please call the clinic before sending records. The team will provide the current secure referral instructions and confirm what documentation is needed.",
+          "Fill in the referral form and fax it with any relevant records to (470) 588-8894. Prefer to talk a case through first? Call (470) 440-4099.",
         bullets: [
           "Patient name and best contact number",
           "Referring doctor and practice details",
@@ -647,16 +648,16 @@ const pages: Record<string, DetailPage> = {
       },
       {
         label: "Keep information secure",
-        title: "Do not send protected health details by ordinary email.",
+        title: "Fax patient records. Never send them by ordinary email.",
         copy:
-          "Call (470) 440-4099 for the clinic’s current secure transmission method. General questions may be sent to info@precisionvisioninstitute.com without patient-specific information.",
+          "Fax is the clinic’s route for patient records: (470) 588-8894. General questions without patient-specific information may be sent to info@precisionvisioninstitute.com.",
       },
     ],
     ctaTitle: "Ready to refer a patient?",
     ctaCopy:
-      "Call the clinic and the team will guide your practice through the secure next step.",
-    ctaLabel: "Call referral line",
-    ctaHref: "tel:+14704404099",
+      "Download the referral form, then fax it with records to (470) 588-8894. Questions? Call (470) 440-4099.",
+    ctaLabel: "Download referral form (PDF)",
+    ctaHref: "/precision-vision-referral-form.pdf",
   },
   testimonials: {
     eyebrow: "Patient experiences",
@@ -1086,9 +1087,15 @@ export default async function DetailPage({
           <h1>{page.title}</h1>
           <p className="detail-lede">{page.lede}</p>
           <div className="detail-actions">
-            <Link className="button button-primary" href="/book">
-              Book an evaluation <ArrowIcon />
-            </Link>
+            {isReferralPage ? (
+              <a className="button button-primary" href={REFERRAL_FORM_URL} target="_blank" rel="noopener">
+                Download referral form (PDF) <ArrowIcon />
+              </a>
+            ) : (
+              <Link className="button button-primary" href="/book">
+                Book an evaluation <ArrowIcon />
+              </Link>
+            )}
             <a href="tel:+14704404099" className="detail-phone">
               Call (470) 440-4099
             </a>
@@ -1206,8 +1213,8 @@ export default async function DetailPage({
         <section className="inquiry-section referral-inquiry">
           <div>
             <p className="section-label">Referral coordination</p>
-            <h2>Request secure referral instructions.</h2>
-            <p>Share your practice contact details and the team will reply with the appropriate secure route for patient records. Please do not include patient information here.</p>
+            <h2>Questions about a referral?</h2>
+            <p>Share your practice contact details and the team will get back to you. Please do not include patient information here; fax records to (470) 588-8894.</p>
           </div>
           <InquiryForm kind="referral" />
         </section>

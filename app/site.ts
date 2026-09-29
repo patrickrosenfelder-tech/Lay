@@ -6,6 +6,8 @@ export const CLINIC = {
   phoneHref: "tel:+14704404099",
   phoneE164: "+1-470-440-4099",
   email: "info@precisionvisioninstitute.com",
+  fax: "(470) 588-8894",
+  faxE164: "+1-470-588-8894",
   streetAddress: "3940 Buford Hwy Ste A104",
   addressLocality: "Duluth",
   addressRegion: "GA",
@@ -18,6 +20,9 @@ export const CLINIC = {
 
 export const MAPS_URL =
   "https://www.google.com/maps/place/Precision+Vision+Institute/@33.9775123,-84.1638908,17z/data=!4m8!3m7!1s0x88f5a31f1f5f00c9:0x21ed856629aca207!8m2!3d33.9775123!4d-84.1613159!9m1!1b1!16s%2Fg%2F11jv5wpzc2";
+
+// Fillable one-page form; regenerate with scripts/build-referral-pdf.py.
+export const REFERRAL_FORM_URL = "/precision-vision-referral-form.pdf";
 
 export const FACEBOOK_URL =
   "https://www.facebook.com/people/Precision-Vision-Institute/100063539512239/";
