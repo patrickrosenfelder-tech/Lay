@@ -4969,7 +4969,8 @@ summary {
 
 .referral-online-frame {
   width: 100%;
-  height: 2100px;
+  /* The Google Form is paginated; each page scrolls inside the frame. */
+  height: 1150px;
   border: 1px solid var(--line);
   border-radius: 22px;
   background: #fff;
@@ -4985,6 +4986,6 @@ summary {
   }
 
   .referral-online-frame {
-    height: 2400px;
+    height: 1300px;
   }
 }
