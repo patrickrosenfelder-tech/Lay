@@ -55,7 +55,7 @@ endobj
 >> /DA (/Helv 10 Tf .086275 .227451 .329412 rg) /DV () /F 4 /FT /Tx 
   /Ff 0 /MK <<
 /BC [ .788235 .839216 .87451 ] /BG [ 1 1 1 ]
->> /MaxLen 100 /P 79 0 R /Rect [ 40 630 296 648 ] /Subtype /Widget 
+>> /MaxLen 100 /P 68 0 R /Rect [ 40 630 296 648 ] /Subtype /Widget 
   /T (patient_name) /TU (Patient name) /Type /Annot /V ()
 >>
 endobj
@@ -80,7 +80,7 @@ endobj
 >> /DA (/Helv 10 Tf .086275 .227451 .329412 rg) /DV () /F 4 /FT /Tx 
   /Ff 0 /MK <<
 /BC [ .788235 .839216 .87451 ] /BG [ 1 1 1 ]
->> /MaxLen 100 /P 79 0 R /Rect [ 306 630 408.4 648 ] /Subtype /Widget 
+>> /MaxLen 100 /P 68 0 R /Rect [ 306 630 408.4 648 ] /Subtype /Widget 
   /T (patient_dob) /TU (Date of birth) /Type /Annot /V ()
 >>
 endobj
@@ -104,7 +104,7 @@ endobj
 >> /DA (/Helv 10 Tf .086275 .227451 .329412 rg) /DV () /F 4 /FT /Tx 
   /Ff 0 /MK <<
 /BC [ .788235 .839216 .87451 ] /BG [ 1 1 1 ]
->> /MaxLen 100 /P 79 0 R /Rect [ 418.4 630 572 648 ] /Subtype /Widget 
+>> /MaxLen 100 /P 68 0 R /Rect [ 418.4 630 572 648 ] /Subtype /Widget 
   /T (patient_phone) /TU (Best phone number) /Type /Annot /V ()
 >>
 endobj
@@ -128,7 +128,7 @@ endobj
 >> /DA (/Helv 10 Tf .086275 .227451 .329412 rg) /DV () /F 4 /FT /Tx 
   /Ff 0 /MK <<
 /BC [ .788235 .839216 .87451 ] /BG [ 1 1 1 ]
->> /MaxLen 100 /P 79 0 R /Rect [ 40 591 301 609 ] /Subtype /Widget 
+>> /MaxLen 100 /P 68 0 R /Rect [ 40 591 301 609 ] /Subtype /Widget 
   /T (patient_email) /TU (Email \(optional\)) /Type /Annot /V ()
 >>
 endobj
@@ -152,7 +152,7 @@ endobj
 >> /DA (/Helv 10 Tf .086275 .227451 .329412 rg) /DV () /F 4 /FT /Tx 
   /Ff 0 /MK <<
 /BC [ .788235 .839216 .87451 ] /BG [ 1 1 1 ]
->> /MaxLen 100 /P 79 0 R /Rect [ 311 591 572 609 ] /Subtype /Widget 
+>> /MaxLen 100 /P 68 0 R /Rect [ 311 591 572 609 ] /Subtype /Widget 
   /T (patient_insurance) /TU (Medical / vision insurance) /Type /Annot /V ()
 >>
 endobj
@@ -176,7 +176,7 @@ endobj
 >> /DA (/Helv 10 Tf .086275 .227451 .329412 rg) /DV () /F 4 /FT /Tx 
   /Ff 0 /MK <<
 /BC [ .788235 .839216 .87451 ] /BG [ 1 1 1 ]
->> /MaxLen 100 /P 79 0 R /Rect [ 40 520 301 538 ] /Subtype /Widget 
+>> /MaxLen 100 /P 68 0 R /Rect [ 40 520 301 538 ] /Subtype /Widget 
   /T (provider_name) /TU (Referring doctor) /Type /Annot /V ()
 >>
 endobj
@@ -200,7 +200,7 @@ endobj
 >> /DA (/Helv 10 Tf .086275 .227451 .329412 rg) /DV () /F 4 /FT /Tx 
   /Ff 0 /MK <<
 /BC [ .788235 .839216 .87451 ] /BG [ 1 1 1 ]
->> /MaxLen 100 /P 79 0 R /Rect [ 311 520 572 538 ] /Subtype /Widget 
+>> /MaxLen 100 /P 68 0 R /Rect [ 311 520 572 538 ] /Subtype /Widget 
   /T (provider_practice) /TU (Practice name) /Type /Annot /V ()
 >>
 endobj
@@ -209,12 +209,11 @@ endobj
 endobj
 29 0 obj
 <<
-/BBox [ 0 0 125.5 18 ] /Filter [ /FlateDecode ] /FormType 1 /Length 108 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF /Text] /Font <</Helv 28 0 R>> >> 
+/BBox [ 0 0 153.6 18 ] /Filter [ /FlateDecode ] /FormType 1 /Length 109 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF /Text] /Font <</Helv 28 0 R>> >> 
   /Subtype /Form /Type /XObject
 >>
 stream
-xúç1¬@˚}≈æ‡∏uÓrGKÑR• !Â	°ÄÁcÀZo1∂FîœÒDf¶¨¶Juv§÷ªï©g”Ë›JÔ3ƒ/≤_Fd%vãüNè/ÀDºa4á
-XÆxπ$D3n∏.˛‡endstream
+xúç1¬0Cwü¬'ÒO~ìÆT®S' 6$  «'_ñÂ·È…¢Fˆ'23Â%MTÁ~«©ın≈ôzôM”ÿV]º¨ø»…ï[8-ú◊è€Bºa4™Œk¿^„$éVúq⁄¸õÔendstream
 endobj
 30 0 obj
 <<
@@ -225,7 +224,7 @@ endobj
 >> /DA (/Helv 10 Tf .086275 .227451 .329412 rg) /DV () /F 4 /FT /Tx 
   /Ff 0 /MK <<
 /BC [ .788235 .839216 .87451 ] /BG [ 1 1 1 ]
->> /MaxLen 100 /P 79 0 R /Rect [ 40 481 165.5 499 ] /Subtype /Widget 
+>> /MaxLen 100 /P 68 0 R /Rect [ 40 481 193.6 499 ] /Subtype /Widget 
   /T (provider_phone) /TU (Phone) /Type /Annot /V ()
 >>
 endobj
@@ -234,12 +233,11 @@ endobj
 endobj
 32 0 obj
 <<
-/BBox [ 0 0 125.5 18 ] /Filter [ /FlateDecode ] /FormType 1 /Length 108 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF /Text] /Font <</Helv 31 0 R>> >> 
+/BBox [ 0 0 153.6 18 ] /Filter [ /FlateDecode ] /FormType 1 /Length 109 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF /Text] /Font <</Helv 31 0 R>> >> 
   /Subtype /Form /Type /XObject
 >>
 stream
-xúç1¬@˚}≈æ‡∏uÓrGKÑR• !Â	°ÄÁcÀZo1∂FîœÒDf¶¨¶Juv§÷ªï©g”Ë›JÔ3ƒ/≤_Fd%vãüNè/ÀDºa4á
-XÆxπ$D3n∏.˛‡endstream
+xúç1¬0Cwü¬'ÒO~ìÆT®S' 6$  «'_ñÂ·È…¢Fˆ'23Â%MTÁ~«©ın≈ôzôM”ÿV]º¨ø»…ï[8-ú◊è€Bºa4™Œk¿^„$éVúq⁄¸õÔendstream
 endobj
 33 0 obj
 <<
@@ -250,7 +248,7 @@ endobj
 >> /DA (/Helv 10 Tf .086275 .227451 .329412 rg) /DV () /F 4 /FT /Tx 
   /Ff 0 /MK <<
 /BC [ .788235 .839216 .87451 ] /BG [ 1 1 1 ]
->> /MaxLen 100 /P 79 0 R /Rect [ 175.5 481 301 499 ] /Subtype /Widget 
+>> /MaxLen 100 /P 68 0 R /Rect [ 203.6 481 357.2 499 ] /Subtype /Widget 
   /T (provider_fax) /TU (Fax) /Type /Annot /V ()
 >>
 endobj
@@ -259,12 +257,12 @@ endobj
 endobj
 35 0 obj
 <<
-/BBox [ 0 0 100.4 18 ] /Filter [ /FlateDecode ] /FormType 1 /Length 107 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF /Text] /Font <</Helv 34 0 R>> >> 
+/BBox [ 0 0 204.8 18 ] /Filter [ /FlateDecode ] /FormType 1 /Length 109 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF /Text] /Font <</Helv 34 0 R>> >> 
   /Subtype /Form /Type /XObject
 >>
 stream
-xúç1
-Ñ0D˚9≈ú ˚LL“*be±ÀÇ'P;A-Ù¯Ê3S<£‘ösÉP®".P3œ+\ Ÿ7ë.7≈k[7Ö®¸çPﬁi-≈îd Öœˇa7ıƒOœ“∆fÏı¬nF|1L=^ﬁ‚åendstream
+xúç1¬0˚}≈æ¿‹ùm|¥D(U
+¢Hº IáD(»ÛÒi¥⁄b5Z•véB°IINu+6§Ênπ2yæô^{∑RïÛÂí*#&9úŒóÂ‰}àåëKå/º˚Içx‚1¯…„endstream
 endobj
 36 0 obj
 <<
@@ -275,38 +273,11 @@ endobj
 >> /DA (/Helv 10 Tf .086275 .227451 .329412 rg) /DV () /F 4 /FT /Tx 
   /Ff 0 /MK <<
 /BC [ .788235 .839216 .87451 ] /BG [ 1 1 1 ]
->> /MaxLen 100 /P 79 0 R /Rect [ 311 481 411.4 499 ] /Subtype /Widget 
-  /T (provider_npi) /TU (NPI \(optional\)) /Type /Annot /V ()
->>
-endobj
-37 0 obj
-<< /BaseFont /Helvetica /Subtype /Type1 /Name /Helv /Type /Font /Encoding 6 0 R >>
-endobj
-38 0 obj
-<<
-/BBox [ 0 0 150.6 18 ] /Filter [ /FlateDecode ] /FormType 1 /Length 106 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF /Text] /Font <</Helv 37 0 R>> >> 
-  /Subtype /Form /Type /XObject
->>
-stream
-xúç;
-Ä@C˚ú"'Xw÷˝Ÿ*be°û@Ìµ–„ªC)è•‰>`i)¡öH…º7Ï0)gWö\7NbŸ‰Ép |aM†V|£NRÁAµ|l«é∏‡Ë
-å
-Ω¬g9—£˙±√UÔendstream
-endobj
-39 0 obj
-<<
-/AP <<
-/N 38 0 R
->> /BS <<
-/S /S /W 1
->> /DA (/Helv 10 Tf .086275 .227451 .329412 rg) /DV () /F 4 /FT /Tx 
-  /Ff 0 /MK <<
-/BC [ .788235 .839216 .87451 ] /BG [ 1 1 1 ]
->> /MaxLen 100 /P 79 0 R /Rect [ 421.4 481 572 499 ] /Subtype /Widget 
+>> /MaxLen 100 /P 68 0 R /Rect [ 367.2 481 572 499 ] /Subtype /Widget 
   /T (provider_email) /TU (Email) /Type /Annot /V ()
 >>
 endobj
-40 0 obj
+37 0 obj
 <<
 /BBox [ 0 0 11 11 ] /Filter [ /FlateDecode ] /FormType 1 /Length 429 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF] >> 
   /Subtype /Form /Type /XObject
@@ -315,7 +286,7 @@ stream
 xúuìIé‘@E˜uä<A*Ê·¨õ+î†Yãn\ü	jóÑZ∂Âã!cÚ€ç◊Î‚ıœ\ÔØãp1œ˝˛m}ømrÍZ[,…{m-S∂ıu<~/⁄~¶π·Îˆr{[ü8!˙ß·n±ÕURWÓ4Îäı¢FR™]¡•µ£NÂÍ’[Y© ®Ë,◊Jïtp^‡>÷È¨«ÕK†|¿Q≈;s  ﬂùmûà≠I¡÷fK∂usòÓ¢Œ≈ªD§˛1“hÙn'µ%Éî¬LA<ç⁄ARNˆ Fâ‘ @Ì`ˆ7]›¢5•=*b◊ã‹ëﬁÏíçà\¸L<X¯jgÒ„fVä!|$%[õ˚ó*§:Ωï!U›)«	◊QUcjºCÉô
 4…Ú"∂ôòasf“Rßg©i”Ÿ¬¯Îc™cceQÁ∏I|l–õ©ƒº°∞]ÊQ2’ªt€E∆k¬CﬂêG}Ñ¡wT°î:]ò˛¶€£ll#ˆaf©Rj:#ƒ12ì3ÈJøäÖÄê—ôXë•œVE¬>VŸ·\C,ge §[çﬂˇ€ˇX?˚Ω¸≈∏xendstream
 endobj
-41 0 obj
+38 0 obj
 <<
 /BBox [ 0 0 11 11 ] /Filter [ /FlateDecode ] /FormType 1 /Length 73 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF] >> 
   /Subtype /Form /Type /XObject
@@ -323,7 +294,7 @@ endobj
 stream
 xúã±Ä0ƒzOÒ¯¸$>í	®aHM(XõìTÍbÄÿ¢dX@¶Ûƒ%jnΩAó∫öwhiµ∞‚»„Ö©ˇ—“Ÿ?“3endstream
 endobj
-42 0 obj
+39 0 obj
 <<
 /BBox [ 0 0 11 11 ] /Filter [ /FlateDecode ] /FormType 1 /Length 429 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF] >> 
   /Subtype /Form /Type /XObject
@@ -334,7 +305,7 @@ xúuìIn1E˜}
 çƒY8;ã\?ü≤ëj 0JÖf=Œ˚Ì∆ÎeÒzZª?œ˚À"<ÃsﬁøØ∑MÊU≤∂à®Î⁄˙Ò˝Ì	ûm?/”x¸æ=ﬂﬁ÷W^àˇu¿[lsï‘ï;Õ∫b˝Ç®ëºjWpi≠◊QßrıÍ≠¨‘eTtàk%èJ:8/pÎt÷„Ê%Pæ¬Q≈;s  ﬂùmûà≠I¡÷fK∂usòÓ¢Œ≈ª–K}2“håo'µ%Éî¬LA<ç⁄ARNı Fâ“ @Ô`ˆQÆn—ö÷±ÎEÓ(øÏíçà\¸H<X¯jgÒ„fV⁄u%[õ˚§KRÇŸ ê™Óî„áÇÎ(ç™Ÿ†1\Ãt†Iñ±Õƒõ˚#ìñ:3KÕHõ…ñ≤’Ic™cceQ'›>6òÕtbﬁPÿ.Û¿ †{ónª»¯`B¯bòÍ®aUËâRg
 3¡Ìˆ(€î±só*•¶sÖH#ss&]ÈW≥2˙"+"≤Ù—™Hÿ«*;úkàÂ¨Ñt´Ò˚˚_◊O¸üˇ8Èπ∞endstream
 endobj
-43 0 obj
+40 0 obj
 <<
 /BBox [ 0 0 11 11 ] /Filter [ /FlateDecode ] /FormType 1 /Length 74 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF] >> 
   /Subtype /Form /Type /XObject
@@ -342,7 +313,7 @@ endobj
 stream
 xú+‰2THW0TpW–≥Ñ¢¢t 44°¢TÖ4.=S#=###cSc=c?»®≥\¡@œå@®£ò+ lendstream
 endobj
-44 0 obj
+41 0 obj
 <<
 /BBox [ 0 0 11 11 ] /Filter [ /FlateDecode ] /FormType 1 /Length 427 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF] >> 
   /Subtype /Form /Type /XObject
@@ -353,7 +324,7 @@ xúuìIé‘@E˜uä<A*Ê·¨õ+î†Yãn\üŸóÑZ∂Âã!cÚ€ç◊Î‚ıœ\ÔØãp1œ˝˛m}øm6ØíµUD]◊∂èÔØ„Ú{
 f∞6[≤≠õ√¿twu.ﬁ%"ıóëF£};©-§f
 ‚i‘ír≤°0J§¶Pj≥ètuã÷îˆD®à]/rG:x≥_H6"rÒ3Ò`·®ù≈èõYi◊ïîlmÓs\™êÍÙVÜTuß?$\GiTÕeàa0SÅ&Y^ƒ63lÓœLZÍÙ,5#m:[ VÁS+ã:«M‚cÉﬁL%ÊÖÌ2¨™wÈ∂ãå÷ Ñ/Üæ!è˙ﬂQÖzpPÍta˙/ònè≤M˚0≥T)5ù‚ô…ôt•_≈B@»ËãL¨à»“g´"a´ÏpÆ!ñ≥2“≠∆ÔˇÌ¨¯_˛ kπendstream
 endobj
-45 0 obj
+42 0 obj
 <<
 /BBox [ 0 0 11 11 ] /Filter [ /FlateDecode ] /FormType 1 /Length 71 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF] >> 
   /Subtype /Form /Type /XObject
@@ -361,118 +332,142 @@ endobj
 stream
 xú+‰2THW0Tpb,JW0 BCC*JUH„“341µ∞0R–362265V–3ÅÉ@Z ÙL¡ÿ– ÑÄ:äπ„fhendstream
 endobj
-46 0 obj
+43 0 obj
 <<
 /AP <<
 /D <<
-/Off 43 0 R /Yes 42 0 R
+/Off 40 0 R /Yes 39 0 R
 >> /N <<
-/Off 41 0 R /Yes 40 0 R
+/Off 38 0 R /Yes 37 0 R
 >> /R <<
-/Off 45 0 R /Yes 44 0 R
+/Off 42 0 R /Yes 41 0 R
 >>
 >> /AS /Off /BS <<
 /S /S /W 1
 >> /F 4 /FT /Btn /Ff 2 
   /H /N /MK <<
 /BC [ .05098 .247059 .384314 ] /BG [ 1 1 1 ] /CA (4)
->> /P 79 0 R /Rect [ 40 426 51 437 ] /Subtype /Widget /T (reason_keratoconus) 
+>> /P 68 0 R /Rect [ 40 426 51 437 ] /Subtype /Widget /T (reason_keratoconus) 
   /TU (Keratoconus / corneal ectasia) /Type /Annot /V /Off
+>>
+endobj
+44 0 obj
+<<
+/AP <<
+/D <<
+/Off 40 0 R /Yes 39 0 R
+>> /N <<
+/Off 38 0 R /Yes 37 0 R
+>> /R <<
+/Off 42 0 R /Yes 41 0 R
+>>
+>> /AS /Off /BS <<
+/S /S /W 1
+>> /F 4 /FT /Btn /Ff 2 
+  /H /N /MK <<
+/BC [ .05098 .247059 .384314 ] /BG [ 1 1 1 ] /CA (4)
+>> /P 68 0 R /Rect [ 306 426 317 437 ] /Subtype /Widget /T (reason_post_surgical) 
+  /TU (Post-surgical cornea \(LASIK, PRK, RK, PK\)) /Type /Annot /V /Off
+>>
+endobj
+45 0 obj
+<<
+/AP <<
+/D <<
+/Off 40 0 R /Yes 39 0 R
+>> /N <<
+/Off 38 0 R /Yes 37 0 R
+>> /R <<
+/Off 42 0 R /Yes 41 0 R
+>>
+>> /AS /Off /BS <<
+/S /S /W 1
+>> /F 4 /FT /Btn /Ff 2 
+  /H /N /MK <<
+/BC [ .05098 .247059 .384314 ] /BG [ 1 1 1 ] /CA (4)
+>> /P 68 0 R /Rect [ 40 409 51 420 ] /Subtype /Widget /T (reason_scleral) 
+  /TU (Scleral / specialty lens evaluation) /Type /Annot /V /Off
+>>
+endobj
+46 0 obj
+<<
+/AP <<
+/D <<
+/Off 40 0 R /Yes 39 0 R
+>> /N <<
+/Off 38 0 R /Yes 37 0 R
+>> /R <<
+/Off 42 0 R /Yes 41 0 R
+>>
+>> /AS /Off /BS <<
+/S /S /W 1
+>> /F 4 /FT /Btn /Ff 2 
+  /H /N /MK <<
+/BC [ .05098 .247059 .384314 ] /BG [ 1 1 1 ] /CA (4)
+>> /P 68 0 R /Rect [ 306 409 317 420 ] /Subtype /Widget /T (reason_dry_eye) 
+  /TU (Severe dry eye / ocular surface disease) /Type /Annot /V /Off
 >>
 endobj
 47 0 obj
 <<
 /AP <<
 /D <<
-/Off 43 0 R /Yes 42 0 R
+/Off 40 0 R /Yes 39 0 R
 >> /N <<
-/Off 41 0 R /Yes 40 0 R
+/Off 38 0 R /Yes 37 0 R
 >> /R <<
-/Off 45 0 R /Yes 44 0 R
+/Off 42 0 R /Yes 41 0 R
 >>
 >> /AS /Off /BS <<
 /S /S /W 1
 >> /F 4 /FT /Btn /Ff 2 
   /H /N /MK <<
 /BC [ .05098 .247059 .384314 ] /BG [ 1 1 1 ] /CA (4)
->> /P 79 0 R /Rect [ 306 426 317 437 ] /Subtype /Widget /T (reason_post_surgical) 
-  /TU (Post-surgical cornea \(LASIK, PRK, RK, PK\)) /Type /Annot /V /Off
+>> /P 68 0 R /Rect [ 40 392 51 403 ] /Subtype /Widget /T (reason_envision) 
+  /TU (Envision dry eye treatment) /Type /Annot /V /Off
 >>
 endobj
 48 0 obj
 <<
 /AP <<
 /D <<
-/Off 43 0 R /Yes 42 0 R
+/Off 40 0 R /Yes 39 0 R
 >> /N <<
-/Off 41 0 R /Yes 40 0 R
+/Off 38 0 R /Yes 37 0 R
 >> /R <<
-/Off 45 0 R /Yes 44 0 R
+/Off 42 0 R /Yes 41 0 R
 >>
 >> /AS /Off /BS <<
 /S /S /W 1
 >> /F 4 /FT /Btn /Ff 2 
   /H /N /MK <<
 /BC [ .05098 .247059 .384314 ] /BG [ 1 1 1 ] /CA (4)
->> /P 79 0 R /Rect [ 40 409 51 420 ] /Subtype /Widget /T (reason_scleral) 
-  /TU (Scleral / specialty lens evaluation) /Type /Annot /V /Off
+>> /P 68 0 R /Rect [ 306 392 317 403 ] /Subtype /Widget /T (reason_orthok) 
+  /TU (Ortho-K / myopia management) /Type /Annot /V /Off
 >>
 endobj
 49 0 obj
-<<
-/AP <<
-/D <<
-/Off 43 0 R /Yes 42 0 R
->> /N <<
-/Off 41 0 R /Yes 40 0 R
->> /R <<
-/Off 45 0 R /Yes 44 0 R
->>
->> /AS /Off /BS <<
-/S /S /W 1
->> /F 4 /FT /Btn /Ff 2 
-  /H /N /MK <<
-/BC [ .05098 .247059 .384314 ] /BG [ 1 1 1 ] /CA (4)
->> /P 79 0 R /Rect [ 306 409 317 420 ] /Subtype /Widget /T (reason_dry_eye) 
-  /TU (Severe dry eye / ocular surface disease) /Type /Annot /V /Off
->>
+<< /BaseFont /Helvetica /Subtype /Type1 /Name /Helv /Type /Font /Encoding 6 0 R >>
 endobj
 50 0 obj
 <<
-/AP <<
-/D <<
-/Off 43 0 R /Yes 42 0 R
->> /N <<
-/Off 41 0 R /Yes 40 0 R
->> /R <<
-/Off 45 0 R /Yes 44 0 R
+/BBox [ 0 0 532 18 ] /Filter [ /FlateDecode ] /FormType 1 /Length 109 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF /Text] /Font <</Helv 49 0 R>> >> 
+  /Subtype /Form /Type /XObject
 >>
->> /AS /Off /BS <<
-/S /S /W 1
->> /F 4 /FT /Btn /Ff 2 
-  /H /N /MK <<
-/BC [ .05098 .247059 .384314 ] /BG [ 1 1 1 ] /CA (4)
->> /P 79 0 R /Rect [ 40 392 51 403 ] /Subtype /Widget /T (reason_envision) 
-  /TU (Envision dry eye treatment) /Type /Annot /V /Off
->>
+stream
+xúç1¬0˚}≈æ¿¯Œ9|iâê´ $^ È"%)»ÛÒiµ⁄b4Z°ÙÏ23≠h Á˛¡©∫k1&/£ µoL¯l˛êì1jE¬©·∏ºNﬁÊâÿ†Töz¿!‡k?â£ÜÓÛÑ?‡endstream
 endobj
 51 0 obj
 <<
 /AP <<
-/D <<
-/Off 43 0 R /Yes 42 0 R
->> /N <<
-/Off 41 0 R /Yes 40 0 R
->> /R <<
-/Off 45 0 R /Yes 44 0 R
->>
->> /AS /Off /BS <<
+/N 50 0 R
+>> /BS <<
 /S /S /W 1
->> /F 4 /FT /Btn /Ff 2 
-  /H /N /MK <<
-/BC [ .05098 .247059 .384314 ] /BG [ 1 1 1 ] /CA (4)
->> /P 79 0 R /Rect [ 306 392 317 403 ] /Subtype /Widget /T (reason_orthok) 
-  /TU (Ortho-K / myopia management) /Type /Annot /V /Off
+>> /DA (/Helv 10 Tf .086275 .227451 .329412 rg) /DV () /F 4 /FT /Tx 
+  /Ff 0 /MK <<
+/BC [ .788235 .839216 .87451 ] /BG [ 1 1 1 ]
+>> /MaxLen 100 /P 68 0 R /Rect [ 40 350 572 368 ] /Subtype /Widget 
+  /T (reason_other) /TU (Other \(please specify\)) /Type /Annot /V ()
 >>
 endobj
 52 0 obj
@@ -480,11 +475,11 @@ endobj
 endobj
 53 0 obj
 <<
-/BBox [ 0 0 532 18 ] /Filter [ /FlateDecode ] /FormType 1 /Length 109 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF /Text] /Font <</Helv 52 0 R>> >> 
+/BBox [ 0 0 128 18 ] /Filter [ /FlateDecode ] /FormType 1 /Length 108 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF /Text] /Font <</Helv 52 0 R>> >> 
   /Subtype /Form /Type /XObject
 >>
 stream
-xúç1¬0˚}≈æ¿¯Œ9|iâê´ $^ È"%)»ÛÒiµ⁄b4Z°ÙÏ23≠h Á˛¡©∫k1&/£ µoL¯l˛êì1jE¬©·∏ºNﬁÊâÿ†Töz¿!‡k?â£ÜÓÛÑ?‡endstream
+xúç±¬0CwÖø Õ]r¨T®SáVï¯`´‘2¿Ás'ÀˆdY(ÆÛçÃLQKû∆ÛâR7”“ò¨\U.ﬁΩ6·:A¯ENça—õõÜÌ«€<îÍ∞¨ÿ˝$é&,∏œ#˛≥⁄endstream
 endobj
 54 0 obj
 <<
@@ -495,8 +490,8 @@ endobj
 >> /DA (/Helv 10 Tf .086275 .227451 .329412 rg) /DV () /F 4 /FT /Tx 
   /Ff 0 /MK <<
 /BC [ .788235 .839216 .87451 ] /BG [ 1 1 1 ]
->> /MaxLen 100 /P 79 0 R /Rect [ 40 350 572 368 ] /Subtype /Widget 
-  /T (reason_other) /TU (Other \(please specify\)) /Type /Annot /V ()
+>> /MaxLen 100 /P 68 0 R /Rect [ 40 279 168 297 ] /Subtype /Widget 
+  /T (va_od) /TU (Best corrected VA  OD) /Type /Annot /V ()
 >>
 endobj
 55 0 obj
@@ -519,8 +514,8 @@ endobj
 >> /DA (/Helv 10 Tf .086275 .227451 .329412 rg) /DV () /F 4 /FT /Tx 
   /Ff 0 /MK <<
 /BC [ .788235 .839216 .87451 ] /BG [ 1 1 1 ]
->> /MaxLen 100 /P 79 0 R /Rect [ 40 279 168 297 ] /Subtype /Widget 
-  /T (va_od) /TU (Best corrected VA  OD) /Type /Annot /V ()
+>> /MaxLen 100 /P 68 0 R /Rect [ 178 279 306 297 ] /Subtype /Widget 
+  /T (va_os) /TU (Best corrected VA  OS) /Type /Annot /V ()
 >>
 endobj
 58 0 obj
@@ -528,11 +523,12 @@ endobj
 endobj
 59 0 obj
 <<
-/BBox [ 0 0 128 18 ] /Filter [ /FlateDecode ] /FormType 1 /Length 108 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF /Text] /Font <</Helv 58 0 R>> >> 
+/BBox [ 0 0 256 18 ] /Filter [ /FlateDecode ] /FormType 1 /Length 107 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF /Text] /Font <</Helv 58 0 R>> >> 
   /Subtype /Form /Type /XObject
 >>
 stream
-xúç±¬0CwÖø Õ]r¨T®SáVï¯`´‘2¿Ás'ÀˆdY(ÆÛçÃLQKû∆ÛâR7”“ò¨\U.ﬁΩ6·:A¯ENça—õõÜÌ«€<îÍ∞¨ÿ˝$é&,∏œ#˛≥⁄endstream
+xúç1
+Ñ@Û~Eø`›w/=#Ej&ËÁÛ›°h:häJ·>©÷ÜH…º7Ï)g≠ç!◊ï∂tjL8˛É—£fÓ$w~®ñáﬂ±#.(¶>6>Æ8Àâò–è^F‡endstream
 endobj
 60 0 obj
 <<
@@ -543,227 +539,115 @@ endobj
 >> /DA (/Helv 10 Tf .086275 .227451 .329412 rg) /DV () /F 4 /FT /Tx 
   /Ff 0 /MK <<
 /BC [ .788235 .839216 .87451 ] /BG [ 1 1 1 ]
->> /MaxLen 100 /P 79 0 R /Rect [ 178 279 306 297 ] /Subtype /Widget 
-  /T (va_os) /TU (Best corrected VA  OS) /Type /Annot /V ()
+>> /MaxLen 100 /P 68 0 R /Rect [ 316 279 572 297 ] /Subtype /Widget 
+  /T (diagnosis) /TU (Working diagnosis / ICD-10) /Type /Annot /V ()
 >>
 endobj
 61 0 obj
-<< /BaseFont /Helvetica /Subtype /Type1 /Name /Helv /Type /Font /Encoding 6 0 R >>
+<<
+/AP <<
+/D <<
+/Off 40 0 R /Yes 39 0 R
+>> /N <<
+/Off 38 0 R /Yes 37 0 R
+>> /R <<
+/Off 42 0 R /Yes 41 0 R
+>>
+>> /AS /Off /BS <<
+/S /S /W 1
+>> /F 4 /FT /Btn /Ff 2 
+  /H /N /MK <<
+/BC [ .05098 .247059 .384314 ] /BG [ 1 1 1 ] /CA (4)
+>> /P 68 0 R /Rect [ 40 246 51 257 ] /Subtype /Widget /T (records_topography) 
+  /TU (Corneal topography / tomography) /Type /Annot /V /Off
+>>
 endobj
 62 0 obj
 <<
-/BBox [ 0 0 256 18 ] /Filter [ /FlateDecode ] /FormType 1 /Length 107 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF /Text] /Font <</Helv 61 0 R>> >> 
-  /Subtype /Form /Type /XObject
+/AP <<
+/D <<
+/Off 40 0 R /Yes 39 0 R
+>> /N <<
+/Off 38 0 R /Yes 37 0 R
+>> /R <<
+/Off 42 0 R /Yes 41 0 R
 >>
-stream
-xúç1
-Ñ@Û~Eø`›w/=#Ej&ËÁÛ›°h:häJ·>©÷ÜH…º7Ï)g≠ç!◊ï∂tjL8˛É—£fÓ$w~®ñáﬂ±#.(¶>6>Æ8Àâò–è^F‡endstream
+>> /AS /Off /BS <<
+/S /S /W 1
+>> /F 4 /FT /Btn /Ff 2 
+  /H /N /MK <<
+/BC [ .05098 .247059 .384314 ] /BG [ 1 1 1 ] /CA (4)
+>> /P 68 0 R /Rect [ 306 246 317 257 ] /Subtype /Widget /T (records_exam) 
+  /TU (Recent exam notes) /Type /Annot /V /Off
+>>
 endobj
 63 0 obj
 <<
 /AP <<
-/N 62 0 R
->> /BS <<
+/D <<
+/Off 40 0 R /Yes 39 0 R
+>> /N <<
+/Off 38 0 R /Yes 37 0 R
+>> /R <<
+/Off 42 0 R /Yes 41 0 R
+>>
+>> /AS /Off /BS <<
 /S /S /W 1
->> /DA (/Helv 10 Tf .086275 .227451 .329412 rg) /DV () /F 4 /FT /Tx 
-  /Ff 0 /MK <<
-/BC [ .788235 .839216 .87451 ] /BG [ 1 1 1 ]
->> /MaxLen 100 /P 79 0 R /Rect [ 316 279 572 297 ] /Subtype /Widget 
-  /T (diagnosis) /TU (Working diagnosis / ICD-10) /Type /Annot /V ()
+>> /F 4 /FT /Btn /Ff 2 
+  /H /N /MK <<
+/BC [ .05098 .247059 .384314 ] /BG [ 1 1 1 ] /CA (4)
+>> /P 68 0 R /Rect [ 40 229 51 240 ] /Subtype /Widget /T (records_surgical) 
+  /TU (Surgical records) /Type /Annot /V /Off
 >>
 endobj
 64 0 obj
 <<
 /AP <<
 /D <<
-/Off 43 0 R /Yes 42 0 R
+/Off 40 0 R /Yes 39 0 R
 >> /N <<
-/Off 41 0 R /Yes 40 0 R
+/Off 38 0 R /Yes 37 0 R
 >> /R <<
-/Off 45 0 R /Yes 44 0 R
+/Off 42 0 R /Yes 41 0 R
 >>
 >> /AS /Off /BS <<
 /S /S /W 1
 >> /F 4 /FT /Btn /Ff 2 
   /H /N /MK <<
 /BC [ .05098 .247059 .384314 ] /BG [ 1 1 1 ] /CA (4)
->> /P 79 0 R /Rect [ 40 246 51 257 ] /Subtype /Widget /T (records_topography) 
-  /TU (Corneal topography / tomography) /Type /Annot /V /Off
+>> /P 68 0 R /Rect [ 306 229 317 240 ] /Subtype /Widget /T (records_lenses) 
+  /TU (Current contact lens parameters) /Type /Annot /V /Off
 >>
 endobj
 65 0 obj
-<<
-/AP <<
-/D <<
-/Off 43 0 R /Yes 42 0 R
->> /N <<
-/Off 41 0 R /Yes 40 0 R
->> /R <<
-/Off 45 0 R /Yes 44 0 R
->>
->> /AS /Off /BS <<
-/S /S /W 1
->> /F 4 /FT /Btn /Ff 2 
-  /H /N /MK <<
-/BC [ .05098 .247059 .384314 ] /BG [ 1 1 1 ] /CA (4)
->> /P 79 0 R /Rect [ 306 246 317 257 ] /Subtype /Widget /T (records_exam) 
-  /TU (Recent exam notes) /Type /Annot /V /Off
->>
+<< /BaseFont /Helvetica /Subtype /Type1 /Name /Helv /Type /Font /Encoding 6 0 R >>
 endobj
 66 0 obj
 <<
-/AP <<
-/D <<
-/Off 43 0 R /Yes 42 0 R
->> /N <<
-/Off 41 0 R /Yes 40 0 R
->> /R <<
-/Off 45 0 R /Yes 44 0 R
+/BBox [ 0 0 532 96 ] /Filter [ /FlateDecode ] /FormType 1 /Length 109 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF /Text] /Font <</Helv 65 0 R>> >> 
+  /Subtype /Form /Type /XObject
 >>
->> /AS /Off /BS <<
-/S /S /W 1
->> /F 4 /FT /Btn /Ff 2 
-  /H /N /MK <<
-/BC [ .05098 .247059 .384314 ] /BG [ 1 1 1 ] /CA (4)
->> /P 79 0 R /Rect [ 40 229 51 240 ] /Subtype /Widget /T (records_surgical) 
-  /TU (Surgical records) /Type /Annot /V /Off
->>
+stream
+xúç1É0˚}≈æ¿Òùs∂iÉ"*ä $^ tH!Ex>>≠V[åF+îñsGd§%ë]ÊπbC(µj2Üö:ï‹∂<M8˛É—kI‹1w~xÃ_cO|°TöVáÍp¡—N¸h¿Ô±«QÚendstream
 endobj
 67 0 obj
 <<
 /AP <<
-/D <<
-/Off 43 0 R /Yes 42 0 R
->> /N <<
-/Off 41 0 R /Yes 40 0 R
->> /R <<
-/Off 45 0 R /Yes 44 0 R
->>
->> /AS /Off /BS <<
-/S /S /W 1
->> /F 4 /FT /Btn /Ff 2 
-  /H /N /MK <<
-/BC [ .05098 .247059 .384314 ] /BG [ 1 1 1 ] /CA (4)
->> /P 79 0 R /Rect [ 306 229 317 240 ] /Subtype /Widget /T (records_lenses) 
-  /TU (Current contact lens parameters) /Type /Annot /V /Off
->>
-endobj
-68 0 obj
-<< /BaseFont /Helvetica /Subtype /Type1 /Name /Helv /Type /Font /Encoding 6 0 R >>
-endobj
-69 0 obj
-<<
-/BBox [ 0 0 532 40 ] /Filter [ /FlateDecode ] /FormType 1 /Length 110 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF /Text] /Font <</Helv 68 0 R>> >> 
-  /Subtype /Form /Type /XObject
->>
-stream
-xúç;¬@C{ü¬'XÊìI6m"î*)'tHÑ"üYñãß'+µÂxA(∑"ÏÑ«é' P´y∞TM˚∂C ˚Â	)¡l∏6««tæ∏<~ú÷ô¯¿h´	˚ÑﬁÌ$è‹p]g¸2„endstream
-endobj
-70 0 obj
-<<
-/AP <<
-/N 69 0 R
+/N 66 0 R
 >> /BS <<
 /S /S /W 1
 >> /DA (/Helv 9 Tf .086275 .227451 .329412 rg) /DV () /F 4 /FT /Tx 
   /Ff 4096 /MK <<
 /BC [ .788235 .839216 .87451 ] /BG [ 1 1 1 ]
->> /MaxLen 100 /P 79 0 R /Rect [ 40 165 572 205 ] /Subtype /Widget 
+>> /MaxLen 100 /P 68 0 R /Rect [ 40 109 572 205 ] /Subtype /Widget 
   /T (notes) /TU (Notes, visual goals, or questions for Dr. Nim) /Type /Annot /V ()
 >>
 endobj
-71 0 obj
-<<
-/AP <<
-/D <<
-/Off 43 0 R /Yes 42 0 R
->> /N <<
-/Off 41 0 R /Yes 40 0 R
->> /R <<
-/Off 45 0 R /Yes 44 0 R
->>
->> /AS /Off /BS <<
-/S /S /W 1
->> /F 4 /FT /Btn /Ff 2 
-  /H /N /MK <<
-/BC [ .05098 .247059 .384314 ] /BG [ 1 1 1 ] /CA (4)
->> /P 79 0 R /Rect [ 40 132 51 143 ] /Subtype /Widget /T (priority_routine) 
-  /TU (Routine) /Type /Annot /V /Off
->>
-endobj
-72 0 obj
-<<
-/AP <<
-/D <<
-/Off 43 0 R /Yes 42 0 R
->> /N <<
-/Off 41 0 R /Yes 40 0 R
->> /R <<
-/Off 45 0 R /Yes 44 0 R
->>
->> /AS /Off /BS <<
-/S /S /W 1
->> /F 4 /FT /Btn /Ff 2 
-  /H /N /MK <<
-/BC [ .05098 .247059 .384314 ] /BG [ 1 1 1 ] /CA (4)
->> /P 79 0 R /Rect [ 306 132 317 143 ] /Subtype /Widget /T (priority_soon) 
-  /TU (Please schedule soon) /Type /Annot /V /Off
->>
-endobj
-73 0 obj
-<< /BaseFont /Helvetica /Subtype /Type1 /Name /Helv /Type /Font /Encoding 6 0 R >>
-endobj
-74 0 obj
-<<
-/BBox [ 0 0 365.4 22 ] /Filter [ /FlateDecode ] /FormType 1 /Length 109 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF /Text] /Font <</Helv 73 0 R>> >> 
-  /Subtype /Form /Type /XObject
->>
-stream
-xúç;É@C{ü¬'ÿÏÃ~XZPDEëâ@∫HÅÇüYñãß'≈r|ôj	ô™<6Ï]kö
-CKΩJµÌræ'/ƒPËM5ª#Óúx,ÛH¸†TÉbPö√_;Ò£	/<Á7SÈendstream
-endobj
-75 0 obj
-<<
-/AP <<
-/N 74 0 R
->> /BS <<
-/S /S /W 1
->> /DA (/Helv 10 Tf .086275 .227451 .329412 rg) /DV () /F 4 /FT /Tx 
-  /Ff 0 /MK <<
-/BC [ .788235 .839216 .87451 ] /BG [ 1 1 1 ]
->> /MaxLen 100 /P 79 0 R /Rect [ 40 86 405.4 108 ] /Subtype /Widget 
-  /T (signature) /TU (Referring provider signature) /Type /Annot /V ()
->>
-endobj
-76 0 obj
-<< /BaseFont /Helvetica /Subtype /Type1 /Name /Helv /Type /Font /Encoding 6 0 R >>
-endobj
-77 0 obj
-<<
-/BBox [ 0 0 156.6 22 ] /Filter [ /FlateDecode ] /FormType 1 /Length 108 /Matrix [ 1 0 0 1 0 0 ] /Resources << /ProcSet [/PDF /Text] /Font <</Helv 76 0 R>> >> 
-  /Subtype /Form /Type /XObject
->>
-stream
-xúç1¬@{ø¬/8Œˆr¥D(UäDHº Ëê<ü]Yñã—»¢"˚ïïÚVÕ∏ﬂÒ@{∑¡Y˙p2µÿÒË‚6C¸¢gVÓÈ(ù◊œÀDºa¥ÄP=·Ø8…£+.ÀÑ?8Èendstream
-endobj
-78 0 obj
-<<
-/AP <<
-/N 77 0 R
->> /BS <<
-/S /S /W 1
->> /DA (/Helv 10 Tf .086275 .227451 .329412 rg) /DV () /F 4 /FT /Tx 
-  /Ff 0 /MK <<
-/BC [ .788235 .839216 .87451 ] /BG [ 1 1 1 ]
->> /MaxLen 100 /P 79 0 R /Rect [ 415.4 86 572 108 ] /Subtype /Widget 
-  /T (signature_date) /TU (Date) /Type /Annot /V ()
->>
-endobj
-79 0 obj
+68 0 obj
 <<
 /Annots [ 9 0 R 12 0 R 15 0 R 18 0 R 21 0 R 24 0 R 27 0 R 30 0 R 33 0 R 36 0 R 
-  39 0 R 46 0 R 47 0 R 48 0 R 49 0 R 50 0 R 51 0 R 54 0 R 57 0 R 60 0 R 
-  63 0 R 64 0 R 65 0 R 66 0 R 67 0 R 70 0 R 71 0 R 72 0 R 75 0 R 78 0 R ] /Contents 83 0 R /MediaBox [ 0 0 612 792 ] /Parent 82 0 R /Resources <<
+  43 0 R 44 0 R 45 0 R 46 0 R 47 0 R 48 0 R 51 0 R 54 0 R 57 0 R 60 0 R 
+  61 0 R 62 0 R 63 0 R 64 0 R 67 0 R ] /Contents 72 0 R /MediaBox [ 0 0 612 792 ] /Parent 71 0 R /Resources <<
 /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] /XObject <<
 /FormXob.34410d16c8aced1d53c148208ba5d4dc 3 0 R
 >>
@@ -773,30 +657,30 @@ endobj
 >> /Type /Page
 >>
 endobj
-80 0 obj
+69 0 obj
 <<
-/AcroForm 84 0 R /PageMode /UseNone /Pages 82 0 R /Type /Catalog
+/AcroForm 73 0 R /PageMode /UseNone /Pages 71 0 R /Type /Catalog
 >>
 endobj
-81 0 obj
+70 0 obj
 <<
-/Author (Precision Vision Institute) /CreationDate (D:20260929004556-04'00') /Creator (anonymous) /Keywords () /ModDate (D:20260929004556-04'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+/Author (Precision Vision Institute) /CreationDate (D:20260929005603-04'00') /Creator (anonymous) /Keywords () /ModDate (D:20260929005603-04'00') /Producer (ReportLab PDF Library - \(opensource\)) 
   /Subject (Fax completed referrals to \(470\) 588-8894) /Title (Patient Referral Form | Precision Vision Institute) /Trapped /False
 >>
 endobj
-82 0 obj
+71 0 obj
 <<
-/Count 1 /Kids [ 79 0 R ] /Type /Pages
+/Count 1 /Kids [ 68 0 R ] /Type /Pages
 >>
 endobj
-83 0 obj
+72 0 obj
 <<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 2041
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 1905
 >>
 stream
-Gau0E>Bed\&:WeDb[]Ck\CSok^6)Wde!*\Gl0^oF'O-*3_4n6+Q@HXofqpTm-92fr"D"`+hd#fuN(bA4(NJos)W5-1mk4qX$F;`(*cRKP_YJ!ZKHa)'#Uka$O[?hrc3OZ](mI!9%QQp:-V;*%R(jT5"FSm0#6KCP+fko*N8/)(TS*H"-LQa(q^jE7drrqHaM<e0aPDcL\@mAN093h>_p?OY&DLE7/&biaE&YlK,C?%'0Y=t<F=[&`&4hR4)_;5m^pa=Ve6.KfJFSGHYd_SbUqup9D:\aN>Pt(V0IK_`a@t\@(G$dnTj_sl7F(K5cLg&<:Kog5U6_L\/aY-Jhic7k/4tL"QbfM1CNqXtFeQqrVJ<8mOXm[%^4k7T0RMErFM;edXN)C)j$@3M.\+-Zq#bNkTEB,hJk2'b,Y9urgs@IhO3(:dCA0gQi@tklFDn^?7l9?0JiJb,(h4^tJu630Cq$8Q5ocZ!Lg-(>B^M!qY"]CUIGZ*^F]6csL*YhME7V+ZH?fW8LVUb\NV4/]X_\&))H4I,i6o;h6]k61J7-ZiD8cAWh/3;O]D]irm_&2!<REm*bZbSeB;>(gC`bSD8K&ai(.UL,:X2iW_S'=YE?M@DoV#ZNnt,/?\Q4(*0e.\+YB]kk&B%.,dD`&h>:N1j%KrXNpN@_&`apB,hl./P@V^a_G8Qp$JsbLDllhumoW+S$D.2_+(X+:U#F^;K\]>G#:(e8l"$]X_%3$,^A[B*N`fIrUNO/pDBFoFkO&8626[lb8`<s)UhUI63jm)!1^K;'sZ*=pqhI;2#*UqB)0/=f[pMa25#T\f.C5a]"5JbW]Sp3SSB6Zk$=7V6>i/Lf+eFLcSr8N)b*K<;#A:!okFETk@7koV)@Gb[^U0KsdZW_^5H5AV!oH-+Wm"pj-?"D)"20RC,)mhJFfS7"2Xo@\1'+:18$0.#d8M$qP3kSQCGX4u=-0?;N$\o5WGV\hcJ8I]]aOAXKhOuiap!=_+qhYZES+`01l+L?n%-)@,9#e1N]J1HD4l[!TYJtO$22.@oL6p5Tk4+-IgFtI)-%u6OR3bO':"5>(B@264/($LEVQCpH#p(PG7>t+X#Q9iAZIYErRgKg4VG4$D[Ag6n<?]%(d2#%Rd"5-';e)Q&qA?R._I_k1%GY-R_s>^J,KrOMB)a6N?EhOXm[5alKP*j1HsC;7AR(X#D,aQW<P=*O.P">>En*_()*\#Z?Phmt?5[m`:i($XTXG2MdTNo>#1-q&Cd0'r.OD.Ye'*_uK7n:GhdAh(Z<u:MI_A(U;6jM<e)Sh%#>i7JUt=Q43urbI$%9)8l:iF1/PEWNpQYHj,(ddNiH&!PQ,*p?=]m\m&O#%J/GY]QeJfa:8KSB0I9$-J'>1.PlO@X"e'$-`F?7'fd25g'B5Gbp`ZACsP+S9h18@-U=#kXK!aM;lZTjEiJ^E%V<L<V!qmE=O00'/[LA1B!s46<sf;TI);<k0cM0<ueG"b4uoj5#S^uOYb7LkFSAd_>*=!6g4AkSEd@qj'r;;4q(('UUA2,ih#?5U4UDUJ$_??[2,WVQU@=E<U?5mQ'62"a5=U"$KM4F2N!U5#AC9Da-+B%dgeBla6hS]NtSV[\e`Bh>5@TWd+mCEj;^mBn^75C028g@g-LY=J:WWBkk_Zs;RT2Xmh7m__qtJiR/.R/k7Gg)k0q89AR0V7q2,FC@6cKf2BeB;;kJfcd@V_R_X#2g+YBZ]:@WklL;-+RK2*\n]BNEjNW6rhV";;`Bm:B5JT_mtr(m\Z/brZ>PWAF.pO;]TIVU7u=-rEa_a.aNkNK:M8]386`SlL`lNtmZR_+j44@a(i[t7<cJ"bq3\`Q#_V28#B@J)15=mJ;Ul]/CKhl(;li9NGu)&>oH$+V$Q_Ki9:R/&U[G,GDf*6r@F?daQ?/"FZGp5D6VEr',u'$9k/t+Y-KBCY7;;;&"u^uaKQCuD)cR/1hdT5i:RCJmgulnaYYmQ/[eapRa%iT"DF[eRA?pl#PM7HI>MU.Co=7#9Q#e3k2pq>>FT>cpVZ$#B6/k'B)#On!ilF+~>endstream
+Gau0E>?BQ=&:Vs/R)cW?>[;dB>9M;;JL5*Pl0\X,_H)J:I7\j$Rt&0tfhTutV49"?8E@]-IIhmIR?=.-n;#`L3!VEI_:qTiPeh)D<-SIFf5Ru5GsmfD"HSCia9XmL$;Lb(pS.e&#"4!&F2AJ<%I5qt["(C'gQBFX)1d1RLi5f:Lf*G/(>:9.c)8'J^q)6j+<ru=I=!W-K'rX:]YFbf%Gt[-5[\IESJ?2haF99iqW9sti+@6jkZ8b$+HRXW4PGb@J^5PjR:V(NNshS41q*WZdcg(0=lo[JGPJ_A,b]Z,W`UW*OZ]KbA0efd1(d(dPB-<c3u=2eoTC&/ft].f8p_/[+*p+'K1i=eGdU@BWf%(IHEF5?ARO);%BFteoqn?q[BfLb@Lqi4cSq(\C[Y/LKA0HUi9b<A@<`]FOT9o9jp1[ifT_*HIkLpb'dSYHQLfdU![5Af,+euT$R(if'"qrT25Tqs!3)]99cbJ4BC3:3'):eYmK@F][*^S)7%D&gc.ZcN!q41F$&SSt`?Jf]JenSa$4OH.+Q1VBmtW$r-*rN>?_H.L&-o[/):,ug:U>rDpjqWC)R$"SZdg4::2&]5DBAQs^j!U>'>fB1$@sRajliCHKCUDS$^L#[lPPmO4Kj#*FlW^7aA?@<fIl9>a9..Xqh(dXD<%oc2m5nITRl(\lj\^4T-3:k&.XdL$?[rPE0jVM`X-7a^'@@=`E_I0[\+c^)h=RF\q-uCrh@[+FQJ6r>U(0&9BQ&q^giU*DNS;e.a@IF/[nGX(+QqEm4MFM6qscX`*'0<\d/4#-Y\MGm4E]WCP313;7Df?@Q2-K9q?OGK4jb4PV:62AqIA%,5j-t/2&V/QHSOZ4Y2oj:XdG)dTq`mU'pk$WhdTs,\>bqNhYBb%O:C/B7R[o<8=:SG*a-EBQ4L8:eeN?\#%Uq^ETJVP6rNSN=C-;;/h,Q&`M,I^u^%'Yru?]#2Oq6g'rADL6D$PWC)IXV@GDu=m?Q=80-`[q$\n=9B`\&q"e-.*ae]IaCDrd`TDA?$OP3ToTCrPW5f??lp/UidudPsOe,Vuhq4bEkZ>>n9c99d>@V6#bGrok,BV_>3`SqFkW4SGGek9T]<NdMjqQ"l]e+5p)d&o>a#DJJ'27Wb@f@-E^JV.`?PsIs6Q+U#nMbHb.pK4CXc?>F2*8m$;1nkBZ<!C]_kfQbIBiVWcKHo"bpLsNoM2/WA_^mt!gIM\q`%-p>-%MqI/VgR@)=pU2Rp*YZ<u#R:kM,0V,``>m_PSB7rZ:81AEQD/OOf0Kj*QLEgnQ"<MAjR:JUgr2<I3V6-PgXY4."tAk(o8U=VJn]ec"`%H@"+jb)U,0.J&UK!Y#Ve1fsR?Vb=`oC4\3B37Jai;OLMamH/)_@4H95HsdXH4]q$s+P0m_G%-HpbW2B:Y^fC!h2ndi2ZUGW5YsEh`/H4WuM4(a86)1J!\]8[f9.RI8SRpWOgRMaXJNrqJ(NKJ\s8KN#^sj>8X/"WBiD$MDmS9Qa3#=7\djhf--[YX\D`3bPOnK2`kQa.J*PU@GX2"+!snpNh?C7PY-F(3>?&"CPN8$@l-$$pH?==SlK&%\YS"DE(bJ;r4L!Z;ja@Z@*gi<)n&`]mY2ZdeaCjA,EZ8NAop0j#;n+(F^M-WYK@29\![&sn#0ZS=-LdZ=dlrqgXJ-4VM7S24-*04n'5B/aAHM\"rZ2Y?P4U,3Pg.#@giXJ5;pQJ!?'4gAM@g>*R6qcaUgW1lomC2pDtC*LR)c3"o&$pq5$91Kp)+3UKFE#C6/>f]2&CUBO@Gu[eaeoV_f>`$\Qb`jW5ta-7:7eo*Mfod!++hRN:uq#S3d#l\"%aRIPd]T1Pfa[E5joVC`+Z.\PTEk4j.%[M>%m[5jjVCQ(bFdIa>r#9S_OH2$73%#7YeoKSr0nL"~>endstream
 endobj
-84 0 obj
+73 0 obj
 <<
 /DA (/Helv 0 Tf 0 g) /DR << /Encoding
 <<
@@ -805,12 +689,12 @@ endobj
 >>
 /Font << /Helv 7 0 R >>
 >> /Fields [ 9 0 R 12 0 R 15 0 R 18 0 R 21 0 R 24 0 R 27 0 R 30 0 R 33 0 R 36 0 R 
-  39 0 R 46 0 R 47 0 R 48 0 R 49 0 R 50 0 R 51 0 R 54 0 R 57 0 R 60 0 R 
-  63 0 R 64 0 R 65 0 R 66 0 R 67 0 R 70 0 R 71 0 R 72 0 R 75 0 R 78 0 R ]
+  43 0 R 44 0 R 45 0 R 46 0 R 47 0 R 48 0 R 51 0 R 54 0 R 57 0 R 60 0 R 
+  61 0 R 62 0 R 63 0 R 64 0 R 67 0 R ]
 >>
 endobj
 xref
-0 85
+0 74
 0000000000 65535 f 
 0000000061 00000 n 
 0000000102 00000 n 
@@ -841,71 +725,60 @@ xref
 0000045097 00000 n 
 0000045419 00000 n 
 0000045518 00000 n 
-0000045856 00000 n 
-0000046168 00000 n 
-0000046267 00000 n 
-0000046605 00000 n 
-0000046914 00000 n 
-0000047013 00000 n 
-0000047350 00000 n 
-0000047672 00000 n 
-0000047771 00000 n 
-0000048107 00000 n 
-0000048420 00000 n 
-0000049047 00000 n 
-0000049317 00000 n 
-0000049944 00000 n 
-0000050215 00000 n 
-0000050840 00000 n 
-0000051108 00000 n 
-0000051496 00000 n 
-0000051902 00000 n 
-0000052292 00000 n 
-0000052688 00000 n 
-0000053070 00000 n 
-0000053453 00000 n 
-0000053552 00000 n 
-0000053889 00000 n 
-0000054216 00000 n 
-0000054315 00000 n 
-0000054651 00000 n 
-0000054968 00000 n 
-0000055067 00000 n 
-0000055403 00000 n 
-0000055721 00000 n 
-0000055820 00000 n 
-0000056155 00000 n 
-0000056482 00000 n 
-0000056872 00000 n 
-0000057244 00000 n 
-0000057617 00000 n 
-0000058005 00000 n 
-0000058104 00000 n 
-0000058442 00000 n 
-0000058785 00000 n 
-0000059149 00000 n 
-0000059525 00000 n 
-0000059624 00000 n 
-0000059963 00000 n 
-0000060292 00000 n 
-0000060391 00000 n 
-0000060729 00000 n 
-0000061040 00000 n 
-0000061526 00000 n 
-0000061613 00000 n 
-0000061966 00000 n 
-0000062027 00000 n 
-0000064160 00000 n 
+0000045857 00000 n 
+0000046169 00000 n 
+0000046268 00000 n 
+0000046607 00000 n 
+0000046918 00000 n 
+0000047017 00000 n 
+0000047356 00000 n 
+0000047669 00000 n 
+0000048296 00000 n 
+0000048566 00000 n 
+0000049193 00000 n 
+0000049464 00000 n 
+0000050089 00000 n 
+0000050357 00000 n 
+0000050745 00000 n 
+0000051151 00000 n 
+0000051541 00000 n 
+0000051937 00000 n 
+0000052319 00000 n 
+0000052702 00000 n 
+0000052801 00000 n 
+0000053138 00000 n 
+0000053465 00000 n 
+0000053564 00000 n 
+0000053900 00000 n 
+0000054217 00000 n 
+0000054316 00000 n 
+0000054652 00000 n 
+0000054970 00000 n 
+0000055069 00000 n 
+0000055404 00000 n 
+0000055731 00000 n 
+0000056121 00000 n 
+0000056493 00000 n 
+0000056866 00000 n 
+0000057254 00000 n 
+0000057353 00000 n 
+0000057690 00000 n 
+0000058033 00000 n 
+0000058484 00000 n 
+0000058571 00000 n 
+0000058924 00000 n 
+0000058985 00000 n 
+0000060982 00000 n 
 trailer
 <<
 /ID 
-[<493411be04520861f4938cfc020add19><493411be04520861f4938cfc020add19>]
+[<b9e12fd93edf67a367980fd0e5bc6054><b9e12fd93edf67a367980fd0e5bc6054>]
 % ReportLab generated PDF document -- digest (opensource)
 
-/Info 81 0 R
-/Root 80 0 R
-/Size 85
+/Info 70 0 R
+/Root 69 0 R
+/Size 74
 >>
 startxref
-64500
+61287
 %%EOF

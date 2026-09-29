@@ -160,7 +160,7 @@ class Form:
 
         self.section("Referring provider")
         self.row([("provider_name", "Referring doctor", 0.5), ("provider_practice", "Practice name", 0.5)])
-        self.row([("provider_phone", "Phone", 0.25), ("provider_fax", "Fax", 0.25), ("provider_npi", "NPI (optional)", 0.2), ("provider_email", "Email", 0.3)])
+        self.row([("provider_phone", "Phone", 0.3), ("provider_fax", "Fax", 0.3), ("provider_email", "Email", 0.4)])
 
         self.section("Reason for referral")
         self.checkboxes(
@@ -175,7 +175,7 @@ class Form:
             other="reason_other",
         )
 
-        self.section("Clinical information")
+        self.section("Clinical information (optional)")
         self.row([("va_od", "Best corrected VA  OD", 0.25), ("va_os", "Best corrected VA  OS", 0.25), ("diagnosis", "Working diagnosis / ICD-10", 0.5)])
         self.label("Records attached")
         self.y -= 10
@@ -187,12 +187,7 @@ class Form:
                 ("records_lenses", "Current contact lens parameters"),
             ],
         )
-        self.row([("notes", "Notes, visual goals, or questions for Dr. Nim", 1.0)], height=40, multiline=True)
-
-        self.label("Priority")
-        self.y -= 10
-        self.checkboxes([("priority_routine", "Routine"), ("priority_soon", "Please schedule soon")], columns=2)
-        self.row([("signature", "Referring provider signature", 0.7), ("signature_date", "Date", 0.3)], height=22)
+        self.row([("notes", "Notes, visual goals, or questions for Dr. Nim", 1.0)], height=96, multiline=True)
         assert self.y > 66, f"content overflows the footer (y={self.y:.0f})"
 
         self.footer()
