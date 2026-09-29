@@ -188,66 +188,70 @@ test("falls back to curated testimonials without a Places API key", async () => 
   assert.doesNotMatch(html, /Reviews and rating provided by Google/);
 });
 
-test("shows every review from the Google Business Profile API when configured", async () => {
+test("shows the latest 50 Google reviews via SerpApi when configured", async () => {
   const realFetch = globalThis.fetch;
-  const env = {
-    GBP_CLIENT_ID: "client",
-    GBP_CLIENT_SECRET: "secret",
-    GBP_REFRESH_TOKEN: "refresh",
-    GBP_ACCOUNT_ID: "accounts/111",
-    GBP_LOCATION_ID: "locations/222",
-    GOOGLE_PLACE_ID: "gbp-place",
-    GOOGLE_PLACES_API_KEY: "places-key-should-not-be-used",
-  };
+  const env = { SERPAPI_API_KEY: "serp-key", GOOGLE_PLACE_ID: "place-123", GOOGLE_PLACES_API_KEY: "places-key-should-not-be-used" };
   Object.assign(process.env, env);
   const calls = [];
-  const review = (n, extra = {}) => ({
-    reviewer: { displayName: `Reviewer ${n}` },
-    starRating: "FIVE",
-    comment: `Business Profile review number ${n}.`,
-    createTime: new Date(Date.now() - n * 86_400_000).toISOString(),
-    ...extra,
-  });
+  let n = 0;
+  const review = (extra = {}) => {
+    n += 1;
+    return {
+      rating: n === 3 ? 2 : 5,
+      date: `${n} days ago`,
+      iso_date: new Date(Date.now() - n * 86_400_000).toISOString(),
+      snippet: `SerpApi review number ${n}.`,
+      user: { name: `Reviewer ${n}`, link: `https://www.google.com/maps/contrib/${n}` },
+      ...extra,
+    };
+  };
   globalThis.fetch = async (input, init) => {
-    const url = String(input instanceof Request ? input.url : input);
-    if (url.startsWith("https://oauth2.googleapis.com/token")) {
-      calls.push("token");
-      return Response.json({ access_token: "access", expires_in: 3599 });
-    }
-    if (url.startsWith("https://mybusiness.googleapis.com/v4/accounts/111/locations/222/reviews")) {
-      calls.push(url.includes("pageToken=") ? "page2" : "page1");
-      assert.equal(new Headers(init?.headers).get("authorization"), "Bearer access");
-      if (!url.includes("pageToken=")) {
-        return Response.json({
-          averageRating: 4.9,
-          totalReviewCount: 15,
-          nextPageToken: "next",
-          reviews: [
-            review(1, { reviewReply: { comment: "Thank you for trusting us with your care!" } }),
-            ...Array.from({ length: 11 }, (_, i) => review(i + 2)),
-            { reviewer: { displayName: "Stars only" }, starRating: "FIVE" },
-          ],
-        });
+    const url = new URL(String(input instanceof Request ? input.url : input));
+    if (url.hostname === "serpapi.com") {
+      const engine = url.searchParams.get("engine");
+      assert.equal(url.searchParams.get("api_key"), "serp-key");
+      if (engine === "google_maps") {
+        calls.push("summary");
+        assert.equal(url.searchParams.get("place_id"), "place-123");
+        return Response.json({ place_results: { rating_summary: [5, 4, 3, 2, 1].map((stars) => ({ stars, amount: { 5: 164, 4: 3, 3: 0, 2: 1, 1: 1 }[stars] })) } });
       }
-      return Response.json({ reviews: [review(13), review(14)] });
+      assert.equal(engine, "google_maps_reviews");
+      assert.equal(url.searchParams.get("data_id"), "0x88f5a31f1f5f00c9:0x21ed856629aca207");
+      assert.equal(url.searchParams.get("sort_by"), "newestFirst");
+      const token = url.searchParams.get("next_page_token");
+      calls.push(token ?? "first");
+      const size = token ? 20 : 8;
+      const reviews = Array.from({ length: size }, (_, i) =>
+        !token && i === 0
+          ? review({ response: { snippet: "Thank you for trusting us with your care!" } })
+          : !token && i === 1
+            ? { ...review(), snippet: "", extracted_snippet: undefined }
+            : review(),
+      );
+      return Response.json({
+        place_info: { rating: 4.9, reviews: 173 },
+        reviews,
+        serpapi_pagination: { next_page_token: `page-${calls.length + 1}` },
+      });
     }
-    if (url.startsWith("https://places.googleapis.com/")) calls.push("places");
+    if (url.hostname === "places.googleapis.com") calls.push("places");
     return realFetch(input, init);
   };
   try {
     const html = await (await render("/testimonials")).text();
-    assert.deepEqual(calls.filter((c) => c !== "token"), ["page1", "page2"], "pages through every review, never calls Places");
-    assert.match(html, /15 Google reviews/);
-    assert.match(html, /class="rating-bars"/);
-    assert.match(html, /<span class="rating-bar-count">15<span class="visually-hidden"> 5-star reviews<\/span>/, "star-only reviews still count");
+    const pages = calls.filter((call) => call !== "summary");
+    assert.equal(pages[0], "first");
+    assert.equal(pages.length, 4, "8 + 20 + 20 + 20 reviews covers the latest 50");
+    assert.ok(!calls.includes("places"), "never falls through to Places when SerpApi works");
+    assert.match(html, /173 Google reviews/);
+    assert.match(html, /<span class="rating-bar-count">164<span class="visually-hidden"> 5-star reviews<\/span>/);
     assert.match(html, /Highest rated review/);
     assert.match(html, /Most recent review/);
-    assert.match(html, /writereview\?placeid=gbp-place/);
+    assert.match(html, /writereview\?placeid=place-123/);
     assert.equal(html.match(/<article class="review-item">/g)?.length, 10, "first page of ten");
-    assert.match(html, /Show more reviews \(4 left\)/);
+    assert.match(html, /Show more reviews \(39 left\)/, "49 written reviews of the latest 50 (one was stars-only)");
     assert.match(html, /Reply from Precision Vision Institute/);
     assert.match(html, /Thank you for trusting us with your care!/);
-    assert.doesNotMatch(html, /Stars only/);
   } finally {
     globalThis.fetch = realFetch;
     for (const key of Object.keys(env)) delete process.env[key];

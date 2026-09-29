@@ -48,12 +48,13 @@ facts without approval.
   correction; myopia-control use described as off-label in the U.S.
 - Dr. Nim to confirm the hedged safety/comfort answers in `app/faq-content.ts`.
 
-## All Google reviews (Business Profile API)
+## Latest 50 Google reviews (SerpApi)
 
-- Request Business Profile API access for the Google Cloud project (Google
-  approval, days to weeks). Until approved and configured, the site keeps
-  using the Places API (max 5 reviews).
-- Then add in Vercel (Production + Preview): GBP_CLIENT_ID, GBP_CLIENT_SECRET,
-  GBP_REFRESH_TOKEN (Secrets) and GBP_ACCOUNT_ID, GBP_LOCATION_ID (Config).
-- OAuth consent screen must be "In production", not "Testing"; testing-mode
-  refresh tokens expire after 7 days and the reviews would silently fall back.
+- Google declined Business Profile API access, so the testimonials page uses
+  SerpApi to retrieve the listing's public reviews (newest first).
+- Create a free SerpApi account (250 searches/month; the site uses ~180) and
+  add its key in Vercel as `SERPAPI_API_KEY` (Secret, Production + Preview),
+  then redeploy. Until then the page shows the 5 Places API reviews.
+- Check SerpApi's dashboard after the first week to confirm usage stays
+  inside the free plan.
+
