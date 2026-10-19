@@ -21,16 +21,6 @@ facts without approval.
 - Dr. Nim's expanded first-person explanation of why she chose specialty
   contact-lens care.
 
-## Latest 50 Google reviews (SerpApi)
-
-- Google declined Business Profile API access, so the testimonials page uses
-  SerpApi to retrieve the listing's public reviews (newest first).
-- Create a free SerpApi account (250 searches/month; the site uses ~180) and
-  add its key in Vercel as `SERPAPI_API_KEY` (Secret, Production + Preview),
-  then redeploy. Until then the page shows the 5 Places API reviews.
-- Check SerpApi's dashboard after the first week to confirm usage stays
-  inside the free plan.
-
 ## Online referral form (Google Form)
 
 - Super admin accepts Google's HIPAA BAA: Admin console → Account → Account
@@ -40,3 +30,13 @@ facts without approval.
   with sign-in NOT required and "send responders a copy" OFF.
 - Add its link in Vercel as `REFERRAL_GOOGLE_FORM_URL` (Config, Production +
   Preview) and redeploy. Until then the referral page offers PDF + fax only.
+
+## Google reviews (snapshot)
+
+- Reviews are a stored snapshot in `app/google-reviews.json` (no live API
+  calls). Add new reviews by hand (newest first) and update `rating`,
+  `reviewCount`, `distribution`, and `snapshotDate` from Google Maps, or run
+  `SERPAPI_API_KEY=… node scripts/refresh-google-reviews.mjs` (~6 searches).
+- The Vercel variables SERPAPI_API_KEY, GOOGLE_PLACES_API_KEY and
+  GOOGLE_PLACE_ID are no longer used by the site and can be deleted.
+

@@ -150,119 +150,6 @@ test("applies the audit batch 2 copy, contact, and FAQ fixes", async () => {
   assert.doesNotMatch(faq, /surprisingly comfortable|excellent option|safe to wear after corneal surgery\?<\/summary><p>Yes\./);
 });
 
-test("shows live Google reviews when the Places API is configured", async () => {
-  const realFetch = globalThis.fetch;
-  process.env.GOOGLE_PLACES_API_KEY = "test-key";
-  process.env.GOOGLE_PLACE_ID = "test-place";
-  globalThis.fetch = async (input, init) => {
-    const url = String(input instanceof Request ? input.url : input);
-    if (!url.startsWith("https://places.googleapis.com/")) return realFetch(input, init);
-    return Response.json({
-      rating: 4.9,
-      userRatingCount: 137,
-      googleMapsUri: "https://maps.google.com/?cid=123",
-      reviews: [
-        {
-          rating: 5,
-          relativePublishTimeDescription: "2 weeks ago",
-          text: { text: "Test review from Google about my scleral lenses." },
-          authorAttribution: { displayName: "Test Patient", uri: "https://www.google.com/maps/contrib/1" },
-        },
-      ],
-    });
-  };
-  try {
-    const html = await (await render("/testimonials")).text();
-    assert.match(html, /Test review from Google about my scleral lenses\./);
-    assert.match(html, /Read all 137 reviews on Google/);
-    assert.match(html, /137 Google reviews/);
-    assert.match(html, /4\.9/);
-    assert.match(html, /Reviews and rating provided by Google/);
-    assert.doesNotMatch(html, /class="rating-bars"/, "five reviews are not enough for a star chart");
-    assert.match(html, /class="write-review" href="https:\/\/search\.google\.com\/local\/writereview\?placeid=test-place"/);
-  } finally {
-    globalThis.fetch = realFetch;
-    delete process.env.GOOGLE_PLACES_API_KEY;
-    delete process.env.GOOGLE_PLACE_ID;
-  }
-});
-
-test("falls back to curated testimonials without a Places API key", async () => {
-  const html = await (await render("/testimonials")).text();
-  assert.match(html, /Shawoun L\./);
-  assert.doesNotMatch(html, /Reviews and rating provided by Google/);
-});
-
-test("shows the latest 50 Google reviews via SerpApi when configured", async () => {
-  const realFetch = globalThis.fetch;
-  const env = { SERPAPI_API_KEY: "serp-key", GOOGLE_PLACE_ID: "place-123", GOOGLE_PLACES_API_KEY: "places-key-should-not-be-used" };
-  Object.assign(process.env, env);
-  const calls = [];
-  let n = 0;
-  const review = (extra = {}) => {
-    n += 1;
-    return {
-      rating: n === 3 ? 2 : 5,
-      date: `${n} days ago`,
-      iso_date: new Date(Date.now() - n * 86_400_000).toISOString(),
-      snippet: `SerpApi review number ${n}.`,
-      user: { name: `Reviewer ${n}`, link: `https://www.google.com/maps/contrib/${n}` },
-      ...extra,
-    };
-  };
-  globalThis.fetch = async (input, init) => {
-    const url = new URL(String(input instanceof Request ? input.url : input));
-    if (url.hostname === "serpapi.com") {
-      const engine = url.searchParams.get("engine");
-      assert.equal(url.searchParams.get("api_key"), "serp-key");
-      if (engine === "google_maps") {
-        calls.push("summary");
-        assert.equal(url.searchParams.get("place_id"), "place-123");
-        return Response.json({ place_results: { rating_summary: [5, 4, 3, 2, 1].map((stars) => ({ stars, amount: { 5: 164, 4: 3, 3: 0, 2: 1, 1: 1 }[stars] })) } });
-      }
-      assert.equal(engine, "google_maps_reviews");
-      assert.equal(url.searchParams.get("data_id"), "0x88f5a31f1f5f00c9:0x21ed856629aca207");
-      assert.equal(url.searchParams.get("sort_by"), "newestFirst");
-      const token = url.searchParams.get("next_page_token");
-      calls.push(token ?? "first");
-      const size = token ? 20 : 8;
-      const reviews = Array.from({ length: size }, (_, i) =>
-        !token && i === 0
-          ? review({ response: { snippet: "Thank you for trusting us with your care!" } })
-          : !token && i === 1
-            ? { ...review(), snippet: "", extracted_snippet: undefined }
-            : review(),
-      );
-      return Response.json({
-        place_info: { rating: 4.9, reviews: 173 },
-        reviews,
-        serpapi_pagination: { next_page_token: `page-${calls.length + 1}` },
-      });
-    }
-    if (url.hostname === "places.googleapis.com") calls.push("places");
-    return realFetch(input, init);
-  };
-  try {
-    const html = await (await render("/testimonials")).text();
-    const pages = calls.filter((call) => call !== "summary");
-    assert.equal(pages[0], "first");
-    assert.equal(pages.length, 4, "8 + 20 + 20 + 20 reviews covers the latest 50");
-    assert.ok(!calls.includes("places"), "never falls through to Places when SerpApi works");
-    assert.match(html, /173 Google reviews/);
-    assert.match(html, /<span class="rating-bar-count">164<span class="visually-hidden"> 5-star reviews<\/span>/);
-    assert.match(html, /Highest rated review/);
-    assert.match(html, /Most recent review/);
-    assert.match(html, /writereview\?placeid=place-123/);
-    assert.equal(html.match(/<article class="review-item">/g)?.length, 10, "first page of ten");
-    assert.match(html, /Show more reviews \(39 left\)/, "49 written reviews of the latest 50 (one was stars-only)");
-    assert.match(html, /Reply from Precision Vision Institute/);
-    assert.match(html, /Thank you for trusting us with your care!/);
-  } finally {
-    globalThis.fetch = realFetch;
-    for (const key of Object.keys(env)) delete process.env[key];
-  }
-});
-
 test("header groups contact lenses, specialty care, and puts Contact under About", async () => {
   const html = await (await render()).text();
   const navStart = html.indexOf(">", html.indexOf('aria-label="Main navigation"')) + 1;
@@ -333,47 +220,32 @@ test("referral page embeds the Google Form only when it is configured", async ()
   }
 });
 
-test("preview deployments never spend SerpApi quota", async () => {
+test("Google reviews come from the stored snapshot with no API calls", async () => {
   const realFetch = globalThis.fetch;
-  Object.assign(process.env, { SERPAPI_API_KEY: "serp-key", VERCEL_ENV: "preview" });
-  let serpCalls = 0;
-  globalThis.fetch = async (input, init) => {
-    if (String(input instanceof Request ? input.url : input).includes("serpapi.com")) serpCalls += 1;
-    return realFetch(input, init);
-  };
-  try {
-    await (await render("/testimonials")).text();
-    await (await render("/")).text();
-    assert.equal(serpCalls, 0);
-  } finally {
-    globalThis.fetch = realFetch;
-    delete process.env.SERPAPI_API_KEY;
-    delete process.env.VERCEL_ENV;
-  }
-});
-
-test("when SerpApi fails, a refresh errors (keeps the last page) but a build falls back", async () => {
-  const realFetch = globalThis.fetch;
-  Object.assign(process.env, { SERPAPI_API_KEY: "serp-key", GOOGLE_PLACES_API_KEY: "places-key", GOOGLE_PLACE_ID: "place-1" });
+  const external = [];
   globalThis.fetch = async (input, init) => {
     const url = String(input instanceof Request ? input.url : input);
-    if (url.includes("serpapi.com")) return Response.json({ error: "Your account has run out of searches." }, { status: 429 });
-    if (url.startsWith("https://places.googleapis.com/")) {
-      return Response.json({ rating: 4.9, userRatingCount: 146, reviews: [{ rating: 5, text: { text: "Places fallback review." }, authorAttribution: { displayName: "Fallback Reviewer" } }] });
-    }
+    if (!url.startsWith("http://localhost")) external.push(url);
     return realFetch(input, init);
   };
   try {
-    // A failed render surfaces as a rejected render here (or a 5xx elsewhere);
-    // either way the refresh fails and Next.js keeps serving the last good page.
-    const refresh = await render("/testimonials").then((response) => response.status, () => "threw");
-    assert.ok(refresh === "threw" || refresh >= 500, `background refresh should fail, got ${refresh}`);
+    const html = await (await render("/testimonials")).text();
+    const home = await (await render("/")).text();
+    assert.deepEqual(external, [], "reviews must not call Google, SerpApi, or any other service");
 
-    process.env.NEXT_PHASE = "phase-production-build";
-    const build = await (await render("/testimonials")).text();
-    assert.match(build, /Places fallback review\./, "a fresh build still renders, using the Places fallback");
+    assert.match(html, /146 Google reviews/);
+    assert.match(html, /<span class="rating-bar-count">145<span class="visually-hidden"> 5-star reviews<\/span>/);
+    assert.match(html, /Show more reviews \(28 left\)/, "38 written reviews, 10 shown first");
+    assert.match(html, /Oct 18, 2026/, "real dates instead of 'x days ago'");
+    assert.doesNotMatch(html, /days? ago|weeks? ago|months? ago/);
+    assert.match(html, /as of October 19, 2026/);
+    assert.match(html, /writereview\?placeid=ChIJyQBfHx-j9YgRB6KsKWaF7SE/);
+    const { readFile } = await import("node:fs/promises");
+    const snapshot = await readFile(new URL("../app/google-reviews.json", import.meta.url), "utf8");
+    assert.doesNotMatch(snapshot, /\$undefined/, "snapshot holds clean values only");
+    assert.equal(home.match(/<article class="review-item">/g)?.length, 3);
   } finally {
     globalThis.fetch = realFetch;
-    for (const key of ["SERPAPI_API_KEY", "GOOGLE_PLACES_API_KEY", "GOOGLE_PLACE_ID", "NEXT_PHASE"]) delete process.env[key];
   }
 });
+

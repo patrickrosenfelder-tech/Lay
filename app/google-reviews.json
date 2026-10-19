@@ -1,0 +1,321 @@
+{
+  "_readme": "Google reviews shown on the website. Edit by hand to add a review (newest first; date as ISO, e.g. 2026-10-18T00:00:00Z), then update rating/reviewCount/distribution from Google Maps and snapshotDate. Or regenerate with scripts/refresh-google-reviews.mjs.",
+  "snapshotDate": "2026-10-19",
+  "rating": 5.0,
+  "reviewCount": 146,
+  "distribution": {
+    "5": 145,
+    "4": 0,
+    "3": 0,
+    "2": 0,
+    "1": 1
+  },
+  "placeId": "ChIJyQBfHx-j9YgRB6KsKWaF7SE",
+  "reviews": [
+    {
+      "author": "Daphne Johnson",
+      "rating": 5,
+      "date": "2026-10-18T15:35:39Z",
+      "text": "I've been a patient for 5yrs, the staff is professional and courteous. My is great and I would recommend her to everyone.  Dr Nim was very patient, as I struggled with wearing  scleral lens.\nOn a scale 1-10 being highest ranking,Dr.Nim and office get a 10",
+      "authorUrl": "https://www.google.com/maps/contrib/108646117855587725692?hl=en-US",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjVmYLrGawBEhEzHQee_ocCZgg_3Uh-qNdxq6ui2v58WRhebBdtegw=s120-c-rp-mo-br100"
+    },
+    {
+      "author": "D'yane Downer",
+      "rating": 5,
+      "date": "2026-09-28T21:40:46Z",
+      "text": "I love Precision Vision Institute. I’ve got a pretty complicated eye condition and they’re the only people I trust to get me what I need. I’ve been with them for about 3 years and the experience has always been pleasant from beginning to end. I’ll never go anywhere else!",
+      "authorUrl": "https://www.google.com/maps/contrib/117629176067967294829?hl=en-US",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocILv8BMnaeDeHHkb0YGNRDYN0HUL91BJlYrGKf3psfkYv8NDg=s120-c-rp-mo-br100"
+    },
+    {
+      "author": "Levi Siegelman",
+      "rating": 5,
+      "date": "2026-09-18T20:24:44Z",
+      "text": "Jasmine were wonderful from the moment I walked in. She was very thorough in her initial analysis and Doctor Nim did a great job explaining everything I needed to know for continued eye care. Highly recommend precision Vision Institute!",
+      "authorUrl": "https://www.google.com/maps/contrib/115356032581558268151?hl=en-US",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUgECBvIu_bVLTUpKaN81k_oqpRzmjYzYOMPOHOAkM2eRGb12n4rA=s120-c-rp-mo-ba12-br100"
+    },
+    {
+      "author": "Genesis Pruitt",
+      "rating": 5,
+      "date": "2026-09-15T18:46:03Z",
+      "text": "Dr. Nim was so kind and knowledgeable! She went above and beyond. I will definitely be back for my next annual visit and I highly recommend her practice!",
+      "authorUrl": "https://www.google.com/maps/contrib/107306059399056343757?hl=en-US",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocL3tE_wGO9rYCypOlZzzX0pk7dl-LTYcaBqYULtB7mOxxtZGCw=s120-c-rp-mo-br100"
+    },
+    {
+      "author": "Misty Prock",
+      "rating": 5,
+      "date": "2026-08-05T21:56:49Z",
+      "text": "One of very few doctors who can fit me for medically necessary scleral lenses, including HOA corrections. Staff is professional and helpful, and Dr. Nim is super-attentive. I’m so glad I found Precision Vision!",
+      "authorUrl": "https://www.google.com/maps/contrib/102304897160384037277?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocL6JggK4KSfVIYb79Tb19hLLkWI3xHasJy2xPuk64KyvP391g=s120-c-rp-mo-br100"
+    },
+    {
+      "author": "Christopher Kearney",
+      "rating": 5,
+      "date": "2025-12-19T19:40:31Z",
+      "text": "Dr. Nim is truly exceptional and I have only positive remarks to share about her. She has been instrumental in helping me achieve optimal vision through Scleral Contacts. It is a remarkable accomplishment to go from being nearly blind due to Keratoconus to now being able to see 20/25. I have always entrusted her with my vision care and will continue to do so. I highly recommend her above any other provider in Georgia for individuals with Keratoconus who require a skilled scleral lens fitter.",
+      "authorUrl": "https://www.google.com/maps/contrib/109194625513248867405?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjVqHXk380LVV83ToD3JUBgOVEY2w2OPCcmrUiuw9XE_aCbs049o=s120-c-rp-mo-ba12-br100"
+    },
+    {
+      "author": "Simon Jone",
+      "rating": 5,
+      "date": "2025-11-14T16:55:08Z",
+      "text": "Each one in the office takes their time to answer all my questions. The glasses usually ready within 2 weeks. I am 60 and the corrective lens are no longer giving the clarity like they used to and I have minor cataract. Dr. Nim is very knowledgeable.  She is very patience and went great length to make sure I understand all the options and for me to receive the best treatment. She takes care everyone in my family.  We trust her and we highly recommend Precision Vision.",
+      "authorUrl": "https://www.google.com/maps/contrib/105786485175520046357?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjU4P4KXzvc7yZJBf8r-FF2wejRnRCwkLoFReHFI4T8GIQY2rVmM=s120-c-rp-mo-ba12-br100"
+    },
+    {
+      "author": "Paul Huynh",
+      "rating": 5,
+      "date": "2025-05-27T17:23:49Z",
+      "text": "Dr. Nim is very knowledgeable and educational. She has all the newest technology and looks for all irregularities. She explains everything in a way where it's very understandable. I highly recommend visiting her for your eye care needs.",
+      "authorUrl": "https://www.google.com/maps/contrib/108712787395263135535?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUA91nTUPMVdzWwjisLTC8Kp_CITH7A_VZZ48a8Xt9RITYJ4uKX=s120-c-rp-mo-ba12-br100"
+    },
+    {
+      "author": "Poochiloo",
+      "rating": 5,
+      "date": "2024-12-30T19:58:20Z",
+      "text": "I recently visited Dr. Nim with my daughter for an eye exam and treatment, and I couldn't be more impressed with the care she received. From the moment I walked in, the staff was welcoming and professional, creating a calm and comfortable atmosphere.Dr. Nim was incredibly thorough, taking the time to explain every step of the exam and answer all my questions. What stood out the most was her ability to diagnose an issue my daughter has been struggling with for a couple months. I highly recommend Dr. Nim to anyone looking for a skilled and compassionate eye doctor. She will truly go above and beyond for her patients. I am very happy with the outcome and she will be our eye doctor moving forward.",
+      "authorUrl": "https://www.google.com/maps/contrib/107134660769790637922?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWyJi9cIwiKWH1cQkk_B5lvtZHkxZD6ioXYjlfDT4-qoaUoEuaRPg=s120-c-rp-mo-ba12-br100"
+    },
+    {
+      "author": "jahkimba",
+      "rating": 5,
+      "date": "2024-10-18T19:43:31Z",
+      "text": "Precision is super wonderful. Customer service is top tier. Dr. Nim knowledge on Keratoconus is top tier. Precision also takes Medical & mostly any vision insurance for those who are worried about insurance. I do recommend this place with people who got Keratoconus.",
+      "authorUrl": "https://www.google.com/maps/contrib/108203890992033353352?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjVHNoKGWDL7mWywd4XhUv3Cy6RaQK0O6_F8_YnV7JimWayARks=s120-c-rp-mo-br100"
+    },
+    {
+      "author": "Nestor Ramirez",
+      "rating": 5,
+      "date": "2024-10-09T21:26:48Z",
+      "text": "Love the people here. They treat me like family",
+      "authorUrl": "https://www.google.com/maps/contrib/104139595653631174085?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKFfPyWecitmK52Slgqkg75EYvDokwQX6gjpbhGOKvU1ShlYRzF=s120-c-rp-mo-br100"
+    },
+    {
+      "author": "Melanie Sarai",
+      "rating": 1,
+      "date": "2024-09-06T14:53:26Z",
+      "text": "Disappointed. I made an appointment for 10:30am the day before. At 10:15am on the day of my “supposed appointment” I got a call stating that there was no appointments available. I was already parked and inside the building when I got the late call. Mind you, the business opens at 9:00am. They could have called at 9:30am or even 10:00am so I didn’t have to waste my time or gas. I was just really disappointed with their lack of consideration.",
+      "reply": "Thank you for sharing your feedback. We’re sorry to hear about your recent experience and truly appreciate you bringing this to our attention.\n\nOur office hours begin at 9:30 AM, and we strive to respond to appointment requests as promptly as possible during our business hours. Your request came in when our office was closed, and while we did our best to reach out on the morning of your appointment, we regret that we were unable to connect with you directly and left a voicemail about 45 minutes before your requested time.\n\nWe apologize for any inconvenience this caused, and we understand how frustrating this must have been. Your feedback is important to us, and we are committed to improving our communication to better serve our patients in the future. Please don’t hesitate to contact us at 470-440-4099, and we will do our best to accommodate your schedule.\n\nThank you for your understanding, and we hope to have the opportunity to provide you with a better experience.",
+      "authorUrl": "https://www.google.com/maps/contrib/114322060781547943800?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocL1zh0x7vM2cDWjFckzZvA2Z31ue00Y118X1S-MtZxDqXmkoPQ=s120-c-rp-mo-ba12-br100"
+    },
+    {
+      "author": "shay travels",
+      "rating": 5,
+      "date": "2024-05-06T01:26:15Z",
+      "text": "I'm so impressed with the professionalism I experienced here. I was very well taken care of during my visit and my concerns were taken seriously. This clinic uses new, modern technology to understand each patient's visit needs. Dr. Nim was able to detect a an eye condition that I was not aware I had, and she was very patient in performing the additional exams I needed the same day. She answered all of my questions very clearly. In the face of my new diagnosis, I was comforted by her expertise and feel that I'm in good hands.",
+      "authorUrl": "https://www.google.com/maps/contrib/109382059225328862053?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocLwovNmEFmxN-ZDdu1lqrgPTKvDl2E7Ku2lmRzBPxQHqA4uxA=s120-c-rp-mo-ba12-br100"
+    },
+    {
+      "author": "Monifa Ramsay",
+      "rating": 5,
+      "date": "2024-04-22T15:55:53Z",
+      "text": "I enjoyed my experience and the team made me comfortable and they were very professional",
+      "authorUrl": "https://www.google.com/maps/contrib/114123213333776599010?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUbu-6OVimIEfqJkWMK5dHA9qgTv9e4QaYD4eYQJO6_Za1D5R0Skg=s120-c-rp-mo-ba12-br100"
+    },
+    {
+      "author": "Arly Cruz",
+      "rating": 5,
+      "date": "2024-03-25T20:16:55Z",
+      "text": "It was my first time here today! The receptionist/tech was welcoming and did the first few exams very thoroughly. He made sure I was comfortable and explained what each machine did.\n\nThe doctor was very detailed in explaining the results and worked thoroughly yet quickly!\n\nThe office itself was modern and extremely clean.\n\nThey explained the pricing detailed and were willing to work with me if it was out of my budget.\n\nI would recommend anyone in the Duluth area to schedule their next appointment here!",
+      "authorUrl": "https://www.google.com/maps/contrib/114682128151797737229?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWfl9zPjf_6Y0P_3BqB_Ya-fdKhFYjzASxDHPttPfJvOJkT4GMY=s120-c-rp-mo-ba12-br100"
+    },
+    {
+      "author": "Rena Clark",
+      "rating": 5,
+      "date": "2024-03-11T04:53:02Z",
+      "text": "$1e",
+      "authorUrl": "https://www.google.com/maps/contrib/109629929193571137247?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWl6CzVLrmvei7RVEPDfocALp6J4KtXj3-zwCcn8naPv-qEpXhb2Q=s120-c-rp-mo-ba12-br100"
+    },
+    {
+      "author": "Rob Pyecha",
+      "rating": 5,
+      "date": "2024-02-27T16:42:04Z",
+      "text": "Found PVI through my insurance carrier, and saw they had great reviews. It was my first time ever at the eye doctor. I could tell my vision was getting worse.\n\nThey got me in and out quickly, and ordered my glasses with full transparency about what my insurance covered + what was out of pocket. The glasses came quickly (within a week!) and they already help me tremendously.",
+      "authorUrl": "https://www.google.com/maps/contrib/113120395186830020999?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUURlr0KAWUSbc8xgm42KcAjoaqyXlbovwC-br7folujRmPvTIlXg=s120-c-rp-mo-ba12-br100"
+    },
+    {
+      "author": "Alina Robinson",
+      "rating": 5,
+      "date": "2024-02-06T21:05:57Z",
+      "text": "This place is so cute and friendly! The staff was super kind, and if you’re looking for a female optometrist they have one! They also have a good variety of glasses to select from. :)",
+      "authorUrl": "https://www.google.com/maps/contrib/107960204996803049259?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjVVTSCzSQmLkrfF8KC9CONYInFM4lwoIaGIvZloBAjGPQ709MBn=s120-c-rp-mo-br100"
+    },
+    {
+      "author": "Lynn McDonald",
+      "rating": 5,
+      "date": "2024-02-02T16:45:08Z",
+      "text": "This team is amazing   The best eye experience I’ve ever had.!!!\nDr Nim is simply the best & her team of professionals make you feel at ease.",
+      "authorUrl": "https://www.google.com/maps/contrib/110910071661074148774?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKXFDtkpbUk5fQY4UG1sTaS7pl6NjSB09df1vw8hMk5FmZEsQ=s120-c-rp-mo-br100"
+    },
+    {
+      "author": "Joshua Jimenez",
+      "rating": 5,
+      "date": "2024-01-31T20:37:20Z",
+      "text": "Quick, professional service. Good experience",
+      "authorUrl": "https://www.google.com/maps/contrib/117021102914839441409?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKp7z_GW5BxWu4B-Enr_kBGfuEkvNNguLhCRhzveGovBiiWIg=s120-c-rp-mo-ba12-br100"
+    },
+    {
+      "author": "Juanita Fozail Raja",
+      "rating": 5,
+      "date": "2023-12-26T17:25:05Z",
+      "text": "I went to them because of a recommendation on social media for Scleral lenses.  They sold them short! Saying that EVERYONE in the office is amazing is an understatement! They are very professional, caring, honestly, I wish more business and specially doctors could be like them.",
+      "authorUrl": "https://www.google.com/maps/contrib/110571115933838366075?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjXkLJdmDF1BOdAS_d2ZEuPT1tPsOmpHqCNlQOl0RgZeS5EtqLs-=s120-c-rp-mo-ba12-br100"
+    },
+    {
+      "author": "Simon",
+      "rating": 5,
+      "date": "2023-12-22T18:10:27Z",
+      "text": "Perfect experience from beginning to end. I’m bad with names, so i’m sorry! The nice young lady at the front was super sweet and helpful. The gentleman who did the pre-tests was polite and quick yet precise. The Doctor found my perfect prescription after only 3-4 better or worse changes during the refraction tests. The facility was modern and clean. Perfect experience after many bad experiences at other places. Will 100% be coming every year.",
+      "authorUrl": "https://www.google.com/maps/contrib/107244402931493454624?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIyT2i6v-k8JCIVJwj7QnFwUc1GATRXXVMjuXFtsfGSRYrxJg=s120-c-rp-mo-br100"
+    },
+    {
+      "author": "alyah montes",
+      "rating": 5,
+      "date": "2023-12-15T16:40:38Z",
+      "text": "Amazing !!! Everyone is so sweet! Very informative!",
+      "authorUrl": "https://www.google.com/maps/contrib/105991314765604297126?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJTBzJout9DXTjLHIz1o-2VGg6t4peq9y5HE-tJHOTr2Q1QcQ=s120-c-rp-mo-br100"
+    },
+    {
+      "author": "Trinidad Robles",
+      "rating": 5,
+      "date": "2023-12-08T22:01:46Z",
+      "text": "A very welcoming , friendly and professional office. Explained everything in detail, from exam being performed to insurance, pricing and answered all my questions and concerns. I am glad I chose Precision Vision Institute for my eye care. 👍🏼😁🙌🏼",
+      "authorUrl": "https://www.google.com/maps/contrib/105346924973266573908?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjVKEGEQGw1dQEaEQJ06f5P8PBFST9ppzhdFrouIHjDAY-E5JOr_=s120-c-rp-mo-br100"
+    },
+    {
+      "author": "Hieu Nguyen",
+      "rating": 5,
+      "date": "2023-10-23T02:25:20Z",
+      "text": "The doctor was amazing. Very knowledgeable and patient. I definitely recommend this place. Best service so far.",
+      "authorUrl": "https://www.google.com/maps/contrib/100194226348359039991?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocLvXokoaGNs6LO_gf6QBvyWgpKQuS4oNmPMqh-FlcyYLXBr9MA=s120-c-rp-mo-br100"
+    },
+    {
+      "author": "Sandy D",
+      "rating": 5,
+      "date": "2023-10-17T16:16:16Z",
+      "text": "Friendly, quick, and professional service 👍🏼",
+      "authorUrl": "https://www.google.com/maps/contrib/114326630796481780987?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocLpI3_Ck9fttBq4IOEaAP2y8zU2b1qPnUa7c41mL0narXhF4g=s120-c-rp-mo-br100"
+    },
+    {
+      "author": "Jessica Davis",
+      "rating": 5,
+      "date": "2023-08-13T15:59:03Z",
+      "text": "Everyone was great and very professional. My glasses came in within a timely manner and everything was perfect with them. Very happy to have found this place- highly recommend!!!! ❤❤",
+      "authorUrl": "https://www.google.com/maps/contrib/108532250589276160906?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJE9YMwIWkgcU95uvAUyGyBPmAMzdOTtUZVq11XtlTPDe9ObQ=s120-c-rp-mo-ba12-br100"
+    },
+    {
+      "author": "Steve Davis",
+      "rating": 5,
+      "date": "2023-08-11T20:08:07Z",
+      "text": "From the text reminders of the appointment,  to figuring out the amount of insurance help, to two techs expertly running their tests, to Dr. Nim's interpretations, additional testing, and recommendations, to the fitting of new glasses, I could not have felt more expertly and personally well-cared for. Thank you all!\n\nSteve",
+      "authorUrl": "https://www.google.com/maps/contrib/112096661139669787982?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUDYCD7i08kLInowmsQMOVsPZDZb0gHhzZo6u8RMvClBbzVO-qy=s120-c-rp-mo-ba12-br100"
+    },
+    {
+      "author": "Jaia Burris",
+      "rating": 5,
+      "date": "2023-07-07T16:15:05Z",
+      "text": "The only doctor that was willing to help treat my damaged cornea, super grateful I was able to find such an amazing doctor. And the staff were very kind and helpful as well 5🌟",
+      "authorUrl": "https://www.google.com/maps/contrib/109371717332093942866?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjVJeZqqlkmdJ4j0-lOJ_knyE-CnmKp9QxoNwC1Igb-APXz-qdyrQA=s120-c-rp-mo-br100"
+    },
+    {
+      "author": "Karen Wellman",
+      "rating": 5,
+      "date": "2023-05-25T13:01:55Z",
+      "text": "So glad I found Precision Vision INstitute.  Dr. Nim has given me the best fit and best vision with my scleral lenses. Dr. Nim has the technology with the Pentacam along with the experience and patience to get you the right fit for your contacts.  She is very thorough. Dr. Nim also takes insurance. Her staff is excellent to work with as well. I highly recommend Dr. Nim at Precision Vision Institute.",
+      "authorUrl": "https://www.google.com/maps/contrib/100484281945833393160?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUsFziGNc3pVp_iANvtubln4U1-MgUhqEStiniBVW8jr_91giLsag=s120-c-rp-mo-ba12-br100"
+    },
+    {
+      "author": "Bijal Patel",
+      "rating": 5,
+      "date": "2023-04-29T18:34:46Z",
+      "text": "Dr Nim is the best. Very caring about her patients needs. We have been taking our child to see Dr. Nim for over a year now. We have nothing but positive things to say about the doctor and her staff. Highly recommend.",
+      "authorUrl": "https://www.google.com/maps/contrib/113877341068847109626?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjVn54hrynTpK0J8YqVwHd-qGgGRR8wZYJS8siMu0Alr11wRqFSi=s120-c-rp-mo-br100"
+    },
+    {
+      "author": "Byron Alexander",
+      "rating": 5,
+      "date": "2023-03-04T20:19:09Z",
+      "text": "Excellent process and experience.  Very professional and cleanliness second to none.. Highly Recommend!!!",
+      "authorUrl": "https://www.google.com/maps/contrib/112041518803049618493?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIOa6TazhKmt7EDug3jfK2g5GhUMm35isRE8W02mDu4s-k5SA=s120-c-rp-mo-br100"
+    },
+    {
+      "author": "Lorrie Lipps",
+      "rating": 5,
+      "date": "2023-03-01T23:56:29Z",
+      "text": "Loved the Dr.",
+      "authorUrl": "https://www.google.com/maps/contrib/112103538630280071463?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIgn_wphpEK8IEPg-Jmo7tGiwrmEw_vru2WVVlf3tFjjo7lvQ=s120-c-rp-mo-br100"
+    },
+    {
+      "author": "Simpson T",
+      "rating": 5,
+      "date": "2023-02-28T17:44:30Z",
+      "text": "Had a great experience from beginning to end. Thorough, attentive, pleasant, kind & I didn't feel rushed at all. Offered suggestions based on my life style & what I personally needed. Answered all the questions I had.",
+      "authorUrl": "https://www.google.com/maps/contrib/112306797138427913059?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjVxkvakRSkKAERhFRySS24NlgTZs9awKs19rf0rxSjVleKSW--qnA=s120-c-rp-mo-ba12-br100"
+    },
+    {
+      "author": "Queenie Zhang",
+      "rating": 5,
+      "date": "2023-02-06T18:09:18Z",
+      "text": "Love Dr. Nim and her team! Came in for a regular eye exam and everything went great. Staff was super friendly and the office was nice and clean, overall I felt very comfortable there. Would highly recommend coming here if you’re looking for a place to get your eye examination done or just need consultation on your vision!",
+      "authorUrl": "https://www.google.com/maps/contrib/115878700219156905061?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjXDnjxXpOMRsbRbdce284xgQWSFOPKaD39_c8HHrdD7V-_5UnA=s120-c-rp-mo-ba12-br100"
+    },
+    {
+      "author": "Essica Williams",
+      "rating": 5,
+      "date": "2023-01-07T18:36:40Z",
+      "text": "Very kind people and I felt very comfortable there.",
+      "authorUrl": "https://www.google.com/maps/contrib/109731013001385405336?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocImO_qyM7mKGhCEctFnBYOsf7yOaFD4jBOmqS7_KKivapNxmg=s120-c-rp-mo-br100"
+    },
+    {
+      "author": "Jason Yan",
+      "rating": 5,
+      "date": "2022-05-30T15:06:10Z",
+      "text": "As Dr. Nim’s little brother, I have to give 5 stars.",
+      "authorUrl": "https://www.google.com/maps/contrib/110749099337669405928?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjW3FCqRZrwfebkkopA8kOib76g1s8Q4_zIHJ2019MprK5CuyP4u=s120-c-rp-mo-br100"
+    },
+    {
+      "author": "Kelsey Holgate",
+      "rating": 5,
+      "date": "2022-03-02T13:58:19Z",
+      "text": "I have NEVER met a better eye doctor than Dr. Nim. I've never had an eye doctor take their TIME with an appointment. I was going through quite a bit when I first met her and she sat there and listened to me and gave me some great insight as well as providing me with a an anxious free environment and an exceptional experience overall. I couldn't recommend Dr. Nim enough!!!",
+      "authorUrl": "https://www.google.com/maps/contrib/100543061837829713543?hl=en",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjXhvHaT0sOExqN8NCxbKTZe-qaY_5tev5rkd0yh20jgA1dOFXpU=s120-c-rp-mo-ba12-br100"
+    }
+  ]
+}
