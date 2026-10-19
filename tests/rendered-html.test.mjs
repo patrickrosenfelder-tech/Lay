@@ -38,8 +38,12 @@ test("server-renders the complete Precision Vision Institute homepage", async ()
   assert.match(html, /\(470\) 440-4099/);
   assert.match(html, /Mon \/ Tue \/ Wed/);
   assert.match(html, /Fri/);
-  assert.match(html, /Thurs \/ Sun/);
+  assert.match(html, /Mon \/ Tue \/ Wed \/ Thurs/);
+  assert.match(html, /9:30 AM–1 PM, 2–5:30 PM|9:30 AM–1 PM<\/span><span class="hours-period">,<br\/>2–5:30 PM/);
+  assert.match(html, /Fri \/ Sun/);
   assert.match(html, />Closed</);
+  assert.doesNotMatch(html, /4:30 PM/, "old Friday hours are gone");
+  assert.match(html, /"dayOfWeek":\["Monday","Tuesday","Wednesday","Thursday"\],"opens":"14:00","closes":"17:30"/);
   assert.match(html, /Request Appointment|Book appointment|Book online/i);
   assert.match(html, /Live appointment availability/i);
   assert.match(html, /Synced with EyeCloud/i);

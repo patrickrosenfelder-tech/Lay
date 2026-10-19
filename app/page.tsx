@@ -6,6 +6,7 @@ import { LocationMap } from "./LocationMap";
 import { OfficeExterior } from "./OfficeExterior";
 import { getGoogleReviews } from "./google-reviews";
 import { HomeReviews } from "./HomeReviews";
+import { OPENING_HOURS } from "./site";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 import { clinicStructuredData, JsonLd } from "./structured-data";
@@ -256,22 +257,17 @@ export default async function Home() {
             Duluth, GA 30096
           </address>
           <div className="hours">
-            <div>
-              <span>Mon / Tue / Wed</span>
-              <strong>9:30 AM—5:30 PM</strong>
-            </div>
-            <div>
-              <span>Fri</span>
-              <strong>9:30 AM—4:30 PM</strong>
-            </div>
-            <div>
-              <span>Sat</span>
-              <strong>9:30 AM—1:30 PM</strong>
-            </div>
-            <div className="closed">
-              <span>Thurs / Sun</span>
-              <strong>Closed</strong>
-            </div>
+            {OPENING_HOURS.map(({ days, hours, ...rest }) => (
+              <div className={"closed" in rest ? "closed" : undefined} key={days}>
+                <span>{days}</span>
+                {/* Morning and afternoon periods each get their own line in this narrow column. */}
+                <strong>
+                  {hours.split(", ").map((period, index) => (
+                    <span className="hours-period" key={period}>{index > 0 && ","}{index > 0 && <br />}{period}</span>
+                  ))}
+                </strong>
+              </div>
+            ))}
           </div>
           <div className="visit-actions">
             <a

@@ -3,31 +3,13 @@ import {
   FACEBOOK_URL,
   INSTAGRAM_URL,
   MAPS_URL,
+  OPENING_HOURS_SPEC,
   SITE_URL,
 } from "./site";
 
 export const CLINIC_ID = `${SITE_URL}/#clinic`;
 
-const openingHours = [
-  {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday"],
-    opens: "09:30",
-    closes: "17:30",
-  },
-  {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: "Friday",
-    opens: "09:30",
-    closes: "16:30",
-  },
-  {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: "Saturday",
-    opens: "09:30",
-    closes: "13:30",
-  },
-];
+const openingHours = OPENING_HOURS_SPEC;
 
 const services = [
   "Scleral lens fitting",
