@@ -351,3 +351,29 @@ test("preview deployments never spend SerpApi quota", async () => {
     delete process.env.VERCEL_ENV;
   }
 });
+
+test("when SerpApi fails, a refresh errors (keeps the last page) but a build falls back", async () => {
+  const realFetch = globalThis.fetch;
+  Object.assign(process.env, { SERPAPI_API_KEY: "serp-key", GOOGLE_PLACES_API_KEY: "places-key", GOOGLE_PLACE_ID: "place-1" });
+  globalThis.fetch = async (input, init) => {
+    const url = String(input instanceof Request ? input.url : input);
+    if (url.includes("serpapi.com")) return Response.json({ error: "Your account has run out of searches." }, { status: 429 });
+    if (url.startsWith("https://places.googleapis.com/")) {
+      return Response.json({ rating: 4.9, userRatingCount: 146, reviews: [{ rating: 5, text: { text: "Places fallback review." }, authorAttribution: { displayName: "Fallback Reviewer" } }] });
+    }
+    return realFetch(input, init);
+  };
+  try {
+    // A failed render surfaces as a rejected render here (or a 5xx elsewhere);
+    // either way the refresh fails and Next.js keeps serving the last good page.
+    const refresh = await render("/testimonials").then((response) => response.status, () => "threw");
+    assert.ok(refresh === "threw" || refresh >= 500, `background refresh should fail, got ${refresh}`);
+
+    process.env.NEXT_PHASE = "phase-production-build";
+    const build = await (await render("/testimonials")).text();
+    assert.match(build, /Places fallback review\./, "a fresh build still renders, using the Places fallback");
+  } finally {
+    globalThis.fetch = realFetch;
+    for (const key of ["SERPAPI_API_KEY", "GOOGLE_PLACES_API_KEY", "GOOGLE_PLACE_ID", "NEXT_PHASE"]) delete process.env[key];
+  }
+});

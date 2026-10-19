@@ -15,6 +15,8 @@ import type { Review } from "./reviews";
 //      GOOGLE_PLACES_API_KEY (+ optional GOOGLE_PLACE_ID)
 // 3. Neither configured or both failing → `null`, and callers fall back to
 //    the curated testimonials in reviews.ts, so builds never break.
+// If SerpApi fails during a background refresh (e.g. quota used up), the
+// error is rethrown so the last good page — with all 50 reviews — stays live.
 
 const DAY_SECONDS = 60 * 60 * 24;
 const SERPAPI_REFRESH_SECONDS = 3 * DAY_SECONDS;
@@ -228,10 +230,20 @@ async function getPlacesReviews(): Promise<GoogleReviewData | null> {
 /* ---------------- Public entry point ---------------- */
 
 export async function getGoogleReviews(): Promise<GoogleReviewData | null> {
+  const serpApiActive = Boolean(process.env.SERPAPI_API_KEY) && process.env.VERCEL_ENV !== "preview";
+  // During `next build` there is no earlier page to fall back on, so a failure
+  // must degrade to Places. At runtime (a background refresh) we instead throw:
+  // Next.js then keeps serving the last successfully generated page, so the
+  // latest 50 reviews stay up when the SerpApi quota is used up, and the next
+  // refresh retries.
+  const isBuild = process.env.NEXT_PHASE === "phase-production-build";
+
   try {
     const latest = await getSerpApiReviews();
     if (latest) return latest;
+    if (serpApiActive) throw new Error("SerpApi returned no usable reviews");
   } catch (error) {
+    if (serpApiActive && !isBuild) throw error;
     console.warn("SerpApi request failed", error);
   }
 
