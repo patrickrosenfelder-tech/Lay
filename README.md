@@ -1,5 +1,7 @@
 # vinext-starter
 
+> **Precision Vision Institute website:** see [`docs/RUNBOOK.md`](docs/RUNBOOK.md) for how the site works, common changes, and troubleshooting.
+
 A clean full-stack starter running on
 [vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
 Drizzle support.
