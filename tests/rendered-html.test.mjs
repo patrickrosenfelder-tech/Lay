@@ -332,3 +332,22 @@ test("referral page embeds the Google Form only when it is configured", async ()
     delete process.env.REFERRAL_GOOGLE_FORM_URL;
   }
 });
+
+test("preview deployments never spend SerpApi quota", async () => {
+  const realFetch = globalThis.fetch;
+  Object.assign(process.env, { SERPAPI_API_KEY: "serp-key", VERCEL_ENV: "preview" });
+  let serpCalls = 0;
+  globalThis.fetch = async (input, init) => {
+    if (String(input instanceof Request ? input.url : input).includes("serpapi.com")) serpCalls += 1;
+    return realFetch(input, init);
+  };
+  try {
+    await (await render("/testimonials")).text();
+    await (await render("/")).text();
+    assert.equal(serpCalls, 0);
+  } finally {
+    globalThis.fetch = realFetch;
+    delete process.env.SERPAPI_API_KEY;
+    delete process.env.VERCEL_ENV;
+  }
+});

@@ -7,13 +7,17 @@ import type { Review } from "./reviews";
 //    the star breakdown. Google declined Business Profile API access, so this
 //    service retrieves the public Maps data for us. Needs, in Vercel:
 //      SERPAPI_API_KEY (+ optional GOOGLE_MAPS_DATA_ID to override the default)
-//    Budget: ~6 requests per daily refresh ≈ 180/month (free plan: 250).
+//    Budget (free plan: 250/month): ~6 requests per fetch. Production refreshes
+//    every 3 days (~60/month) plus ~6 per production deploy. Preview
+//    deployments (staging) skip SerpApi entirely and use Places instead,
+//    because every preview build and visit would otherwise spend the quota.
 // 2. Places API (New): public data, capped by Google at 5 reviews. Needs:
 //      GOOGLE_PLACES_API_KEY (+ optional GOOGLE_PLACE_ID)
 // 3. Neither configured or both failing → `null`, and callers fall back to
 //    the curated testimonials in reviews.ts, so builds never break.
 
 const DAY_SECONDS = 60 * 60 * 24;
+const SERPAPI_REFRESH_SECONDS = 3 * DAY_SECONDS;
 const LATEST_REVIEWS = 50;
 const SERPAPI = "https://serpapi.com/search.json";
 // The practice's Google Maps listing id (the "1s0x…:0x…" part of its Maps URL).
@@ -63,7 +67,7 @@ type SerpPlace = {
 };
 
 async function serpApi<T>(params: Record<string, string>): Promise<T | null> {
-  const response = await fetch(`${SERPAPI}?${new URLSearchParams(params)}`, cacheFor(DAY_SECONDS));
+  const response = await fetch(`${SERPAPI}?${new URLSearchParams(params)}`, cacheFor(SERPAPI_REFRESH_SECONDS));
   if (!response.ok) {
     console.warn(`SerpApi ${params.engine} request failed: ${response.status}`);
     return null;
@@ -86,6 +90,8 @@ async function getStarBreakdown(apiKey: string, placeId?: string) {
 async function getSerpApiReviews(): Promise<GoogleReviewData | null> {
   const apiKey = process.env.SERPAPI_API_KEY;
   if (!apiKey) return null;
+  // Staging/preview builds fall back to Places so they never spend SerpApi quota.
+  if (process.env.VERCEL_ENV === "preview") return null;
   const dataId = process.env.GOOGLE_MAPS_DATA_ID || DEFAULT_MAPS_DATA_ID;
   const placeId = process.env.GOOGLE_PLACE_ID;
 
