@@ -39,7 +39,7 @@ test("server-renders the complete Precision Vision Institute homepage", async ()
   assert.match(html, /Mon \/ Tue \/ Wed/);
   assert.match(html, /Fri/);
   assert.match(html, /Mon \/ Tue \/ Wed \/ Thurs/);
-  assert.match(html, /9:30 AM–1 PM, 2–5:30 PM|9:30 AM–1 PM<\/span><span class="hours-period">,<br\/>2–5:30 PM/);
+  assert.match(html, /9:30 AM–1:00 PM<\/span><span class="hours-period">,<br\/>2:00 PM–5:30 PM/);
   assert.match(html, /Fri \/ Sun/);
   assert.match(html, />Closed</);
   assert.doesNotMatch(html, /4:30 PM/, "old Friday hours are gone");

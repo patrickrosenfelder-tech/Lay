@@ -24,7 +24,7 @@ export const MAPS_URL =
 // Opening hours: the one place to edit them. Shown on the homepage, contact
 // and office pages; OPENING_HOURS_SPEC feeds Google via structured data.
 export const OPENING_HOURS = [
-  { days: "Mon / Tue / Wed / Thurs", hours: "9:30 AM–1 PM, 2–5:30 PM" },
+  { days: "Mon / Tue / Wed / Thurs", hours: "9:30 AM–1:00 PM, 2:00 PM–5:30 PM" },
   { days: "Sat", hours: "9:30 AM–1:30 PM" },
   { days: "Fri / Sun", hours: "Closed", closed: true },
 ] as const;
