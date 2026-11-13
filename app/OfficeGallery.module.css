@@ -1,0 +1,66 @@
+.gallery {
+  padding: 0 5vw clamp(64px, 8vw, 120px);
+}
+
+.intro {
+  max-width: 700px;
+  margin-bottom: 36px;
+}
+
+.intro h2 {
+  margin: 0 0 20px;
+  color: var(--navy);
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+}
+
+.intro > p:last-child {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px 24px;
+}
+
+.photo {
+  min-width: 0;
+  margin: 0;
+}
+
+.imageLink {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #eeece7;
+}
+
+.imageLink img {
+  object-fit: cover;
+}
+
+.imageLink:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 5px;
+}
+
+.photo figcaption {
+  margin-top: 14px;
+  color: var(--navy);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1000px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+}

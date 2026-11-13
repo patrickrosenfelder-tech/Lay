@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowIcon } from "./ArrowIcon";
 import { LocationMap } from "./LocationMap";
 import { OfficeExterior } from "./OfficeExterior";
+import { OfficeGallery } from "./OfficeGallery";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 import {
@@ -66,6 +67,7 @@ export function StaticPage({ page, path }: { page: StaticPageData; path: string 
           </article>
         ))}
       </section>
+      {path === "/our-office" && <OfficeGallery />}
       {page.showOfficeLocation && (
         <section className="office-location">
           <div>
